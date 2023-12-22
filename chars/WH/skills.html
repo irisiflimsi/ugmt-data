@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <link rel="stylesheet" type="text/css" href="/main.css"/>
+    <link rel="stylesheet" type="text/css" href="/chars/chars.css"/>
+   </head>
+  <body>
+    <table style="width:100%">
+      <tr style="width:100%">
+        <td class="name" colspan="8">
+          $Name
+        </td>
+        <td id="roll" rowspan="2" colspan="2" width="18%" class="roll" onmouseover="high(this)" onmouseout="low(this)" onclick="rollWH()">1d100</td>
+      </tr>
+      <tr>
+        <td width="9%" class="head">WS</td>
+        <td width="9%" class="head">BS</td>
+        <td width="9%" class="head">S</td>
+        <td width="9%" class="head">T</td>
+        <td width="9%" class="head">Ag</td>
+        <td width="9%" class="head">Int</td>
+        <td width="9%" class="head">WP</td>
+        <td width="9%" class="head">Fel</td>
+      </tr>
+      <tr>
+        <td id="AttrV1" class="attr">
+          $WSCurr
+        </td>
+        <td id="AttrV2" class="attr">
+          $BSCurr
+        </td>
+        <td id="AttrV3"  class="attr">
+          $SCurr
+        </td>
+        <td id="AttrV4" class="attr">
+          $TCurr
+        </td>
+        <td id="AttrV5" class="attr">
+          $AglCurr
+        </td>
+        <td id="AttrV6" class="attr">
+          $IntCurr
+        </td>
+        <td id="AttrV7" class="attr">
+          $WPCurr
+        </td>
+        <td id="AttrV8" class="attr">
+          $FelCurr
+        </td>
+        <td colspan="2" rowspan="2" class="attr">
+          <span id="Roll">0</span>
+        </td>
+      </tr>
+      <tr>
+        <td id="AttrR1" class="attr">&nbsp;</td>
+        <td id="AttrR2" class="attr"></td>
+        <td id="AttrR3" class="attr"></td>
+        <td id="AttrR4" class="attr"></td>
+        <td id="AttrR5" class="attr"></td>
+        <td id="AttrR6" class="attr"></td>
+        <td id="AttrR7" class="attr"></td>
+        <td id="AttrR8" class="attr"></td>
+      </tr>
+      <tr>
+        <td class="name" colspan="10">Basic Skills</td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-1N</td>
+        <td class="attr" id="SkillV1">$SkBasic-1VV</td>
+        <td class="attr" id="SkillR1"></td>
+        <td class="head" colspan="3">$SkBasic-2N</td>
+        <td style="width:9%;" class="attr" id="SkillV2">$SkBasic-2VV</td>
+        <td class="attr" id="SkillR2"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-3N</td>
+        <td class="attr" id="SkillV3">$SkBasic-3VV</td>
+        <td class="attr" id="SkillR3"></td>
+        <td class="head" colspan="3">$SkBasic-4N</td>
+        <td style="width:9%;" class="attr" id="SkillV4">$SkBasic-4VV</td>
+        <td class="attr" id="SkillR4"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-5N</td>
+        <td class="attr" id="SkillV5">$SkBasic-5VV</td>
+        <td class="attr" id="SkillR5"></td>
+        <td class="head" colspan="3">$SkBasic-6N</td>
+        <td style="width:9%;" class="attr" id="SkillV6">$SkBasic-6VV</td>
+        <td class="attr" id="SkillR6"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-7N</td>
+        <td class="attr" id="SkillV7">$SkBasic-7VVV</td>
+        <td class="attr" id="SkillR7"></td>
+        <td class="head" colspan="3">$SkBasic-8N</td>
+        <td style="width:9%;" class="attr" id="SkillV8">$SkBasic-8VV</td>
+        <td class="attr" id="SkillR8"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-9N</td>
+        <td class="attr" id="SkillV9">$SkBasic-9VV</td>
+        <td class="attr" id="SkillR9"></td>
+        <td class="head" colspan="3">$SkBasic-10N</td>
+        <td style="width:9%;" class="attr" id="SkillV10">$SkBasic-10VV</td>
+        <td class="attr" id="SkillR10"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-11N</td>
+        <td class="attr" id="SkillV11">$SkBasic-11VV</td>
+        <td class="attr" id="SkillR11"></td>
+        <td class="head" colspan="3">$SkBasic-12N</td>
+        <td style="width:9%;" class="attr" id="SkillV12">$SkBasic-12VV</td>
+        <td class="attr" id="SkillR12"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-13N</td>
+        <td class="attr" id="SkillV13">$SkBasic-13VV</td>
+        <td class="attr" id="SkillR13"></td>
+        <td class="head" colspan="3">$SkBasic-14N</td>
+        <td style="width:9%;" class="attr" id="SkillV14">$SkBasic-14VV</td>
+        <td class="attr" id="SkillR14"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-15N</td>
+        <td class="attr" id="SkillV15">$SkBasic-15VV</td>
+        <td class="attr" id="SkillR15"></td>
+        <td class="head" colspan="3">$SkBasic-16N</td>
+        <td style="width:9%;" class="attr" id="SkillV16">$SkBasic-16VV</td>
+        <td class="attr" id="SkillR16"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-17N</td>
+        <td class="attr" id="SkillV17">$SkBasic-17VV</td>
+        <td class="attr" id="SkillR17"></td>
+        <td class="head" colspan="3">$SkBasic-18N</td>
+        <td style="width:9%;" class="attr" id="SkillV18">$SkBasic-18VV</td>
+        <td class="attr" id="SkillR18"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkBasic-19N</td>
+        <td class="attr" id="SkillV19">$SkBasic-19VV</td>
+        <td class="attr" id="SkillR19"></td>
+        <td class="head" colspan="3">$SkBasic-20N</td>
+        <td style="width:9%;" class="attr" id="SkillV20">$SkBasic-20VV</td>
+        <td class="attr" id="SkillR20"></td>
+      </tr>
+      <tr>
+        <td class="name" colspan="10">Advanced Skills</td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-1N</td>
+        <td class="attr" id="SkillV21">$SkAdvanced-1VV</td>
+        <td class="attr" id="SkillR21"></td>
+        <td class="head" colspan="3">$SkAdvanced-2N</td>
+        <td style="width:9%;" class="attr" id="SkillV22">$SkAdvanced-2VV</td>
+        <td class="attr" id="SkillR22"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-3N</td>
+        <td class="attr" id="SkillV23">$SkAdvanced-3VV</td>
+        <td class="attr" id="SkillR23"></td>
+        <td class="head" colspan="3">$SkAdvanced-4N</td>
+        <td style="width:9%;" class="attr" id="SkillV24">$SkAdvanced-4VV</td>
+        <td class="attr" id="SkillR24"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-5N</td>
+        <td class="attr" id="SkillV25">$SkAdvanced-5VV</td>
+        <td class="attr" id="SkillR25"></td>
+        <td class="head" colspan="3">$SkAdvanced-6N</td>
+        <td style="width:9%;" class="attr" id="SkillV26">$SkAdvanced-6VV</td>
+        <td class="attr" id="SkillR26"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-7N</td>
+        <td class="attr" id="SkillV27">$SkAdvanced-7VV</td>
+        <td class="attr" id="SkillR27"></td>
+        <td class="head" colspan="3">$SkAdvanced-8N</td>
+        <td style="width:9%;" class="attr" id="SkillV28">$SkAdvanced-8VV</td>
+        <td class="attr" id="SkillR28"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-9N</td>
+        <td class="attr" id="SkillV29">$SkAdvanced-9VV</td>
+        <td class="attr" id="SkillR29"></td>
+        <td class="head" colspan="3">$SkAdvanced-10N</td>
+        <td style="width:9%;" class="attr" id="SkillV30">$SkAdvanced-10VV</td>
+        <td class="attr" id="SkillR30"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-11N</td>
+        <td class="attr" id="SkillV31">$SkAdvanced-11VV</td>
+        <td class="attr" id="SkillR31"></td>
+        <td class="head" colspan="3">$SkAdvanced-12N</td>
+        <td style="width:9%;" class="attr" id="SkillV32">$SkAdvanced-12VV</td>
+        <td class="attr" id="SkillR32"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-13N</td>
+        <td class="attr" id="SkillV33">$SkAdvanced-13VV</td>
+        <td class="attr" id="SkillR33"></td>
+        <td class="head" colspan="3">$SkAdvanced-14N</td>
+        <td style="width:9%;" class="attr" id="SkillV34">$SkAdvanced-14VV</td>
+        <td class="attr" id="SkillR34"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-15N</td>
+        <td class="attr" id="SkillV35">$SkAdvanced-15VV</td>
+        <td class="attr" id="SkillR35"></td>
+        <td class="head" colspan="3">$SkAdvanced-16N</td>
+        <td style="width:9%;" class="attr" id="SkillV36">$SkAdvanced-16VV</td>
+        <td class="attr" id="SkillR36"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-17N</td>
+        <td class="attr" id="SkillV37">$SkAdvanced-17VV</td>
+        <td class="attr" id="SkillR37"></td>
+        <td class="head" colspan="3">$SkAdvanced-18N</td>
+        <td style="width:9%;" class="attr" id="SkillV38">$SkAdvanced-18VV</td>
+        <td class="attr" id="SkillR38"></td>
+      </tr>
+      <tr>
+        <td class="head" colspan="3">$SkAdvanced-19N</td>
+        <td class="attr" id="SkillV39">$SkAdvanced-19VV</td>
+        <td class="attr" id="SkillR39"></td>
+        <td class="head" colspan="3">$SkAdvanced-20N</td>
+        <td style="width:9%;" class="attr" id="SkillV40">$SkAdvanced-20VV</td>
+        <td class="attr" id="SkillR40"></td>
+      </tr>
+    </table>
+  </body>
+</html>

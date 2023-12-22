@@ -1,0 +1,118 @@
+td {
+    vertical-align:middle;
+}
+
+td.name {
+    font-weight: bold;
+    color:#fff;
+    background-color:#000;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 2px #000;
+    border: 1px solid black;
+    padding:2px;
+}
+
+td.list {
+    background-color:#fff;
+    vertical-align:top;
+    color:#000;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 2px #000;
+    border: 1px solid black;
+    padding:2px;
+    font-size:.75em;
+}
+
+td.attrlist {
+    background-color:#fff;
+    border-radius: 3px;
+    border: 1px solid black;
+    box-shadow: inset 0px 0px 2px #000;
+    color:#000;
+    font-size:.75em;
+    padding:.4em;
+    padding-left:1.3em;
+    text-align:left;
+    text-indent:-1em;
+}
+
+td.attr {
+    text-align:center;
+    background-color:#fff;
+    color:#000;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 2px #000;
+    border: 1px solid black;
+    padding:2px;
+    font-size:.75em;
+}
+
+.head {
+    text-align:center;
+    color:#fff;
+    background-color:#555;
+    border-radius: 3px;
+    box-shadow: inset 0px 0px 2px #000;
+    border: 1px solid black;
+    padding:2px;
+    font-size:.75em;
+}
+
+td.roll {
+    text-align:center;
+    color:#fff;
+    background-color:#a50;
+    border-radius: 3px;
+    font-weight:bold;
+    box-shadow: inset 0px 0px 2px #000;
+    border: 1px solid black;
+    padding:2px;
+    font-size:.75em;
+}
+
+input {
+    text-align:center;
+    width: 100%;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    border: solid 0px black;
+    border-radius:2px;
+    box-shadow: inset 0px 0px 1px #000;
+}
+
+textarea {
+    width: 100%;
+    padding-top: .2em;
+    padding-bottom: .2em;
+    border: solid 0px black;
+    border-radius:2px;
+    box-shadow: inset 0px 0px 1px #000;
+}
+
+body.dsa {
+    font-size: 14px;
+}
+
+.dsa table {
+    padding:5px;
+}
+
+.dsa .inner tr:nth-child(3n+1) {
+    background-color: #ccc;
+}
+
+.dsa th, .dsa td {
+    vertical-align: top; padding: 1px 5px; border: 1px solid black;
+}
+
+.dsa .b {
+    background-color: #aaa;
+}
+
+.dsa .b:hover {
+    background-color: #ccc;
+}
+
+.dsa .c {
+    text-align: left;
+}

@@ -1,0 +1,2222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="WH">
+  <attribute name="Apparent Age" rule="u:table-lookup('Age',720 - u:year(./attribute[@name='Birthdate']/@value))"/>
+  <attribute name="Apparent Height" rule="concat(floor(./attribute[@name='Height']/@value div 12), 'ft', ./attribute[@name='Height']/@value mod 12, 'in')"/>
+  <attribute name="WSCheck1" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="WSCheck2" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="WSCheck3" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="WSCheck4" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="WSCheck5" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="WSCheck6" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="WSCheck7" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="WSCheck8" rule="u:ifthenelse(.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('WSAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="BSCheck1" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="BSCheck2" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="BSCheck3" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="BSCheck4" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="BSCheck5" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="BSCheck6" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="BSCheck7" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="BSCheck8" rule="u:ifthenelse(.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('BSAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="SCheck1" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="SCheck2" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="SCheck3" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="SCheck4" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="SCheck5" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="SCheck6" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="SCheck7" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="SCheck8" rule="u:ifthenelse(.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('SAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="TCheck1" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="TCheck2" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="TCheck3" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="TCheck4" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="TCheck5" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="TCheck6" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="TCheck7" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="TCheck8" rule="u:ifthenelse(.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('TAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="AglCheck1" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="AglCheck2" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="AglCheck3" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="AglCheck4" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="AglCheck5" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="AglCheck6" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="AglCheck7" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="AglCheck8" rule="u:ifthenelse(.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('AglAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="IntCheck1" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="IntCheck2" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="IntCheck3" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="IntCheck4" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="IntCheck5" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="IntCheck6" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="IntCheck7" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="IntCheck8" rule="u:ifthenelse(.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('IntAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="WPCheck1" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="WPCheck2" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="WPCheck3" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="WPCheck4" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="WPCheck5" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="WPCheck6" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="WPCheck7" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="WPCheck8" rule="u:ifthenelse(.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('WPAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="FelCheck1" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="FelCheck2" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 10, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 10, 'o', ''))"/>
+  <attribute name="FelCheck3" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 15, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 15, 'o', ''))"/>
+  <attribute name="FelCheck4" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 20, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 20, 'o', ''))"/>
+  <attribute name="FelCheck5" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 25, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 25, 'o', ''))"/>
+  <attribute name="FelCheck6" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 30, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 30, 'o', ''))"/>
+  <attribute name="FelCheck7" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 35, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 35, 'o', ''))"/>
+  <attribute name="FelCheck8" rule="u:ifthenelse(.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value &gt;= 40, 'x', u:ifthenelse(u:attribute('FelAdv') &gt;= 40, 'o', ''))"/>
+  <attribute name="ACheck1" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 1, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 1, 'o', ''))"/>
+  <attribute name="ACheck2" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 2, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 2, 'o', ''))"/>
+  <attribute name="ACheck3" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 3, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 3, 'o', ''))"/>
+  <attribute name="ACheck4" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 4, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 4, 'o', ''))"/>
+  <attribute name="ACheck5" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="ACheck6" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 6, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 6, 'o', ''))"/>
+  <attribute name="ACheck7" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 7, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 7, 'o', ''))"/>
+  <attribute name="ACheck8" rule="u:ifthenelse(.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value &gt;= 8, 'x', u:ifthenelse(u:attribute('AAdv') &gt;= 8, 'o', ''))"/>
+  <attribute name="WCheck1" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 1, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 1, 'o', ''))"/>
+  <attribute name="WCheck2" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 2, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 2, 'o', ''))"/>
+  <attribute name="WCheck3" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 3, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 3, 'o', ''))"/>
+  <attribute name="WCheck4" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 4, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 4, 'o', ''))"/>
+  <attribute name="WCheck5" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="WCheck6" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 6, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 6, 'o', ''))"/>
+  <attribute name="WCheck7" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 7, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 7, 'o', ''))"/>
+  <attribute name="WCheck8" rule="u:ifthenelse(.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value &gt;= 8, 'x', u:ifthenelse(u:attribute('WAdv') &gt;= 8, 'o', ''))"/>
+  <attribute name="MagCheck1" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 1, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 1, 'o', ''))"/>
+  <attribute name="MagCheck2" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 2, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 2, 'o', ''))"/>
+  <attribute name="MagCheck3" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 3, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 3, 'o', ''))"/>
+  <attribute name="MagCheck4" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 4, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 4, 'o', ''))"/>
+  <attribute name="MagCheck5" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 5, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 5, 'o', ''))"/>
+  <attribute name="MagCheck6" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 6, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 6, 'o', ''))"/>
+  <attribute name="MagCheck7" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 7, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 7, 'o', ''))"/>
+  <attribute name="MagCheck8" rule="u:ifthenelse(.//attribute[@name='MagCurr']/@value - .//attribute[@name='MagStart']/@value &gt;= 8, 'x', u:ifthenelse(u:attribute('MagAdv') &gt;= 8, 'o', ''))"/>
+  <attribute name="Disengage" rule=".//attribute[@name='Move']/@value * 2"/>
+  <attribute name="Charge" rule=".//attribute[@name='Move']/@value * 4"/>
+  <attribute name="Run" rule=".//attribute[@name='Move']/@value * 6"/>
+  <attribute name="WereWSCurr" rule=".//attribute[@name='WSCurr']/@value + 10"/>
+  <attribute name="WereBSCurr" rule=".//attribute[@name='BSCurr']/@value"/>
+  <attribute name="WereSCurr" rule=".//attribute[@name='SCurr']/@value + 10"/>
+  <attribute name="WereTCurr" rule=".//attribute[@name='TCurr']/@value + 10"/>
+  <attribute name="WereAglCurr" rule=".//attribute[@name='AglCurr']/@value + 20"/>
+  <attribute name="WereIntCurr" rule=".//attribute[@name='IntCurr']/@value - 10"/>
+  <attribute name="WereWPCurr" rule=".//attribute[@name='WPCurr']/@value - 10"/>
+  <attribute name="WereFelCurr" rule=".//attribute[@name='FelCurr']/@value - 20"/>
+  <attribute name="WereACurr" rule=".//attribute[@name='ACurr']/@value + 1"/>
+  <attribute name="WereWCurr" rule=".//attribute[@name='WCurr']/@value + 5"/>
+  <attribute name="WereMagAdv" rule=".//attribute[@name='MagCurr']/@value"/>
+  <attribute name="WSAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|WSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|WSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|WSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|WSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|WSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|WSAdv|]/@value'))))"/>
+  <attribute name="BSAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|BSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|BSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|BSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|BSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|BSAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|BSAdv|]/@value'))))"/>
+  <attribute name="SAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|SAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|SAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|SAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|SAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|SAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|SAdv|]/@value'))))"/>
+  <attribute name="TAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|TAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|TAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|TAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|TAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|TAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|TAdv|]/@value'))))"/>
+  <attribute name="AglAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|AglAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|AglAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|AglAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|AglAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|AglAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|AglAdv|]/@value'))))"/>
+  <attribute name="IntAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|IntAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|IntAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|IntAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|IntAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|IntAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|IntAdv|]/@value'))))"/>
+  <attribute name="WPAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|WPAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|WPAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|WPAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|WPAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|WPAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|WPAdv|]/@value'))))"/>
+  <attribute name="FelAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|FelAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|FelAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|FelAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|FelAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|FelAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|FelAdv|]/@value'))))"/>
+  <attribute name="AAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|AAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|AAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|AAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|AAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|AAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|AAdv|]/@value'))))"/>
+  <attribute name="WAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|WAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|WAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|WAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|WAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|WAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|WAdv|]/@value'))))"/>
+  <attribute name="MagAdv" rule="u:max(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/attribute[@name=|MagAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/attribute[@name=|MagAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/attribute[@name=|MagAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/attribute[@name=|MagAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/attribute[@name=|MagAdv|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/attribute[@name=|MagAdv|]/@value'))))"/>
+  <attribute name="Previous Careers" rule="concat(.//attribute[@name='Previous Career 5']/@value, u:ifthenelse(boolean(.//attribute[@name='Previous Career 5']), ',', ''), .//attribute[@name='Previous Career 4']/@value, u:ifthenelse(boolean(.//attribute[@name='Previous Career 4']), ',', ''), .//attribute[@name='Previous Career 3']/@value, u:ifthenelse(boolean(.//attribute[@name='Previous Career 3']), ',', ''), .//attribute[@name='Previous Career 2']/@value, u:ifthenelse(boolean(.//attribute[@name='Previous Career 2']), ',', ''), .//attribute[@name='Previous Career 1']/@value)"/>
+  <attribute name="TotalXP" rule="u:attribute('UsedXP') + .//attribute[@name='CurrentXP']/@value"/>
+  <attribute name="UsedXP" rule="sum(.//skill/@value) * 100 + (.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value) * 20 + (.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value) * 20 + (.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value) * 20 + (.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value) * 20 + (.//attribute[@name='AglCurr']/@value - .//attribute[@name='AglStart']/@value) * 20 + (.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value) * 20 + (.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value) * 20 + (.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value) * 20 + (.//attribute[@name='WCurr']/@value - .//attribute[@name='WStart']/@value) * 100 + (.//attribute[@name='ACurr']/@value - .//attribute[@name='AStart']/@value) * 100 + (u:parse(.//attribute[@name='MagCurr']/@value) - u:parse(.//attribute[@name='MagStart']/@value)) * 100 - u:rules(concat('.//race[@name=|', .//attribute[@name='Race']/@value, '|]/@experience')) - u:rules(concat('.//class[@name=|', u:ifthenelse(boolean(.//attribute[@name='Previous Career 1']), string(.//attribute[@name='Previous Career 1']/@value), .//attribute[@name='Current Career']/@value), '|]/@experience'))"/>
+  <attribute name="SB" rule="floor(.//attribute[@name='SCurr']/@value div 10)"/>
+  <attribute name="TB" rule="floor(.//attribute[@name='TCurr']/@value div 10)"/>
+
+  <attribute name="ArmorPointsHead" rule="u:rules-sum('//equipment[@name=|$1| and @location=|Head|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|All|]/@ap', .//equipment[@type='Armor']/@name)"/>
+  <attribute name="ArmorPointsBody" rule="u:rules-sum('//equipment[@name=|$1| and @location=|Body|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|All|]/@ap', .//equipment[@type='Armor']/@name)"/>
+  <attribute name="ArmorPointsLLeg" rule="u:rules-sum('//equipment[@name=|$1| and @location=|Left Leg|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|Legs|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|All|]/@ap', .//equipment[@type='Armor']/@name)"/>
+  <attribute name="ArmorPointsRLeg" rule="u:rules-sum('//equipment[@name=|$1| and @location=|Right Leg|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|Legs|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|All|]/@ap', .//equipment[@type='Armor']/@name)"/>
+  <attribute name="ArmorPointsLArm" rule="u:rules-sum('//equipment[@name=|$1| and @location=|Left Arm|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|Arms|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|All|]/@ap', .//equipment[@type='Armor']/@name)"/>
+  <attribute name="ArmorPointsRArm" rule="u:rules-sum('//equipment[@name=|$1| and @location=|Right Arm|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|Arms|]/@ap', .//equipment[@type='Armor']/@name) + u:rules-sum('//equipment[@name=|$1| and @location=|All|]/@ap', .//equipment[@type='Armor']/@name)"/>
+  <section name="Basic">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="value" value="floor(u:ifthenelse(.//skill[@name='$name']/@value &gt; 0, u:eval(u:rules('.//skill[@name=|$name|]/@attr')) + .//skill[@name='$name']/@value * 10 - 10, u:eval(u:rules('.//skill[@name=|$name|]/@attr')) div 2))"/>
+    <modifier name="learn1" value="u:ifthenelse(.//skill[@name='$name']/@value &gt;= 1, 'X', u:ifthenelse(u:sum(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/skill[@name=|$name|]/@value')))) &gt;= 1, 'O', ''))"/>
+    <modifier name="learn2" value="u:ifthenelse(.//skill[@name='$name']/@value &gt;= 2, 'X', u:ifthenelse(u:sum(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/skill[@name=|$name|]/@value')))) &gt;= 2, 'O', ''))"/>
+    <modifier name="learn3" value="u:ifthenelse(.//skill[@name='$name']/@value &gt;= 3, 'X', u:ifthenelse(u:sum(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/skill[@name=|$name|]/@value')))) &gt;= 3, 'O', ''))"/>
+    <skill name="Animal Care" attr="u:attribute('IntCurr')"/>
+    <skill name="Charm" attr="u:attribute('FelCurr')"/>
+    <skill name="Command" attr="u:attribute('FelCurr')"/>
+    <skill name="Concealment" attr="u:attribute('AglCurr')"/>
+    <skill name="Consume Alcohol" attr="u:attribute('TCurr')"/>
+    <skill name="Disguise" attr="u:attribute('FelCurr')"/>
+    <skill name="Drive" attr="u:attribute('SCurr')"/>
+    <skill name="Evaluate" attr="u:attribute('IntCurr')"/>
+    <skill name="Gamble" attr="u:attribute('IntCurr')"/>
+    <skill name="Gossip" attr="u:attribute('FelCurr')"/>
+    <skill name="Haggle" attr="u:attribute('FelCurr')"/>
+    <skill name="Intimidate" attr="u:attribute('SCurr')"/>
+    <skill name="Outdoor Survival" attr="u:attribute('IntCurr')"/>
+    <skill name="Perception" attr="u:attribute('IntCurr')"/>
+    <skill name="Ride" attr="u:attribute('AglCurr')"/>
+    <skill name="Row" attr="u:attribute('SCurr')"/>
+    <skill name="Scale Sheer Surface" attr="u:attribute('SCurr')"/>
+    <skill name="Search" attr="u:attribute('IntCurr')"/>
+    <skill name="Silent Move" attr="u:attribute('AglCurr')"/>
+    <skill name="Swim" attr="u:attribute('SCurr')"/>
+  </section>
+  <section name="Advanced">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="value" value="floor(u:ifthenelse(.//skill[@name='$name']/@value &gt; 0, u:eval(u:rules('.//skill[@name=|$name|]/@attr')) + .//skill[@name='$name']/@value * 10 - 10, 0))"/>
+    <modifier name="learn1" value="u:ifthenelse(.//skill[@name='$name']/@value &gt; 1, 'X', u:ifthenelse(u:sum(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/skill[@name=|$name|]/@value')))) &gt; 1, 'O', ''))"/>
+    <modifier name="learn2" value="u:ifthenelse(.//skill[@name='$name']/@value &gt; 2, 'X', u:ifthenelse(u:sum(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/skill[@name=|$name|]/@value')))) &gt; 2, 'O', ''))"/>
+    <modifier name="learn3" value="u:ifthenelse(.//skill[@name='$name']/@value &gt; 3, 'X', u:ifthenelse(u:sum(u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 5']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 4']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 3']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 2']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Previous Career 1']/@value, '|]/skill[@name=|$name|]/@value'))), u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Current Career']/@value, '|]/skill[@name=|$name|]/@value')))) &gt; 3, 'O', ''))"/>
+    <skill name="Knowledge (Border Princes)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Bretonnia)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Dwarfs)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Elves)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Empire)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Greenskin)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Halfling)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Kislev)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Norsca)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Ogre)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Philosophy)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Science)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Skaven)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Tilea)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Wasteland)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (any 1)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (any common 3)" attr="u:attribute('IntCurr')"/>
+    <skill name="Animal Training" attr="u:attribute('FelCurr')"/>
+    <skill name="Blather" attr="u:attribute('FelCurr')"/>
+    <skill name="Channeling" attr="u:attribute('WPCurr')"/>
+    <skill name="Charm Animal" attr="u:attribute('FelCurr')"/>
+    <skill name="Knowledge (Astronomy)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Daemonology)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Dragons)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Engineering)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Genealogy&amp;Heraldry)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (History)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Law)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Magic)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Necromancy)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Philosophy)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Runes)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Science)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Strategy&amp;Tactics)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (The Arts)" attr="u:attribute('IntCurr')"/>
+    <skill name="Knowledge (Theology)" attr="u:attribute('IntCurr')"/>
+    <skill name="Dodge Blow" attr="u:attribute('AglCurr')"/>
+    <skill name="Follow Trail" attr="u:attribute('IntCurr')"/>
+    <skill name="Heal" attr="u:attribute('IntCurr')"/>
+    <skill name="Hypnotism" attr="u:attribute('WPCurr')"/>
+    <skill name="Lip Reading" attr="u:attribute('IntCurr')"/>
+    <skill name="Lycanthropy" attr="u:attribute('WPCurr')"/>
+    <skill name="Magical Sense" attr="u:attribute('WPCurr')"/>
+    <skill name="Navigation" attr="u:attribute('IntCurr')"/>
+    <skill name="Performer" attr="u:attribute('FelCurr')"/>
+    <skill name="Pick Locks" attr="u:attribute('AglCurr')"/>
+    <skill name="Prepare Poison" attr="u:attribute('IntCurr')"/>
+    <skill name="Read&amp;Write" attr="u:attribute('IntCurr')"/>
+    <skill name="Sail" attr="u:attribute('AglCurr')"/>
+    <skill name="Secret Lang. (Thief)" attr="u:attribute('IntCurr')"/>
+    <skill name="Secret Lang. (Guild)" attr="u:attribute('IntCurr')"/>
+    <skill name="Secret Lang. (Battle)" attr="u:attribute('IntCurr')"/>
+    <skill name="Secret Signs (Thief)" attr="u:attribute('IntCurr')"/>
+    <skill name="Secret Signs (Scout)" attr="u:attribute('IntCurr')"/>
+    <skill name="Secret Signs (Ranger)" attr="u:attribute('IntCurr')"/>
+    <skill name="Set Trap" attr="u:attribute('AglCurr')"/>
+    <skill name="Shadowing" attr="u:attribute('AglCurr')"/>
+    <skill name="Sleight of Hand" attr="u:attribute('AglCurr')"/>
+    <skill name="Speak (Arcane Elf)" attr="u:attribute('IntCurr')"/><!-- Arcane -->
+    <skill name="Speak (Breton)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Classical)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Daemonic)" attr="u:attribute('IntCurr')"/><!-- Arcane -->
+    <skill name="Speak (Dark)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Eltharin)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Estalian)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Goblin)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Grumbarth)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Halfling)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Khazalid)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Kislevian)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Magick)" attr="u:attribute('IntCurr')"/><!-- Arcane -->
+    <skill name="Speak (Malla-room-ba-larin)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Nehekharan)" attr="u:attribute('IntCurr')"/><!-- Arcane -->
+    <skill name="Speak (Norsca)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Queekish)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Ranger)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Reikspiel)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Tilean)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (Tribal)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (any 1)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (any 2)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (any 3)" attr="u:attribute('IntCurr')"/>
+    <skill name="Speak (any 4)" attr="u:attribute('IntCurr')"/>
+    <skill name="Torture" attr="u:attribute('FelCurr')"/>
+    <skill name="Trade (Apothecary)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Armorer)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Artist)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Bowyer)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Brewer)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Calligrapher)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Candlemaker)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Carpenter)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Cartographer)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Cook)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Cooper)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Embalmer)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Farmer)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Gem Cutter)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Goldsmith)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Gunsmith)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Herbalist)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Merchant)" attr="u:attribute('FelCurr')"/>
+    <skill name="Trade (Miller)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Miner)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Prospector)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Shipwright)" attr="u:attribute('IntCurr')"/>
+    <skill name="Trade (Shoemaker)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Smith)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Stoneworker)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Tailor)" attr="u:attribute('AglCurr')"/>
+    <skill name="Trade (Tanner)" attr="u:attribute('SCurr')"/>
+    <skill name="Trade (Weaponsmith)" attr="u:attribute('SCurr')"/>
+    <skill name="Ventriloquism" attr="u:attribute('FelCurr')"/>
+  </section>
+  <section name="Talents">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Daemonic Aura"/>
+    <skill name="Ethereal"/>
+    <skill name="Scales(1)"/>
+    <skill name="Scales(2)"/>
+    <skill name="Scales(3)"/>
+    <skill name="Scales(4)"/>
+    <skill name="Scales(5)"/>
+    <skill name="Unstoppable Blows"/>
+    <skill name="Will of Iron"/>
+    <skill name="Acute Hearing" related="Perception"/>
+    <skill name="Aethyric Attunement" related="Channeling,Magical Sense"/>
+    <skill name="Alley Cat" related="Concealment,Silent Move"/>
+    <skill name="Ambidextrous"/>
+    <skill name="Arcane Law (Beasts)"/>
+    <skill name="Arcane Law (Death)"/>
+    <skill name="Arcane Law (Fire)"/>
+    <skill name="Arcane Law (The Heavens)"/>
+    <skill name="Arcane Law (Life)"/>
+    <skill name="Arcane Law (Metal)"/>
+    <skill name="Arcane Law (Shadow)"/>
+    <skill name="Armored Casting"/>
+    <skill name="Artistic" related="Trade (Artist),Evaluate"/>
+    <skill name="Contortionist" related="Performer"/>
+    <skill name="Coolheaded"/>
+    <skill name="Dark Lore"/>
+    <skill name="Dark Magic"/>
+    <skill name="Dealmaker" related="Evaluate,Haggle"/>
+    <skill name="Disarm"/>
+    <skill name="Divine Lore"/>
+    <skill name="Dwarfcraft" related="Trade (Armorer),Trade (Brewer),Trade (Gem Cutter),Trade (Gunsmith),Trade (Miner),Trade (Smith),Trade (Stoneworker),Trade (Weaponsmith)"/>
+    <skill name="Etiquette" related="Charm,Gossip"/>
+    <skill name="Excellent Vision" related="Perception,Lip Reading"/>
+    <skill name="Fast Hands"/>
+    <skill name="Fearless"/>
+    <skill name="Flee"/>
+    <skill name="Fleet Footed"/>
+    <skill name="Flier"/>
+    <skill name="Frenzy"/>
+    <skill name="Frightening"/>
+    <skill name="Grudge-born Fury"/>
+    <skill name="Hardy"/>
+    <skill name="Hedge Magic"/>
+    <skill name="Hoverer"/>
+    <skill name="Keen Senses"/>
+    <skill name="Lesser Magic (Skywalk)"/>
+    <skill name="Lesser Magic (Silence)"/>
+    <skill name="Lesser Magic (Alarm)"/>
+    <skill name="Lesser Magic (Move)"/>
+    <skill name="Lesser Magic (Weapon)"/>
+    <skill name="Lesser Magic (Lock)"/>
+    <skill name="Lesser Magic (Dispel)"/>
+    <skill name="Lesser Magic (Armor)"/>
+    <skill name="Lightning Parry"/>
+    <skill name="Lightning Reflexes"/>
+    <skill name="Linguistics" related="Read&amp;Write,Speak (Arcane Elf),Speak (Breton),Speak (Classical),Speak (Daemonic),Speak (Dark),Speak (Eltharin),Speak (Estalian),Speak (Goblin),Speak (Grumbarth),Speak (Halfling),Speak (Khazalid),Speak (Kislevian),Speak (Magick),Speak (Nehekharan),Speak (Norsca),Speak (Queekish),Speak (Ranger),Speak (Reikspiel),Speak (Tilean),Speak (Tribal)"/>
+    <skill name="Luck"/>
+    <skill name="Marksman"/>
+    <skill name="Master Gunner"/>
+    <skill name="Master Orator" related="Charm"/>
+    <skill name="Meditation"/>
+    <skill name="Menacing" related="Intimidate,Torture"/>
+    <skill name="Mighty Missile"/>
+    <skill name="Mighty Shot"/>
+    <skill name="Mimic" related="Disguise,Performer,Speak (Arcane Elf),Speak (Breton),Speak (Classical),Speak (Daemonic),Speak (Dark),Speak (Eltharin),Speak (Estalian),Speak (Goblin),Speak (Grumbarth),Speak (Halfling),Speak (Khazalid),Speak (Kislevian),Speak (Magick),Speak (Nehekharan),Speak (Norsca),Speak (Queekish),Speak (Ranger),Speak (Reikspiel),Speak (Tilean),Speak (Tribal)"/>
+    <skill name="Natural Weapons"/>
+    <skill name="Night Vision"/>
+    <skill name="Orientation" related="Navigation"/>
+    <skill name="Petty Magic (Arcane)"/>
+    <skill name="Petty Magic (Divine)"/>
+    <skill name="Petty Magic (Hegde)"/>
+    <skill name="Public Speaking" related="Charm"/>
+    <skill name="Quick Draw"/>
+    <skill name="Rapid Reload"/>
+    <skill name="Resistance to Chaos"/>
+    <skill name="Resistance to Disease"/>
+    <skill name="Resistance to Magic"/>
+    <skill name="Resistance to Poison"/>
+    <skill name="Rover" related="Concealment,Silent Move"/>
+    <skill name="Savvy"/>
+    <skill name="Schemer" related="Charm"/>
+    <skill name="Traveller" related="Knowledge (Empire),Knowledge (Tilea),Knowledge (Kislev),Knowledge (Bretonnia),Knowledge (Greenskin),Knowledge (Skaven),Knowledge (Halfling),Knowledge (Dwarfs),Knowledge (Elves),Knowledge (Ogre),Knowledge (Wasteland),Knowledge (Norsca),Speak (Arcane Elf),Speak (Breton),Speak (Classical),Speak (Daemonic),Speak (Dark),Speak (Eltharin),Speak (Estalian),Speak (Goblin),Speak (Grumbarth),Speak (Halfling),Speak (Khazalid),Speak (Kislevian),Speak (Magick),Speak (Nehekharan),Speak (Norsca),Speak (Queekish),Speak (Ranger),Speak (Reikspiel),Speak (Tilean),Speak (Tribal)"/>
+    <skill name="Sharpshooter"/>
+    <skill name="Sixth Sense"/>
+    <skill name="Special Weapon (Cavalry)"/>
+    <skill name="Special Weapon (Crossbow)"/>
+    <skill name="Special Weapon (Engineer)"/>
+    <skill name="Special Weapon (Entangling)"/>
+    <skill name="Special Weapon (Fencing)"/>
+    <skill name="Special Weapon (Flail)"/>
+    <skill name="Special Weapon (Gunpowder)"/>
+    <skill name="Special Weapon (Longbow)"/>
+    <skill name="Special Weapon (Parrying)"/>
+    <skill name="Special Weapon (Sling)"/>
+    <skill name="Special Weapon (Throwing)"/>
+    <skill name="Special Weapon (Two-handed)"/>
+    <skill name="Special Weapon (any 2)"/>
+    <skill name="Stout Hearted"/>
+    <skill name="Street Fighting"/>
+    <skill name="Streetwise" related="Charm,Gossip"/>
+    <skill name="Strike Mighty Blow"/>
+    <skill name="Strike to Injure"/>
+    <skill name="Strike to Stun"/>
+    <skill name="Strong-minded"/>
+    <skill name="Sturdy"/>
+    <skill name="Suave"/>
+    <skill name="Super Numerate" related="Gamble,Perception,Navigation"/>
+    <skill name="Sure Shot"/>
+    <skill name="Surgery" related="Heal"/>
+    <skill name="Swashbuckler"/>
+    <skill name="Terrifying"/>
+    <skill name="Trap Finder" related="Perception,Pick Locks"/>
+    <skill name="Trick Riding" related="Ride"/>
+    <skill name="Tunnel Rat" related="Concealment,Silent Move"/>
+    <skill name="Undead"/>
+    <skill name="Unsettling"/>
+    <skill name="Very Resilient"/>
+    <skill name="Very Strong"/>
+    <skill name="Warrior Born"/>
+    <skill name="Wrestling"/>
+  </section>
+  <race name="Human" experience="500"/>
+  <race name="Halfling" experience="1000"/>
+  <race name="Dwarf" experience="1000"/>
+  <race name="Elf" experience="700"/>
+  <class name="Agitator" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Apprentice Wizard" experience="1200">
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <attribute name="MagAdv" value="1"/>
+    <skill name="Knowledge (Magic)" value="1"/>
+    <skill name="Channeling" value="1"/>
+    <skill name="Magical Sense" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Speak (Magick)" value="1"/>
+    <skill name="Speak (Classical)" value="1"/>
+    <skill name="Aethyric Attunement" value="1"/>
+    <skill name="Fast Hands" value="1"/>
+    <skill name="Petty Magic (Arcane)" value="1"/>
+    <skill name="Savvy" value="1"/>
+    <skill name="Very Resilient" value="1"/>
+  </class>
+  <class name="Bailiff" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Barber-Surgeon" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Haggle" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Speak (Breton)" value="1"/>
+    <skill name="Speak (Reikspiel)" value="1"/>
+    <skill name="Speak (Tilean)" value="1"/>
+    <skill name="Trade (Apothecary)" value="1"/>
+    <skill name="Resistance to Disease" value="1"/>
+    <skill name="Savvy" value="1"/>
+    <skill name="Suave" value="1"/>
+    <skill name="Very Resilient" value="1"/>
+    <skill name="Surgery" value="1"/>
+  </class>
+  <class name="Boatman" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Bodyguard" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="3"/>
+  </class>
+  <class name="Bone Picker" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Bounty Hunter" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Burgher" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Camp Follower" experience="1400">
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Charcoal Burner" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Coachman" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Haggle" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Navigation" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Secret Signs (Ranger)" value="1"/>
+    <skill name="Speak (Breton)" value="1"/>
+    <skill name="Speak (Kislevian)" value="1"/>
+    <skill name="Speak (Tilean)" value="1"/>
+    <skill name="Quick Draw" value="1"/>
+    <skill name="Seasoned Traveller" value="1"/>
+    <skill name="Special Weapon (Gunpowder)" value="1"/>
+  </class>
+  <class name="Entertainer" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Envoy" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Estalian Diestro" experience="1000">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Ferryman" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Fieldwarden" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Fisherman" experience="1200">
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Grave Robber" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Hedge Wizard" experience="1100">
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <attribute name="MagAdv" value="1"/>
+  </class>
+  <class name="Hunter" experience="1200">
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WAdv" value="3"/>
+  </class>
+  <class name="Initiate" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Knowledge (Astronomy)" value="1"/>
+    <skill name="Knowledge (History)" value="1"/>
+    <skill name="Knowledge (Theology)" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Speak (Classical)" value="1"/>
+    <skill name="Speak (Reikspiel)" value="1"/>
+    <skill name="Lightning Reflexes" value="1"/>
+    <skill name="Very Strong" value="1"/>
+    <skill name="Public Speaking" value="1"/>
+    <skill name="Suave" value="1"/>
+    <skill name="Warrior Born" value="1"/>
+  </class>
+  <class name="Jailer" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="3"/>
+  </class>
+  <class name="Kislevite Kossar" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Knowledge (Kislev)" value="1"/>
+    <skill name="Consume Alcohol" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Gamble" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Speak (Kislev)" value="1"/>
+    <skill name="Special Weapon (Two-handed)" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+  </class>
+  <class name="Kithband Warrior" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Marine" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="3"/>
+  </class>
+  <class name="Mercenary" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Gamble" value="1"/>
+    <skill name="Knowledge (Bretonnia)" value="1"/>
+    <skill name="Knowledge (Tilea)" value="1"/>
+    <skill name="Knowledge (Kislev)" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Haggle" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Secret Lang. (Battle)" value="1"/>
+    <skill name="Speak (Tilean)" value="1"/>
+    <skill name="Swim" value="1"/>
+  </class>
+  <class name="Messenger" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Knowledge (Wasteland)" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Navigation" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Secret Signs (Scout)" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Speak (Reikspiel)" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Orientation" value="1"/>
+    <skill name="Traveller" value="1"/>
+  </class>
+  <class name="Militiaman" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Gamble" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+    <skill name="Special Weapon (Two-handed)" value="1"/>
+  </class>
+  <class name="Miner" experience="1100">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Noble" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Norse Berserker" experience="1100">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Outlaw" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Set Trap" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Rover" value="1"/>
+    <skill name="Streetwise" value="1"/>
+    <skill name="Sharpshooter" value="1"/>
+    <skill name="Strike to Stun" value="1"/>
+    <skill name="Secret Signs (Thief)" value="1"/>
+  </class>
+  <class name="Outrider" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Peasant" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Pit Fighter" experience="1200">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Disarm" value="1"/>
+    <skill name="Wrestling" value="1"/>
+    <skill name="Quick Draw" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+    <skill name="Special Weapon (Flail)" value="1"/>
+    <skill name="Special Weapon (Parrying)" value="1"/>
+    <skill name="Special Weapon (Two-handed)" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+    <skill name="Very Strong" value="1"/>
+    <skill name="Strong-minded" value="1"/>
+  </class>
+  <class name="Protagonist" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Haggle" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Disarm" value="1"/>
+    <skill name="Quick Draw" value="1"/>
+    <skill name="Menacing" value="1"/>
+    <skill name="Suave" value="1"/>
+    <skill name="Street Fighting" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+    <skill name="Strike to Stun" value="1"/>
+  </class>
+  <class name="Rat Catcher" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Roadwarden" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Follow Trail" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Secret Signs (Scout)" value="1"/>
+    <skill name="Navigation" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Quick Draw" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Special Weapon (Gunpowder)" value="1"/>
+  </class>
+  <class name="Rogue" experience="1300">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Runebearer" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <attribute name="MAdv" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Navigation" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Secret Signs (Scout)" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Flee" value="1"/>
+    <skill name="Fleet Footed" value="1"/>
+    <skill name="Sixth Sense" value="1"/>
+    <skill name="Orientation" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Very Resilient" value="1"/>
+    <skill name="Very Strong" value="1"/>
+  </class>
+  <class name="Scribe" experience="1100">
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Seaman" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Servant" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Shieldbreaker" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Navigation" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Shadowing" value="1"/>
+    <skill name="Acute Hearing" value="1"/>
+    <skill name="Coolheaded" value="1"/>
+    <skill name="Orientation" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+    <skill name="Strike to Stun" value="1"/>
+  </class>
+  <class name="Smuggler" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Soldier" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Squire" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Student" experience="1200">
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Consume Alcohol" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Speak (Reikspiel)" value="1"/>
+    <skill name="Speak (Classical)" value="1"/>
+    <skill name="Etiquette" value="1"/>
+    <skill name="Linguistics" value="1"/>
+    <skill name="Savvy" value="1"/>
+    <skill name="Suave" value="1"/>
+    <skill name="Traveller" value="1"/>
+    <skill name="Super Numerate" value="1"/>
+  </class>
+  <class name="Thief" experience="1300">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Disguise" value="1"/>
+    <skill name="Evaluate" value="1"/>
+    <skill name="Gamble" value="1"/>
+    <skill name="Pick Locks" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Sleight of Hand" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Secret Lang. (Thief)" value="1"/>
+    <skill name="Secret Signs (Thief)" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Alley Cat" value="1"/>
+    <skill name="Streetwise" value="1"/>
+    <skill name="Super Numerate" value="1"/>
+    <skill name="Trapfinder" value="1"/>
+  </class>
+  <class name="Thug" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Toll Keeper" experience="900">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Tomb Robber" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Secret Signs (Thief)" value="1"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Evaluate" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Pick Locks" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Speak (Classical)" value="1"/>
+    <skill name="Speak (Khazalid)" value="1"/>
+    <skill name="Speak (Eltharin)" value="1"/>
+    <skill name="Luck" value="1"/>
+    <skill name="Sixth Sense" value="1"/>
+    <skill name="Trapfinder" value="1"/>
+    <skill name="Tunnel Rat" value="1"/>
+  </class>
+  <class name="Tradesman" experience="1100">
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Haggle" value="1"/>
+    <skill name="Evaluate" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Dealmaker" value="1"/>
+    <skill name="Savvy" value="1"/>
+    <skill name="Secret Lang. (Guild)" value="1"/>
+  </class>
+  <class name="Troll Slayer" experience="1000">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="3"/>
+    <skill name="Consume Alcohol" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Disarm" value="1"/>
+    <skill name="Quick Draw" value="1"/>
+    <skill name="Hardy" value="1"/>
+    <skill name="Lightning Reflexes" value="1"/>
+    <skill name="Very Resilient" value="1"/>
+    <skill name="Special Weapon (Two-handed)" value="1"/>
+    <skill name="Street Fighting" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+  </class>
+  <class name="Vagabond" experience="1200">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Valet" experience="1200">
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Watchman" experience="1200">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Woodsman" experience="1100">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="3"/>
+  </class>
+  <class name="Zealot" experience="1000">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="2"/>
+  </class>
+  <class name="Anointed Priest" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="25"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="5"/>
+    <attribute name="MagAdv" value="2"/>
+    <skill name="Knowledge (Theology)" value="1"/>
+    <skill name="Channelling" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Magical Sense" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Speak (Magick)" value="1"/>
+    <skill name="Aethyric Attunement" value="1"/>
+    <skill name="Meditation" value="1"/>
+    <skill name="Armored Casting" value="1"/>
+    <skill name="Fast Hands" value="1"/>
+    <skill name="Seasoned Traveller" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+  </class>
+  <class name="Artisan" experience="0">
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="3"/>
+  </class>
+  <class name="Assassin" experience="0">
+    <attribute name="WSAdv" value="25"/>
+    <attribute name="BSAdv" value="25"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="30"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Captain" experience="0">
+    <attribute name="WSAdv" value="30"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="20"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="7"/>
+  </class>
+  <class name="Cat Burglar" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="25"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Evaluate" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Haggle" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Pick Locks" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Secret Lang. (Thief)" value="1"/>
+    <skill name="Secret Signs (Thief)" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Alley Cat" value="1"/>
+    <skill name="Street Fighting" value="1"/>
+    <skill name="Streetwise" value="1"/>
+    <skill name="Trapfinder" value="1"/>
+  </class>
+  <class name="Champion" experience="0">
+    <attribute name="WSAdv" value="40"/>
+    <attribute name="BSAdv" value="40"/>
+    <attribute name="SAdv" value="25"/>
+    <attribute name="TAdv" value="25"/>
+    <attribute name="AglAdv" value="30"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="8"/>
+  </class>
+  <class name="Charlatan" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Courtier" experience="0">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Crime Lord" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="25"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="30"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Daemon Slayer" experience="0">
+    <attribute name="WSAdv" value="40"/>
+    <attribute name="SAdv" value="30"/>
+    <attribute name="TAdv" value="30"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="WPAdv" value="30"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="8"/>
+    <skill name="Lightning Parry" value="1"/>
+    <skill name="Unsettling" value="1"/>
+    <skill name="Consume Alcohol" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+  </class>
+  <class name="Demagogue" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="30"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Duellist" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Engineer" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Knowledge (Engineer)" value="1"/>
+    <skill name="Knowledge (Science)" value="1"/>
+    <skill name="Knowledge (Dwarfs)" value="1"/>
+    <skill name="Knowledge (Tilea)" value="1"/>
+    <skill name="Drive" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Speak (Khazalid)" value="1"/>
+    <skill name="Speak (Tilean)" value="1"/>
+    <skill name="Trade (Gunsmith)" value="1"/>
+    <skill name="Master Gunner" value="1"/>
+    <skill name="Special Weapon (Engineer)" value="1"/>
+    <skill name="Special Weapon (Gunpowder)" value="1"/>
+  </class>
+  <class name="Explorer" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="25"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Fence" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Flagellant" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Friar" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Ghost Strider" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="30"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="25"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Giant Slayer" experience="0">
+    <attribute name="WSAdv" value="25"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Knowledge (Halfling)" value="1"/>
+    <skill name="Knowledge (Dwarfs)" value="1"/>
+    <skill name="Knowledge (Elves)" value="1"/>
+    <skill name="Consume Alcohol" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Fearless" value="1"/>
+    <skill name="Resistance to Poison" value="1"/>
+    <skill name="Special Weapon (Flail)" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+  </class>
+  <class name="Guild Master" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="30"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="35"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="5"/>
+  </class>
+  <class name="Herald" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="High Priest" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="30"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+    <attribute name="MagAdv" value="3"/>
+    <skill name="Knowledge (Theology)" value="1"/>
+    <skill name="Channelling" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Magical Sense" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Speak (Magick)" value="1"/>
+    <skill name="Aethyric Attunment" value="1"/>
+    <skill name="Meditation" value="1"/>
+    <skill name="Armored Casting" value="1"/>
+    <skill name="Mighty Missile" value="1"/>
+    <skill name="Etiquette" value="1"/>
+    <skill name="Fast Hands" value="1"/>
+    <skill name="Strong-minded" value="1"/>
+  </class>
+  <class name="Highwayman" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="30"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Animal Care" value="1"/>
+    <skill name="Animal Training" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Evaluate" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Ambidextrous" value="1"/>
+    <skill name="Etiquette" value="1"/>
+    <skill name="Master Guinner" value="1"/>
+    <skill name="Mighty Shot" value="1"/>
+    <skill name="Sharpshooter" value="1"/>
+    <skill name="Special Weapon (Fencing)" value="1"/>
+    <skill name="Swashbuckler" value="1"/>
+    <skill name="Trick Riding" value="1"/>
+  </class>
+  <class name="Innkeeper" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Interrogator" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="SAdv" value="20"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Journeyman Wizard" experience="0">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="25"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="3"/>
+    <attribute name="MagAdv" value="2"/>
+    <skill name="Knowledge (Magic)" value="1"/>
+    <skill name="Channeling" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Magical Sense" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Speak (Magick)" value="1"/>
+  </class>
+  <class name="Judicial Champion" experience="0">
+    <attribute name="WSAdv" value="35"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Knight" experience="0">
+    <attribute name="WSAdv" value="25"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="5"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Knight of the Inner Circle" experience="0">
+    <attribute name="WSAdv" value="35"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="20"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="25"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="8"/>
+  </class>
+  <class name="Master Thief" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="40"/>
+    <attribute name="IntAdv" value="25"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Disguise" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Evaluate" value="1"/>
+    <skill name="Gambling" value="1"/>
+    <skill name="Lip Reading" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Pick Lock" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Secret Lang. (Thief)" value="1"/>
+    <skill name="Secret Signs (Thief)" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Sleight of Hand" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Special Weapon (Crossbow)" value="1"/>
+    <skill name="Special Weapon (Throwing)" value="1"/>
+    <skill name="Streetwise" value="1"/>
+    <skill name="Swashbuckler" value="1"/>
+    <skill name="Street Fighting" value="1"/>
+    <skill name="Trapfinder" value="1"/>
+  </class>
+  <class name="Master Wizard" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="30"/>
+    <attribute name="WPAdv" value="35"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+    <attribute name="MagAdv" value="3"/>
+    <skill name="Knowledge (Magic)" value="1"/>
+    <skill name="Channeling" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Magical Sense" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Speak (Magick)" value="1"/>
+  </class>
+  <class name="Mate" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Merchant" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="25"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Minstrel" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="5"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Navigator" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="25"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="5"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Noble Lord" experience="0">
+    <attribute name="WSAdv" value="25"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="30"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Outlaw Chief" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="30"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="6"/>
+    <skill name="Knowledge (Strategy&amp;Tactics)" value="1"/>
+    <skill name="Command" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Follow Trail" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Secret Lang. (Battle)" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Secret Signs (Thief)" value="1"/>
+    <skill name="Secret Signs (Scout)" value="1"/>
+    <skill name="Lightning Parry" value="1"/>
+    <skill name="Mighty Shot" value="1"/>
+    <skill name="Quick Draw" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Sure Shot" value="1"/>
+  </class>
+  <class name="Physician" experience="0">
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="30"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Knowledge (Science)" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Prepare Poison" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Speak (Classical)" value="1"/>
+    <skill name="Trade (Apothecary)" value="1"/>
+    <skill name="Resistance to Disease" value="1"/>
+    <skill name="Strike to Stun" value="1"/>
+    <skill name="Surgery" value="1"/>
+  </class>
+  <class name="Pistolier" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Politician" experience="0">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Priest" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Knowledge (any 1)" value="1"/>
+    <skill name="Knowledge (any 2)" value="1"/>
+    <skill name="Knowledge (Theology)" value="1"/>
+    <skill name="Channeling" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Heal" value="1"/>
+    <skill name="Magical Sense" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Read&amp;Write" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Swim" value="1"/>
+    <skill name="Speak (Magick)" value="1"/>
+    <skill name="Speak (any 2)" value="1"/>
+    <skill name="Armored Casting" value="1"/>
+    <skill name="Master Orator" value="1"/>
+    <skill name="Petty Magic (Divine)" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+    <skill name="Strike to Stun" value="1"/>
+  </class>
+  <class name="Racketeer" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="5"/>
+  </class>
+  <class name="Scholar" experience="0">
+    <attribute name="WSAdv" value="5"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Scout" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Sea Captain" experience="0">
+    <attribute name="WSAdv" value="25"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="25"/>
+    <attribute name="FelAdv" value="30"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Sergeant" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Spy" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="35"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Steward" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="IntAdv" value="30"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="25"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Targeteer" experience="0">
+    <attribute name="BSAdv" value="35"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="25"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Outdoor Survival" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Sleight of Hand" value="1"/>
+    <skill name="Mighty Shot" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Sharpshooter" value="1"/>
+    <skill name="Special Weapon (Crossbow)" value="1"/>
+    <skill name="Special Weapon (Throwing)" value="1"/>
+    <skill name="Sure Shot" value="1"/>
+  </class>
+  <class name="Vampire Hunter" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+    <skill name="Knowledge (History)" value="1"/>
+    <skill name="Knowledge (Necromancy)" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Concealment" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Follow Trail" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Scale Sheer Surface" value="1"/>
+    <skill name="Shadowing" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Speak (Classical)" value="1"/>
+    <skill name="Mighty Shot" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Stout Hearted" value="1"/>
+    <skill name="Special Weapon (Crossbow)" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+    <skill name="Tunnel Rat" value="1"/>
+  </class>
+  <class name="Veteran" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Consume Alcohol" value="1"/>
+    <skill name="Dodge Blow" value="1"/>
+    <skill name="Gamble" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Secret Lang. (Battle)" value="1"/>
+    <skill name="Mighty Shot" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+    <skill name="Rapid Reload" value="1"/>
+    <skill name="Strike to Injure" value="1"/>
+    <skill name="Special Weapon (any 2)" value="1"/>
+    <skill name="Very Resilient" value="1"/>
+    <skill name="Very Strong" value="1"/>
+  </class>
+  <class name="Witch Hunter" experience="0">
+    <attribute name="WSAdv" value="30"/>
+    <attribute name="BSAdv" value="30"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="35"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="6"/>
+    <skill name="Knowledge (Magic)" value="1"/>
+    <skill name="Knowledge (Necromancy)" value="1"/>
+    <skill name="Knowledge (Theology)" value="1"/>
+    <skill name="Charm" value="1"/>
+    <skill name="Command" value="1"/>
+    <skill name="Knowledge (Empire)" value="1"/>
+    <skill name="Gossip" value="1"/>
+    <skill name="Intimidate" value="1"/>
+    <skill name="Perception" value="1"/>
+    <skill name="Ride" value="1"/>
+    <skill name="Search" value="1"/>
+    <skill name="Silent Move" value="1"/>
+    <skill name="Speak (any 1)" value="1"/>
+    <skill name="Lightning Parry" value="1"/>
+    <skill name="Lightning Reflexes" value="1"/>
+    <skill name="Marksman" value="1"/>
+    <skill name="Menacing" value="1"/>
+    <skill name="Public Speaking" value="1"/>
+    <skill name="Sixth Sense" value="1"/>
+    <skill name="Special Weapon (Croossbow)" value="1"/>
+    <skill name="Special Weapon (Entangling)" value="1"/>
+    <skill name="Special Weapon (Throwing)" value="1"/>
+    <skill name="Stout Hearted" value="1"/>
+    <skill name="Strike Mighty Blow" value="1"/>
+  </class>
+  <class name="Wizard Lord" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="35"/>
+    <attribute name="WPAdv" value="40"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="5"/>
+    <attribute name="MagAdv" value="4"/>
+  </class>
+  <class name="Abbot" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="30"/>
+    <attribute name="WPAdv" value="25"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Admiral" experience="0">
+    <attribute name="WSAdv" value="25"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="30"/>
+    <attribute name="WPAdv" value="30"/>
+    <attribute name="FelAdv" value="35"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Agent of the Shroud" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="30"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Brute" experience="0">
+    <attribute name="WSAdv" value="20"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="15"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+  </class>
+  <class name="Sneak" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="20"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="15"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="4"/>
+  </class>
+  <class name="Chief" experience="0">
+    <attribute name="WSAdv" value="30"/>
+    <attribute name="BSAdv" value="20"/>
+    <attribute name="SAdv" value="20"/>
+    <attribute name="TAdv" value="20"/>
+    <attribute name="AglAdv" value="35"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="2"/>
+    <attribute name="WAdv" value="8"/>
+  </class>
+  <class name="Shaman" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="10"/>
+    <attribute name="SAdv" value="5"/>
+    <attribute name="TAdv" value="10"/>
+    <attribute name="AglAdv" value="10"/>
+    <attribute name="IntAdv" value="15"/>
+    <attribute name="WPAdv" value="20"/>
+    <attribute name="FelAdv" value="15"/>
+    <attribute name="WAdv" value="4"/>
+    <attribute name="MagAdv" value="2"/>
+  </class>
+  <class name="Apprentice Shaman" experience="0">
+    <attribute name="WSAdv" value="10"/>
+    <attribute name="BSAdv" value="5"/>
+    <attribute name="TAdv" value="5"/>
+    <attribute name="AglAdv" value="5"/>
+    <attribute name="IntAdv" value="10"/>
+    <attribute name="WPAdv" value="10"/>
+    <attribute name="FelAdv" value="10"/>
+    <attribute name="WAdv" value="2"/>
+    <attribute name="MagAdv" value="1"/>
+  </class>
+  <class name="Shaman Lord" experience="0">
+    <attribute name="WSAdv" value="15"/>
+    <attribute name="BSAdv" value="15"/>
+    <attribute name="SAdv" value="10"/>
+    <attribute name="TAdv" value="15"/>
+    <attribute name="AglAdv" value="15"/>
+    <attribute name="IntAdv" value="20"/>
+    <attribute name="WPAdv" value="25"/>
+    <attribute name="FelAdv" value="20"/>
+    <attribute name="AAdv" value="1"/>
+    <attribute name="WAdv" value="6"/>
+    <attribute name="MagAdv" value="3"/>
+  </class>
+  <spell name="Glowing Light" cast="3" time="Half action" ingredients="Drop of lamp oil (+1)"/>
+  <spell name="Sounds" cast="4" time="Half action" ingredients="Tiny bell (+1)"/>
+  <spell name="Drop" cast="4" time="Half action" ingredients="Dab of butter (+1)"/>
+  <spell name="Marshlights" cast="6" time="Full action" ingredients="Firefly (+1)"/>
+  <spell name="Magic Dart" cast="6" time="Half action" ingredients="Small dart (+1)"/>
+  <spell name="Sleep" cast="6" time="Half action" ingredients="Piece of down (+1)"/>
+  <spell name="Blessing of Courage" cast="3" time="Half action" ingredients="Tuft of dog hair (+1)"/>
+  <spell name="Blessing of Speed" cast="4" time="Half action" ingredients="Snake scale (+1)"/>
+  <spell name="Blessing of Healing" cast="5" time="Half action" ingredients="Sprig of holly (+1)"/>
+  <spell name="Blessing of Fortitude" cast="5" time="Half action" ingredients="Piece of turtle shell (+1)"/>
+  <spell name="Blessing of Might" cast="6" time="Half action" ingredients="Iron nail (+1)"/>
+  <spell name="Blessing of Protection" cast="7" time="Full action" ingredients="Token with holy symbol (+1)"/>
+  <spell name="Calm the Wild Beast" cast="5" time="Half action" ingredients="Lump of sugar  (+1)"/>
+  <spell name="Form of the Raven" cast="7" time="Full action" ingredients="Raven feather (+1)"/>
+  <spell name="Claws of Fury" cast="8" time="Half action" ingredients="Cat claw (+1)"/>
+  <spell name="Talking Beast" cast="11" time="Half action" ingredients="Tongue from animal to change into (+2)"/>
+  <spell name="Masters Voice" cast="13" time="Half action" ingredients="Miniature whip of braided animal hair (+2)"/>
+  <spell name="Form of the Wolf" cast="15" time="2 Full actions" ingredients="Wolf paw (+2)"/>
+  <spell name="Crows Feast" cast="17" time="Full action" ingredients="Caged crow (+2)"/>
+  <spell name="Beast Unleashed" cast="21" time="2 Full actions" ingredients="Wolf heart (+2)"/>
+  <spell name="Form of the Bear" cast="25" time="3 Full actions" ingredients="Bear claw (+3)"/>
+  <spell name="Wings of the Falcon" cast="29" time="2 Full actions" ingredients="Live falcon (+3)"/>
+  <spell name="Move" cast="4" time="Half action" ingredients="Small fan (+1)"/>
+  <gear>
+    <equipment name="Axe" enc="50" damage="'SB'"/>
+    <equipment name="Bow" enc="80" damage="3" range="24/48" reload="Half"/>
+    <equipment name="Buckler" enc="10" damage="'SB'" qualities="Balanced, Defensive, Pummeling"/>
+    <equipment name="Crossbow Pistol" enc="25" range="8/16" reload="Full" damage="2"/>
+    <equipment name="Crossbow" enc="120" damage="4" range="30/60" reload="Full"/>
+    <equipment name="Dagger" enc="10" damage="'SB-3'"/>
+    <equipment name="Hammer" enc="50" damage="'SB'"/>
+    <equipment name="Spear" enc="50" damage="'SB'" qualities="Fast"/>
+    <equipment name="Halberd" enc="175" damage="'SB'" qualities="Special"/>
+    <equipment name="Knuckledusters" enc="1" damage="'SB-3'" qualities="Pummeling"/>
+    <equipment name="Longbow" enc="90" damage="3" range="30/60" reload="Half" qualities="Armor Piercing"/>
+    <equipment name="Pistol" enc="25" damage="4" range="8/16" reload="2 Full" qualities="Impact, Unreliable"/>
+    <equipment name="Quarterstaff" enc="50" damage="'SB-2'" qualities="Defensive, Pummeling"/>
+    <equipment name="Rapier" enc="40" damage="'SB-1'" qualities="Fast"/>
+    <equipment name="Repeater Crossbow" enc="150" damage="2" range="16/32" reload="Free" qualities="Special"/>
+    <equipment name="Shield" enc="50" damage="'SB-2'" qualities="Defensive, Special"/>
+    <equipment name="Tower Shield" enc="75" damage="'SB-2'" qualities="Defensive, Special"/>
+    <equipment name="Sword" enc="50" damage="'SB'"/>
+    <equipment name="Blunderbuss" enc="50" range="32/-" reload="3 Full" damage="3" qualities="Shrapnel"/>
+    <equipment name="Throwing Dagger" enc="10" range="6/12" reload="Half" damage="'SB-3'"/>
+    <equipment name="Two-handed axe" enc="200" damage="'SB'" qualities="Impact, Slow"/>
+    <equipment name="Full Plate" enc="395" type="Armor" location="All" ap="5"/>
+    <equipment name="Full Mail" enc="210" type="Armor" location="All" ap="3"/>
+    <equipment name="Full Leather" enc="80" type="Armor" location="All" ap="1"/>
+    <equipment name="Mail Shirt" enc="60" type="Armor" location="Body" ap="2"/>
+    <equipment name="Mail Coif" enc="30" type="Armor" location="Head" ap="2"/>
+    <equipment name="Helmet" type="Armor" enc="40" location="Head" ap="2"/>
+    <equipment name="Breastplate" type="Armor" enc="75" location="Body" ap="2"/>
+    <equipment name="Left Plate Bracer" type="Armor" enc="15" location="Left Arm" ap="2"/>
+    <equipment name="Right Plate Bracer" type="Armor" enc="15" location="Right Arm" ap="2"/>
+    <equipment name="Plate Bracers" type="Armor" enc="30" location="Arms" ap="2"/>
+    <equipment name="Left Plate Legging" type="Armor" enc="20" location="Left Leg" ap="2"/>
+    <equipment name="Right Plate Legging" type="Armor" enc="20" location="Right Leg" ap="2"/>
+    <equipment name="Plate Leggings" type="Armor" enc="40" location="Legs" ap="2"/>
+    <equipment name="Mail Sleeve Shirt" type="Armor" enc="80" location="Body,Arms" ap="2"/>
+    <equipment name="Leather Jack" type="Armor" enc="50" location="Body,Arms" ap="1"/>
+    <equipment name="Headband+1" type="Armor" enc="2" location="Head" ap="1"/>
+    <equipment name="Amulet+1" type="Armor" enc="2" location="All" ap="1"/>
+    <equipment name="Arrow" enc="2"/>
+    <equipment name="Grappling Hook" enc="20"/>
+    <equipment name="Bolt" enc="2"/>
+    <equipment name="Backpack" enc="20"/>
+    <equipment name="Religious Symbol" enc="5"/>
+    <equipment name="Cutlery, wood" enc="2"/>
+    <equipment name="Tankard, wood" enc="5"/>
+    <equipment name="Fish Hook and Line" enc="5"/>
+    <equipment name="Prayer Book" enc="35"/>
+    <equipment name="Book" enc="35"/>
+    <equipment name="Bottle of Spirits" enc="5"/>
+    <equipment name="Writing Kit" enc="5"/>
+    <equipment name="Ration, week" enc="50"/>
+    <equipment name="Water Skin" enc="1"/>
+    <equipment name="Tent" enc="20"/>
+    <equipment name="Torch" enc="5"/>
+    <equipment name="Blanket" enc="10"/>
+    <equipment name="Bedroll" enc="20"/>
+    <equipment name="Healing Draught" enc="0.1"/>
+    <equipment name="Healing Poltice" enc="0.1"/>
+    <equipment name="Lantern" enc="20"/>
+    <equipment name="Leather Jerkin" enc="40" type="Armor" location="Body,Arms" ap="1"/>
+    <equipment name="Lucky Charm" enc="0.1"/>
+    <equipment name="Oil" enc="5"/>
+    <equipment name="Ingredients" enc="10"/>
+    <equipment name="Noble Garb" enc="30"/>
+    <equipment name="Shot" enc="2"/>
+    <equipment name="Saddle" enc="50"/>
+    <equipment name="Harness" enc="20"/>
+    <equipment name="Rope, 1m" enc="2.5"/>
+    <equipment name="Antitoxin" enc="1"/>
+    <equipment name="Wand of Onyx" enc="50"/>
+    <equipment name="Purse" enc="1"/>
+    <equipment name="Case" enc="2"/>
+    <equipment name="Quiver" enc="3"/>
+    <equipment name="Spike" enc="5"/>
+    <equipment name="Manacles" enc="20"/>
+    <equipment name="Rations, 1 week" enc="50"/>
+    <equipment name="Tinderbox" enc="5"/>
+  </gear>
+  <table name="Age">
+    <row key0="0 11" value="Child"/>
+    <row key0="12 20" value="Adolescent"/>
+    <row key0="21 25" value="Early twenties"/>
+    <row key0="26 30" value="Late twenties"/>
+    <row key0="31 35" value="Early thirties"/>
+    <row key0="36 40" value="Late thirties"/>
+    <row key0="41 45" value="Early fourties"/>
+    <row key0="46 50" value="Late fourties"/>
+    <row key0="51 55" value="Early fifties"/>
+    <row key0="56 60" value="Late fifties"/>
+    <row key0="61 70" value="Sixties"/>
+    <row key0="71 80" value="Seventies"/>
+    <row key0="81 90" value="Eighties"/>
+    <row key0="91 999" value="Methusalem"/>
+  </table>
+</rules>

@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="HM3">
+  <attribute name="Apparent Age" rule="u:table-lookup('Age',720 - u:year(./attribute[@name='Birthdate']/@value))"/>
+  <attribute name="Apparent Voice" rule="u:table-lookup('Voice', ./attribute[@name='Voice']/@value)"/>
+  <attribute name="Apparent Height" rule="concat(floor(./attribute[@name='Height']/@value div 12), 'ft', ./attribute[@name='Height']/@value mod 12, 'in')"/>
+  <section name="Physical">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Acrobatics" attr="Strength/Agility/Agility" sun="Nad+2/Hir+1" oml="2xSB" special="true">
+      <skill name="Trapez" imply="40"/>
+      <skill name="Tumbling" imply="40"/>
+      <skill name="Vaulting" imply="40"/>
+    </skill>
+    <skill name="Climbing" attr="Strength/Dexterity/Agility" sun="Ula+2/Ara+2" oml="4xSB"/>
+    <skill name="Condition" attr="Strength/Stamina/Will" sun="Ula+2/Lad+2" oml="5xSB"/>
+    <skill name="Dancing" attr="Dexterity/Agility/Agility" sun="Tar+2/Hir+1/Tai+1" oml="2xSB"/>
+    <skill name="Jumping" attr="Strength/Agility/Agility" sun="Nad+2/Hir+2" oml="4xSB" special="true">
+      <skill name="High jump" imply="40"/>
+      <skill name="Long jump" imply="40"/>
+    </skill>
+    <skill name="Legerdemain" attr="Dexterity/Dexterity/Will" sun="Sko+2/Tai+2/Tar+2" oml="1xSB" special="true">
+      <skill name="Pursecutting" imply="40"/>
+      <skill name="Conjuring" imply="40"/>
+    </skill>
+    <skill name="Skiing" attr="Strength/Dexterity/Agility" sun="Mas+2/Sko+1/Lad+1" oml="1xSB"/>
+    <skill name="Stealth" attr="Agility/Hearing/Will" sun="Hir+2/Tar+2/Tai+2" oml="3xSB"/>
+    <skill name="Swimming" attr="Stamina/Dexterity/Agility" sun="Sko+1/Mas+3/Lad+3" oml="1xSB"/>
+    <skill name="Throwing" attr="Strength/Dexterity/Eyesight" sun="Hir+2/Tar+1/Nad+1" oml="4xSB"/>
+  </section>
+  <section name="Communication">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Acting" attr="Agility/Voice/Intelligence" sun="Tar+1/Tai+1" oml="2xSB"/>
+    <skill name="Awareness" attr="Eyesight/Hearing/Smell" sun="Hir+2/Tar+2" oml="4xSB"/>
+    <skill name="Intrigue" attr="Intelligence/Aura/Will" sun="Tai+1/Tar+1/Sko+1" oml="3xSB"/>
+    <skill name="Lovecraft" attr="Comeliness/Agility/Voice" sun="Mas+1/Ang+1" oml="3xSB"/>
+    <skill name="Mental Conflict" attr="Aura/Will/Will" oml="3xSB"/>
+    <skill name="Musician" attr="Dexterity/Hearing/Hearing" sun="Mas+1/Ang+1" oml="1xSB" branch="true">
+      <skill name="Drum"/>
+      <skill name="Flute"/>
+      <skill name="Harp"/>
+      <skill name="Horn"/>
+      <skill name="Pipes"/>
+      <skill name="Lute"/>
+    </skill>
+    <skill name="Oratory" attr="Comeliness/Voice/Intelligence" sun="Tar+1" oml="2xSB"/>
+    <skill name="Rhetoric" attr="Voice/Intelligence/Will" sun="Tai+1/Tar+1/Sko+1" oml="3xSB" special="true">
+      <skill name="Command" imply="40"/>
+      <skill name="Diplomacy" imply="40"/>
+      <skill name="Intimidation" imply="40"/>
+    </skill>
+    <skill name="Singing" attr="Hearing/Voice/Voice" sun="Mas+1" oml="3xSB"/>
+    <skill name="Language" attr="Voice/Intelligence/Will" sun="Tai+1" branch="true">
+      <skill name="Jarind" branch="true">
+        <skill name="Altish"/>
+        <skill name="Old Altish"/>
+        <skill name="Emela"/>
+        <skill name="Jarind"/>
+        <skill name="Jarinese"/>
+        <skill name="Old Jarinese"/>
+        <skill name="Hârnic"/>
+        <skill name="Old Hârnic"/>
+        <skill name="Orbaalese"/>
+        <skill name="Yarili"/>
+      </skill>
+      <skill name="Phari" branch="true">
+        <skill name="Harbaalese"/>
+        <skill name="Ivinian"/>
+        <skill name="Palithanian"/>
+        <skill name="Phari"/>
+        <skill name="Quar"/>
+        <skill name="Quarph"/>
+        <skill name="Trierzi"/>
+        <skill name="Old Trierzi"/>
+        <skill name="Shorka"/>
+      </skill>
+      <skill name="Azeri" branch="true">
+        <skill name="Azeri"/>
+        <skill name="Azeryani"/>
+        <skill name="High Azeryani"/>
+        <skill name="Low Azeryani"/>
+        <skill name="Byrian"/>
+        <skill name="Elbythian"/>
+        <skill name="Karejian"/>
+        <skill name="Karuia"/>
+        <skill name="Urmech"/>
+      </skill>
+      <skill name="Anzela" branch="true">
+        <skill name="Anzela"/>
+        <skill name="Chogori"/>
+        <skill name="Gelaphic"/>
+        <skill name="Neshai"/>
+        <skill name="Panhaonic"/>
+        <skill name="Pechalari"/>
+        <skill name="Thonian"/>
+        <skill name="Tuvarese"/>
+        <skill name="Wernai"/>
+        <skill name="Old Wernai"/>
+      </skill>
+      <skill name="Mafani" branch="true">
+        <skill name="Mafanese"/>
+        <skill name="Mafani"/>
+        <skill name="Mafash"/>
+        <skill name="Molnasian"/>
+        <skill name="Shenti"/>
+        <skill name="Thota"/>
+      </skill>
+      <skill name="Molkuri" branch="true">
+        <skill name="Chomsuni"/>
+        <skill name="Homori"/>
+        <skill name="Kanic"/>
+        <skill name="Lashoi"/>
+        <skill name="Melurian"/>
+        <skill name="Molken"/>
+        <skill name="Molkuri"/>
+        <skill name="Pechosi"/>
+      </skill>
+      <skill name="Resheni" branch="true">
+        <skill name="Argolan"/>
+        <skill name="Jankorian"/>
+        <skill name="Mengolan"/>
+        <skill name="Resheni"/>
+        <skill name="Shoji"/>
+      </skill>
+      <skill name="Ketar" branch="true">
+        <skill name="Besha"/>
+        <skill name="Dalken"/>
+        <skill name="Diranese"/>
+        <skill name="Ketar"/>
+        <skill name="Ketari"/>
+        <skill name="Anil Ketari"/>
+        <skill name="Old Ketari"/>
+        <skill name="Kyaman"/>
+        <skill name="Mafaketa"/>
+        <skill name="Reksyni"/>
+      </skill>
+      <skill name="Hepeka" branch="true">
+        <skill name="Falani"/>
+        <skill name="Hepeka"/>
+        <skill name="Korlic"/>
+        <skill name="Numer"/>
+        <skill name="Old Numec"/>
+      </skill>
+      <skill name="Ivashi"/>
+      <skill name="Khuzan"/>
+      <skill name="Ormauk"/>
+      <skill name="Surikal"/>
+      <skill name="Sindarin"/>
+    </skill>
+    <skill name="Script" attr="Dexterity/Eyesight/Intelligence" sun="Tar+1/Tai+1" branch="true" oml="70+1xSB">
+      <skill name="Alanta"/>
+      <skill name="Anneri"/>
+      <skill name="Ayaran"/>
+      <skill name="Hekori"/>
+      <skill name="Kalphori"/>
+      <skill name="Khruni"/>
+      <skill name="Kono"/>
+      <skill name="Lakise"/>
+      <skill name="Milanta"/>
+      <skill name="Miluan"/>
+      <skill name="Music"/>
+      <skill name="Neramic"/>
+      <skill name="Neri"/>
+      <skill name="Nuvesarl"/>
+      <skill name="Perika"/>
+      <skill name="Runic"/>
+      <skill name="Selenian"/>
+      <skill name="Sheni"/>
+      <skill name="Shenya"/>
+      <skill name="Soma"/>
+      <skill name="Somish"/>
+      <skill name="Tankono"/>
+      <skill name="Taelda"/>
+      <skill name="Tianta"/>
+      <skill name="Zerin"/>
+    </skill>
+  </section>
+  <section name="Combat">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Initiative" attr="Agility/Will/Will" oml="4xSB"/>
+    <skill name="Unarmed" attr="Strength/Dexterity/Agility" sun="Mas+2/Lad+2/Ula+2" oml="4xSB" special="true">
+      <skill name="Brawling" imply="40"/>
+      <skill name="Wrestling" imply="40"/>
+      <skill name="Martial arts" imply="40"/>
+    </skill>
+    <skill name="Riding" attr="Dexterity/Agility/Will" sun="Ula+1/Ara+1" oml="1xSB"/>
+    <skill name="Dodge" attr="Agility/Agility/Agility" sun="Ula+1/Ara+1" oml="5xSB"/>
+    <skill name="Weapon" branch="true">
+      <skill name="Axe" attr="Strength/Strength/Dexterity" sun="Ahn+1/Fen+1/Ang+1" oml="3xSB" special="true">
+        <skill name="Battleaxe" imply="40"/>
+        <skill name="Handaxe" imply="40"/>
+        <skill name="Hatchet" imply="40"/>
+        <skill name="Shorkana" imply="40"/>
+        <skill name="Pickaxe" imply="40"/>
+        <skill name="Sickle" imply="40"/>
+        <skill name="Warhammer" imply="40"/>
+      </skill>
+      <skill name="Blowgun" attr="Stamina/Dexterity/Eyesight" sun="Hir+2/Tar+1/Nad+1" oml="4xSB"/>
+      <skill name="Bow" attr="Strength/Dexterity/Eyesight" sun="Hir+1/Tar+1/Nad+1" oml="2xSB" special="true">
+        <skill name="Crossbow" imply="40"/>
+        <skill name="Hartbow" imply="40"/>
+        <skill name="Longbow" imply="40"/>
+        <skill name="Shortbow" imply="40"/>
+      </skill>
+      <skill name="Club" attr="Strength/Strength/Dexterity" sun="Ula+1/Ara+1" oml="4xSB" special="true">
+        <skill name="Club" imply="40"/>
+        <skill name="Mace" imply="40"/>
+        <skill name="Morningstar" imply="40"/>
+        <skill name="Maul" imply="40"/>
+      </skill>
+      <skill name="Dagger" attr="Dexterity/Dexterity/Eyesight" sun="Ang+2/Nad+2" oml="3xSB" special="true">
+        <skill name="Dagger" imply="40"/>
+        <skill name="Keltan" imply="40"/>
+        <skill name="Knife" imply="40"/>
+        <skill name="Taburi" imply="40"/>
+      </skill>
+      <skill name="Flail" attr="Dexterity/Dexterity/Dexterity" sun="Hir+1/Tar+1/Nad+1" oml="1xSB" special="true">
+        <skill name="Ball &amp; chain" imply="40"/>
+        <skill name="Grainflail" imply="40"/>
+        <skill name="Nachakas" imply="40"/>
+        <skill name="Warflail" imply="40"/>
+      </skill>
+      <skill name="Net" attr="Dexterity/Dexterity/Eyesight" sun="Mas+1/Sko+1/Lad+1" oml="1xSB" special="true">
+        <skill name="Net" imply="40"/>
+        <skill name="Cloak" imply="40"/>
+      </skill>
+      <skill name="Polearm" attr="Strength/Strength/Dexterity" sun="Ang+1/Ara+1" oml="2xSB" special="true">
+        <skill name="Lance" imply="40"/>
+        <skill name="Glaive" imply="40"/>
+        <skill name="Jousting pole" imply="40"/>
+        <skill name="Pike" imply="40"/>
+        <skill name="Poleaxe" imply="40"/>
+      </skill>
+      <skill name="Shield" attr="Strength/Dexterity/Dexterity" sun="Ula+1/Lad+1/Mas+1" oml="3xSB" special="true">
+        <skill name="Buckler" imply="40"/>
+        <skill name="Kiteshield" imply="40"/>
+        <skill name="Knightshield" imply="40"/>
+        <skill name="Roundshield" imply="40"/>
+        <skill name="Towershield" imply="40"/>
+      </skill>
+      <skill name="Sling" attr="Dexterity/Dexterity/Eyesight" sun="Hir+1/Tar+1/Nad+1" oml="1xSB" special="true">
+        <skill name="Sling" imply="40"/>
+        <skill name="Staffsling" imply="40"/>
+      </skill>
+      <skill name="Spear" attr="Strength/Strength/Dexterity" sun="Ara+1/Fen+1/Ula+1" oml="3xSB" special="true">
+        <skill name="Javelin" imply="40"/>
+        <skill name="Spear" imply="40"/>
+        <skill name="Staff" imply="40"/>
+        <skill name="Trident" imply="40"/>
+      </skill>
+      <skill name="Sword" attr="Strength/Dexterity/Dexterity" sun="Ang+3/Ahn+1/Nad+1" oml="3xSB" special="true">
+        <skill name="Bastard sword" imply="40"/>
+        <skill name="Battlesword" imply="40"/>
+        <skill name="Broadsword" imply="40"/>
+        <skill name="Estoc" imply="40"/>
+        <skill name="Falchion" imply="40"/>
+        <skill name="Longknife" imply="40"/>
+        <skill name="Mang" imply="40"/>
+        <skill name="Mankar" imply="40"/>
+        <skill name="Shortsword" imply="40"/>
+      </skill>
+      <skill name="Whip" attr="Dexterity/Dexterity/Eyesight" sun="Hir+1/Nad+1" oml="1xSB" special="true">
+        <skill name="Isagra" imply="40"/>
+        <skill name="Whip" imply="40"/>
+      </skill>
+    </skill>
+  </section>
+  <section name="Craft/Lore">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Agriculture" attr="Strength/Stamina/Will" sun="Ula+2/Ara+2" oml="2xSB"/>
+    <skill name="Alchemy" attr="Smell/Intelligence/Aura" sun="Sko+3/Tai+2/Mas+2" oml="1xSB"/>
+    <skill name="Animalcraft" attr="Agility/Voice/Will" sun="Ula+1/Ara+1" oml="1xSB" special="true">
+      <skill name="Horse" imply="40"/>
+      <skill name="Cattle" imply="40"/>
+      <skill name="Bird" imply="40"/>
+      <skill name="Sheep" imply="40"/>
+      <skill name="Dog" imply="40"/>
+      <skill name="Swine" imply="40"/>
+      <skill name="Ox" imply="40"/>
+    </skill>
+    <skill name="Astrology" attr="Eyesight/Intelligence/Aura" sun="Aura+1/Tar+1" oml="1xSB" special="true">
+      <skill name="Astromancy" imply="40"/>
+      <skill name="Astronomy" imply="40"/>
+    </skill>
+    <skill name="Brewing" attr="Dexterity/Smell/Smell" sun="Sko+3/Tai+2/Mas+2" oml="2xSB"/>
+    <skill name="Ceramics" attr="Dexterity/Dexterity/Eyesight" sun="Ula+2/Ara+2" oml="2xSB"/>
+    <skill name="Cookery" attr="Dexterity/Smell/Smell" sun="Sko+1" oml="3xSB"/>
+    <skill name="Drawing" attr="Dexterity/Eyesight/Eyesight" sun="Sko+1/Tai+1" oml="2xSB" special="true">
+      <skill name="Cartography" imply="40"/>
+      <skill name="Painting" imply="40"/>
+      <skill name="Fresco" imply="40"/>
+      <skill name="Sketching" imply="40"/>
+      <skill name="Woodcut" imply="40"/>
+      <skill name="Pen &amp; ink" imply="40"/>
+    </skill>
+    <skill name="Embalming" attr="Dexterity/Eyesight/Smell" sun="Sko+1/Ula+1" oml="1xSB"/>
+    <skill name="Engineering" attr="Dexterity/Intelligence/Intelligence" sun="Ula+2/Ara+2/Fen+1" oml="1xSB" special="true">
+      <skill name="Fortification" imply="40"/>
+      <skill name="Mills" imply="40"/>
+      <skill name="Siege engines" imply="40"/>
+    </skill>
+    <skill name="Fishing" attr="Dexterity/Eyesight/Will" sun="Mas+2/Lad+2" oml="3xSB" special="true">
+      <skill name="Hook &amp; line" imply="40"/>
+      <skill name="Spear-fishing" imply="40"/>
+      <skill name="Net-fishing" imply="40"/>
+      <skill name="Bare hands" imply="40"/>
+    </skill>
+    <skill name="Fletching" attr="Dexterity/Dexterity/Eyesight" sun="Hir+2/Tar+1/Nad+1" oml="1xSB" special="true">
+      <skill name="Bowyer" imply="40"/>
+      <skill name="Fletching" imply="40"/>
+    </skill>
+    <skill name="Folklore" attr="Voice/Intelligence/Intelligence" sun="Tai+2" oml="3xSB"/>
+    <skill name="Foraging" attr="Dexterity/Smell/Intelligence" sun="Ula+2/Ara+2" oml="3xSB"/>
+    <skill name="Glasswork" attr="Dexterity/Eyesight/Will" sun="Fen+2" oml="1xSB"/>
+    <skill name="Heraldry" attr="Dexterity/Eyesight/Will" sun="Sko+1/Tai+1" oml="1xSB"/>
+    <skill name="Herblore" attr="Eyesight/Smell/Intelligence" sun="Ula+3/Ara+2" oml="1xSB"/>
+    <skill name="Hidework" attr="Dexterity/Smell/Will" sun="Ula+1/Ara+1" oml="2xSB" special="true">
+      <skill name="Tanning" imply="40"/>
+      <skill name="Parchment" imply="40"/>
+      <skill name="Taxidermy" imply="40"/>
+      <skill name="Leatherworking" imply="40"/>
+      <skill name="Furrier" imply="40"/>
+    </skill>
+    <skill name="Jewelcraft" attr="Dexterity/Eyesight/Will" sun="Fen+3/Tar+1/Ara+1" oml="1xSB" special="true">
+      <skill name="Goldsmith" imply="40"/>
+      <skill name="Silversmith" imply="40"/>
+      <skill name="Gemcutter" imply="40"/>
+      <skill name="Designer" imply="40"/>
+    </skill>
+    <skill name="Law" attr="Voice/Intelligence/Will" sun="Tar+1/Tai+1" oml="1xSB"/>
+    <skill name="Lockcraft" attr="Dexterity/Eyesight/Will" sun="Fen+1" oml="1xSB" special="true">
+      <skill name="Lockmaker" imply="40"/>
+      <skill name="Lockpicker" imply="40"/>
+      <skill name="Fine mechanician" imply="40"/>
+    </skill>
+    <skill name="Masonry" attr="Strength/Dexterity/Intelligence" sun="Ula+2/Ara+2" oml="1xSB" special="true">
+      <skill name="Architect" imply="40"/>
+      <skill name="Quarry" imply="40"/>
+      <skill name="Stonelayer" imply="40"/>
+      <skill name="Builder" imply="40"/>
+      <skill name="Stonecutter" imply="40"/>
+      <skill name="Sculptor" imply="40"/>
+    </skill>
+    <skill name="Mathematics" attr="Intelligence/Intelligence/Will" sun="Tai+3/Tar+1/Sko+1" oml="1xSB" special="true">
+      <skill name="Algebra" imply="40"/>
+      <skill name="Bookkeeping" imply="40"/>
+      <skill name="Geometry" imply="40"/>
+    </skill>
+    <skill name="Metalcraft" attr="Strength/Dexterity/Will" sun="Fen+3/Ahn+1/Ang+1" oml="1xSB" special="true">
+      <skill name="Copper" imply="40"/>
+      <skill name="Iron &amp; steel" imply="40"/>
+      <skill name="Bronze" imply="40"/>
+      <skill name="Brass" imply="40"/>
+      <skill name="Pewter" imply="40"/>
+      <skill name="Lead" imply="40"/>
+      <skill name="Tin" imply="40"/>
+      <skill name="Valuation" imply="40"/>
+    </skill>
+    <skill name="Milling" attr="Strength/Dexterity/Smell" sun="Ula+1" oml="2xSB" special="true">
+      <skill name="Baking" imply="40"/>
+      <skill name="Milling" imply="40"/>
+    </skill>
+    <skill name="Mining" attr="Strength/Eyesight/Intelligence" sun="Ula+2/Ara+2/Fen+1" oml="1xSB"/>
+    <skill name="Perfumery" attr="Smell/Smell/Intelligence" sun="Hir+1/Sko+1/Tar+1" oml="1xSB" special="true">
+      <skill name="Incense" imply="40"/>
+      <skill name="Scented oils" imply="40"/>
+      <skill name="Soap" imply="40"/>
+    </skill>
+    <skill name="Physician" attr="Dexterity/Eyesight/Intelligence" sun="Mas+2/Sko+1/Tai+1" oml="1xSB" special="true">
+      <skill name="Homeopathy" imply="40"/>
+      <skill name="Surgery" imply="40"/>
+      <skill name="Torture" imply="40"/>
+      <skill name="Veterinary" imply="40"/>
+    </skill>
+    <skill name="Piloting" attr="Dexterity/Eyesight/Intelligence" sun="Lad+3/Mas+1" oml="1xSB" special="true">
+      <skill name="Navigation" imply="40"/>
+      <skill name="Sailing" imply="40"/>
+    </skill>
+    <skill name="Ritual" oml="1xSB" branch="true">
+      <skill name="Adaenum" attr="Voice/Intelligence/Dexterity" sun="Lad+2/Hir+1/Sko+1"/>
+      <skill name="Anoa" attr="Voice/Intelligence/Aura" sun="Sko+2/Tai+1/Ula+1"/>
+      <skill name="Bujoc" attr="Voice/Intelligence/Aura"/>
+      <skill name="Chelni" attr="Voice/Intelligence/Aura" sun="Ahn+2/Fen+1/Tai+1"/>
+      <skill name="Chymak" attr="Voice/Intelligence/Dexterity" sun="Lad+2/Fen+1/Sko+1"/>
+      <skill name="Equani" attr="Voice/Intelligence/Aura" sun="Ara+2/Ang+1/Fen+1"/>
+      <skill name="Gozyda" attr="Voice/Intelligence/Will" sun="Ahn+2/Tai+1/Tar+1"/>
+      <skill name="Kabloqui" attr="Voice/Intelligence/Aura" sun="Ara+2/Ang+1/Fen+1"/>
+      <skill name="Kamaki" attr="Voice/Intelligence/Dexterity" sun="Lad+2/Ahn+1/Ula+1"/>
+      <skill name="Kath" attr="Voice/Intelligence/Aura" sun="Hir+2/Ahn+1/Ula+1"/>
+      <skill name="Kubora" attr="Voice/Intelligence/Aura" sun="Ara+2/Ura+1/Tar+1"/>
+      <skill name="Pagaelin" attr="Voice/Intelligence/Aura"/>
+      <skill name="Solori" attr="Voice/Intelligence/Voice" sun="Ang+2/Nad+1/Tai+1"/>
+      <skill name="Taelda" attr="Voice/Intelligence/Aura" sun="Ula+2/Hir+1/Tai+1"/>
+      <skill name="Tulwyn" attr="Voice/Intelligence/Strength" sun="Hir+2/Ang+1/Sko+1"/>
+      <skill name="Urdu" attr="Voice/Intelligence/Aura" sun="Ara+2/Mas+1/Tai+1"/>
+      <skill name="Ymodi" attr="Voice/Intelligence/Aura"/>
+      <skill name="Agrik" attr="Voice/Intelligence/Strength" sun="Nad+2/Ang+1/Ahn+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Halea" attr="Voice/Intelligence/Comeliness" sun="Tar+2/Hir+1/Mas+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Ilvir" attr="Voice/Intelligence/Aura" sun="Sko+2/Tai+1/Ula+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Larani" attr="Voice/Intelligence/Will" sun="Ang+2/Ahn+1/Fen+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Morgath" attr="Voice/Intelligence/Aura" sun="Lad+2/Ahn+1/Mas+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Naveh" attr="Voice/Intelligence/Will" sun="Mas+2/Sko+1/Tar+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Peoni" attr="Voice/Intelligence/Dexterity" sun="Ara+2/Ang+1/Ula+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Sarajin" attr="Voice/Intelligence/Strength" sun="Fen+2/Ara+1/Lad+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Save-K'nor" attr="Voice/Intelligence/Intelligence" sun="Tai+2/Sko+1/Tar+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+      <skill name="Siem" attr="Voice/Intelligence/Aura" sun="Hir+2/Fen+1/Ula+1" special="true">
+        <skill name="Liturgy" imply="40"/>
+        <skill name="Theology" imply="40"/>
+        <skill name="Scriptor" imply="40"/>
+      </skill>
+    </skill>
+    <skill name="Runecraft" attr="Intelligence/Aura/Aura" sun="Tai+2/Sko+1" oml="1xSB"/>
+    <skill name="Seamanship" attr="Strength/Dexterity/Agility" sun="Lad+3/Mas+1/Sko+1" oml="2xSB" special="true">
+      <skill name="Rowing" imply="40"/>
+      <skill name="Sailing" imply="40"/>
+      <skill name="Sculling" imply="40"/>
+    </skill>
+    <skill name="Shipwright" attr="Strength/Dexterity/Intelligence" sun="Lad+3/Mas+1" oml="1xSB" special="true">
+      <skill name="Naval architecture" imply="40"/>
+      <skill name="Sailmaking" imply="40"/>
+    </skill>
+    <skill name="Survival" attr="Strength/Dexterity/Intelligence" sun="Ula+2/Ara+1" oml="3xSB"/>
+    <skill name="Tarotry" attr="Intelligence/Aura/Will" sun="Tar+2/Tai+2/Sko+1/Hir+1" oml="1xSB"/>
+    <skill name="Textilecraft" attr="Dexterity/Dexterity/Eyesight" sun="Ula+1/Ara+1" oml="2xSB" special="true">
+      <skill name="Embroidery" imply="40"/>
+      <skill name="Needlework" imply="40"/>
+      <skill name="Tailoring" imply="40"/>
+      <skill name="Weaving" imply="40"/>
+      <skill name="Spinning" imply="40"/>
+      <skill name="Valuation" imply="40"/>
+    </skill>
+    <skill name="Timbercraft" attr="Strength/Dexterity/Agility" sun="Ula+3/Ara+1" oml="2xSB" special="true">
+      <skill name="Cutting" imply="40"/>
+      <skill name="Felling" imply="40"/>
+      <skill name="Tree care" imply="40"/>
+    </skill>
+    <skill name="Tracking" attr="Eyesight/Smell/Will" sun="Ula+3/Ara+3" oml="2xSB"/>
+    <skill name="Weaponcraft" attr="Strength/Dexterity/Will" sun="Fen+3/Ahn+1/Ang+1" oml="1xSB" special="true">
+      <skill name="Cloth" imply="40"/>
+      <skill name="Quilt" imply="40"/>
+      <skill name="Leather" imply="40"/>
+      <skill name="Kurbul" imply="40"/>
+      <skill name="Ring" imply="40"/>
+      <skill name="Mail" imply="40"/>
+      <skill name="Scale" imply="40"/>
+      <skill name="Plate" imply="40"/>
+      <skill name="Axe" imply="40"/>
+      <skill name="Blowgun" imply="40"/>
+      <skill name="Bow" imply="40"/>
+      <skill name="Club" imply="40"/>
+      <skill name="Dagger" imply="40"/>
+      <skill name="Flail" imply="40"/>
+      <skill name="Net" imply="40"/>
+      <skill name="Polearm" imply="40"/>
+      <skill name="Shield" imply="40"/>
+      <skill name="Sling" imply="40"/>
+      <skill name="Spear" imply="40"/>
+      <skill name="Sword" imply="40"/>
+      <skill name="Whip" imply="40"/>
+      <skill name="Valuation" imply="40"/>
+    </skill>
+    <skill name="Weatherlore" attr="Intelligence/Eyesight/Smell" sun="Hir+1/Tar+1/Mas+1/Lad+1" oml="3xSB"/>
+    <skill name="Woodcraft" attr="Dexterity/Dexterity/Will" sun="Ula+2/Ara+1/Lad+1" oml="2xSB" special="true">
+      <skill name="Cabinetry" imply="40"/>
+      <skill name="Carpentry" imply="40"/>
+      <skill name="Cooper" imply="40"/>
+      <skill name="Carving" imply="40"/>
+      <skill name="Wheelwright" imply="40"/>
+    </skill>
+  </section>
+  <section name="Psionics">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Charm" attr="Aura/Aura/Will" sun="Tai+1/Nad+1/Tar+1" oml="1xSB"/>
+    <skill name="Clairvoyance" attr="Aura/Aura/Will" sun="Tai+1" oml="1xSB"/>
+    <skill name="Disembodiement" attr="Aura/Aura/Will" sun="Hir+1/Nad+1" oml="1xSB"/>
+    <skill name="Healing" attr="Aura/Aura/Will" sun="Mas+1/Sko+1" oml="1xSB"/>
+    <skill name="Hex" attr="Aura/Aura/Will" sun="Ahn+1" oml="1xSB"/>
+    <skill name="Medium" attr="Aura/Aura/Will" sun="Tai+1" oml="1xSB"/>
+    <skill name="Mental Bolt" attr="Aura/Aura/Will" sun="Ahn+1" oml="1xSB"/>
+    <skill name="Mental Prowess" attr="Aura/Aura/Will" sun="Ahn+1" oml="1xSB"/>
+    <skill name="Negation" attr="Aura/Aura/Will" sun="Fen+1" oml="1xSB"/>
+    <skill name="Prescience" attr="Aura/Aura/Will" sun="Tai+1/Tar+1" oml="1xSB"/>
+    <skill name="Psychometry" attr="Aura/Aura/Will" sun="Tai+1/Mas+1" oml="1xSB"/>
+    <skill name="Pyrokinesis" attr="Aura/Aura/Will" sun="Ahn+1/Nad+1/Ang+1" oml="1xSB"/>
+    <skill name="Sensitivity" attr="Aura/Aura/Will" sun="Tar+1/Tai+1" oml="1xSB"/>
+    <skill name="Telekinesis" attr="Aura/Aura/Will" sun="Ahn+1/Nad+1" oml="1xSB"/>
+    <skill name="Telepathy" attr="Aura/Aura/Will" sun="Tai+1/Sko+1/Tar+1" oml="1xSB"/>
+    <skill name="Transference" attr="Aura/Aura/Will" sun="Tai+1/Tar+1" oml="1xSB"/>
+    <skill name="Transmutation" attr="Aura/Aura/Will" sun="Tai+1/Tar+1" oml="1xSB"/>
+  </section>
+  <section name="Convocational">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Lyahvi" attr="Aura/Aura/Eyesight" sun="Ula-3/Ara-2/Fen-1/Ang+1/Nad+2/Hir+3/Tar+2/Tai+1/Mas-1/Lad-2"/>
+    <skill name="Peleahn" attr="Aura/Aura/Agility" sun="Ula-1/Fen+1/Ahn+2/Ang+3/Nad+2/Hir+1/Tai-1/Sko-2/Mas-3/Lad-2"/>
+    <skill name="Jmorvi" attr="Aura/Aura/Strength" sun="Ula+1/Ara+2/Fen+3/Ahn+2/Ang+1/Hir-1/Tar-2/Tai-3/Sko-2/Mas-1"/>
+    <skill name="Fyvria" attr="Aura/Aura/Smell" sun="Ula+3/Ara+2/Fen+1/Ang-1/Nad-2/Hir-3/Tar-2/Tai-1/Mas+1/Lad+2"/>
+    <skill name="Odivshe" attr="Aura/Aura/Dexterity" sun="Ula+1/Fen-1/Ahn-2/Ang-3/Nad-2/Hir-1/Tai+1/Sko+2/Mas+3/Lad+2"/>
+    <skill name="Savorya" attr="Aura/Aura/Intelligence" sun="Ula-1/Ara-2/Fen-3/Ahn-2/Ang-1/Hir+1/Tar+2/Tai+3/Sko+2/Mas+1"/>
+    <skill name="Neutral" attr="Aura/Aura/Will"/>
+  </section>
+  <table name="Age">
+    <row key0="0 12" value="Child"/>
+    <row key0="12 20" value="Adolescent"/>
+    <row key0="21 25" value="Early twenties"/>
+    <row key0="26 30" value="Late twenties"/>
+    <row key0="31 35" value="Early thirties"/>
+    <row key0="36 40" value="Late thirties"/>
+    <row key0="41 45" value="Early fourties"/>
+    <row key0="46 50" value="Late fourties"/>
+    <row key0="51 55" value="Early fifties"/>
+    <row key0="56 60" value="Late fifties"/>
+    <row key0="61 70" value="Sixties"/>
+    <row key0="71 80" value="Seventies"/>
+    <row key0="81 90" value="Eighties"/>
+    <row key0="91 999" value="Methusalem"/>
+  </table>
+  <table name="Voice">
+    <row key0="0 4" value="Unbearable"/>
+    <row key0="5 8" value="Unpleasant"/>
+    <row key0="9 12" value="Average"/>
+    <row key0="13 15" value="Pleasant"/>
+    <row key0="16 17" value="Excellent"/>
+    <row key0="18 999" value="Unearthly"/>
+  </table>
+</rules>

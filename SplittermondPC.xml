@@ -1,0 +1,582 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./ugmt.xsd">
+  <char rules="SM" id="SMPC3003" permit="true">
+    <tagged>Splittermond</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Brekwart"/>
+    <attribute name="XPTotal" value="146"/>
+    <attribute name="Ausbildung" value="Skeftamagi"/>
+    <attribute name="Kultur" value="Zwingard"/>
+    <attribute name="Rasse" value="Mensch"/>
+    <attribute name="Haarfarbe" value="schwarz"/>
+    <attribute name="Augenfarbe" value="braun"/>
+    <attribute name="Abstammung" value="Landadel"/>
+    <attribute name="Geschlecht" value="m"/>
+    <attribute name="Körpergröße" value="1,82 m"/>
+    <attribute name="Gewicht" value="88 kg"/>
+    <attribute name="Mondzeichen" value="Omen des schw. Mond"/>
+    <attribute name="Sprachen" value="Basargnomisch, Zwingardisch"/>
+    <attribute name="Schwächen" value="Eitelkeit"/>
+    <attribute name="Kulturkunde" value="Zwingard"/>
+    <attribute name="AUSStart" value="1"/>
+    <attribute name="BEWStart" value="4"/>
+    <attribute name="INTStart" value="3"/>
+    <attribute name="KONStart" value="3"/>
+    <attribute name="MYSStart" value="1"/>
+    <attribute name="STÄStart" value="3"/>
+    <attribute name="VERStart" value="1"/>
+    <attribute name="WILStart" value="4"/>
+    <attribute name="AUSCurr" value="1"/>
+    <attribute name="BEWCurr" value="5" cost="10"/>
+    <attribute name="INTCurr" value="4" cost="10"/>
+    <attribute name="KONCurr" value="3"/>
+    <attribute name="MYSCurr" value="1"/>
+    <attribute name="STÄCurr" value="4" cost="10"/>
+    <attribute name="VERCurr" value="1"/>
+    <attribute name="WILCurr" value="5" cost="10"/>
+    <image type="marker" file="/data/markers/pcs/brekwart.png"/>
+    <image type="portrait" file="/data/portraits/brekwart.png"/>
+    <skill name="Akrobatik" value="6"/>
+    <skill name="Alchemie" value="0"/>
+    <skill name="Anführen" value="0"/>
+    <skill name="Arkane Kunde" value="0"/>
+    <skill name="Athletik" value="2"/>
+    <skill name="Darbietung" value="0"/>
+    <skill name="Diplomatie" value="0"/>
+    <skill name="Edelhandwerk" value="0"/>
+    <skill name="Empathie" value="0"/>
+    <skill name="Entschlossenheit" value="3"/>
+    <skill name="Fingerfertigkeit" value="0"/>
+    <skill name="Geschichte und Mythen" value="0"/>
+    <skill name="Handwerk" value="0"/>
+    <skill name="Heilkunde" value="0"/>
+    <skill name="Heimlichkeit" value="0"/>
+    <skill name="Jagdkunst" value="1"/>
+    <skill name="Länderkunde" value="1"/>
+    <skill name="Naturkunde" value="1"/>
+    <skill name="Redegewandtheit" value="0"/>
+    <skill name="Schlösser &amp; Fallen" value="1"/>
+    <skill name="Schwimmen" value="1"/>
+    <skill name="Seefahrt" value="0"/>
+    <skill name="Straßenkunde" value="0"/>
+    <skill name="Tierführung" value="6" cost="6"/>
+    <skill name="Überleben" value="4"/>
+    <skill name="Wahrnehmung" value="6" cost="?"/>
+    <skill name="Zähigkeit" value="4"/>
+    <skill name="Ansehen" value="0"/>
+    <skill name="Gefolge" value="0"/>
+    <skill name="Kontakte" value="0"/>
+    <skill name="Kreatur" value="3" misc="Streitross"/>
+    <skill name="Mentor" value="0"/>
+    <skill name="Rang" value="0"/>
+    <skill name="Relikt" value="0"/>
+    <skill name="Stand" value="3" misc="Baronsfamilie"/>
+    <skill name="Vermögen" value="3" misc="reichlich (80/40L)"/>
+    <skill name="Zuflucht" value="0"/>
+    <skill name="Schnell auf den Beinen" value="1"/>
+    <skill name="Ausweichen" value="1"/>
+    <skill name="Reiterkampf" value="1"/>
+    <skill name="Blitzreflexe" value="1"/>
+    <skill name="Umgebungssinne (Stadt)" value="1"/>
+    <skill name="Stehaufmännchen" value="1"/>
+    <skill name="Kampf mit 2 Waffen" value="1"/>
+    <skill name="Scharfschütze" value="1"/>
+    <skill name="Schnellschütze" value="1"/>
+    <skill name="Belagerungsschütze" value="1" cost="5"/>
+    <skill name="Zus. Splitterpunkte" value="1"/>
+    <skill name="Flink" value="1"/>
+    <skill name="Attraktivität" value="1"/>
+    <skill name="Zäh" value="1"/>
+    <skill name="Erh. Fokuspool" value="1"/>
+    <skill name="Stabile Magie" value="1"/>
+    <skill name="Dämmersicht" value="1"/>
+    <skill name="Handgemenge" type="combat" value="0"/>
+    <skill name="Hiebwaffen" type="combat" value="0"/>
+    <skill name="Kettenwaffen" type="combat" value="0"/>
+    <skill name="Klingenwaffen" type="combat" value="7"/>
+    <skill name="Stangenwaffen" type="combat" value="0"/>
+    <skill name="Schusswaffen" type="combat" value="6"/>
+    <skill name="Wurfwaffen" type="combat" value="0"/>
+    <skill name="Geschossmagie" value="1"/>
+    <skill name="Eis. Konzentration" value="1"/>
+    <skill name="Magische Zeichen" value="1"/>
+    <skill name="Stärkungsmagie" value="6"/>
+    <skill name="Kampfmagie" value="6"/>
+    <skill name="Heilungmagie" value="3" cost="6"/>
+    <skill name="Schutzmagie" value="3"/>
+    <spell name="Ausdauer stärken"/>
+    <spell name="Eiserne Aura"/>
+    <spell name="Erfrischung"/>
+    <spell name="Feuerstrahl"/>
+    <spell name="Flammende Waffe"/>
+    <spell name="Geisterdolch"/>
+    <spell name="Geschoss verzaubern"/>
+    <spell name="Kl. Magieschutz"/>
+    <spell name="Magische Rüstung"/>
+    <spell name="Rindenhaut"/>
+    <spell name="Selbstheilung"/>
+    <spell name="Sicht verbessern"/>
+    <equipment name="robuste Kleidung" type="Basic"/>
+    <equipment name="Decke" type="Basic"/>
+    <equipment name="Wasserschlauch" type="Basic"/>
+    <equipment name="Essgeschirr" type="Basic"/>
+    <equipment name="Feuerzeug" type="Basic"/>
+    <equipment name="Ration (3)" type="Basic"/>
+    <equipment name="Fackel (5)" type="Basic"/>
+    <equipment name="Seil (10)" type="Basic"/>
+    <equipment name="Dietriche" type="Basic"/>
+    <equipment name="Leder, schwer [T1]" type="Armor"/>
+    <equipment name="Reiterbogen [W1S2]" type="Waffe"/>
+    <equipment name="Breitschwert" type="Waffe"/>
+    <equipment name="Dolch [S2W1]" type="Waffe"/>
+    <equipment name="Reitersäbel" type="Waffe"/>
+    <note type="background">
+      <p>
+        Brekwart ist erster Abkömmling von <i>Grimhild</i>, einer
+        Nichte des Königs, und <i>Varin</i>, Thain über die Burg
+        <i>Grölltrutz</i> nördlich von Isafest, die der Abwehr von
+        Felswesen und Wyvern aus dem Gebirge Riesheim dient.  Er wurde
+        früh zu einer militärischen Karriere erzogen und hat auf den
+        drängenden Wunsch seiner Mutter eine Ausbildung als Skeftamagi
+        in Isafest erhalten.  Brekwart hat dabei tatsächlich viel
+        Geschick im Umgang mit dem Pfeil und Bogen und auch der
+        Reiterei bewiesen, ließ es jedoch an einer wirklichen Begabung
+        für Magie fehlen.  Bei den Skeftamagi hatte er mit der Zeit
+        einen gewissen Ruhm für seine relativ hohe Quote an
+        Zauberfehlschlägen und -patzern erworben; die Abschlussprüfung
+        hat er schließlich durch <i>eiserne Konzentrationsübungen</i>
+        und <i>stabiler Magiewirkung</i> trotzdem bestanden.  Zur
+        bestandenen Prüfung haben ihm seine Eltern <i>Ricardo</i>
+        geschenkt, ein reinblütiges Schlachtross, mit dem er Anfang 20
+        seinen einjährigen Wehrdienst begann.  Hier war es
+        insbesondere seine Eitelkeit, die den (standesgemäßen)
+        Aufstieg in höhere Ränge des Zwingarder Militärs verhinderte.
+      </p>
+      <p>
+        Stattdessen hat er den vagen Auftrag erhalten, Siedler in
+        aller Herren Länder zu finden, wobei ihm ein Gnom namens
+        <i>Zahanjin</i> mit seinen weitläufigen Kontakten helfen
+        solle.  Er gehört einer Gilde an, die Fremden in aller Welt
+        hilft.
+      </p>
+      <p>
+        In Sarnburg ließ ihn seine Attraktivität anscheinend im
+        Stich. Seine Avancen einer Hofdame gegenüber wurden unsanft
+        durch einen Schwall kalten Wassers abgewiesen.  Neben sich in
+        derselben Pfütze befand sich Bruce. Beim gemeinsamen
+        Wundenlecken stellte sich heraus, dass auch er Splitterträger
+        ist.  Gemeinsam zogen sie weiter nach Südosten.
+      </p>
+    </note>
+  </char>
+  <char rules="SM" id="SMPC3001" permit="true">
+    <tagged>Splittermond</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Teron"/>
+    <attribute name="XPTotal" value="315"/>
+    <attribute name="Ausbildung" value="Kämpfer(Reißzahn)"/>
+    <attribute name="Kultur" value="Tarr"/>
+    <attribute name="Rasse" value="Varg"/>
+    <attribute name="Haarfarbe" value="sandfarben"/>
+    <attribute name="Augenfarbe" value="bernsteinfarben"/>
+    <attribute name="Hautfarbe" value="sandfarben"/>
+    <attribute name="Abstammung" value="Kriegsvolk"/>
+    <attribute name="Geschlecht" value="m"/>
+    <attribute name="Körpergröße" value="2,18 m"/>
+    <attribute name="Gewicht" value="140 kg"/>
+    <attribute name="Mondzeichen" value="Der Blitz"/>
+    <attribute name="Sprachen" value="Basargnomisch, Tarrgro"/>
+    <attribute name="Schwächen" value="Eitelkeit"/>
+    <attribute name="Kulturkunde" value="Tarr"/>
+    <attribute name="AUSStart" value="2"/>
+    <attribute name="BEWStart" value="3"/>
+    <attribute name="INTStart" value="2"/>
+    <attribute name="KONStart" value="4"/>
+    <attribute name="MYSStart" value="2"/>
+    <attribute name="STÄStart" value="5"/>
+    <attribute name="VERStart" value="1"/>
+    <attribute name="WILStart" value="1"/>
+    <attribute name="AUSCurr" value="2"/>
+    <attribute name="BEWCurr" value="5" cost="25"/>
+    <attribute name="INTCurr" value="2"/>
+    <attribute name="KONCurr" value="6" cost="25"/>
+    <attribute name="MYSCurr" value="3" cost="10"/>
+    <attribute name="STÄCurr" value="7" cost="25"/>
+    <attribute name="VERCurr" value="2" cost="10"/>
+    <attribute name="WILCurr" value="2" cost="10"/>
+    <image type="portrait" file="/data/portraits/teron.png"/>
+    <image type="marker" file="/data/markers/pcs/teron.png"/>
+    <skill name="Akrobatik" value="2" cost="3"/>
+    <skill name="Alchemie" value="0"/>
+    <skill name="Anführen" value="1"/>
+    <skill name="Arkane Kunde" value="0"/>
+    <skill name="Athletik" value="6" cost="3"/>
+    <skill name="Darbietung" value="0"/>
+    <skill name="Diplomatie" value="2"/>
+    <skill name="Edelhandwerk" value="0"/>
+    <skill name="Empathie" value="0"/>
+    <skill name="Entschlossenheit" value="6" cost="6"/>
+    <skill name="Fingerfertigkeit" value="0"/>
+    <skill name="Geschichte und Mythen" value="1"/>
+    <skill name="Handwerk" value="1"/>
+    <skill name="Heilkunde" value="2"/>
+    <skill name="Heimlichkeit" value="1" cost="3"/>
+    <skill name="Jagdkunst" value="6" cost="6"/>
+    <skill name="Länderkunde" value="0"/>
+    <skill name="Naturkunde" value="6" cost="12"/>
+    <skill name="Redegewandtheit" value="0"/>
+    <skill name="Schlösser &amp; Fallen" value="6" cost="18"/>
+    <skill name="Schwimmen" value="6" cost="18"/>
+    <skill name="Seefahrt" value="0"/>
+    <skill name="Straßenkunde" value="0"/>
+    <skill name="Tierführung" value="2"/>
+    <skill name="Überleben" value="6" cost="3"/>
+    <skill name="Wahrnehmung" value="9" cost="30"/>
+    <skill name="Zähigkeit" value="9" cost="15"/>
+    <skill name="Ansehen" value="1"/>
+    <skill name="Gefolge" value="0"/>
+    <skill name="Kontakte" value="2"/>
+    <skill name="Kreatur" value="0"/>
+    <skill name="Mentor" value="3"/>
+    <skill name="Rang" value="1"/>
+    <skill name="Relikt" value="1"/>
+    <skill name="Stand" value="0"/>
+    <skill name="Vermögen" value="1"/>
+    <skill name="Zuflucht" value="0"/>
+    <skill name="Geländekunde Wüste" value="1"/>
+    <skill name="Schwerpunkt Wüste" value="1"/>
+    <skill name="Umgebungssinne (Wald)" value="1"/>
+    <skill name="Rüstungsträger I" value="1"/>
+    <skill name="Rüstungsträger II" value="1"/>
+    <skill name="Ausfall" value="1"/>
+    <skill name="Sprinter" value="1"/>
+    <skill name="Wildnisläufer" value="1"/>
+    <skill name="Kampf mit 2 Waffen" value="1"/>
+    <skill name="Ausdauernd" value="1"/>
+    <skill name="Natürliche Waffe" value="1"/>
+    <skill name="Hitzeresistent" value="1"/>
+    <skill name="Natürliche Rüstung" value="1"/>
+    <skill name="Scharfes Gehör" value="1"/>
+    <skill name="Feine Nase" value="1"/>
+    <skill name="Gleichgewichtssinn" value="1"/>
+    <skill name="Umklammern" value="1" cost="5"/>
+    <skill name="Blocken" value="1" cost="5"/>
+    <skill name="Scharfschütze" value="1"/>
+    <skill name="Arbeit unter Wasser" value="1"/>
+    <skill name="Alchimistenhelfer" value="1"/>
+    <skill name="Schmerzh. Hieb" value="1"/>
+    <skill name="Klingenwirbel" value="1"/>
+    <skill name="Verteidiger" value="1"/>
+    <skill name="Aufmerksam" value="1"/>
+    <skill name="Eis. Wille" value="1"/>
+    <skill name="Tierkenner Insekt" value="1"/>
+    <skill name="Handgemenge" type="combat" value="9" cost="21"/>
+    <skill name="Hiebwaffen" type="combat" value="0"/>
+    <skill name="Kettenwaffen" type="combat" value="0"/>
+    <skill name="Klingenwaffen" type="combat" value="9" cost="15"/>
+    <skill name="Stangenwaffen" type="combat" value="0"/>
+    <skill name="Schusswaffen" type="combat" value="6" cost="6"/>
+    <skill name="Wurfwaffen" type="combat" value="0"/>
+    <skill name="Kampfmagie" value="2"/>
+    <skill name="Stärkungsmagie" value="6" cost="9"/>
+    <skill name="Schutzmagie" value="6" cost="18"/>
+    <spell name="Geisterdolch"/>
+    <spell name="Ausdauer stärken"/>
+    <spell name="Sicht verbessern"/>
+    <spell name="Rindenhaut" cost="3"/>
+    <spell name="Gehör verbessern" cost="3"/>
+    <equipment name="robuste Kleidung" type="Basic"/>
+    <equipment name="Decke" type="Basic"/>
+    <equipment name="Wasserschlauch" type="Basic"/>
+    <equipment name="Essgeschirr" type="Basic"/>
+    <equipment name="Feuerzeug" type="Basic"/>
+    <equipment name="Ration (3)" type="Basic"/>
+    <equipment name="Kette, leicht [V1T1]" type="Armor"/>
+    <equipment name="Falchion [S1]" type="Waffe"/>
+    <equipment name="1&#x00bd;händer [W1S2]" type="Waffe"/>
+    <equipment name="Langbogen" type="Waffe"/>
+    <equipment name="Halsband (giftresistent)" type="Basic"/>
+    <equipment name="Dolch" type="Waffe"/>
+    <equipment name="Laterne" type="Basic"/>
+    <equipment name="Laternenöl" type="Basic"/>
+    <equipment name="Wurfhaken" type="Basic"/>
+    <equipment name="Seil, 1m (10)" type="Basic"/>
+    <note type="background">
+      <p>
+        Teron ist der klassische Wanderer, der in seiner Heimat bei
+        den Tarr nicht durchsetzungsfähig genug war, um einen
+        günstigen Platz in der Rangordnung einzunehmen.  Die Scharte
+        will er auswetzen, in dem er Ruhm in der Fremde erlangt.
+      </p>
+      <p>
+        Obwohl seine Reise bisher relativ ereignislos war, hat er
+        einem Gnom namens <i>Zahanjin</i> das Leben in einer
+        scheinbaren Kneipenschlägerei gerettet, als dieser einem
+        <i>Splitterträgerjäger</i> zum Opfer fallen sollte. Die
+        Schlägerei war wohl inszeniert, leider war der Schurke am Ende
+        aber nicht mehr in der Lage, Auskunft über seine Hintermänner
+        zu geben.
+      </p>
+    </note>
+  </char>
+    <char rules="SM" id="SMPC3002" permit="true">
+    <tagged>Splittermond</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Zahanjin"/>
+    <attribute name="XPTotal" value="167"/>
+    <attribute name="Ausbildung" value="Ganove"/>
+    <attribute name="Kultur" value="Pashtar"/>
+    <attribute name="Rasse" value="Gnom"/>
+    <attribute name="Haarfarbe" value="hellbraun"/>
+    <attribute name="Augenfarbe" value="dunkelblau"/>
+    <attribute name="Hautfarbe" value="dunkelbraun"/>
+    <attribute name="Abstammung" value="Ganove"/>
+    <attribute name="Geschlecht" value="m"/>
+    <attribute name="Körpergröße" value="1,09 m"/>
+    <attribute name="Gewicht" value="20 kg"/>
+    <attribute name="Mondzeichen" value="Das zweite Gesicht"/>
+    <attribute name="Sprachen" value="Basargnomisch, Farukanisch"/>
+    <attribute name="Schwächen" value="nachtragend"/>
+    <attribute name="Kulturkunde" value="Pashtar"/>
+    <attribute name="AUSStart" value="2"/>
+    <attribute name="BEWStart" value="4"/>
+    <attribute name="INTStart" value="3"/>
+    <attribute name="KONStart" value="1"/>
+    <attribute name="MYSStart" value="4"/>
+    <attribute name="STÄStart" value="2"/>
+    <attribute name="VERStart" value="2"/>
+    <attribute name="WILStart" value="2"/>
+    <attribute name="AUSCurr" value="2"/>
+    <attribute name="BEWCurr" value="5" cost="10"/>
+    <attribute name="INTCurr" value="3"/>
+    <attribute name="KONCurr" value="2" cost="10"/>
+    <attribute name="MYSCurr" value="4"/>
+    <attribute name="STÄCurr" value="3" cost="10"/>
+    <attribute name="VERCurr" value="2"/>
+    <attribute name="WILCurr" value="2"/>
+    <image type="portrait" file="/data/portraits/gnomethief.png"/>
+    <image type="marker" file="/data/markers/pcs/zahanjin.png"/>
+    <skill name="Akrobatik" value="4"/>
+    <skill name="Alchemie" value="0"/>
+    <skill name="Anführen" value="2"/>
+    <skill name="Arkane Kunde" value="1"/>
+    <skill name="Athletik" value="4"/>
+    <skill name="Darbietung" value="0"/>
+    <skill name="Diplomatie" value="3"/>
+    <skill name="Edelhandwerk" value="0"/>
+    <skill name="Empathie" value="1"/>
+    <skill name="Entschlossenheit" value="1"/>
+    <skill name="Fingerfertigkeit" value="4"/>
+    <skill name="Geschichte und Mythen" value="1"/>
+    <skill name="Handwerk" value="0"/>
+    <skill name="Heilkunde" value="0"/>
+    <skill name="Heimlichkeit" value="5"/>
+    <skill name="Jagdkunst" value="0"/>
+    <skill name="Länderkunde" value="2"/>
+    <skill name="Naturkunde" value="0"/>
+    <skill name="Redegewandtheit" value="5"/>
+    <skill name="Schlösser &amp; Fallen" value="0"/>
+    <skill name="Schwimmen" value="3"/>
+    <skill name="Seefahrt" value="2"/>
+    <skill name="Straßenkunde" value="2"/>
+    <skill name="Tierführung" value="2"/>
+    <skill name="Überleben" value="0"/>
+    <skill name="Wahrnehmung" value="2"/>
+    <skill name="Zähigkeit" value="1"/>
+    <skill name="Ansehen" value="0"/>
+    <skill name="Gefolge" value="1" misc="Varg Bashim" cost="7"/>
+    <skill name="Kontakte" value="3"/>
+    <skill name="Kreatur" value="2" misc="diebisches Frettchen"/>
+    <skill name="Mentor" value="0"/>
+    <skill name="Rang" value="4" cost="7" misc="La Familia"/>
+    <skill name="Relikt" value="7" misc="Dschiahn" cost="49"/>
+    <skill name="Stand" value="0"/>
+    <skill name="Vermögen" value="1" cost="7"/>
+    <skill name="Zuflucht" value="0"/>
+    <skill name="Balance" value="1"/>
+    <skill name="Blick auf die Sterne" value="1"/>
+    <skill name="Leisetreter" value="1"/>
+    <skill name="Feensinn" value="1"/>
+    <skill name="Feine Nase" value="1"/>
+    <skill name="Flink" value="1"/>
+    <skill name="Hoher Geist. Widerst." value="1"/>
+    <skill name="Natürliche Waffe" value="1"/>
+    <skill name="Orientierungssinn" value="1" cost="7"/><!--?-->
+    <skill name="Scharfes Gehör" value="1"/>
+    <skill name="Scharfe Sicht" value="1"/>
+    <skill name="Stabile Magie" value="1"/>
+    <skill name="Tiervertrauter" value="1"/>
+    <skill name="Handgemenge" type="combat" value="0"/>
+    <skill name="Hiebwaffen" type="combat" value="0"/>
+    <skill name="Kettenwaffen" type="combat" value="0"/>
+    <skill name="Klingenwaffen" type="combat" value="6" cost="9"/>
+    <skill name="Stangenwaffen" type="combat" value="0"/>
+    <skill name="Schusswaffen" type="combat" value="0"/>
+    <skill name="Wurfwaffen" type="combat" value="0"/>
+    <skill name="Bewegungsmagie" value="1" cost="3"/>
+    <skill name="Wassermagie" value="1"/>
+    <skill name="Illusionsmagie" value="6" cost="9"/>
+    <skill name="Schattenmagie" value="6" cost="9"/>
+    <spell name="Falsches Gesicht"/>
+    <spell name="Katzenwäsche"/>
+    <spell name="Lichtertanz"/>
+    <spell name="Schattenspiel"/>
+    <spell name="Schattenwaffe"/>
+    <equipment name="robuste Kleidung" type="Basic"/>
+    <equipment name="Leder, schwer [T1]" type="Armor"/>
+    <equipment name="Decke" type="Basic"/>
+    <equipment name="Wasserschlauch" type="Basic"/>
+    <equipment name="Essgeschirr" type="Basic"/>
+    <equipment name="Feuerzeug" type="Basic"/>
+    <equipment name="Ration (3)" type="Basic"/>
+    <equipment name="Laterne" type="Basic"/>
+    <equipment name="Laternenöl" type="Basic"/>
+    <equipment name="Brecheisen" type="Basic"/>
+    <equipment name="Dietriche" type="Basic"/>
+    <equipment name="Wurfhaken" type="Basic"/>
+    <equipment name="Kletterhaken (10)" type="Basic"/>
+    <equipment name="Seil (20)" type="Basic"/>
+    <equipment name="Spaten" type="Basic"/>
+    <equipment name="Leinensack" type="Basic"/>
+    <equipment name="Dolch" type="Waffe"/>
+    <equipment name="Kopesh [W1S1]" type="Waffe"/>
+    <equipment name="Dschiahn [W1S2]" type="Waffe"/>
+    <equipment name="Schlagring" type="Waffe"/>
+    <equipment name="Maske + 1" type="Basic"/>
+    <note type="background">
+      <p>
+        Schon früh zeigte sich, dass Zahanjin vor allem mit
+        <i>Schatten</i> zu tun haben würde: mit realen und im
+        übertragenden Sinne. Durch entsprechend zweifelhaftes Vorgehen
+        bei der Suche nach seinem Glück konnte er nie lange an einem
+        Ort bleiben, stattdessen machte er Bekanntschaft mit der
+        <i>Familia</i>, einer Organisation, die Auswanderer
+        bzw. Einwanderer unterstützt.  Das hört sich zwar nobel an,
+        die notwendigen Mittel werden aber durch weniger noble
+        Methoden eingetrieben.
+      </p>
+      <p>
+        Mittlerweile hat Zahanjin zwar ein Niveau erreicht, dass ihm
+        erlauben würde, auch längere Zeit an einem Ort zu bleiben,
+        aber er zieht es vor zu reisen. Momentan mit der etwas
+        kuriosen (und langfristigen) Aufgabe, für den adligen
+        <i>Brekwart</i> Siedler in seine Heimat zu schaffen.
+      </p>
+      <p>
+        <i>Teron</i> ist ein Varg, der Zahanjin das Leben rettete, als
+        es dem Gnom ans Leder ging. Ein <i>Splitterträgerjäger</i> kam
+        dabei ums Leben. Zu diesem Zeitpunkt war Zahanjin zwar schon
+        unterwegs mit <i>Brekwart</i>, der aber in edleren Gaststätten
+        einkehrt und nicht zugegen war.
+      </p>
+    </note>
+  </char>
+  <char rules="SM" id="SMPC3006" permit="true">
+    <tagged>Splittermond</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Bibi"/>
+    <attribute name="XPTotal" value="161"/>
+    <attribute name="Mondzeichen" value="Geist der Gedanken"/>
+    <attribute name="Ausbildung" value="Hexer"/>
+    <attribute name="Schwächen" value="Abergläubisch"/>
+    <skill name="Handgemenge" type="combat" value="0"/>
+    <skill name="Hiebwaffen" type="combat" value="0"/>
+    <skill name="Kettenwaffen" type="combat" value="0"/>
+    <skill name="Klingenwaffen" type="combat" value="0"/>
+    <skill name="Stangenwaffen" type="combat" value="0"/>
+    <skill name="Schusswaffen" type="combat" value="0"/>
+    <skill name="Wurfwaffen" type="combat" value="0"/>
+    <image type="marker" file="/data/markers/pcs/bibi.png"/>
+    <note type="Background">
+      <p>
+        Bibi stammt aus den selenianischen Wäldern mit mythischen
+        Tierahnen.  Sie redet gerne Tieren, was auch als
+        Selbstgespräche fehlgedeutet wird.  Dank ihrer Mutter ist Bibi
+        Mitglied im Kult der Hekaria.  Einen Namen hat Bibi
+        ursprünglich nie bekommen, damit er auf keinen Fall den Feen
+        verraten würde.  Um die Neugier der Leute zu befriedigen,
+        denke ich sie sich jeden Tag einen Namen aus und wählt eine
+        passende Haarfarbe zu diesem neuen Ich.
+      </p>
+      <p>
+        Ihre Mutter war ständig auf der Flucht, wahrscheinlich vor
+        Drachlingen.  Von ihrem Mentor, auch er ein Namenloser, hat
+        sie Alchemie gelernt.  Obwohl ihr Bekanntenkreis sie für
+        heldenhaft hält, glaubt Bibi selbst eher, sie müsse den Helden
+        der Prophezeiung finden und ihn unterstützen.
+      </p>
+      <p>
+        In der Zivilisation ist sie als Hinterwäldler anfangs häufig
+        angeeckt. Ihre Kräuter seien illegale Drogen. (Jedenfalls hat
+        mich einer der Mitabenteurer aus solchen Schwierigkeiten
+        herausgeboxt.  Umgekehrt konnte ich einem anderen
+        Mitabenteurer in der Not beistehen, indem ich ihn geheilt
+        habe.  Und in einen der Mitabenteurer habe ich mich
+        unglücklich verliebt.
+      </p>
+    </note>
+  </char>
+  <char rules="SM" id="SMPC3004" permit="true">
+    <tagged>Splittermond</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Bruce"/>
+    <attribute name="XPTotal" value="152"/>
+    <skill name="Handgemenge" type="combat" value="0"/>
+    <skill name="Hiebwaffen" type="combat" value="0"/>
+    <skill name="Kettenwaffen" type="combat" value="0"/>
+    <skill name="Klingenwaffen" type="combat" value="0"/>
+    <skill name="Stangenwaffen" type="combat" value="0"/>
+    <skill name="Schusswaffen" type="combat" value="0"/>
+    <skill name="Wurfwaffen" type="combat" value="0"/>
+    <image type="marker" file="/data/markers/pcs/bruce.png"/>
+    <image type="portrait" file="/data/portraits/bruce.png"/>
+    <note type="background">
+      <p>
+        Bruce von Rabenfels aus einem Landgut im Norden von Selenia.
+        Bruce als zweitgeborenem Sohn, nach seinem Bruder Bill, fiel
+        es zu statt der primären, die sekundäre, magische
+        Familientradition fortzusetzen.  Er lernte die magischen
+        Künste vor allem von seiner Mutter Marta.  Sein Vater John war
+        für die primäre Familientradition, die Landwirtschaft,
+        zuständig.
+      </p>
+      <p>
+        Mit 15 fand Bruce den Kohlraben Abraxas.  Der Rabe ist zudem
+        das Wappentier derer von Rabenfels. Mit 16 fand Bruce ein halb
+        verhungertes, 10-jähriges Mädchen, das jede Erinnerung an
+        seine Herkunft und sogar seinen Namen verloren hatte. Es trug
+        jedoch goldene Kette mit den Buchstaben FIONA. Bruce kümmerte
+        sich um das Mädchen, das langsam Vertrauen zu ihm fasste und
+        die Sprache erlernte.  Fiona ist inzwischen eine durchaus
+        selbsständige, hübsche junge Frau geworden, die sich Bruce
+        verbunden fühlt. Sie sieht zu Bruce auf und folgt ihm, wohin
+        er geht. Bruce kümmert sich gewissenhaft um Fiona, denn er
+        will, dass es ihr gut geht.
+      </p>
+      <p>
+        Bruce will nun über den Tellerrand schauen und eventuell
+        andere Splitterträger finden.  Abraxas und Fiona begleiten ihn
+        auf seiner Suche in die weite Welt.  Seine erste Station war
+        Sarnburg, wo er ihn zum ersten Mal seine Attraktivität im
+        Stich gelassen hat. Seine Avancen einer Hofdame gegenüber
+        wurden unsanft durch einen Schwall kalten Wassers abgewiesen.
+        Neben sich in derselben Pfütze befand sich Brekwart. Beim
+        gemeinsamen Wundenlecken stellte sich heraus, dass auch er
+        Splitterträger ist.  Gemeinsam zogen sie weiter nach Südosten.
+      </p>
+    </note>
+  </char>
+  <char rules="SM" id="SMPC3005" permit="true">
+    <tagged>Splittermond</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Andreas"/>
+    <attribute name="XPTotal" value="89"/>
+  </char>
+</data>
+<!--
+  Brekwart: Zahanjin, Bruce
+  Zahanjin: Brekwart, Teron
+  Teron: Zahanjin
+  Bruce: Brekwart
+  Bibi:
+-->

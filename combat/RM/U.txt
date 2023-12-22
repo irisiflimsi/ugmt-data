@@ -1,0 +1,95 @@
+5   Nary a thing extra. +0 hits
+    Fairly weak. +0 zip.
+    Nope.
+    +1 hit.
+    +2 hits.
+10  Sorry pal, maybe next time.
+    +1 hit
+    +2 hits.
+    +3 hits.
+    +5 hits.
+15  Glancing strike. +3 hits.
+    Lame side strike. +4 hits.
+    Weak blow. +5 hits.
+    Back strike. +6 hits.
+    Blow to back. +7 hits.
+20  Foe must parry next rnd.
+    Glancing side blow. +4 hits and foe must parry next rnd.
+    Side strike. Foe must parry next rnd. +5 hits.
+    Blow to foe's side. Foe is at -10 next rnd. +7 hits.
+    Side blow. Foe is at -20 next rnd. +8 hits.
+35  On line, but weak. Foe must parry next rnd. +4 hits.
+    Foe is unbalanced and is at -20 next rnd. +5 hits.
+    Chest strike. Foe is stunned next rnd. +6 hits.
+    Blow is weak but stuns foe for next rnd. +8 hits.
+    Blow cracks ribs. Foe is stunned and at -10 next rnd. +9 hits.
+45  Break foe's concentration. You have initiative next rnd. +4 hits.
+    Leg strike unsteadies foe. +5 hits. You have initiative next rnd. Foe is at -5 for 2 rnds.
+    Blow to leg. Foe is at -40 next rnd. +5 hits.
+    Calf strike. Foe's hurt muscle impairs maneuvers by -25. You have initiative next rnd. +7 hits.
+    Hard, glancing blow to leg. If leg armor, +10 hits. If not, +12 hits and foe stunned 2 rnds.
+50  Back strike. +5 hits. Foe must parry next rnd at -10. Good, glancing shot.
+    Back hit forces foe to parry next rnd at -20. +5 hits.
+    Lower back strike. Foe reels and is stunned and unable to parry next rnd. +5 hits.
+    Blow to back spins foe. +8 hits and foe is stunned and unable to parry next rnd.
+    Strong back blow staggers foe. +12 hits. Foe is stunned and is unable to parry next rnd.
+55  Chest strike knocks foe back. Foe must parry next rnd at -20. +5 hits.
+    Blow stuns foe for next rnd. +5 hits.
+    Blast staggers foe. +6 hits and foe is stunned and unable to parry next rnd.
+    Chest strike takes wind out of foe. +10 hits. Foe is stunned and unable to parry next rnd.
+    Foe is knocked down. +12 hits. Foe is stunned and sadly unable to parry next rnd.
+60  Glancing leg strike. If foe has leg armor, +5 hits. If not, +7 hits and foe is stunned next rnd.
+    Thigh strike bruises foe. +6 hits. Foe is forced to parry at -30 next rnd.
+    Calf strike. If leg armor, +7 hits. If not, +9 hits, foe is stunned 2 rnds, and at -10.
+    Thigh strike. +12 hits. Foe is stunned for 2 rnds. You have initiative next 3 rnds.
+    Glancing strike to leg. Foe is stunned for 3 rnds. +14 hits.
+65  Arm strike. Foe is stunned for next rnd. +6 hits.
+    Forearm strike disarms foe. +6 hits.
+    Shoulder strike disarms foe and leaves foe stunned for 2 rnds. +6 hits.
+    Arm strike disarms foe. Foe is stunned for 2 rounds. Add 20 to next action. +7 hits.
+    Blow to shoulder spins foe. +13 hits. Foe is stunned and unable to parry for 2 rnds.
+66  Shoulder strike sends foe spinning. +7 hits. Foe is stunned and unable to parry for 2 rnds while regaining bearings.
+    Elbow strike numbs foe's forearm. +8 hits. Foe drops his weapon and is stunned and unable to parry 2 rnds.
+    Knee strike knocks foe down. +9 hits. Foe is at -80 due to broken knee and is stunned and unable to parry 3 rnds.
+    Hard hit strike. If foe has helm, he is knocked back 10' and stunned for 6 rnds. If not, foe is knocked out for 24 hours.
+    Foe is knocked down and is unconscious. +30 hits.
+70  Chest strike unbalances foe. +6 hits. Foe is unbalanced and fights at -50 for 2 rnds.
+    Blow to foe's chest. +7 hits. Confused foe is stunned and unable to parry next rnd.
+    Strike to chest. Foe is at -20 due to broken ribs. +8 hits. Foe is stunned for 2 rnds.
+    Shoulder strike spins foe. +10 hits. Foe is at -25 due to a broken collar bone and is stunned and unable to parry next rnd.
+    Shoulder blast knocks foe down. Foe is stunned and unable to parry for 2 rnds and is at -10 due to minor fracture.
+75  Blow to foe's lower leg. Foe is stunned for 2 rounds. +7 hits.
+    Blow bruises foe's calf. Foe is stunned next round. +9 hits. Foe is at -10.
+    Bruise foe's leg. +10 hits. Foe is stunned and unable to parry next round. Foe operates at -20.
+    Blow break foe's leg. Foe moves at -75. +12 hits. Foe is stunned and unable to parry next rnd.
+    Hard blow to foe's thigh knocks foe down. +15 hits. Foe stunned and unable to parry 3 rnds.
+80  Blow to shield arm. If foe has a shield, it is torn away and +8 hits. If not, +12 hits and foe is stunned for 2 rnds.
+    Strike to foe's shield arm. Foe is stunned for 2 rnds and is knocked backwards 5'. +10 hits. Foe is at -10.
+    Strike to foe's weapon arm. Foe is knocked back 5' and is stunned for 3 rnds. +11 hits. Slight fracture. Foe is at -25.
+    Strong blow to foe's weapon arm. Foe is knocked back 10'. +10 hits. Foe is at -25 and drops weapon. Foe is stunned for 3 rnds.
+    Strike to foe's shield arm. Foe stumbles back 3' and falls down. +15 hits. Foe is stunned and unable to parry for 4 rnds and is disarmed.
+85  Side strike. +12 hits. Foe is stunned and unable to parry next rnd. Add +10 to your next roll.
+    Blow to foe's side. Foe is knocked sideways 3' and is stunned for 3 rnds. +15 hits.
+    Shot to side knocks foe 5' sideways. Foe drops anything carried in shield hand (and any shield) and is stunned for 6 rnds.
+    Strike to foe's shield side knocks foe 5' sideways. Foe breaks ankle and falls down. Foe is at -50. +11 hits.
+    Awesome side shot sends foe sideways. Foe breaks leg and rolls 5'. Foe is at -50, is stunned and unable to parry 6 rnds.
+90  Blow to back. Foe stumbles 5' sideways and it stunned for 3 rnds. +13 hits. Add +20 to your next roll.
+    Strike to foe's back knocks foe sideways 10'. +12 hits. Foe is stunned and unable to parry for 2 rnds.
+    Precise back strike knocks foe down. Foe is disarmed and stunned for 6 rnds. +14 hits. Add +20 to your next roll.
+    Brutal back strike knocks foe down. +12 hits. Foe is disarmed and stunned and unable to parry for 4 rnds.
+    Cruel head strike.. Foe sees stars. +20 hits. Foe is knocked 10' backwards and is stunned and unable to parry 12 rnds.
+95  Head strike breaks foe's nose. If foe has helm, he is stunned 3 rnds. If not, foe is knocked out for at least 2 hours.
+    Blow to side of foe's head crushes ear area. Foe is stunned for 6 rnds. +9 hits. Foe is at -50 for 3 weeks; impaired balance.
+    Side strike spins foe 10' sideways. Foe must roll on appropriate fumble table next 3 rnds. +8 hits.
+    Strike to foe's arm. If foe has shield, he loses it and take +10 hits. If not foe's arm is useless and he is stunned for 9 rnds.
+    Blow to foe's shield shoulder. If foe has shield, he is stunned 6 rnds. If not, he is knocked down, has a useless arm, passes out.
+99  Nicely placed strike sends foe sprawling on his face. +10 hits. Foe is stunned and unable to parry for 3 rnds.
+    Side strike causes foe to stumble to an embarrassing prone position. Foe in stunned and unable to parry 6 rnds.
+    Smooth and snazzy strike sends foe to his knees. If foe was using 1-hand weapon, it is thrown backwards 10'. Foe is stunned 24 hours.
+    Strike to foe's head sends him 10' backwards. If helmed, +9 hits, the helm is destroyed, and foe stunned 6 rnds. If not, foe is in a coma for 4 weeks.
+    Pinpoint strike breaks foe's neck. Foe falls back 5' spins, and stumbles to the ground. Foe dies of shock and suffocation in 3 rnds.
+100 Brutal hip strike knocks foe down, tears tendon and shatters joint. Foe stunned and unable to parry for 9 hours. Leg useless, foe is at -90.
+    Inspired back strike sends foe flying 10' and onto his face. Severe nerve damage. Foe is paralyzed from waist down.
+    Upper chest strike knocks foe 10' sideways. Foe falls down and breaks both arms. Foe is sent into a 2 month coma.
+    Savage blow to foe's head knocks foe down. Foe falls into coma and dies in 12 rnds due to severed vein. Add +20 next roll.
+    Frightening strike to foe's temple knocks foe back 20'. Foe dies instantly. Add +20 to your next 3 rolls. Be kind now.

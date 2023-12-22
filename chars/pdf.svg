@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.2">
+
+  <pageSet>
+     
+     <!-- here is the first page -->
+     <page>
+       <circle cx="100" cy="100" r="20" fill="blue"/>
+     </page>
+
+     <!-- here is the second page -->
+     <page>
+       <rect x="100" y="100" width="20" height="20"
+             fill="red"/>
+     </page>
+
+  </pageSet>
+
+</svg>
+

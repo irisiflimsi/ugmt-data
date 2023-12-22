@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+  <template name="Synopsis" file="synopsis.html"/>
+  <template name="Skills" file="skills.html"/>
+  <template name="Page 1" file="char1.svg"/>
+  <template name="Page 2" file="char2.svg"/>
+  <template name="Page 3" file="char3.svg"/>
+</templates>

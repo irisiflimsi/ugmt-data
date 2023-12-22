@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="S9">
+  <section name="Sekundär">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Größe"/>
+    <skill name="Bewegung"/>
+    <skill name="Abwehr"/>
+    <skill name="Wahrnehmung"/>
+    <skill name="Gesundheit"/>
+    <skill name="Initiative"/>
+  </section>
+  <section name="Fertigkeit">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Waffenlos"/>
+    <skill name="Sportlichkeit"/>
+    <skill name="Heimlichkeit"/>
+    <skill name="Überleben"/>
+    <skill name="Klettern"/>
+    <skill name="Empathie"/>
+    <skill name="Werfen"/>
+    <skill name="Beobachtung"/>
+    <skill name="Eloquenz"/>
+    <skill name="Linguistik"/>
+    <skill name="Pilot"/>
+    <skill name="Nahkampf"/>
+    <skill name="Zielen"/>
+    <skill name="Kannonier"/>
+    <skill name="Verhandeln"/>
+    <skill name="Reiten"/>
+    <skill name="Anführen"/>
+    <skill name="Fieldcraft"/>
+    <skill name="Mechanik"/>
+    <skill name="Schwimmen"/>
+    <skill name="Wissenschaft"/>
+    <skill name="Theater"/>
+    <skill name="Medizin"/>
+    <skill name="Kriminalität"/>
+    <skill name="Spuren Lesen"/>
+  </section>
+  <section name="Waffen">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Kopfstoss"/>
+    <skill name="Niedertrampeln"/>
+    <skill name="Biss"/>
+    <skill name="Stachel"/>
+    <skill name="Steinwurf"/>
+    <skill name="Hieb"/>
+    <skill name="Tritt"/>
+    <skill name="Schlag"/>
+    <skill name="Schwanz"/>
+    <skill name="Umschlingen"/>
+    <skill name="Klaue"/>
+    <skill name="Tentakel"/>
+    <skill name="Greifen"/>
+  </section>
+</rules>

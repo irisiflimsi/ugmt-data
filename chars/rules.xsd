@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="rules">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="armor" type="armor"/>
+        <xs:element name="attribute" type="attribute"/>
+        <xs:element name="class" type="class"/>
+        <xs:element name="gear" type="gear"/>
+        <xs:element name="race" type="race"/>
+        <xs:element name="section" type="section"/>
+        <xs:element name="spell" type="spell"/>
+        <xs:element name="table" type="table"/>
+      </xs:choice>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="root">
+    <xs:attribute name="name" type="xs:string" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="gear">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="modifier" type="modifier"/>
+      <xs:element name="equipment" type="equipment"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="atype">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:attribute name="max"/>
+        <xs:attribute name="min"/>
+        <xs:attribute name="missile"/>
+        <xs:attribute name="pace"/>
+        <xs:attribute name="quickness"/>
+        <xs:attribute name="type"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="table">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="row" type="row"/>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="attribute">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:attribute name="rule"/>
+        <xs:attribute name="value"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="section">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="skill" type="skill"/>
+          <xs:element name="modifier" type="modifier"/>
+        </xs:choice>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="skill">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="skill" type="skill"/>
+        </xs:choice>
+        <xs:attribute name="Alchimist"/>
+        <xs:attribute name="Animist"/>
+        <xs:attribute name="Archmage"/>
+        <xs:attribute name="Astrologer"/>
+        <xs:attribute name="Bard"/>
+        <xs:attribute name="Cleric"/>
+        <xs:attribute name="Delver"/>
+        <xs:attribute name="Fighter"/>
+        <xs:attribute name="Healer"/>
+        <xs:attribute name="Hunter"/>
+        <xs:attribute name="Illusionist"/>
+        <xs:attribute name="LayHealer"/>
+        <xs:attribute name="Magician"/>
+        <xs:attribute name="Mentalist"/>
+        <xs:attribute name="Monk"/>
+        <xs:attribute name="Mystic"/>
+        <xs:attribute name="Nightblade"/>
+        <xs:attribute name="NoProfession"/>
+        <xs:attribute name="Paladin"/>
+        <xs:attribute name="Ranger"/>
+        <xs:attribute name="Rogue"/>
+        <xs:attribute name="Seer"/>
+        <xs:attribute name="Sorcerer"/>
+        <xs:attribute name="Thief"/>
+        <xs:attribute name="WarriorMonk"/>
+        <xs:attribute name="attr"/>
+        <xs:attribute name="branch"/>
+        <xs:attribute name="cost"/>
+        <xs:attribute name="imply"/>
+        <xs:attribute name="misc"/>
+        <xs:attribute name="learn1"/>
+        <xs:attribute name="learn2"/>
+        <xs:attribute name="learn3"/>
+        <xs:attribute name="class"/>
+        <xs:attribute name="oml"/>
+        <xs:attribute name="related"/>
+        <xs:attribute name="rule"/>
+        <xs:attribute name="skill"/>
+        <xs:attribute name="special"/>
+        <xs:attribute name="sun"/>
+        <xs:attribute name="total"/>
+        <xs:attribute name="train"/>
+        <xs:attribute name="value"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="modifier">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:attribute name="value"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="spell">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:attribute name="attr"/>
+        <xs:attribute name="description"/>
+        <xs:attribute name="cast"/>
+        <xs:attribute name="duration"/>
+        <xs:attribute name="focus"/>
+        <xs:attribute name="ingredients"/>
+        <xs:attribute name="learn"/>
+        <xs:attribute name="level"/>
+        <xs:attribute name="range"/>
+        <xs:attribute name="school"/>
+        <xs:attribute name="time"/>
+        <xs:attribute name="value"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="race">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="attribute" type="attribute"/>
+          <xs:element name="skill" type="skill"/>
+        </xs:choice>
+        <xs:attribute name="GK"/>
+        <xs:attribute name="experience"/>
+        <xs:attribute name="move"/>
+        <xs:attribute name="size"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="class">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="attribute" type="attribute"/>
+          <xs:element name="levels" type="levels"/>
+          <xs:element name="skill" type="skill"/>
+        </xs:choice>
+        <xs:attribute name="Academic"/>
+        <xs:attribute name="Athletic"/>
+        <xs:attribute name="BAR"/>
+        <xs:attribute name="Body"/>
+        <xs:attribute name="Combat"/>
+        <xs:attribute name="Concentration"/>
+        <xs:attribute name="Directed"/>
+        <xs:attribute name="General"/>
+        <xs:attribute name="Linguistic"/>
+        <xs:attribute name="Magical"/>
+        <xs:attribute name="Medical"/>
+        <xs:attribute name="Outdoor"/>
+        <xs:attribute name="Perception"/>
+        <xs:attribute name="Subterfuge"/>
+        <xs:attribute name="experience"/>
+        <xs:attribute name="mod"/>
+        <xs:attribute name="ranks"/>
+        <xs:attribute name="realms"/>
+        <xs:attribute name="type"/>
+        <xs:attribute name="value"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="levels">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="attribute" type="attribute"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="values">
+    <xs:attribute name="values"/>
+  </xs:complexType>
+
+  <xs:complexType name="row">
+    <xs:attribute name="key0" use="required"/>
+    <xs:attribute name="key1" use="optional"/>
+    <xs:attribute name="value" use="required"/>
+  </xs:complexType>
+
+  <xs:complexType name="armor">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="atype" type="atype"/>
+    </xs:choice>
+  </xs:complexType>
+
+  <xs:complexType name="equipment">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:attribute name="ap"/> <!-- armor points -->
+        <xs:attribute name="attr"/> <!-- attributes used -->
+        <xs:attribute name="sattr"/> <!-- damage attributes used -->
+        <xs:attribute name="category"/>
+        <xs:attribute name="class"/>
+        <xs:attribute name="clip"/>
+        <xs:attribute name="crit"/>
+        <xs:attribute name="damage"/>
+        <xs:attribute name="damageK"/> <!-- damage for K -->
+        <xs:attribute name="damageMG"/> <!-- damage for MG -->
+        <xs:attribute name="enc"/> <!-- weight -->
+        <xs:attribute name="group"/>
+        <xs:attribute name="location"/>
+        <xs:attribute name="mal"/>
+        <xs:attribute name="smal"/>
+        <xs:attribute name="smod"/>
+        <xs:attribute name="maxdex"/>
+        <xs:attribute name="mod"/>
+        <xs:attribute name="munition"/>
+        <xs:attribute name="pen"/>
+        <xs:attribute name="qualities"/>
+        <xs:attribute name="range"/>
+        <xs:attribute name="reload"/>
+        <xs:attribute name="rof"/>
+        <xs:attribute name="skill"/> <!-- skill used -->
+        <xs:attribute name="special"/>
+        <xs:attribute name="type"/> <!-- equipment type -->
+        <xs:attribute name="wtype"/> <!-- weapon type -->
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

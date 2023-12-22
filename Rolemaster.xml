@@ -1,0 +1,1182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./ugmt.xsd">
+  <char rules="RM" id="PC3458" permit="true">
+    <tagged>Rolemaster</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Apolithe Uwawori"/>
+    <attribute name="CoTp" value="79"/>
+    <attribute name="CoP" value="79"/>
+    <attribute name="AgTp" value="94"/>
+    <attribute name="AgP" value="94"/>
+    <attribute name="SDTp" value="90"/>
+    <attribute name="SDP" value="90"/>
+    <attribute name="MeTp" value="82"/>
+    <attribute name="MeP" value="82"/>
+    <attribute name="ReTp" value="68"/>
+    <attribute name="ReP" value="68"/>
+    <attribute name="StTp" value="85"/>
+    <attribute name="StP" value="85"/>
+    <attribute name="QuTp" value="93"/>
+    <attribute name="QuP" value="94"/>
+    <attribute name="PrTp" value="101"/>
+    <attribute name="PrP" value="101"/>
+    <attribute name="EmTp" value="53"/>
+    <attribute name="EmP" value="53"/>
+    <attribute name="InTp" value="51"/>
+    <attribute name="InP" value="51"/>
+    <attribute name="SDM" value="5"/>
+    <attribute name="StM" value="5"/>
+    <attribute name="Race" value="Human, Mongol"/>
+    <attribute name="Nationality" value="Mongolian"/>
+    <attribute name="Culture" value="Tribal"/>
+    <attribute name="Eye Color" value="black"/>
+    <attribute name="Hair Color" value="black"/>
+    <attribute name="Gender" value="Female"/>
+    <attribute name="Age" value="24"/>
+    <attribute name="Profession" value="Mentalist"/>
+    <attribute name="ExpPoints" value="181178"/>
+    <attribute name="AT" value="11"/>
+    <attribute name="Height" value="70"/>
+    <attribute name="Weight" value="151"/>
+    <attribute name="Birthdate" value="19.3.100"/>
+    <skill name="Acrobatics" ranks="1"/>
+    <skill name="Track &amp; Field" ranks="0"/>
+    <skill name="Climbing" ranks="1"/>
+    <skill name="Contortions" ranks="0"/>
+    <skill name="Diving" ranks="0"/>
+    <skill name="Fly &amp; Glide" ranks="0"/>
+    <skill name="Rowing" ranks="0"/>
+    <skill name="Run, Distance" ranks="1"/>
+    <skill name="Run, Sprint" ranks="1"/>
+    <skill name="Swimming" ranks="1"/>
+    <skill name="Tumbling" ranks="0"/>
+    <skill name="Heavy Athletics" ranks="0"/>
+    <skill name="Dance" ranks="0"/>
+    <skill name="Juggling" ranks="0"/>
+    <skill name="Sailing" ranks="0"/>
+    <skill name="Skiing" ranks="0"/>
+    <skill name="Appraisal" ranks="0"/>
+    <skill name="Cookery" ranks="1"/>
+    <skill name="Rope Mastery" ranks="0"/>
+    <skill name="Fletching" ranks="0"/>
+    <skill name="Gimmickry" ranks="0"/>
+    <skill name="Gambling" ranks="0"/>
+    <skill name="Seduction" ranks="0"/>
+    <skill name="Working, Leather" ranks="0"/>
+    <skill name="Working, Stone" ranks="0"/>
+    <skill name="Working, Metal" ranks="0"/>
+    <skill name="Working, Wood" ranks="0"/>
+    <skill name="Locate S-Openings" ranks="2"/>
+    <skill name="General Perception" ranks="11"/>
+    <skill name="Surveillance" ranks="4"/>
+    <skill name="Time Sense" ranks="4"/>
+    <skill name="Tracking" ranks="0"/>
+    <skill name="Adrenal Moves/Balance" ranks="0"/>
+    <skill name="Adrenal Moves/Landing" ranks="0"/>
+    <skill name="Adrenal Moves/Leaping" ranks="0"/>
+    <skill name="Adrenal Moves/Quick Draw" ranks="0"/>
+    <skill name="Adrenal Moves/Speed" ranks="0"/>
+    <skill name="Adrenal Moves/Strength" ranks="0"/>
+    <skill name="Lycanthropy" ranks="0"/>
+    <skill name="Frenzy" ranks="0"/>
+    <skill name="Meditation/Heal" ranks="0"/>
+    <skill name="Meditation/Ki" ranks="5"/>
+    <skill name="Meditation/Sleep" ranks="9"/>
+    <skill name="Meditation/Trance" ranks="9"/>
+    <skill name="Acting" ranks="0"/>
+    <skill name="Disarm Traps" ranks="0"/>
+    <skill name="Falsification" ranks="0"/>
+    <skill name="Hide &amp; Stalk" ranks="1"/>
+    <skill name="Pick Locks" ranks="0"/>
+    <skill name="Pick Pockets" ranks="0"/>
+    <skill name="Trickery" ranks="0"/>
+    <skill name="Trap Building" ranks="0"/>
+    <skill name="Channeling" ranks="0"/>
+    <skill name="Power Perception" ranks="5"/>
+    <skill name="Runes" ranks="5"/>
+    <skill name="Staves &amp; Wands" ranks="6"/>
+    <skill name="Spell Mastery/Concentration" ranks="10"/>
+    <skill name="Spell Mastery/Penetration" ranks="0"/>
+    <skill name="Spell Mastery/Targeting" ranks="0"/>
+    <skill name="Animal Healing" ranks="0"/>
+    <skill name="First Aid" ranks="5"/>
+    <skill name="Herb Mastery" ranks="0"/>
+    <skill name="Midwifery" ranks="0"/>
+    <skill name="Poetic Improv." ranks="0"/>
+    <skill name="Ventriloquism" ranks="0"/>
+    <skill name="Singing" ranks="0"/>
+    <skill name="Public Speaking" ranks="2"/>
+    <skill name="Signaling" ranks="0"/>
+    <skill name="Animal Handling" ranks="0"/>
+    <skill name="Caving" ranks="0"/>
+    <skill name="Herding" ranks="0"/>
+    <skill name="Foraging" ranks="1"/>
+    <skill name="Architecture" ranks="0"/>
+    <skill name="Chemistry" ranks="1"/>
+    <skill name="Heraldry" ranks="0"/>
+    <skill name="Mathematics" ranks="1"/>
+    <skill name="Mining" ranks="0"/>
+    <skill name="Navigation" ranks="2"/>
+    <skill name="Star Gazing" ranks="1"/>
+    <skill name="Tactics, Land" ranks="0" misc="10"/>
+    <skill name="Tactics, Water" ranks="0" misc="10"/>
+    <skill name="Weather Watching" ranks="0"/>
+    <skill name="Soft Leather" ranks="0"/>
+    <skill name="Rigid Leather" ranks="12"/>
+    <skill name="Chain" ranks="0"/>
+    <skill name="Plate" ranks="0"/>
+    <skill name="Ambush" ranks="0"/>
+    <skill name="Adrenal Defense" ranks="0"/>
+    <skill name="Body Development" ranks="12"/>
+    <skill name="Weapon1/1-h edged" ranks="10" misc="5"/>
+    <skill name="Weapon2/Bows" ranks="4" misc="5"/>
+    <skill name="Weapon3/Thrown arms" ranks="0" misc="5"/>
+    <skill name="Weapon4/1-h crushing" ranks="0" misc="5"/>
+    <skill name="Weapon5/2-h" ranks="0" misc="5"/>
+    <skill name="Weapon6/Pole arms" ranks="0" misc="5"/>
+    <skill name="Brawling" ranks="0"/>
+    <skill name="Grappling Hook" ranks="0"/>
+    <skill name="MA, Strikes Rk 1" ranks="0"/>
+    <skill name="MA, Strikes Rk 2" ranks="0"/>
+    <skill name="MA, Strikes Rk 3" ranks="0"/>
+    <skill name="MA, Strikes Rk 4" ranks="0"/>
+    <skill name="MA, Throws Rk 1" ranks="0"/>
+    <skill name="MA, Throws Rk 2" ranks="0"/>
+    <skill name="MA, Throws Rk 3" ranks="0"/>
+    <skill name="MA, Throws Rk 4" ranks="0"/>
+    <skill name="Subduing" ranks="0"/>
+    <skill name="Reverse Stroke" ranks="0"/>
+    <skill name="Yado" ranks="0"/>
+    <skill name="Crafting" ranks="0"/>
+    <skill name="Instrument" ranks="0"/>
+    <skill name="Lip Reading" ranks="0"/>
+    <skill name="Artillery" ranks="0"/>
+    <skill name="Disarming" ranks="0"/>
+    <skill name="Animal Training" ranks="0"/>
+    <skill name="Riding, Horse" ranks="1"/>
+    <skill name="Tact. Games" ranks="0"/>
+    <skill name="Mongolian" ranks="7/6"/>
+    <spell type="Mentalism" name="Self Healing" value="1 - 10"/>
+    <spell type="Mentalism" name="Sense Control" value="1 - 10"/>
+    <spell type="Mentalism" name="Movement" value="1 - 10"/>
+    <spell type="Mentalism" name="Sense Mastery" value="1 - 10"/>
+    <spell type="Mentalism" name="Presence" value="1 - 20"/>
+    <spell type="Mentalism" name="Mind Attack" value="1 - 10"/>
+    <spell type="Mentalism" name="Cloaking" value="1 - 10"/>
+    <spell type="Mentalism" name="Attack Avoidance" value="1 - 10"/>
+    <spell type="Mentalism" name="Mind Control" value="1 - 10"/>
+    <spell type="Mentalism" name="Speed" learn="1 - 10"/>
+    <spell type="Mentalism" name="Mind's Door" learn="1 - 10"/>
+    <spell type="Mentalism" name="Brilliance" learn="1 - 10"/>
+    <note type="short1">Birthday: 19.3.00 (Monkey)</note>
+    <note type="short2">short hair</note>
+    <note type="short3">Griffin: 70502 XP (Level 6)</note>
+    <image type="portrait" file="data/portraits/Apolithe.jpg"/>
+  </char>
+  <char rules="RM" id="PC1758" permit="true">
+    <tagged>Rolemaster</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Makasi Uwawori"/>
+    <attribute name="CoTp" value="100"/>
+    <attribute name="AgTp" value="90"/>
+    <attribute name="SDTp" value="87"/>
+    <attribute name="MeTp" value="85"/>
+    <attribute name="ReTp" value="83"/>
+    <attribute name="StTp" value="100"/>
+    <attribute name="QuTp" value="91"/>
+    <attribute name="PrTp" value="101"/>
+    <attribute name="EmTp" value="71"/>
+    <attribute name="InTp" value="60"/>
+    <attribute name="CoP" value="101"/>
+    <attribute name="AgP" value="90"/>
+    <attribute name="SDP" value="87"/>
+    <attribute name="MeP" value="85"/>
+    <attribute name="ReP" value="83"/>
+    <attribute name="StP" value="100"/>
+    <attribute name="QuP" value="91"/>
+    <attribute name="PrP" value="101"/>
+    <attribute name="EmP" value="71"/>
+    <attribute name="InP" value="62"/>
+    <attribute name="AgM" value="5"/>
+    <attribute name="SDM" value="5"/>
+    <attribute name="ReM" value="5"/>
+    <attribute name="Birthdate" value="14.7.101"/>
+    <attribute name="Race" value="Human, Mongol"/>
+    <attribute name="Nationality" value="Mongolian"/>
+    <attribute name="Culture" value="Tribal"/>
+    <attribute name="Eye Color" value="black"/>
+    <attribute name="Hair Color" value="black"/>
+    <attribute name="Gender" value="Female"/>
+    <attribute name="Age" value="23"/>
+    <attribute name="Profession" value="Nightblade"/>
+    <attribute name="ExpPoints" value="204157"/>
+    <attribute name="AT" value="1"/>
+    <attribute name="Height" value="70"/>
+    <attribute name="Weight" value="165"/>
+    <skill name="Acrobatics" ranks="7"/>
+    <skill name="Track &amp; Field" ranks="2"/>
+    <skill name="Climbing" ranks="1"/>
+    <skill name="Contortions" ranks="7"/>
+    <skill name="Diving" ranks="1"/>
+    <skill name="Fly &amp; Glide" ranks="4"/>
+    <skill name="Rowing" ranks="3"/>
+    <skill name="Run, Distance" ranks="13"/>
+    <skill name="Run, Sprint" ranks="13"/>
+    <skill name="Swimming" ranks="6"/>
+    <skill name="Tumbling" ranks="12"/>
+    <skill name="Heavy Athletics" ranks="1"/>
+    <skill name="Dance" ranks="1"/>
+    <skill name="Juggling" ranks="1"/>
+    <skill name="Sailing" ranks="1"/>
+    <skill name="Skiing" ranks="0"/>
+    <skill name="Appraisal" ranks="7"/>
+    <skill name="Cookery" ranks="4"/>
+    <skill name="Rope Mastery" ranks="2"/>
+    <skill name="Fletching" ranks="0"/>
+    <skill name="Gimmickry" ranks="0"/>
+    <skill name="Gambling" ranks="6"/>
+    <skill name="Seduction" ranks="0"/>
+    <skill name="Working, Leather" ranks="1"/>
+    <skill name="Working, Stone" ranks="0"/>
+    <skill name="Working, Metal" ranks="1"/>
+    <skill name="Working, Wood" ranks="0"/>
+    <skill name="Locate S-Openings" ranks="7"/>
+    <skill name="General Perception" ranks="8"/>
+    <skill name="Surveillance" ranks="7"/>
+    <skill name="Time Sense" ranks="5"/>
+    <skill name="Tracking" ranks="0"/>
+    <skill name="Adrenal Moves/Balance" ranks="5"/>
+    <skill name="Adrenal Moves/Landing" ranks="5"/>
+    <skill name="Adrenal Moves/Leaping" ranks="5"/>
+    <skill name="Adrenal Moves/Quick Draw" ranks="4"/>
+    <skill name="Adrenal Moves/Speed" ranks="4"/>
+    <skill name="Adrenal Moves/Strength" ranks="4"/>
+    <skill name="Lycanthropy" ranks="0"/>
+    <skill name="Frenzy" ranks="0"/>
+    <skill name="Meditation/Heal" ranks="0"/>
+    <skill name="Meditation/Ki" ranks="0"/>
+    <skill name="Meditation/Sleep" ranks="0"/>
+    <skill name="Meditation/Trance" ranks="0"/>
+    <skill name="Acting" ranks="2"/>
+    <skill name="Disarm Traps" ranks="1"/>
+    <skill name="Falsification" ranks="8"/>
+    <skill name="Hide &amp; Stalk" ranks="6"/>
+    <skill name="Pick Locks" ranks="1"/>
+    <skill name="Pick Pockets" ranks="5"/>
+    <skill name="Trickery" ranks="4"/>
+    <skill name="Trap Building" ranks="5"/>
+    <skill name="Channeling" ranks="0"/>
+    <skill name="Power Perception" ranks="1"/>
+    <skill name="Runes" ranks="0"/>
+    <skill name="Staves &amp; Wands" ranks="0"/>
+    <skill name="Spell Mastery/Concentration" ranks="0"/>
+    <skill name="Spell Mastery/Penetration" ranks="0"/>
+    <skill name="Spell Mastery/Targeting" ranks="0"/>
+    <skill name="Animal Healing" ranks="0"/>
+    <skill name="First Aid" ranks="2"/>
+    <skill name="Herb Mastery" ranks="3"/>
+    <skill name="Midwifery" ranks="0"/>
+    <skill name="Poetic Improv." ranks="0"/>
+    <skill name="Ventriloquism" ranks="0"/>
+    <skill name="Singing" ranks="1"/>
+    <skill name="Public Speaking" ranks="1"/>
+    <skill name="Signaling" ranks="1"/>
+    <skill name="Animal Handling" ranks="0"/>
+    <skill name="Caving" ranks="0"/>
+    <skill name="Herding" ranks="0"/>
+    <skill name="Foraging" ranks="1"/>
+    <skill name="Architecture" ranks="0"/>
+    <skill name="Chemistry" ranks="3"/>
+    <skill name="Heraldry" ranks="0"/>
+    <skill name="Mathematics" ranks="0"/>
+    <skill name="Mining" ranks="0"/>
+    <skill name="Navigation" ranks="0"/>
+    <skill name="Star Gazing" ranks="0"/>
+    <skill name="Tactics, Land" ranks="1" misc="10"/>
+    <skill name="Tactics, Water" ranks="1" misc="10"/>
+    <skill name="Weather Watching" ranks="0"/>
+    <skill name="Soft Leather" ranks="0"/>
+    <skill name="Rigid Leather" ranks="0"/>
+    <skill name="Chain" ranks="0"/>
+    <skill name="Plate" ranks="0"/>
+    <skill name="Ambush" ranks="6"/>
+    <skill name="Adrenal Defense" ranks="11"/>
+    <skill name="Body Development" ranks="12"/>
+    <skill name="Weapon1/Thrown arms" ranks="0" misc="5"/>
+    <skill name="Dir. Spell/Adrenal Focus I" ranks="11"/>
+    <skill name="Dir. Spell/Adrenal Focus II" ranks="9"/>
+    <skill name="Dir. Spell/Adrenal Focus III" ranks="7"/>
+    <skill name="Weapon2/1-h edged" ranks="0" misc="5"/>
+    <skill name="Weapon3/1-h crushing" ranks="0" misc="5"/>
+    <skill name="Weapon4/2-h" ranks="0" misc="5"/>
+    <skill name="Weapon5/Bows" ranks="0" misc="5"/>
+    <skill name="Weapon6/Pole arms" ranks="0" misc="5"/>
+    <skill name="Brawling" ranks="0"/>
+    <skill name="Grappling Hook" ranks="2"/>
+    <skill name="MA, Strikes Rk 1" ranks="3"/>
+    <skill name="MA, Strikes Rk 2" ranks="0"/>
+    <skill name="MA, Strikes Rk 3" ranks="0"/>
+    <skill name="MA, Strikes Rk 4" ranks="0"/>
+    <skill name="MA, Throws Rk 1" ranks="0"/>
+    <skill name="MA, Throws Rk 2" ranks="0"/>
+    <skill name="MA, Throws Rk 3" ranks="0"/>
+    <skill name="MA, Throws Rk 4" ranks="0"/>
+    <skill name="Subduing" ranks="6"/>
+    <skill name="Reverse Stroke" ranks="0"/>
+    <skill name="Yado" ranks="1"/>
+    <skill name="Crafting" ranks="0"/>
+    <skill name="Instrument" ranks="0"/>
+    <skill name="Lip Reading" ranks="0"/>
+    <skill name="Artillery" ranks="0"/>
+    <skill name="Disarming" ranks="0"/>
+    <skill name="Animal Training" ranks="0"/>
+    <skill name="Riding, Horse" ranks="1"/>
+    <skill name="Riding, Griffon" ranks="2"/>
+    <skill name="Tact. Games" ranks="0"/>
+    <skill name="Mongolian" ranks="7/7"/>
+    <spell type="Mentalism" name="Phantom Move" value="1 - 10"/>
+    <spell type="Mentalism" name="Self Healing" value="1 - 5"/>
+    <spell type="Mentalism" name="Poison Mastery" value="1 - 10"/>
+    <spell type="Mentalism" name="Adrenal Focus" value="1 - 10"/>
+    <spell type="Mentalism" name="Distraction" value="1 - 10"/>
+    <spell type="Mentalism" name="Phantom's Face" value="1 - 20"/>
+    <spell type="Mentalism" name="Phantom Move" value="11 - 20" learn="0%"/>
+    <spell type="Mentalism" name="Brilliance" value="1 - 5" learn="10%"/>
+    <image type="portrait" file="data/portraits/Makasi.jpg"/>
+    <note type="short1">long, curly hair</note>
+    <note type="short2">Birthday: 14.7.01</note>
+    <note type="short3">Language:6/6</note>
+  </char>
+  <char rules="RM" id="PC1754" permit="true">
+    <tagged>Rolemaster</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Kirùn og Manór"/>
+    <attribute name="CoTp" value="92"/>
+    <attribute name="AgTp" value="101"/>
+    <attribute name="SDTp" value="78"/>
+    <attribute name="MeTp" value="86"/>
+    <attribute name="ReTp" value="98"/>
+    <attribute name="StTp" value="98"/>
+    <attribute name="QuTp" value="90"/>
+    <attribute name="PrTp" value="70"/>
+    <attribute name="EmTp" value="88"/>
+    <attribute name="InTp" value="92"/>
+    <attribute name="CoP" value="92"/>
+    <attribute name="AgP" value="101"/>
+    <attribute name="SDP" value="78"/>
+    <attribute name="MeP" value="86"/>
+    <attribute name="ReP" value="98"/>
+    <attribute name="StP" value="98"/>
+    <attribute name="QuP" value="90"/>
+    <attribute name="PrP" value="74"/>
+    <attribute name="EmP" value="90"/>
+    <attribute name="InP" value="92"/>
+    <attribute name="StM" value="5"/>
+    <attribute name="Race" value="Elf, Wood"/>
+    <attribute name="Culture" value="Tribal"/>
+    <attribute name="Eye Color" value="green"/>
+    <attribute name="Hair Color" value="brown"/>
+    <attribute name="Gender" value="Male"/>
+    <attribute name="Profession" value="Thief"/>
+    <attribute name="ExpPoints" value="209189"/>
+    <attribute name="AT" value="13E"/>
+    <attribute name="Height" value="78"/>
+    <attribute name="Weight" value="170"/>
+    <skill name="Acrobatics" ranks="11"/>
+    <skill name="Track &amp; Field" ranks="1"/>
+    <skill name="Climbing" ranks="12"/>
+    <skill name="Contortions" ranks="4"/>
+    <skill name="Diving" ranks="1"/>
+    <skill name="Fly &amp; Glide" ranks="1"/>
+    <skill name="Rowing" ranks="1"/>
+    <skill name="Run, Distance" ranks="13"/>
+    <skill name="Run, Sprint" ranks="13"/>
+    <skill name="Swimming" ranks="10"/>
+    <skill name="Tumbling" ranks="2"/>
+    <skill name="Heavy Athletics" ranks="1"/>
+    <skill name="Dance" ranks="1"/>
+    <skill name="Juggling" ranks="1"/>
+    <skill name="Sailing" ranks="1"/>
+    <skill name="Skiing" ranks="1"/>
+    <skill name="Appraisal" ranks="10"/>
+    <skill name="Cookery" ranks="1"/>
+    <skill name="Rope Mastery" ranks="10"/>
+    <skill name="Fletching" ranks="0"/>
+    <skill name="Gimmickry" ranks="4"/>
+    <skill name="Gambling" ranks="1"/>
+    <skill name="Seduction" ranks="1"/>
+    <skill name="Working, Leather" ranks="7"/>
+    <skill name="Working, Stone" ranks="1"/>
+    <skill name="Working, Metal" ranks="6"/>
+    <skill name="Working, Wood" ranks="7"/>
+    <skill name="Crafting/Arrows" ranks="10"/>
+    <skill name="Crafting/Armor" ranks="10"/>
+    <skill name="Locate S-Openings" ranks="13"/>
+    <skill name="General Perception" ranks="19"/>
+    <skill name="Surveillance" ranks="13"/>
+    <skill name="Time Sense" ranks="13"/>
+    <skill name="Tracking" ranks="13"/>
+    <skill name="Adrenal Moves/Balance" ranks="0"/>
+    <skill name="Adrenal Moves/Landing" ranks="0"/>
+    <skill name="Adrenal Moves/Leaping" ranks="0"/>
+    <skill name="Adrenal Moves/Quick Draw" ranks="0"/>
+    <skill name="Adrenal Moves/Speed" ranks="0"/>
+    <skill name="Adrenal Moves/Strength" ranks="0"/>
+    <skill name="Lycanthropy" ranks="0"/>
+    <skill name="Frenzy" ranks="0"/>
+    <skill name="Meditation/Heal" ranks="0"/>
+    <skill name="Meditation/Ki" ranks="0"/>
+    <skill name="Meditation/Sleep" ranks="0"/>
+    <skill name="Meditation/Trance" ranks="0"/>
+    <skill name="Acting" ranks="5"/>
+    <skill name="Disarm Traps" ranks="13"/>
+    <skill name="Falsification" ranks="7"/>
+    <skill name="Hide &amp; Stalk" ranks="19" misc="10"/>
+    <skill name="Pick Locks" ranks="13" misc="15"/>
+    <skill name="Pick Pockets" ranks="13"/>
+    <skill name="Trickery" ranks="8"/>
+    <skill name="Trap Building" ranks="13"/>
+    <skill name="Channeling" ranks="0"/>
+    <skill name="Power Perception" ranks="5"/>
+    <skill name="Runes" ranks="0"/>
+    <skill name="Staves &amp; Wands" ranks="1"/>
+    <skill name="Spell Mastery/Concentration" ranks="0"/>
+    <skill name="Spell Mastery/Penetration" ranks="0"/>
+    <skill name="Spell Mastery/Targeting" ranks="0"/>
+    <skill name="Animal Healing" ranks="0"/>
+    <skill name="First Aid" ranks="0"/>
+    <skill name="Herb Mastery" ranks="3"/>
+    <skill name="Midwifery" ranks="0"/>
+    <skill name="Poetic Improv." ranks="0"/>
+    <skill name="Ventriloquism" ranks="0"/>
+    <skill name="Singing" ranks="0"/>
+    <skill name="Public Speaking" ranks="1"/>
+    <skill name="Signaling" ranks="0"/>
+    <skill name="Animal Handling" ranks="0"/>
+    <skill name="Caving" ranks="1"/>
+    <skill name="Herding" ranks="1"/>
+    <skill name="Foraging" ranks="5"/>
+    <skill name="Riding, Horse" ranks="3"/>
+    <skill name="Architecture" ranks="1"/>
+    <skill name="Chemistry" ranks="1"/>
+    <skill name="Heraldry" ranks="1"/>
+    <skill name="Mathematics" ranks="1"/>
+    <skill name="Mining" ranks="1"/>
+    <skill name="Navigation" ranks="9"/>
+    <skill name="Star Gazing" ranks="1"/>
+    <skill name="Tactics, Land" ranks="1"/>
+    <skill name="Tactics, Water" ranks="1"/>
+    <skill name="Weather Watching" ranks="1"/>
+    <skill name="Soft Leather" ranks="0"/>
+    <skill name="Rigid Leather" ranks="0"/>
+    <skill name="Chain" ranks="6"/>
+    <skill name="Plate" ranks="0"/>
+    <skill name="Ambush" ranks="21"/>
+    <skill name="Adrenal Defense" ranks="0"/>
+    <skill name="Body Development" ranks="20"/>
+    <skill name="Weapon1/1-h edged/Rapier" ranks="13" misc="10"/>
+    <skill name="Weapon1/1-h edged/Dagger" ranks="9"/>
+    <skill name="Weapon2/Bows/Longbow" ranks="13" misc="30"/>
+    <skill name="Weapon3/2-h" ranks="0"/>
+    <skill name="Weapon4/Thrown arms" ranks="2"/>
+    <skill name="Weapon5/1-h crushing" ranks="0"/>
+    <skill name="Weapon6/Pole arms" ranks="0"/>
+    <skill name="Brawling" ranks="0"/>
+    <skill name="Grappling Hook" ranks="1"/>
+    <skill name="MA, Strikes Rk 1" ranks="1"/>
+    <skill name="MA, Strikes Rk 2" ranks="0"/>
+    <skill name="MA, Strikes Rk 3" ranks="0"/>
+    <skill name="MA, Strikes Rk 4" ranks="0"/>
+    <skill name="MA, Throws Rk 1" ranks="1"/>
+    <skill name="MA, Throws Rk 2" ranks="0"/>
+    <skill name="MA, Throws Rk 3" ranks="0"/>
+    <skill name="MA, Throws Rk 4" ranks="0"/>
+    <skill name="Subduing" ranks="0"/>
+    <skill name="Reverse Stroke" ranks="0"/>
+    <skill name="Yado" ranks="1"/>
+    <skill name="Crafting" ranks="0"/>
+    <skill name="Instrument" ranks="0"/>
+    <skill name="Lip Reading" ranks="1"/>
+    <skill name="Artillery" ranks="1"/>
+    <skill name="Disarming" ranks="0"/>
+    <skill name="Animal Training" ranks="0"/>
+    <skill name="Tact. Games" ranks="0"/>
+    <skill name="Elfish" ranks="7/8"/>
+    <skill name="Mongolian" ranks="6/6"/>
+    <skill name="Dwarfish" ranks="6/6"/>
+    <image type="portrait" file="data/portraits/Kirun.jpg"/>
+  </char>
+  <char rules="RM" id="PC1761" permit="true">
+    <tagged>Rolemaster</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Aphrael Uwawori"/>
+    <attribute name="CoTp" value="92"/>
+    <attribute name="AgTp" value="97"/>
+    <attribute name="SDTp" value="95"/>
+    <attribute name="MeTp" value="99"/>
+    <attribute name="ReTp" value="86"/>
+    <attribute name="StTp" value="101"/>
+    <attribute name="QuTp" value="76"/>
+    <attribute name="PrTp" value="93"/>
+    <attribute name="EmTp" value="42"/>
+    <attribute name="InTp" value="88"/>
+    <attribute name="CoP" value="92"/>
+    <attribute name="AgP" value="99"/>
+    <attribute name="SDP" value="95"/>
+    <attribute name="MeP" value="99"/>
+    <attribute name="ReP" value="86"/>
+    <attribute name="StP" value="101"/>
+    <attribute name="QuP" value="77"/>
+    <attribute name="PrP" value="98"/>
+    <attribute name="EmP" value="42"/>
+    <attribute name="InP" value="92"/>
+    <attribute name="CoM" value="5"/>
+    <attribute name="Race" value="Human, Mongol"/>
+    <attribute name="Nationality" value="Mongolian"/>
+    <attribute name="Culture" value="Tribal"/>
+    <attribute name="Eye Color" value="braun"/>
+    <attribute name="Hair Color" value="black"/>
+    <attribute name="Gender" value="Female"/>
+    <attribute name="Birthdate" value="29.6.107"/>
+    <attribute name="Age" value="17"/>
+    <attribute name="Profession" value="Ranger"/>
+    <attribute name="ExpPoints" value="134047"/>
+    <attribute name="AT" value="11"/>
+    <attribute name="Height" value="63"/>
+    <attribute name="Weight" value="175"/>
+    <skill name="Acrobatics" ranks="2"/>
+    <skill name="Track &amp; Field" ranks="1"/>
+    <skill name="Climbing" ranks="5"/>
+    <skill name="Contortions" ranks="2"/>
+    <skill name="Diving" ranks="1"/>
+    <skill name="Fly &amp; Glide" ranks="0"/>
+    <skill name="Rowing" ranks="0"/>
+    <skill name="Run, Distance" ranks="6"/>
+    <skill name="Run, Sprint" ranks="7"/>
+    <skill name="Swimming" ranks="5"/>
+    <skill name="Tumbling" ranks="1"/>
+    <skill name="Heavy Athletics" ranks="2"/>
+    <skill name="Dance" ranks="0"/>
+    <skill name="Juggling" ranks="1"/>
+    <skill name="Sailing" ranks="0"/>
+    <skill name="Skiing" ranks="0"/>
+    <skill name="Appraisal" ranks="5"/>
+    <skill name="Cookery" ranks="3"/>
+    <skill name="Rope Mastery" ranks="5"/>
+    <skill name="Fletching" ranks="3"/>
+    <skill name="Gimmickry" ranks="0"/>
+    <skill name="Gambling" ranks="1"/>
+    <skill name="Seduction" ranks="0"/>
+    <skill name="Working, Leather" ranks="4"/>
+    <skill name="Working, Stone" ranks="1"/>
+    <skill name="Working, Metal" ranks="2"/>
+    <skill name="Working, Wood" ranks="4"/>
+    <skill name="Locate S-Openings" ranks="4"/>
+    <skill name="General Perception" ranks="8"/>
+    <skill name="Surveillance" ranks="2"/>
+    <skill name="Time Sense" ranks="3"/>
+    <skill name="Tracking" ranks="7"/>
+    <skill name="Adrenal Moves/Balance" ranks="0"/>
+    <skill name="Adrenal Moves/Landing" ranks="2"/>
+    <skill name="Adrenal Moves/Leaping" ranks="1"/>
+    <skill name="Adrenal Moves/Quick Draw" ranks="0"/>
+    <skill name="Adrenal Moves/Speed" ranks="0"/>
+    <skill name="Adrenal Moves/Strength" ranks="1"/>
+    <skill name="Lycanthropy" ranks="0"/>
+    <skill name="Frenzy" ranks="0"/>
+    <skill name="Meditation/Heal" ranks="6"/>
+    <skill name="Meditation/Ki" ranks="0"/>
+    <skill name="Meditation/Sleep" ranks="5"/>
+    <skill name="Meditation/Trance" ranks="0"/>
+    <skill name="Acting" ranks="0"/>
+    <skill name="Disarm Traps" ranks="2"/>
+    <skill name="Falsification" ranks="0"/>
+    <skill name="Hide &amp; Stalk" ranks="6"/>
+    <skill name="Pick Locks" ranks="0"/>
+    <skill name="Pick Pockets" ranks="0"/>
+    <skill name="Trickery" ranks="0"/>
+    <skill name="Trap Building" ranks="5"/>
+    <skill name="Channeling" ranks="0"/>
+    <skill name="Power Perception" ranks="0"/>
+    <skill name="Runes" ranks="0"/>
+    <skill name="Staves &amp; Wands" ranks="0"/>
+    <skill name="Spell Mastery/Concentration" ranks="0"/>
+    <skill name="Spell Mastery/Penetration" ranks="0"/>
+    <skill name="Spell Mastery/Targeting" ranks="0"/>
+    <skill name="Animal Healing" ranks="5"/>
+    <skill name="First Aid" ranks="9"/>
+    <skill name="Herb Mastery" ranks="7"/>
+    <skill name="Midwifery" ranks="0"/>
+    <skill name="Poetic Improv." ranks="0"/>
+    <skill name="Ventriloquism" ranks="0"/>
+    <skill name="Singing" ranks="0"/>
+    <skill name="Public Speaking" ranks="0"/>
+    <skill name="Signaling" ranks="1"/>
+    <skill name="Animal Handling" ranks="4"/>
+    <skill name="Caving" ranks="3"/>
+    <skill name="Herding" ranks="0"/>
+    <skill name="Foraging" ranks="8"/>
+    <skill name="Architecture" ranks="1"/>
+    <skill name="Chemistry" ranks="1"/>
+    <skill name="Heraldry" ranks="1"/>
+    <skill name="Mathematics" ranks="0"/>
+    <skill name="Mining" ranks="1"/>
+    <skill name="Navigation" ranks="5"/>
+    <skill name="Star Gazing" ranks="2"/>
+    <skill name="Tactics, Land" ranks="1" misc="10"/>
+    <skill name="Tactics, Water" ranks="1" misc="10"/>
+    <skill name="Weather Watching" ranks="2"/>
+    <skill name="Soft Leather" ranks="0"/>
+    <skill name="Rigid Leather" ranks="8"/>
+    <skill name="Chain" ranks="0"/>
+    <skill name="Plate" ranks="0"/>
+    <skill name="Ambush" ranks="0"/>
+    <skill name="Adrenal Defense" ranks="0"/>
+    <skill name="Body Development" ranks="14"/>
+    <skill name="Weapon1/Thrown arms" ranks="0" misc="5"/>
+    <skill name="Weapon2/1-h edged" ranks="8" misc="5"/>
+    <skill name="Weapon3/1-h crushing" ranks="0" misc="5"/>
+    <skill name="Weapon4/2-h" ranks="0" misc="5"/>
+    <skill name="Weapon5/Bows" ranks="10" misc="5"/>
+    <skill name="Weapon6/Pole arms" ranks="0" misc="5"/>
+    <skill name="Brawling" ranks="2"/>
+    <skill name="Grappling Hook" ranks="1"/>
+    <skill name="MA, Strikes Rk 1" ranks="0"/>
+    <skill name="MA, Strikes Rk 2" ranks="0"/>
+    <skill name="MA, Strikes Rk 3" ranks="0"/>
+    <skill name="MA, Strikes Rk 4" ranks="0"/>
+    <skill name="MA, Throws Rk 1" ranks="0"/>
+    <skill name="MA, Throws Rk 2" ranks="0"/>
+    <skill name="MA, Throws Rk 3" ranks="0"/>
+    <skill name="MA, Throws Rk 4" ranks="0"/>
+    <skill name="Subduing" ranks="0"/>
+    <skill name="Reverse Stroke" ranks="0"/>
+    <skill name="Yado" ranks="0"/>
+    <skill name="Crafting" ranks="1"/>
+    <skill name="Instrument" ranks="0"/>
+    <skill name="Lip Reading" ranks="0"/>
+    <skill name="Artillery" ranks="0"/>
+    <skill name="Disarming" ranks="1"/>
+    <skill name="Animal Training" ranks="2"/>
+    <skill name="Riding, Horse" ranks="2"/>
+    <skill name="Tact. Games" ranks="0"/>
+    <skill name="Mongolian" ranks="7/6"/>
+    <spell type="Channeling" name="Nature's Guises (Base)" value="1 - 10" learn=""/>
+    <spell type="Channeling" name="Concussion's Ways (Open)" value="1 - 5" learn=""/>
+    <spell type="Channeling" name="Inner Walls (Base)" value="1 - 10" learn=""/>
+    <spell type="Channeling" name="Purification (Open)" value="1 - 5" learn="5%"/>
+    <note type="short1">Griffon LV 1 'Pinky'</note>
+    <note type="short2">Language: 6/6</note>
+    <note type="short3">Spell List extra Pick Open Chan. Concussions Ways 1-5</note>
+    <image type="portrait" file="data/portraits/Aphrael.jpg"/>
+  </char>
+  <char rules="RM" id="PC1763" permit="true">
+    <tagged>Rolemaster</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Murriel Uwawori"/>
+    <attribute name="CoTp" value="94"/>
+    <attribute name="AgTp" value="100"/>
+    <attribute name="SDTp" value="46"/>
+    <attribute name="MeTp" value="74"/>
+    <attribute name="ReTp" value="74"/>
+    <attribute name="StTp" value="101"/>
+    <attribute name="QuTp" value="99"/>
+    <attribute name="PrTp" value="70"/>
+    <attribute name="EmTp" value="61"/>
+    <attribute name="InTp" value="80"/>
+    <attribute name="CoP" value="94"/>
+    <attribute name="AgP" value="100"/>
+    <attribute name="SDP" value="46"/>
+    <attribute name="MeP" value="74"/>
+    <attribute name="ReP" value="74"/>
+    <attribute name="StP" value="101"/>
+    <attribute name="QuP" value="100"/>
+    <attribute name="PrP" value="70"/>
+    <attribute name="EmP" value="62"/>
+    <attribute name="InP" value="85"/>
+    <attribute name="AgM" value="15"/>
+    <attribute name="StM" value="10"/>
+    <attribute name="Race" value="Human, Mongol"/>
+    <attribute name="Nationality" value="Mongolian"/>
+    <attribute name="Culture" value="Tribal"/>
+    <attribute name="Eye Color" value="black"/>
+    <attribute name="Birthdate" value="20.5.106"/>
+    <attribute name="Hair Color" value="black"/>
+    <attribute name="Gender" value="Female"/>
+    <attribute name="Age" value="18"/>
+    <attribute name="Profession" value="Hunter"/>
+    <attribute name="ExpPoints" value="87001"/>
+    <attribute name="AT" value="1"/>
+    <attribute name="Height" value="71"/>
+    <attribute name="Weight" value="157"/>
+    <skill name="Acrobatics" ranks="2"/>
+    <skill name="Climbing" ranks="7"/>
+    <skill name="Contortions" ranks="3"/>
+    <skill name="Diving" ranks="1"/>
+    <skill name="Fly &amp; Glide" ranks="1"/>
+    <skill name="Rowing" ranks="1"/>
+    <skill name="Run, Distance" ranks="8"/>
+    <skill name="Run, Sprint" ranks="8"/>
+    <skill name="Swimming" ranks="6"/>
+    <skill name="Tumbling" ranks="5"/>
+    <skill name="Heavy Athletics" ranks="3"/>
+    <skill name="Track &amp; Field" ranks="3"/>
+    <skill name="Dance" ranks="0"/>
+    <skill name="Juggling" ranks="0"/>
+    <skill name="Sailing" ranks="0"/>
+    <skill name="Skiing" ranks="0"/>
+    <skill name="Appraisal" ranks="0"/>
+    <skill name="Cookery" ranks="3"/>
+    <skill name="Rope Mastery" ranks="7"/>
+    <skill name="Fletching" ranks="5"/>
+    <skill name="Gimmickry" ranks="0"/>
+    <skill name="Gambling" ranks="1"/>
+    <skill name="Seduction" ranks="2"/>
+    <skill name="Working, Leather" ranks="2"/>
+    <skill name="Working, Stone" ranks="0"/>
+    <skill name="Working, Metal" ranks="0"/>
+    <skill name="Working, Wood" ranks="0"/>
+    <skill name="Locate S-Openings" ranks="0"/>
+    <skill name="General Perception" ranks="4"/>
+    <skill name="Surveillance" ranks="0"/>
+    <skill name="Time Sense" ranks="2"/>
+    <skill name="Tracking" ranks="7"/>
+    <skill name="Adrenal Moves/Balance" ranks="0"/>
+    <skill name="Adrenal Moves/Landing" ranks="1"/>
+    <skill name="Adrenal Moves/Leaping" ranks="1"/>
+    <skill name="Adrenal Moves/Quick Draw" ranks="2"/>
+    <skill name="Adrenal Moves/Speed" ranks="0"/>
+    <skill name="Adrenal Moves/Strength" ranks="2"/>
+    <skill name="Lycanthropy" ranks="0"/>
+    <skill name="Frenzy" ranks="0"/>
+    <skill name="Meditation/Heal" ranks="0"/>
+    <skill name="Meditation/Ki" ranks="0"/>
+    <skill name="Meditation/Sleep" ranks="3"/>
+    <skill name="Meditation/Trance" ranks="0"/>
+    <skill name="Acting" ranks="0"/>
+    <skill name="Disarm Traps" ranks="0"/>
+    <skill name="Falsification" ranks="0"/>
+    <skill name="Hide &amp; Stalk" ranks="5"/>
+    <skill name="Pick Locks" ranks="0"/>
+    <skill name="Pick Pockets" ranks="0"/>
+    <skill name="Trickery" ranks="0"/>
+    <skill name="Trap Building" ranks="0"/>
+    <skill name="Channeling" ranks="0"/>
+    <skill name="Power Perception" ranks="0"/>
+    <skill name="Runes" ranks="0"/>
+    <skill name="Staves &amp; Wands" ranks="0"/>
+    <skill name="Spell Mastery/Concentration" ranks="0"/>
+    <skill name="Spell Mastery/Penetration" ranks="0"/>
+    <skill name="Spell Mastery/Targeting" ranks="0"/>
+    <skill name="Animal Healing" ranks="2"/>
+    <skill name="First Aid" ranks="4"/>
+    <skill name="Herb Mastery" ranks="0"/>
+    <skill name="Midwifery" ranks="0"/>
+    <skill name="Poetic Improv." ranks="0"/>
+    <skill name="Ventriloquism" ranks="1"/>
+    <skill name="Singing" ranks="0"/>
+    <skill name="Public Speaking" ranks="0"/>
+    <skill name="Signaling" ranks="0"/>
+    <skill name="Animal Handling" ranks="6"/>
+    <skill name="Caving" ranks="0"/>
+    <skill name="Herding" ranks="0"/>
+    <skill name="Foraging" ranks="7"/>
+    <skill name="Architecture" ranks="0"/>
+    <skill name="Chemistry" ranks="0"/>
+    <skill name="Heraldry" ranks="0"/>
+    <skill name="Mathematics" ranks="0"/>
+    <skill name="Mining" ranks="0"/>
+    <skill name="Navigation" ranks="0"/>
+    <skill name="Star Gazing" ranks="1"/>
+    <skill name="Tactics, Land" ranks="0"/>
+    <skill name="Tactics, Water" ranks="0"/>
+    <skill name="Weather Watching" ranks="0"/>
+    <skill name="Soft Leather" ranks="0"/>
+    <skill name="Rigid Leather" ranks="0"/>
+    <skill name="Chain" ranks="0"/>
+    <skill name="Plate" ranks="0"/>
+    <skill name="Ambush" ranks="0"/>
+    <skill name="Adrenal Defense" ranks="5"/>
+    <skill name="Body Development" ranks="12"/>
+    <skill name="Weapon5/Thrown arms" ranks="0"/>
+    <skill name="Weapon2/1-h edged" ranks="10"/>
+    <skill name="Weapon4/1-h crushing" ranks="0"/>
+    <skill name="Weapon3/2-h" ranks="0"/>
+    <skill name="Weapon1/Bows" ranks="12"/>
+    <skill name="Weapon6/Pole arms" ranks="0"/>
+    <skill name="Brawling" ranks="0"/>
+    <skill name="Grappling Hook" ranks="2"/>
+    <skill name="MA, Strikes Rk 1" ranks="3"/>
+    <skill name="MA, Strikes Rk 2" ranks="0"/>
+    <skill name="MA, Strikes Rk 3" ranks="0"/>
+    <skill name="MA, Strikes Rk 4" ranks="0"/>
+    <skill name="MA, Throws Rk 1" ranks="3"/>
+    <skill name="MA, Throws Rk 2" ranks="0"/>
+    <skill name="MA, Throws Rk 3" ranks="0"/>
+    <skill name="MA, Throws Rk 4" ranks="0"/>
+    <skill name="Subduing" ranks="0"/>
+    <skill name="Reverse Stroke" ranks="0"/>
+    <skill name="Yado" ranks="5"/>
+    <skill name="Crafting" ranks="0"/>
+    <skill name="Instrument" ranks="0"/>
+    <skill name="Lip Reading" ranks="1"/>
+    <skill name="Artillery" ranks="0"/>
+    <skill name="Disarming, Sword" ranks="3"/>
+    <skill name="Animal Training, Horse" ranks="8"/>
+    <skill name="Riding, Horse" ranks="8"/>
+    <skill name="Tact. Games" ranks="0"/>
+    <skill name="Mongolian" ranks="7/6"/>
+    <note type="short1">Geboren am 20.5.06</note>
+    <note type="short2">Language: 6/6</note>
+    <image type="portrait" file="data/portraits/Murriel.jpg"/>
+  </char>
+  <char rules="RM" id="MPC1" permit="true">
+    <tagged>Rolemaster</tagged>
+    <tagged>PC</tagged>
+    <attribute name="Name" value="Rotom"/>
+    <attribute name="CoTp" value="90"/>
+    <attribute name="CoP" value="90"/>
+    <attribute name="AgTp" value="101"/>
+    <attribute name="AgP" value="101"/>
+    <attribute name="SDTp" value="68"/>
+    <attribute name="SDP" value="71"/>
+    <attribute name="MeTp" value="46"/>
+    <attribute name="MeP" value="47"/>
+    <attribute name="ReTp" value="98"/>
+    <attribute name="ReP" value="98"/>
+    <attribute name="StTp" value="101"/>
+    <attribute name="StP" value="101"/>
+    <attribute name="QuTp" value="95"/>
+    <attribute name="QuP" value="101"/>
+    <attribute name="PrTp" value="80"/>
+    <attribute name="PrP" value="80"/>
+    <attribute name="EmTp" value="40"/>
+    <attribute name="EmP" value="42"/>
+    <attribute name="InTp" value="81"/>
+    <attribute name="InP" value="84"/>
+    <!--attribute name="CoM" value="10"/>
+    <attribute name="SDM" value="5"/>
+    <attribute name="StM" value="10"/>
+    <attribute name="QuM" value="15"/>
+    <attribute name="PrM" value="5"/>
+    <attribute name="EmM" value="-5"/-->
+    <attribute name="Race" value="Human, Mongol"/>
+    <attribute name="Nationality" value="Barbarian"/>
+    <attribute name="Culture" value="Tribal"/>
+    <attribute name="Eye Color" value="black"/>
+    <attribute name="Hair Color" value="black"/>
+    <attribute name="Gender" value="Male"/>
+    <attribute name="Age" value="21"/>
+    <attribute name="Profession" value="Hunter"/>
+    <attribute name="ExpPoints" value="162000"/>
+    <attribute name="AT" value="1"/>
+    <attribute name="Height" value="74"/>
+    <attribute name="Weight" value="187"/>
+    <skill name="Acrobatics" ranks="3"/>
+    <skill name="Track &amp; Field" ranks="0"/>
+    <skill name="Climbing" ranks="10"/>
+    <skill name="Contortions" ranks="3"/>
+    <skill name="Diving" ranks="0"/>
+    <skill name="Fly &amp; Glide" ranks="0"/>
+    <skill name="Rowing" ranks="2"/>
+    <skill name="Run, Distance" ranks="10"/>
+    <skill name="Run, Sprint" ranks="10"/>
+    <skill name="Swimming" ranks="10"/>
+    <skill name="Tumbling" ranks="10"/>
+    <skill name="Heavy Athletics" ranks="0"/>
+    <skill name="Dance" ranks="0"/>
+    <skill name="Juggling" ranks="0"/>
+    <skill name="Sailing" ranks="0"/>
+    <skill name="Skiing" ranks="0"/>
+    <skill name="Appraisal" ranks="0"/>
+    <skill name="Cookery" ranks="0"/>
+    <skill name="Rope Mastery" ranks="2"/>
+    <skill name="Fletching" ranks="0"/>
+    <skill name="Gimmickry" ranks="0"/>
+    <skill name="Gambling" ranks="0"/>
+    <skill name="Seduction" ranks="0"/>
+    <skill name="Working, Leather" ranks="0"/>
+    <skill name="Working, Stone" ranks="0"/>
+    <skill name="Working, Metal" ranks="0"/>
+    <skill name="Working, Wood" ranks="0"/>
+    <skill name="Locate S-Openings" ranks="5"/>
+    <skill name="General Perception" ranks="15"/>
+    <skill name="Surveillance" ranks="8"/>
+    <skill name="Time Sense" ranks="1"/>
+    <skill name="Tracking" ranks="5"/>
+    <skill name="Adrenal Moves/Balance" ranks="1"/>
+    <skill name="Adrenal Moves/Landing" ranks="11"/>
+    <skill name="Adrenal Moves/Leaping" ranks="1"/>
+    <skill name="Adrenal Moves/Quick Draw" ranks="6"/>
+    <skill name="Adrenal Moves/Speed" ranks="11"/>
+    <skill name="Adrenal Moves/Strength" ranks="10"/>
+    <skill name="Lycanthropy" ranks="1"/>
+    <skill name="Frenzy" ranks="0"/>
+    <skill name="Meditation/Heal" ranks="0"/>
+    <skill name="Meditation/Ki" ranks="0"/>
+    <skill name="Meditation/Sleep" ranks="0"/>
+    <skill name="Meditation/Trance" ranks="0"/>
+    <skill name="Acting" ranks="0"/>
+    <skill name="Disarm Traps" ranks="0"/>
+    <skill name="Falsification" ranks="0"/>
+    <skill name="Hide &amp; Stalk" ranks="11"/>
+    <skill name="Pick Locks" ranks="0"/>
+    <skill name="Pick Pockets" ranks="0"/>
+    <skill name="Trickery" ranks="0"/>
+    <skill name="Trap Building" ranks="0"/>
+    <skill name="Channeling" ranks="0"/>
+    <skill name="Power Perception" ranks="0"/>
+    <skill name="Runes" ranks="0"/>
+    <skill name="Staves &amp; Wands" ranks="0"/>
+    <skill name="Spell Mastery/Concentration" ranks="0"/>
+    <skill name="Spell Mastery/Penetration" ranks="0"/>
+    <skill name="Spell Mastery/Targeting" ranks="0"/>
+    <skill name="Animal Healing" ranks="0"/>
+    <skill name="First Aid" ranks="10"/>
+    <skill name="Herb Mastery" ranks="0"/>
+    <skill name="Midwifery" ranks="0"/>
+    <skill name="Poetic Improv." ranks="0"/>
+    <skill name="Ventriloquism" ranks="0"/>
+    <skill name="Singing" ranks="0"/>
+    <skill name="Public Speaking" ranks="0"/>
+    <skill name="Signaling" ranks="0"/>
+    <skill name="Animal Handling" ranks="0"/>
+    <skill name="Caving" ranks="0"/>
+    <skill name="Herding" ranks="0"/>
+    <skill name="Foraging" ranks="10"/>
+    <skill name="Architecture" ranks="0"/>
+    <skill name="Chemistry" ranks="0"/>
+    <skill name="Heraldry" ranks="0"/>
+    <skill name="Mathematics" ranks="0"/>
+    <skill name="Mining" ranks="0"/>
+    <skill name="Navigation" ranks="0"/>
+    <skill name="Star Gazing" ranks="0"/>
+    <skill name="Tactics, Land" ranks="0"/>
+    <skill name="Tactics, Water" ranks="0"/>
+    <skill name="Weather Watching" ranks="0"/>
+    <skill name="Soft Leather" ranks="0"/>
+    <skill name="Rigid Leather" ranks="0"/>
+    <skill name="Chain" ranks="0"/>
+    <skill name="Plate" ranks="0"/>
+    <skill name="Ambush" ranks="8"/>
+    <skill name="Adrenal Defense" ranks="10"/>
+    <skill name="Body Development" ranks="20"/>
+    <skill name="Weapon1/1-h edged/Bastard sword" ranks="16" misc="20"/>
+    <skill name="Weapon1/1-h edged/Handaxe" ranks="13" misc="-20"/>
+    <skill name="Weapon1/1-h edged/Rapier" ranks="1"/>
+    <skill name="Weapon1/1-h edged/Dagger" ranks="7" misc="10"/>
+    <skill name="Weapon2/Bows/Longbow" ranks="13" misc="10"/>
+    <skill name="Weapon3/Thrown arms/Spear" ranks="1"/>
+    <skill name="Weapon4/2-h/Two-handed sword" ranks="1" misc="10"/>
+    <skill name="Weapon5/Pole arms" ranks="0"/>
+    <skill name="Weapon6/1-h crushing" ranks="0"/>
+    <skill name="Brawling" ranks="3"/>
+    <skill name="Grappling Hook" ranks="1"/>
+    <skill name="MA, Strikes Rk 1" ranks="1"/>
+    <skill name="MA, Strikes Rk 2" ranks="0"/>
+    <skill name="MA, Strikes Rk 3" ranks="0"/>
+    <skill name="MA, Strikes Rk 4" ranks="0"/>
+    <skill name="MA, Throws Rk 1" ranks="1"/>
+    <skill name="MA, Throws Rk 2" ranks="0"/>
+    <skill name="MA, Throws Rk 3" ranks="0"/>
+    <skill name="MA, Throws Rk 4" ranks="0"/>
+    <skill name="Subduing" ranks="4"/>
+    <skill name="Reverse Stroke" ranks="3"/>
+    <skill name="Yado" ranks="4"/>
+    <skill name="Crafting" ranks="0"/>
+    <skill name="Instrument" ranks="0"/>
+    <skill name="Lip Reading" ranks="0"/>
+    <skill name="Artillery" ranks="0"/>
+    <skill name="Disarming" ranks="3"/>
+    <skill name="Animal Training" ranks="0"/>
+    <skill name="Riding, Horse" ranks="1"/>
+    <skill name="Tact. Games" ranks="0"/>
+    <note type="short1">curly hair</note>
+    <note type="short2">Languages 5/4, 4/3, 3/3, 2/0</note>
+    <note type="short3">hates rats</note>
+    <note type="short4">25 dev left</note>
+  </char>
+  <art id="Por-6" name="Almandir" file="/data/portraits/Almandir.jpg">
+    <tagged>Rolemaster</tagged>
+    <tagged>Portrait</tagged>
+  </art>
+  <art id="Por-9" name="Aphrael" file="/data/portraits/Aphrael.jpg">
+    <tagged>Rolemaster</tagged>
+    <tagged>Portrait</tagged>
+  </art>
+  <art id="Por-10" name="Apolithe" file="/data/portraits/Apolithe.jpg">
+    <tagged>Rolemaster</tagged>
+    <tagged>Portrait</tagged>
+  </art>
+  <art id="Por-136" name="Kirun" file="/data/portraits/Kirun.jpg">
+    <tagged>Rolemaster</tagged>
+    <tagged>Portrait</tagged>
+  </art>
+  <art id="Por-155" name="Makasi" file="/data/portraits/Makasi.jpg">
+    <tagged>Rolemaster</tagged>
+    <tagged>Portrait</tagged>
+  </art>
+  <art id="Por-254" name="Murriel" file="/data/portraits/Murriel.jpg">
+    <tagged>Rolemaster</tagged>
+    <tagged>Portrait</tagged>
+  </art>
+  <note type="file" id="n1" file="/data/notes/Dwarven-Teleport.png" name="Dwarven Teleport" permit="true">
+    <tagged>Rolemaster</tagged>
+  </note>
+  <note type="file" id="n2" file="/data/notes/Mongolian-Teleport.png" name="Mongolian Teleport" permit="true">
+    <tagged>Rolemaster</tagged>
+  </note>
+  <map name="Drak Demon Ground" file="/data/maps/drakdeep.png" id="drakdeep" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Drak Teeth Chamber" file="/data/maps/drakchamber.png" id="drakchamber" scalef="2.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Drak King" file="/data/maps/drakking.png" id="drakking" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Arador's Tomb" file="/data/maps/aradorstomb.jpg" id="aradorstomb" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Barad Cam Tower" file="/data/maps/barad-cam.jpg" id="barad-cam" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Brethil Keep" file="/data/maps/brethilkeep.jpg" id="brethilkeep" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Taur Deloth Catacomb" file="/data/maps/catacombs.jpg" id="catacombs" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Dol Ilmara" file="/data/maps/dolilmara.jpg" id="dolilmara" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Dol Ilmara Underground" file="/data/maps/dolilmaraunder.jpg" id="dolilmaraunder" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Drunan Dum Lower Levels" file="/data/maps/drunanlower.jpg" id="drunanlower" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Drunan Dum Overlay" file="/data/maps/drunanoverlay.jpg" id="drunanoverlay" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Drunan Dum Upper Levels" file="/data/maps/drunanupper.png" id="drunanupper" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Evil Wood Cavern" file="/data/maps/evilwood.png" id="evilwood" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Town Fornost Erain" file="/data/maps/fornostmedium.jpg" id="fornostmedium" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Fulciwan Manor" file="/data/maps/fulciwan.jpg" id="fulciwan" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Hill Fort" file="/data/maps/hillfort.jpg" id="hillfort" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Hobbit Hill" file="/data/maps/hobbithill.jpg" id="hobbithill" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Howester Keep" file="/data/maps/howester.jpg" id="howester" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Hyaminas Keep" file="/data/maps/hyaminas.jpg" id="hyaminas" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Last Inn Hamlet" file="/data/maps/lastinn.jpg" id="lastinn" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Minas Brithil" file="/data/maps/minasbrethil.jpg" id="minasbrethil" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Minas Nen ruins" file="/data/maps/minas-nen.jpg" id="minas-nen" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Ruined Manor" file="/data/maps/morvaruins.jpg" id="morvaruins" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Nienna Monestary" file="/data/maps/nienna.jpg" id="nienna" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Nothva Ruins" file="/data/maps/nothva.jpg" id="nothva" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Orc Lair Color" file="/data/maps/orccavesflat.jpg" id="orccavesflat" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Orc Lair" file="/data/maps/orclair.jpg" id="orclair" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Pen Morva Keep" file="/data/maps/penmorvabig2.jpg" id="penmorvabig2" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Sarik Keep" file="/data/maps/sarikkeep.jpg" id="sarikkeep" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Sarik Town" file="/data/maps/sariktown.jpg" id="sariktown" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Troll Shaws" file="/data/maps/trollshaws.jpg" id="trollshaws" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Hobbit Place" file="/data/maps/strangefoot.jpg" id="strangefoot" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Forest Ruins" file="/data/maps/templespider.jpg" id="templespider" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <map name="Ulwarth Manor" file="/data/maps/ulwarth.jpg" id="ulwarth" scalef="1.0">
+    <tagged>Rolemaster</tagged>
+  </map>
+  <char id="RMM-1" rules="RM">
+    <attribute name="Name" value="Skeleton"/>
+    <attribute name="XP" value="5C"/>
+    <attribute name="Movement" value="80/3x"/>
+    <attribute name="Crits" value="I#"/>
+    <attribute name="Hits" value="100"/>
+    <attribute name="ATDB" value="1(30)"/>
+    <attribute name="Attacks" value="50bs/60MBa"/>
+    <attribute name="Special" value="3Co/rd after 3rd round in 10'R"/>
+    <tagged>Rolemaster</tagged>
+  </char>
+  <char id="RMM-2" rules="RM">
+    <attribute name="Name" value="Bat"/>
+    <attribute name="XP" value="3"/>
+    <attribute name="Movement" value="90/4x"/>
+    <attribute name="Hits" value="5"/>
+    <attribute name="ATDB" value="1(60)"/>
+    <attribute name="Attacks" value="20SBi"/>
+    <tagged>Rolemaster</tagged>
+  </char>
+  <char id="RMM-3" rules="RM">
+    <attribute name="Name" value="Rat"/>
+    <attribute name="XP" value="3"/>
+    <attribute name="Movement" value="30/4x"/>
+    <attribute name="Hits" value="25"/>
+    <attribute name="ATDB" value="1(30)"/>
+    <attribute name="Attacks" value="25SBi"/>
+    <tagged>Rolemaster</tagged>
+  </char>
+  <char id="RMM-4" rules="RM">
+    <attribute name="Name" value="Cat"/>
+    <attribute name="XP" value="3"/>
+    <attribute name="Movement" value="110/5x"/>
+    <attribute name="Hits" value="60"/>
+    <attribute name="ATDB" value="3(60)"/>
+    <attribute name="Attacks" value="30MCl/20SBi"/>
+    <tagged>Rolemaster</tagged>
+  </char>
+  <char id="RMM-5" name="Ghoul" rules="RM">
+    <attribute name="XP" value="6C"/>
+    <attribute name="Movement" value="65/3x"/>
+    <attribute name="Hits" value="75"/>
+    <attribute name="ATDB" value="4(20)"/>
+    <attribute name="Attacks" value="60MBa/75SCl/60ss"/>
+    <attribute name="Crits" value="I#"/>
+    <attribute name="Special" value="Fear"/>
+    <tagged>Rolemaster</tagged>
+  </char>
+  <note type="file" id="n117" file="/data/notes/rmrules.html" name="Rolemaster Tables" permit="true">
+    <tagged>Rolemaster</tagged>
+  </note>
+</data>

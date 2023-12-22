@@ -1,0 +1,615 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="RM">
+  <attribute name="Apparent Age" rule="u:table-lookup('Age',720 - u:year(./attribute[@name='Birthdate']/@value))"/>
+  <attribute name="Apparent Height" rule="concat(floor(./attribute[@name='Height']/@value div 12), 'ft', ./attribute[@name='Height']/@value mod 12, 'in')"/>
+  <attribute name="RecMult" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|RecMult|]/@value'))"/>
+  <attribute name="SoulDep" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|SoulDep|]/@value'))"/>
+  <attribute name="StatDet" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|StatDet|]/@value'))"/>
+  <attribute name="Level" rule="u:table-lookup('XP', a:attribute('ExpPoints'))"/>
+  <attribute name="NxtLevel" rule="1000 * (u:attribute('Level') + 1) * (u:attribute('Level') + 6)"/>
+  <attribute name="Sex" rule=".//attribute[@name='Gender']/@value"/>
+  <attribute name="Species" rule=".//attribute[@name='Race']/@value"/>
+  <attribute name="SizeHd" rule="floor((u:attribute('MeP') + .//attribute[@name='Height']/@value + u:attribute('ReP')) div 4)"/>
+  <attribute name="SizeBT" rule="floor((u:attribute('Weight') + .//attribute[@name='Height']/@value + .//attribute[@name='Weight']/@value) div 4)"/>
+  <attribute name="SizeHF" rule="floor((u:attribute('StP') + .//attribute[@name='Height']/@value + .//attribute[@name='Weight']/@value) div 4)"/>
+  <attribute name="TotalDP" rule="substring(10 + u:attribute('CoDP') + u:attribute('AgDP') + u:attribute('SDDP') + u:attribute('MeDP') + u:attribute('ReDP'), 0, 5)"/>
+  <attribute name="MaxPace" rule="u:rules(concat('//armor/atype[@name=|', .//attribute[@name='AT']/@value, '|]/@pace'))"/>
+  <attribute name="BARB" rule="u:sign(u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@BAR')))"/>
+  <attribute name="Realms" rule="u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@realms'))"/>
+  <attribute name="ArmMiss" rule="u:rules(concat('//armor/atype[@name=|', .//attribute[@name='AT']/@value, '|]/@missile'))"/>
+  <attribute name="TotalHits" rule="floor(u:min(floor((.//skill[@name='Body Development']/@ranks * u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|HitsRank|]/@value'))) + .//attribute[@name='CoTp']/@value div 10) * (1 + u:parse(u:attribute('CoTo')) div 100), u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|MaxHits|]/@value'))))"/>
+  <attribute name="PP" rule="u:ifthenelse(u:attribute('Realms') = '', 0, (u:ifthenelse(contains(u:attribute('Realms'), 'Mentalism'), u:attribute('PrPP'), 0) + u:ifthenelse(contains(u:attribute('Realms'), 'Essence'), u:attribute('PrEm'), 0) + u:ifthenelse(contains(u:attribute('Realms'), 'Channeling'), u:attribute('PrIn'), 0)) div (u:ifthenelse(contains(u:attribute('Realms'), 'Mentalism'), 1, 0) + u:ifthenelse(contains(u:attribute('Realms'), 'Essence'), 1, 0) + u:ifthenelse(contains(u:attribute('Realms'), 'Channeling'), 1, 0))) * u:attribute('Level')"/>
+  <attribute name="CoR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Co|]/@value'))"/>
+  <attribute name="AgR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Ag|]/@value'))"/>
+  <attribute name="SDR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|SD|]/@value'))"/>
+  <attribute name="MeR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Me|]/@value'))"/>
+  <attribute name="ReR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Re|]/@value'))"/>
+  <attribute name="StR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|St|]/@value'))"/>
+  <attribute name="QuR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Qu|]/@value'))"/>
+  <attribute name="PrR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Pr|]/@value'))"/>
+  <attribute name="EmR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|Em|]/@value'))"/>
+  <attribute name="InR" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/attribute[@name=|In|]/@value'))"/>
+  <attribute name="CoB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='CoTp']/@value), 1, 3)))"/>
+  <attribute name="AgB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='AgTp']/@value), 1, 3)))"/>
+  <attribute name="SDB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='SDTp']/@value), 1, 3)))"/>
+  <attribute name="MeB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='MeTp']/@value), 1, 3)))"/>
+  <attribute name="ReB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='ReTp']/@value), 1, 3)))"/>
+  <attribute name="StB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='StTp']/@value), 1, 3)))"/>
+  <attribute name="QuB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='QuTp']/@value), 1, 3)))"/>
+  <attribute name="PrB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='PrTp']/@value), 1, 3)))"/>
+  <attribute name="EmB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='EmTp']/@value), 1, 3)))"/>
+  <attribute name="InB" rule="u:sign(u:parse(substring(u:table-lookup('Stats', .//attribute[@name='InTp']/@value), 1, 3)))"/>
+  <attribute name="CoDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='CoTp']/@value), 5, 4)"/>
+  <attribute name="AgDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='AgTp']/@value), 5, 4)"/>
+  <attribute name="SDDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='SDTp']/@value), 5, 4)"/>
+  <attribute name="MeDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='MeTp']/@value), 5, 4)"/>
+  <attribute name="ReDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='ReTp']/@value), 5, 4)"/>
+  <attribute name="StDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='StTp']/@value), 5, 4)"/>
+  <attribute name="QuDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='QuTp']/@value), 5, 4)"/>
+  <attribute name="PrDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='PrTp']/@value), 5, 4)"/>
+  <attribute name="EmDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='EmTp']/@value), 5, 4)"/>
+  <attribute name="InDP" rule="substring(u:table-lookup('Stats', .//attribute[@name='InTp']/@value), 5, 4)"/>
+  <attribute name="CoPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='CoTp']/@value), 10)"/>
+  <attribute name="AgPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='AgTp']/@value), 10)"/>
+  <attribute name="SDPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='SDTp']/@value), 10)"/>
+  <attribute name="MePP" rule="substring(u:table-lookup('Stats', .//attribute[@name='MeTp']/@value), 10)"/>
+  <attribute name="RePP" rule="substring(u:table-lookup('Stats', .//attribute[@name='ReTp']/@value), 10)"/>
+  <attribute name="StPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='StTp']/@value), 10)"/>
+  <attribute name="QuPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='QuTp']/@value), 10)"/>
+  <attribute name="PrPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='PrTp']/@value), 10)"/>
+  <attribute name="EmPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='EmTp']/@value), 10)"/>
+  <attribute name="InPP" rule="substring(u:table-lookup('Stats', .//attribute[@name='InTp']/@value), 10)"/>
+  <attribute name="CoTo" rule="u:sign(u:parse(u:attribute('CoB')) + u:parse(u:attribute('CoR')) + u:parse(u:attribute('CoM')))"/>
+  <attribute name="AgTo" rule="u:sign(u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgR')) + u:parse(u:attribute('AgM')))"/>
+  <attribute name="SDTo" rule="u:sign(u:parse(u:attribute('SDB')) + u:parse(u:attribute('SDR')) + u:parse(u:attribute('SDM')))"/>
+  <attribute name="MeTo" rule="u:sign(u:parse(u:attribute('MeB')) + u:parse(u:attribute('MeR')) + u:parse(u:attribute('MeM')))"/>
+  <attribute name="ReTo" rule="u:sign(u:parse(u:attribute('ReB')) + u:parse(u:attribute('ReR')) + u:parse(u:attribute('ReM')))"/>
+  <attribute name="StTo" rule="u:sign(u:parse(u:attribute('StB')) + u:parse(u:attribute('StR')) + u:parse(u:attribute('StM')))"/>
+  <attribute name="QuTo" rule="u:sign(u:parse(u:attribute('QuB')) + u:parse(u:attribute('QuR')) + u:parse(u:attribute('QuM')))"/>
+  <attribute name="PrTo" rule="u:sign(u:parse(u:attribute('PrB')) + u:parse(u:attribute('PrR')) + u:parse(u:attribute('PrM')))"/>
+  <attribute name="EmTo" rule="u:sign(u:parse(u:attribute('EmB')) + u:parse(u:attribute('EmR')) + u:parse(u:attribute('EmM')))"/>
+  <attribute name="InTo" rule="u:sign(u:parse(u:attribute('InB')) + u:parse(u:attribute('InR')) + u:parse(u:attribute('InM')))"/>
+  <attribute name="CoM"/>
+  <attribute name="AgM"/>
+  <attribute name="SDM"/>
+  <attribute name="MeM"/>
+  <attribute name="ReM"/>
+  <attribute name="StM"/>
+  <attribute name="QuM"/>
+  <attribute name="PrM"/>
+  <attribute name="EmM"/>
+  <attribute name="InM"/>
+  <attribute name="Hair Color"/>
+  <attribute name="Eye Color"/>
+  <attribute name="RREss" rule="u:parse(u:attribute('EmTo')) + u:parse(u:rules(concat('//race[@name=|',  .//attribute[@name='Race']/@value, '|]/attribute[@name=|RREss|]/@value'))) + u:ifthenelse(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')) = 'Arcane', 5, 0) + u:ifthenelse(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')) = 'PureEss', 15, 0) + u:ifthenelse(contains(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')), 'Ess'), 15, 0)"/>
+  <attribute name="RRCha" rule="u:parse(u:attribute('EmTo')) + u:parse(u:rules(concat('//race[@name=|',  .//attribute[@name='Race']/@value, '|]/attribute[@name=|RRCha|]/@value'))) + u:ifthenelse(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')) = 'Arcane', 5, 0) + u:ifthenelse(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')) = 'PureCha', 15, 0) + u:ifthenelse(contains(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')), 'Cha'), 15, 0)"/>
+  <attribute name="RRMen" rule="u:parse(u:attribute('EmTo')) + u:parse(u:rules(concat('//race[@name=|',  .//attribute[@name='Race']/@value, '|]/attribute[@name=|RRMen|]/@value'))) + u:ifthenelse(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')) = 'Arcane', 5, 0) + u:ifthenelse(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')) = 'PureMen', 15, 0) + u:ifthenelse(contains(u:rules(concat('//class[@name=|',  .//attribute[@name='Profession']/@value, '|]/@type')), 'Men'), 15, 0)"/>
+  <attribute name="RRFea" rule="u:parse(u:attribute('SDTo')) + u:parse(u:rules(concat('//race[@name=|',  .//attribute[@name='Race']/@value, '|]/attribute[@name=|RRFea|]/@value')))"/>
+  <attribute name="RRPoi" rule="u:parse(u:attribute('CoTo')) + u:parse(u:rules(concat('//race[@name=|',  .//attribute[@name='Race']/@value, '|]/attribute[@name=|RRPoi|]/@value')))"/>
+  <attribute name="RRSor" rule="round((u:attribute('RREss') + u:attribute('RRCha')) div 2)"/>
+  <attribute name="RRMys" rule="round((u:attribute('RREss') + u:attribute('RRMen')) div 2)"/>
+  <attribute name="RRAst" rule="round((u:attribute('RRMen') + u:attribute('RRCha')) div 2)"/>
+  <attribute name="RRArc" rule="round((u:attribute('RREss') + u:attribute('RRCha') + u:attribute('RRMen')) div 3)"/>
+  <attribute name="RRDis" rule="u:parse(u:attribute('CoTo')) + u:parse(u:rules(concat('//race[@name=|',  .//attribute[@name='Race']/@value, '|]/attribute[@name=|RRDis|]/@value')))"/>
+  <attribute name="BaseMove" rule=".//attribute[@name='Height']/@value + 20 + u:parse(u:attribute('QuTo')) + u:min(0, u:rules(concat('//armor/atype[@name=|', .//attribute[@name='AT']/@value, '|]/@quickness')) + u:parse(u:attribute('StTo')))"/>
+  <attribute name="DefBonus" rule="u:sign(u:ifthenelse(.//attribute[@name='AT']/@value = 1, u:parse(.//skill[@name='Adrenal Defense']/@ranks) * 5 - u:max(u:parse(.//skill[@name='Adrenal Defense']/@ranks) * 3 - 30, 0) - u:max(u:parse(.//skill[@name='Adrenal Defense']/@ranks) - 20, 0), u:max(0, u:parse(u:attribute('QuTo')) + u:rules(concat('//armor/atype[@name=|', .//attribute[@name='AT']/@value, '|]/@quickness')))))"/>
+  <attribute name="ArmMan" rule="floor(u:ifthenelse(u:attribute('ArmType') != '', u:min(u:rules(concat('//armor/atype[@name=|', .//attribute[@name='AT']/@value, '|]/@min')), u:rules(concat('//armor/atype[@name=|', .//attribute[@name='AT']/@value, '|]/@max')) + ./skill[@name=u:attribute('ArmType')]/@value * 5), 0))"/>
+  <attribute name="ArmType" rule="u:rules(concat('//armor/atype[@name=|', u:parse(.//attribute[@name='AT']/@value), '|]/@type'))"/>
+  <attribute name="EffMove" rule="floor(u:attribute('BaseMove') * (350 + u:parse(u:skill('Run, Distance', 'total'))) * (150 + u:parse(u:skill('Run, Sprint', 'total'))) div 50 div (550 + u:parse(u:skill('Run, Distance', 'total'))) + 0.5)"/>
+  <section name="Academic">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Academic')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Academic')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Academic')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <skill name="Architecture" attr="u:sign(floor(u:parse(u:attribute(u:sign(floor((u:parse(u:attribute('ReB')) + u:attribute('MeB') div 2))" Fighter="3B')) + u:parse(u:attribute('6B')) div 2))" Hunter="5" Rogue="2/5" Thief="2/4" WarriorMonk="2/4" Alchimist="1/4" Illusionist="2/5" Magician="2/5" LayHealer="2/5" Mentalist="2/5" Seer="2/5" Animist="3/6" Cleric="2/5" Healer="2/5" Astrologer="2/5" Mystic="2/5" Sorcerer="2/5" Archmage="2/4" Bard="2/5" Delver="2/5" Monk="3/6" Nightblade="2/4" Paladin="2/5" Ranger="3/6" NoProfession="2/6"/>
+    <skill name="Chemistry" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('MeB')) div 2))" Fighter="3/7" Hunter="3/9" Rogue="3/5" Thief="2/6" WarriorMonk="2/6" Alchimist="1/2" Illusionist="2/7" Magician="2/4" LayHealer="1/2" Mentalist="2/6" Seer="2/6" Animist="3/7" Cleric="2/6" Healer="3/6" Astrologer="2/4" Mystic="2/4" Sorcerer="2/5" Archmage="2/4" Bard="2/4" Delver="1/4" Monk="2/5" Nightblade="2/6" Paladin="2/7" Ranger="3/7" NoProfession="2/6"/>
+    <skill name="Heraldry" attr="u:sign(floor(u:parse(u:attribute('MeB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/5" Hunter="3/5" Rogue="2/5" Thief="2/5" WarriorMonk="2/5" Alchimist="3/6" Illusionist="2/5" Magician="3/5" LayHealer="3/8" Mentalist="2/5" Seer="1/4" Animist="3/5" Cleric="2/4" Healer="2/4" Astrologer="2/4" Mystic="2/4" Sorcerer="3/5" Archmage="3/5" Bard="1/2" Delver="2/6" Monk="2/6" Nightblade="2/5" Paladin="1/3" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Mathematics" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('MeB')) div 2))" Fighter="3/7" Hunter="3/7" Rogue="3/6" Thief="2/7" WarriorMonk="3/6" Alchimist="1/4" Illusionist="2/4" Magician="2/6" LayHealer="2/4" Mentalist="2/5" Seer="2/5" Animist="2/6" Cleric="2/5" Healer="2/6" Astrologer="1/2" Mystic="2/5" Sorcerer="1/5" Archmage="1/3" Bard="2/5" Delver="2/5" Monk="2/5" Nightblade="2/7" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Mining" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('InB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/4" Thief="1/4" WarriorMonk="2/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="1/2" Animist="2/7" Cleric="2/7" Healer="2/7" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3/6" Monk="2/6" Nightblade="3/6" Paladin="3/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Navigation" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('InB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/5" Thief="2/6" WarriorMonk="2/6" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/6" Mentalist="2/6" Seer="1/2" Animist="1/5" Cleric="2/4" Healer="2/4" Astrologer="1/3" Mystic="2/6" Sorcerer="2/6" Archmage="2/6" Bard="2/6" Delver="2/6" Monk="2/6" Nightblade="2/6" Paladin="2/5" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Star Gazing" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('MeB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/6" WarriorMonk="2/5" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/6" Mentalist="2/6" Seer="1/3" Animist="1/3" Cleric="1/3" Healer="1/4" Astrologer="1/2" Mystic="1/4" Sorcerer="1/3" Archmage="1/3" Bard="2/5" Delver="2/4" Monk="2/5" Nightblade="2/6" Paladin="2/5" Ranger="2/4" NoProfession="2/6"/>
+    <skill name="Tact. Games" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('MeB')) div 2))" Fighter="2/4" Hunter="2/4" Rogue="2/4" Thief="2/4" WarriorMonk="2/4" Alchimist="1/4" Illusionist="1/4" Magician="1/4" LayHealer="2/4" Mentalist="2/4" Seer="2/4" Animist="2/4" Cleric="2/4" Healer="2/4" Astrologer="2/4" Mystic="1/4" Sorcerer="1/4" Archmage="1/4" Bard="2/4" Delver="1/4" Monk="1/4" Nightblade="1/4" Paladin="1/4" Ranger="2/4" NoProfession="2/6"/>
+    <skill name="Tactics, Land" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('InB')) div 2))" Fighter="1/3" Hunter="1/3" Rogue="1/3" Thief="1/3" WarriorMonk="1/4" Alchimist="2/4" Illusionist="1/4" Magician="2/4" LayHealer="2/5" Mentalist="2/4" Seer="2/5" Animist="2/5" Cleric="2/5" Healer="2/5" Astrologer="2/5" Mystic="2/4" Sorcerer="2/4" Archmage="2/5" Bard="2/4" Delver="1/5" Monk="2/4" Nightblade="1/3" Paladin="1/3" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Tactics, Water" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('InB')) div 2))" Fighter="1/3" Hunter="1/3" Rogue="1/3" Thief="1/3" WarriorMonk="1/4" Alchimist="2/4" Illusionist="1/4" Magician="2/4" LayHealer="2/5" Mentalist="2/4" Seer="2/5" Animist="2/5" Cleric="2/5" Healer="2/5" Astrologer="2/5" Mystic="2/4" Sorcerer="2/4" Archmage="2/5" Bard="2/4" Delver="1/5" Monk="2/4" Nightblade="1/3" Paladin="1/3" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Weather Watching" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('EmB')) div 2))" Fighter="3/7" Hunter="2/6" Rogue="3/7" Thief="3/7" WarriorMonk="2/7" Alchimist="1/4" Illusionist="1/4" Magician="1/4" LayHealer="2/6" Mentalist="2/6" Seer="1/2" Animist="1/3" Cleric="1/3" Healer="1/3" Astrologer="1/2" Mystic="1/4" Sorcerer="1/3" Archmage="1/3" Bard="1/6" Delver="1/5" Monk="1/5" Nightblade="3/7" Paladin="2/5" Ranger="1/5" NoProfession="2/6"/>
+  </section>
+  <section name="Athletic">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Athletic')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Athletic')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Athletic')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Acrobatics" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('QuB')) div 2))" Fighter="2/5" Hunter="2/5" Rogue="1/4" Thief="1/3" WarriorMonk="1/3" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3/7" Mentalist="3/7" Seer="3/7" Animist="2/7" Cleric="2/7" Healer="2/7" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3" Monk="1/5" Nightblade="1/3" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Track &amp; Field" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('QuB')) div 2))" Fighter="1/4" Hunter="1/4" Rogue="2/5" Thief="1/5" WarriorMonk="1/5" Alchimist="3" Illusionist="7" Magician="6" LayHealer="6" Mentalist="5" Seer="4" Animist="4" Cleric="5" Healer="6" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="2/6" Delver="3/7" Monk="1/5" Nightblade="2/6" Paladin="1/5" Ranger="1/4" NoProfession="4"/>
+    <skill name="Heavy Athletics" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 2))" Fighter="1/4" Hunter="1/4" Rogue="2/5" Thief="1/5" WarriorMonk="1/5" Alchimist="3" Illusionist="7" Magician="6" LayHealer="6" Mentalist="5" Seer="4" Animist="4" Cleric="5" Healer="6" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="2/6" Delver="3/7" Monk="1/5" Nightblade="2/6" Paladin="1/5" Ranger="1/4" NoProfession="4"/>
+    <skill name="Climbing" attr="u:attribute('AgB')" Fighter="3/7" Hunter="2/6" Rogue="3/7" Thief="2/5" WarriorMonk="3/7" Alchimist="7" Illusionist="7" Magician="6" LayHealer="6" Mentalist="5" Seer="4" Animist="4" Cleric="5" Healer="6" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="3/9" Delver="3/7" Monk="3/7" Nightblade="3/7" Paladin="6" Ranger="3/9" NoProfession="5"/>
+    <skill name="Contortions" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/4" Thief="1/3" WarriorMonk="1/2" Alchimist="5" Illusionist="4" Magician="5" LayHealer="3" Mentalist="3" Seer="3" Animist="2/6" Cleric="3/7" Healer="2/6" Astrologer="5" Mystic="4" Sorcerer="5" Archmage="5" Bard="2/5" Delver=" 5" Monk="2/4" Nightblade="1/3" Paladin="2/5" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Dance" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('InB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/4" Thief="2/4" WarriorMonk="2/4" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/6" Mentalist="2/6" Seer="2/5" Animist="1/5" Cleric="1/5" Healer="2/4" Astrologer="2/5" Mystic="2/4" Sorcerer="2/7" Archmage="3/7" Bard="1/3" Delver="2/6" Monk="1/5" Nightblade="2/4" Paladin="2/5" Ranger="2/5" NoProfession="2/6"/>
+    <skill name="Diving" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/4" Thief="1/3" WarriorMonk="1/4" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/5" Cleric="2/5" Healer="2/5" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/5" Delver="3" Monk="2/4" Nightblade="2/4" Paladin="2/6" Ranger="2/5" NoProfession="2/7"/>
+    <skill name="Fly &amp; Glide" attr="u:attribute('AgB')" Fighter="3/6" Hunter="3/6" Rogue="2/6" Thief="1/5" WarriorMonk="2/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/7" Cleric="2/7" Healer="2/7" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3" Monk="2/5" Nightblade="1/5" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Juggling" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('InB')) div 2))" Fighter="1/5" Hunter="2/5" Rogue="1/3" Thief="1/2" WarriorMonk="2/7" Alchimist="5" Illusionist="3" Magician="3" LayHealer="2/6" Mentalist="2/6" Seer="2/5" Animist="2/7" Cleric="2/6" Healer="2/7" Astrologer="2/6" Mystic="2/5" Sorcerer="2/5" Archmage="2/5" Bard="1/5" Delver="3" Monk="2/7" Nightblade="2/7" Paladin="1/2" Ranger="2/7" NoProfession="2/6"/>
+    <skill name="Rowing" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('StB')) div 2))" Fighter="1/4" Hunter="1/4" Rogue="1/3" Thief="1/4" WarriorMonk="1/4" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/5" Cleric="2/5" Healer="2/6" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/5" Delver="3" Monk="1/5" Nightblade="1/4" Paladin="2/5" Ranger="2/5" NoProfession="2/7"/>
+    <skill name="Run, Distance" attr="u:attribute('CoB')" Fighter="2/4" Hunter="2/4" Rogue="2/5" Thief="1/3" WarriorMonk="1/5" Alchimist="6" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3" Monk="2/6" Nightblade="1/3" Paladin="2/5" Ranger="2/6" NoProfession="2/7"/>
+    <skill name="Run, Sprint" attr="u:attribute('QuB')" Fighter="2/4" Hunter="2/4" Rogue="2/5" Thief="1/3" WarriorMonk="1/5" Alchimist="6" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3" Monk="2/6" Nightblade="1/3" Paladin="2/5" Ranger="2/6" NoProfession="2/7"/>
+    <skill name="Sailing" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('InB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/6" WarriorMonk="2/6" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/5" Cleric="2/7" Healer="2/5" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3" Monk="2/4" Nightblade="2/6" Paladin="2/5" Ranger="2/5" NoProfession="3/8"/>
+    <skill name="Skiing" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="2/7" Hunter="2/4" Rogue="2/6" Thief="2/6" WarriorMonk="2/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3/5" Mentalist="3/5" Seer="3/5" Animist="2/7" Cleric="2/6" Healer="2/7" Astrologer="3/7" Mystic="3/7" Sorcerer="3/7" Archmage="3/7" Bard="2/7" Delver="3" Monk="2/6" Nightblade="2/6" Paladin="2/7" Ranger="2/6" NoProfession="3/8"/>
+    <skill name="Swimming" attr="u:attribute('AgB')" Fighter="2/6" Hunter="1/3" Rogue="2/5" Thief="1/3" WarriorMonk="1/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="2/6" Monk="2/6" Nightblade="3" Paladin="3" Ranger="2/6" NoProfession="2/7"/>
+    <skill name="Tumbling" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="1/5" Hunter="1/5" Rogue="1/3" Thief="1/3" WarriorMonk="1/2" Alchimist="3" Illusionist="3" Magician="3" LayHealer="2" Mentalist="2" Seer="2" Animist="2/5" Cleric="2/6" Healer="2/5" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/5" Delver="3" Monk="1/4" Nightblade="1/3" Paladin="2/4" Ranger="2/4" NoProfession="2/7"/>
+  </section>
+  <section name="Combat">
+    <modifier name="display" value="u:ifthenelse(contains('$name', '/'), substring-after('$name', '/'), '$name')"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Combat')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Combat')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Combat')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Artillery" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('InB')) div 2))" Fighter="1/3" Hunter="2/4" Rogue="1/4" Thief="1/4" WarriorMonk="1/5" Alchimist="3/6" Illusionist="3/6" Magician="3/6" LayHealer="4" Mentalist="3/6" Seer="3/7" Animist="3" Cleric="3/6" Healer="3/7" Astrologer="2/7" Mystic="2/7" Sorcerer="2/7" Archmage="2/7" Bard="2/5" Delver="2/5" Monk="2/5" Nightblade="2/5" Paladin="1/4" Ranger="2/5" NoProfession="2/6"/>
+    <skill name="Brawling" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('InB')) div 2))" Fighter="2/6" Hunter="2/5" Rogue="1/5" Thief="2/7" WarriorMonk="8" Alchimist="18" Illusionist="18" Magician="18" LayHealer="8" Mentalist=" 8" Seer="15" Animist="7" Cleric="7" Healer="15" Astrologer="18" Mystic="18" Sorcerer="18" Archmage="20" Bard="5" Delver="18" Monk="8" Nightblade="2/7" Paladin="3/6" Ranger="5" NoProfession="9"/>
+    <skill name="Disarming" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('QuB')) div 2))" Fighter="2/6" Hunter="2/7" Rogue="2/6" Thief="2/6" WarriorMonk="2/3" Alchimist="8" Illusionist="7" Magician="7" LayHealer="5" Mentalist=" 5" Seer="5" Animist="6" Cleric="6" Healer="8" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="5" Delver="7" Monk="3/4" Nightblade="2/6" Paladin="3/5" Ranger="4" NoProfession="5"/>
+    <skill name="Disarming, Sword" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('QuB')) div 2))" Fighter="2/6" Hunter="2/7" Rogue="2/6" Thief="2/6" WarriorMonk="2/3" Alchimist="8" Illusionist="7" Magician="7" LayHealer="5" Mentalist=" 5" Seer="5" Animist="6" Cleric="6" Healer="8" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="5" Delver="7" Monk="3/4" Nightblade="2/6" Paladin="3/5" Ranger="4" NoProfession="5"/>
+    <skill name="Grappling Hook" attr="u:attribute('AgB')" Fighter="2/6" Hunter="2/6" Rogue="1/5" Thief="1/3" WarriorMonk="2/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/6" Cleric="2/5" Healer="2/6" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/5" Delver="3" Monk="2/4" Nightblade="1/3" Paladin="2/6" Ranger="2/5" NoProfession="3/6"/>
+    <skill name="MA, Strikes Rk 1" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Strikes Rk 2" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Strikes Rk 3" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Strikes Rk 4" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Throws Rk 1" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Throws Rk 2" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Throws Rk 3" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="MA, Throws Rk 4" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 3))" Fighter="3/7" Hunter="3/7" Rogue="3/7" Thief="3/7" WarriorMonk="1/3" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3" Mentalist="3" Seer="3" Animist=" 6" Cleric="6" Healer="6" Astrologer="6" Mystic="6" Sorcerer="9" Archmage="6" Bard="3" Delver="4" Monk="2/5" Nightblade="3/7" Paladin="6" Ranger="4" NoProfession="5"/>
+    <skill name="Reverse Stroke" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/7" Hunter="3/7" Rogue="3/8" Thief="4" WarriorMonk="2/6" Alchimist="20" Illusionist="20" Magician="20" LayHealer="20" Mentalist="20" Seer="20" Animist="20" Cleric="20" Healer="20" Astrologer="20" Mystic="20" Sorcerer="20" Archmage="20" Bard="5" Delver="20" Monk="3/7" Nightblade="4" Paladin="3/7" Ranger="3/7" NoProfession="10"/>
+    <skill name="Shield Bash" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))" Fighter="2/5" Hunter="2/6" Rogue="2/6" Thief="2/7" WarriorMonk="8" Alchimist="18" Illusionist="18" Magician="18" LayHealer="8" Mentalist="8" Seer="15" Animist="7" Cleric="7" Healer="15" Astrologer="18" Mystic="18" Sorcerer="18" Archmage="20" Bard="5" Delver="18" Monk="8" Nightblade="3/8" Paladin="2/5" Ranger="5" NoProfession="8"/>
+    <skill name="Subduing" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('QuB')) div 2))" Fighter="2/5" Hunter="2/5" Rogue="1/5" Thief="1/4" WarriorMonk="1/2" Alchimist="6" Illusionist="4" Magician="6" LayHealer="1/3" Mentalist="6" Seer="5" Animist="3/6" Cleric="3/6" Healer="3/6" Astrologer="6" Mystic="3/5" Sorcerer="6" Archmage="6" Bard="5" Delver="6" Monk="3" Nightblade="1/4" Paladin="3/6" Ranger="4" NoProfession="4"/>
+    <skill name="Yado" attr="u:sign(floor(u:parse(u:attribute('QuB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="3/6" Thief="3/6" WarriorMonk="2/6" Alchimist="6" Illusionist="6" Magician="6" LayHealer="6" Mentalist="5" Seer="6" Animist="5" Cleric="5" Healer="6" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="4" Delver="5" Monk="2/6" Nightblade="3/6" Paladin="3/7" Ranger="4" NoProfession="4"/>
+    <skill name="Weapon1" Fighter="1/5" Hunter="1/5" Rogue="2/5" Thief="2/7" WarriorMonk="4" Alchimist="9" Illusionist="9" Magician="9" LayHealer="8" Mentalist="6" Seer="6" Animist="6" Cleric="6" Healer="9" Astrologer="9" Mystic="9" Sorcerer="9" Archmage="9" Bard="3/9" Delver="4/8" Monk="5" Nightblade="3/9" Paladin="2/5" Ranger="3/7" NoProfession="3/7" class="u:rules(concat('//section//skill[@name=|Weapon1|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Thrown arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Spear" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h edged" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Rapier" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Dagger" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Bastard sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Handaxe" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h crushing" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      <skill name="2-h" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Two-handed sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Bows" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Longbow" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Pole arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+    </skill>
+    <skill name="Weapon2" Fighter="2/5" Hunter="2/5" Rogue="3/8" Thief="3/8" WarriorMonk="6" Alchimist="20" Illusionist="20" Magician="20" LayHealer="8" Mentalist="8" Seer="15" Animist="7" Cleric="7" Healer="20" Astrologer="20" Mystic="20" Sorcerer="20" Archmage="20" Bard="6" Delver="6" Monk="8" Nightblade="6" Paladin="3/8" Ranger="4" NoProfession="7" class="u:rules(concat('//section//skill[@name=|Weapon2|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Thrown arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Spear" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h edged" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Rapier" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Dagger" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Bastard sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Handaxe" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h crushing" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      <skill name="2-h" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Two-handed sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Bows" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Longbow" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Pole arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+    </skill>
+    <skill name="Weapon3" Fighter="2/7" Hunter="3/8" Rogue="3/9" Thief="4" WarriorMonk="8" Alchimist="20" Illusionist="20" Magician="20" LayHealer="15" Mentalist="15" Seer="20" Animist="9" Cleric="9" Healer="20" Astrologer="20" Mystic="20" Sorcerer="20" Archmage="20" Bard="7" Delver="6" Monk="8" Nightblade="7" Paladin="4" Ranger="6" NoProfession="12" class="u:rules(concat('//section//skill[@name=|Weapon3|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Thrown arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Spear" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h edged" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Rapier" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Dagger" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h crushing" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      <skill name="2-h" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Two-handed sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Bows" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Longbow" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Pole arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+    </skill>
+    <skill name="Weapon4" Fighter="2/7" Hunter="4" Rogue="3/9" Thief="4" WarriorMonk="8" Alchimist="20" Illusionist="20" Magician="20" LayHealer="20" Mentalist="20" Seer="20" Animist="9" Cleric="9" Healer="20" Astrologer="20" Mystic="20" Sorcerer="20" Archmage="20" Bard="7" Delver="7" Monk="8" Nightblade="7" Paladin="4" Ranger="6" NoProfession="15" class="u:rules(concat('//section//skill[@name=|Weapon4|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Thrown arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Spear" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h edged" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Rapier" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Dagger" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h crushing" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      <skill name="2-h" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Two-handed sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Bows" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Longbow" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Pole arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+    </skill>
+    <skill name="Weapon5" Fighter="2/7" Hunter="4" Rogue="3/9" Thief="4" WarriorMonk="8" Alchimist="20" Illusionist="20" Magician="20" LayHealer="20" Mentalist="20" Seer="20" Animist="9" Cleric="9" Healer="20" Astrologer="20" Mystic="20" Sorcerer="20" Archmage="20" Bard="7" Delver="7" Monk="15" Nightblade="7" Paladin="4" Ranger="6" NoProfession="15" class="u:rules(concat('//section//skill[@name=|Weapon5|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Thrown arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Spear" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h edged" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Rapier" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Dagger" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h crushing" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      <skill name="2-h" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Two-handed sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Bows" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Longbow" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Pole arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+    </skill>
+    <skill name="Weapon6" Fighter="5" Hunter="6" Rogue="8" Thief="6" WarriorMonk="15" Alchimist="20" Illusionist="20" Magician="20" LayHealer="20" Mentalist="20" Seer="20" Animist="20" Cleric="20" Healer="20" Astrologer="20" Mystic="20" Sorcerer="20" Archmage="20" Bard="15" Delver="7" Monk="15" Nightblade="15" Paladin="6" Ranger="9" NoProfession="15" class="u:rules(concat('//section//skill[@name=|Weapon6|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Thrown arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Spear" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h edged" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Rapier" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+        <skill name="Dagger" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="1-h crushing" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      <skill name="2-h" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Two-handed sword" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Bows" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))">
+        <skill name="Longbow" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) + u:parse(u:attribute('AgB')) div 3))"/>
+      </skill>
+      <skill name="Pole arms" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 3))"/>
+    </skill>
+  </section>
+  <section name="Concentration">
+    <modifier name="display" value="u:ifthenelse(contains('$name', '/'), substring-after('$name', '/'), '$name')"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Concentration')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Concentration')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Concentration')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <skill name="Adrenal Moves" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="2/6" Hunter="2/4" Rogue="2/6" Thief="2/6" WarriorMonk="1/3" Alchimist="6" Illusionist="6" Magician="6" LayHealer="3" Mentalist="3" Seer="3" Animist="5" Cleric="5" Healer="5" Astrologer="5" Mystic="5" Sorcerer="5" Archmage="5" Bard="2/7" Delver="2/7" Monk="2/4" Nightblade="1/4" Paladin="3/9" Ranger="2/7" NoProfession="3" class="u:rules(concat('//section//skill[@name=|Adrenal Moves|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))">
+      <skill name="Balance" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))"/>
+      <skill name="Landing" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))"/>
+      <skill name="Leaping" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))"/>
+      <skill name="Quick Draw" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))"/>
+      <skill name="Speed" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))"/>
+      <skill name="Strength" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))"/>
+    </skill>
+    <skill name="Lycanthropy" attr="u:attribute('SDB')" Fighter="2/6" Hunter="2/4" Rogue="2/6" Thief="2/6" WarriorMonk="1/3" Alchimist="2/4" Illusionist="2/4" Magician="1/4" LayHealer="1/4" Mentalist="1/4" Seer="1/2" Animist="2/4" Cleric="1/4" Healer="1/2" Astrologer="2/5" Mystic="1/3" Sorcerer="2/5" Archmage="2/4" Bard="2/6" Delver="2/6" Monk="2/6" Nightblade="2/6" Paladin="1/4" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Frenzy" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/6" WarriorMonk="2/5" Alchimist="5" Illusionist="5" Magician="5" LayHealer="2/5" Mentalist="2/4" Seer="6" Animist="3" Cleric="3" Healer="3" Astrologer="5" Mystic="3" Sorcerer="3/6" Archmage="3/6" Bard="2/6" Delver="6" Monk="1/3" Nightblade="2/6" Paladin="2/5" Ranger="2/6" NoProfession="3/8"/>
+    <skill name="Meditation">
+      <skill name="Ki" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="3/7" Hunter="3/7" Rogue="3/6" Thief="3/6" WarriorMonk="2/4" Alchimist="2/4" Illusionist="2/4" Magician="2/4" LayHealer="1/2" Mentalist="1/3" Seer="1/3" Animist="1/4" Cleric="1/4" Healer="1/3" Astrologer="2/4" Mystic="1/3" Sorcerer="2/4" Archmage="1/4" Bard="2/4" Delver="2/4" Monk="1/4" Nightblade="3/6" Paladin="2/4" Ranger="2/4" NoProfession="2/6" class="u:rules(concat('//section//skill[@name=|Ki|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+      <skill name="Sleep" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="3/7" Hunter="3/7" Rogue="3/6" Thief="3/6" WarriorMonk="2/4" Alchimist="2/4" Illusionist="2/4" Magician="2/4" LayHealer="1/2" Mentalist="1/3" Seer="1/3" Animist="1/4" Cleric="1/4" Healer="1/3" Astrologer="2/4" Mystic="1/3" Sorcerer="2/4" Archmage="1/4" Bard="2/4" Delver="2/4" Monk="1/4" Nightblade="3/6" Paladin="2/4" Ranger="2/4" NoProfession="2/6" class="u:rules(concat('//section//skill[@name=|Sleep|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+      <skill name="Heal" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="3/7" Hunter="3/7" Rogue="3/6" Thief="3/6" WarriorMonk="2/4" Alchimist="2/4" Illusionist="2/4" Magician="2/4" LayHealer="1/2" Mentalist="1/3" Seer="1/3" Animist="1/4" Cleric="1/4" Healer="1/3" Astrologer="2/4" Mystic="1/3" Sorcerer="2/4" Archmage="1/4" Bard="2/4" Delver="2/4" Monk="1/4" Nightblade="3/6" Paladin="2/4" Ranger="2/4" NoProfession="2/6" class="u:rules(concat('//section//skill[@name=|Heal|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+      <skill name="Trance" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="3/7" Hunter="3/7" Rogue="3/6" Thief="3/6" WarriorMonk="2/4" Alchimist="2/4" Illusionist="2/4" Magician="2/4" LayHealer="1/2" Mentalist="1/3" Seer="1/3" Animist="1/4" Cleric="1/4" Healer="1/3" Astrologer="2/4" Mystic="1/3" Sorcerer="2/4" Archmage="1/4" Bard="2/4" Delver="2/4" Monk="1/4" Nightblade="3/6" Paladin="2/4" Ranger="2/4" NoProfession="2/6" class="u:rules(concat('//section//skill[@name=|Trance|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    </skill>
+  </section>
+  <section name="General">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@General')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@General')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@General')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Appraisal" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/5" Hunter="3/6" Rogue="2/4" Thief="1/4" WarriorMonk="2" Alchimist="1/4" Illusionist="3/7" Magician="3/7" LayHealer="2" Mentalist="2" Seer="2/5" Animist="2" Cleric="2" Healer="2" Astrologer="2" Mystic="3/5" Sorcerer="2" Archmage="3/5" Bard="1/3" Delver="1/2" Monk="2/5" Nightblade="1/4" Paladin="1/4" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Cookery" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/5" Hunter="2/5" Rogue="1/5" Thief="2/5" WarriorMonk="1/5" Alchimist="1/2" Illusionist="2/6" Magician="2/6" LayHealer="1/2" Mentalist="2/6" Seer="2/6" Animist="1/4" Cleric="2/4" Healer="1/5" Astrologer="2/6" Mystic="2/6" Sorcerer="2/4" Archmage="2/6" Bard="2/6" Delver="1/3" Monk="2/6" Nightblade="1/5" Paladin="2/6" Ranger="2/4" NoProfession="2/6"/>
+    <skill name="Crafting" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/5" Hunter="2/6" Rogue="2/4" Thief="1/5" WarriorMonk="2/5" Alchimist="1/3" Illusionist="2/4" Magician="2/5" LayHealer="3/6" Mentalist="2/4" Seer="2/5" Animist="2/6" Cleric="2/6" Healer="2/6" Astrologer="2/6" Mystic="2/6" Sorcerer="2/6" Archmage="2/6" Bard="3/5" Delver="1/3" Monk="1/4" Nightblade="2/6" Paladin="2/4" Ranger="2/4" NoProfession="2/6">
+      <skill name="Arrows" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('ReB')) div 2))"/>
+      <skill name="Armor" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('ReB')) div 2))"/>
+    </skill>
+    <skill name="Fletching" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="2/4" Hunter="2/4" Rogue="2/4" Thief="2/4" WarriorMonk="2/5" Alchimist="1/3" Illusionist="2/7" Magician="2/6" LayHealer="2/5" Mentalist="2/6" Seer="2/6" Animist="2/5" Cleric="2/5" Healer="2/6" Astrologer="3/6" Mystic="3/6" Sorcerer="3/5" Archmage="3/5" Bard="2/5" Delver="1/3" Monk="2/5" Nightblade="2/6" Paladin="2/5" Ranger="2/5" NoProfession="2/6"/>
+    <skill name="Gambling" attr="u:sign(floor(u:parse(u:attribute('MeB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="2/4" Hunter="2/5" Rogue="1/4" Thief="1/3" WarriorMonk="2/4" Alchimist="2/6" Illusionist="2/5" Magician="2/6" LayHealer="2/5" Mentalist="2/5" Seer="1/3" Animist="2/6" Cleric="1/4" Healer="2/4" Astrologer="1/5" Mystic="2/5" Sorcerer="2/7" Archmage="2/7" Bard="2/6" Delver="2/6" Monk="2/6" Nightblade="1/3" Paladin="3/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Gimmickry" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="3/7" Hunter="3/7" Rogue="2/6" Thief="2/5" WarriorMonk="3/7" Alchimist="1/2" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="3/7" Cleric="3/7" Healer="3/7" Astrologer="3/6" Mystic="3/6" Sorcerer="3/5" Archmage="2/6" Bard="2/5" Delver="1/4" Monk="2/6" Nightblade="2/5" Paladin="2/6" Ranger="2/7" NoProfession="3"/>
+    <skill name="Rope Mastery" attr="u:sign(floor(u:parse(u:attribute('MeB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="1/5" Thief="1/3" WarriorMonk="2/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/6" Cleric="2/5" Healer="2/6" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/5" Delver="3" Monk="2/4" Nightblade="2/6" Paladin="2/6" Ranger="2/5" NoProfession="2/6"/>
+    <skill name="Seduction" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="2/6" Hunter="2/5" Rogue="2/5" Thief="2/6" WarriorMonk="2/6" Alchimist="2/5" Illusionist="2/5" Magician="2/5" LayHealer="2/6" Mentalist="2/6" Seer="2/4" Animist="2/6" Cleric="2/6" Healer="2/6" Astrologer="2/6" Mystic="1/3" Sorcerer="2/5" Archmage="2/5" Bard="1/4" Delver="2/5" Monk="2/6" Nightblade="2/6" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Working, Leather" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/4" Hunter="2/4" Rogue="2/4" Thief="2/4" WarriorMonk="2/4" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="2/5" Cleric="2/6" Healer="2/5" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="1/4" Delver="2/5" Monk="1/3" Nightblade="2/6" Paladin="1/4" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Working, Metal" attr="u:sign(floor(u:parse(u:attribute('StB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="3/5" Hunter="3/5" Rogue="2/7" Thief="2/6" WarriorMonk="3/5" Alchimist="1/2" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="3/5" Delver="1/2" Monk="2/6" Nightblade="2/6" Paladin="3/5" Ranger="2/7" NoProfession="3"/>
+    <skill name="Working, Stone" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="2/7" Hunter="2/6" Rogue="3/7" Thief="3/7" WarriorMonk="3/5" Alchimist="1/3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="3" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/7" Delver="2/5" Monk="2/7" Nightblade="3/5" Paladin="3/5" Ranger="3/6" NoProfession="3"/>
+    <skill name="Working, Wood" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('EmB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/7" WarriorMonk="2/6" Alchimist="1/3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="1/2" Seer="3" Animist="2/5" Cleric="2/6" Healer="2/6" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/4" Delver="1/4" Monk="1/5" Nightblade="3/5" Paladin="2/4" Ranger="2/4" NoProfession="3"/>
+  </section>
+  <section name="Linguistic">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Linguistic')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Linguistic')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Linguistic')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Instrument" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('EmB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/6" WarriorMonk="2/6" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/5" Mentalist="2/5" Seer="2/5" Animist="2/6" Cleric="2/5" Healer="2/6" Astrologer="2/4" Mystic="2/5" Sorcerer="2/6" Archmage="2/6" Bard="1/2" Delver="2/6" Monk="2/6" Nightblade="2/6" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Lip Reading" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="3/5" Hunter="3/7" Rogue="2/5" Thief="3/5" WarriorMonk="3/5" Alchimist="1/5" Illusionist="1/3" Magician="2/4" LayHealer="3/6" Mentalist="2/4" Seer="1/4" Animist="2/4" Cleric="2/4" Healer="2/4" Astrologer="1/3" Mystic="1/3" Sorcerer="2/4" Archmage="1/3" Bard="1/4" Delver="3/5" Monk="2/4" Nightblade="3/5" Paladin="2/5" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Poetic Improv." attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/5" Thief="2/5" WarriorMonk="2/6" Alchimist="2/5" Illusionist="2/5" Magician="2/6" LayHealer="2/5" Mentalist="2/5" Seer="2/4" Animist="2/4" Cleric="2/4" Healer="2/4" Astrologer="2/4" Mystic="2/5" Sorcerer="2/6" Archmage="2/4" Bard="1/2" Delver="2/6" Monk="2/6" Nightblade="2/5" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Public Speaking" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/4" Thief="2/4" WarriorMonk="2/6" Alchimist="2/6" Illusionist="2/5" Magician="2/6" LayHealer="2/5" Mentalist="2/5" Seer="2/4" Animist="2/6" Cleric="2/5" Healer="2/5" Astrologer="2/5" Mystic="2/4" Sorcerer="1/3" Archmage="2/4" Bard="1/2" Delver="2/6" Monk="2/6" Nightblade="2/6" Paladin="1/4" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Signaling" attr="u:sign(floor(u:parse(u:attribute('MeB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="1/4" Hunter="1/4" Rogue="1/4" Thief="1/3" WarriorMonk="1/4" Alchimist="1/5" Illusionist="2/4" Magician="1/5" LayHealer="2/6" Mentalist="2/6" Seer="2/6" Animist="2/5" Cleric="2/5" Healer="2/6" Astrologer="1/4" Mystic="1/3" Sorcerer="2/6" Archmage="2/6" Bard="1/5" Delver="1/5" Monk="2/6" Nightblade="1/3" Paladin="1/5" Ranger="1/5" NoProfession="2/6"/>
+    <skill name="Singing" attr="u:sign(floor(u:parse(u:attribute('PrB')) + u:parse(u:attribute('InB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/6" WarriorMonk="2/6" Alchimist="3" Illusionist="2/6" Magician="2/6" LayHealer="2/6" Mentalist="2/6" Seer="2/5" Animist="2/6" Cleric="2/5" Healer="2/6" Astrologer="2/4" Mystic="2/5" Sorcerer="2/6" Archmage="2/6" Bard="1/2" Delver="2/6" Monk="2/6" Nightblade="2/6" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Ventriloquism" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('InB')) div 2))" Fighter="3/5" Hunter="3/5" Rogue="2/5" Thief="3/5" WarriorMonk="3/5" Alchimist="3/6" Illusionist="2/3" Magician="3/6" LayHealer="3/6" Mentalist="3/6" Seer="2/5" Animist="2/5" Cleric="2/5" Healer="3/7" Astrologer="3/7" Mystic="2/4" Sorcerer="3/7" Archmage="2/6" Bard="2/5" Delver="3/6" Monk="3/6" Nightblade="3/5" Paladin="3/6" Ranger="3/6" NoProfession="2/6"/>
+  </section>
+  <section name="Language">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <modifier name="total" value="substring(.//skill[@name='$name']/@ranks, 1, 2)"/>
+    <skill name="Elfish" Fighter="3/*" Hunter="3/*" Rogue="3/*" Thief="3/*" WarriorMonk="3/*" Alchimist="1/*" Illusionist="1/*" Magician="2/*" LayHealer="2/*" Mentalist="2/*" Seer="1/*" Animist="2/*" Cleric="2/*" Healer="2/*" Astrologer="1/*" Mystic="1/*" Sorcerer="2/*" Archmage="1/*" Bard="1/*" Delver="3/*" Monk="3/*" Nightblade="3/*" Paladin="3/*" Ranger="3/*" NoProfession="2/*"/>
+    <skill name="Mongolian" Fighter="3/*" Hunter="3/*" Rogue="3/*" Thief="3/*" WarriorMonk="3/*" Alchimist="1/*" Illusionist="1/*" Magician="2/*" LayHealer="2/*" Mentalist="2/*" Seer="1/*" Animist="2/*" Cleric="2/*" Healer="2/*" Astrologer="1/*" Mystic="1/*" Sorcerer="2/*" Archmage="1/*" Bard="1/*" Delver="3/*" Monk="3/*" Nightblade="3/*" Paladin="3/*" Ranger="3/*" NoProfession="2/*"/>
+    <skill name="Dwarfish" Fighter="3/*" Hunter="3/*" Rogue="3/*" Thief="3/*" WarriorMonk="3/*" Alchimist="1/*" Illusionist="1/*" Magician="2/*" LayHealer="2/*" Mentalist="2/*" Seer="1/*" Animist="2/*" Cleric="2/*" Healer="2/*" Astrologer="1/*" Mystic="1/*" Sorcerer="2/*" Archmage="1/*" Bard="1/*" Delver="3/*" Monk="3/*" Nightblade="3/*" Paladin="3/*" Ranger="3/*" NoProfession="2/*"/>
+    <skill name="Hyperborean" Fighter="3/*" Hunter="3/*" Rogue="3/*" Thief="3/*" WarriorMonk="3/*" Alchimist="1/*" Illusionist="1/*" Magician="2/*" LayHealer="2/*" Mentalist="2/*" Seer="1/*" Animist="2/*" Cleric="2/*" Healer="2/*" Astrologer="1/*" Mystic="1/*" Sorcerer="2/*" Archmage="1/*" Bard="1/*" Delver="3/*" Monk="3/*" Nightblade="3/*" Paladin="3/*" Ranger="3/*" NoProfession="2/*"/>
+  </section>
+  <section name="Magical">
+    <modifier name="display" value="u:ifthenelse(contains('$name', '/'), substring-after('$name', '/'), '$name')"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Magical')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Magical')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Magical')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Channeling" attr="u:attribute('InB')" Fighter="25" Hunter="25" Rogue="20" Thief="20" WarriorMonk="19" Alchimist="7" Illusionist="7" Magician="7" LayHealer="8" Mentalist="8" Seer="8" Animist="2/5" Cleric="1/4" Healer="2/5" Astrologer="1/5" Mystic="8" Sorcerer="2/5" Archmage="2/5" Bard="13" Delver="13" Monk="13" Nightblade="20" Paladin="3" Ranger="3" NoProfession="10"/>
+    <skill name="Power Perception" attr="u:attribute('EmB')" Fighter="6" Hunter="7" Rogue="5" Thief="4" WarriorMonk="3/7" Alchimist="1/3" Illusionist="1/3" Magician="1/3" LayHealer="1/3" Mentalist="1/3" Seer="1/3" Animist="1/3" Cleric="1/3" Healer="1/3" Astrologer="1/4" Mystic="1/4" Sorcerer="1/4" Archmage="1/3" Bard="2/5" Delver="2/5" Monk="2/5" Nightblade="2/5" Paladin="2/5" Ranger="2/5" NoProfession="3/6"/>
+    <skill name="Runes" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('InB')) div 2))" Fighter="7" Hunter="8" Rogue="6" Thief="6" WarriorMonk="6" Alchimist="1/3" Illusionist="1/4" Magician="1/4" LayHealer="2/6" Mentalist="2/5" Seer="2/6" Animist="2/6" Cleric="2/5" Healer="2/6" Astrologer="2/6" Mystic="2/5" Sorcerer="2/5" Archmage="1/4" Bard="5" Delver="4" Monk="4" Nightblade="6" Paladin="7" Ranger="5" NoProfession="3/6"/>
+    <skill name="Spell Mastery">
+      <skill name="Concentration" attr="u:attribute('PrB')" Fighter="6" Hunter="6" Rogue="5" Thief="6" WarriorMonk="5" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/4" Mentalist="2/4" Seer="2/4" Animist="3/7" Cleric="3/7" Healer="3/7" Astrologer="2/5" Mystic="2/5" Sorcerer="2/6" Archmage="2/5" Bard="2/5" Delver="3/6" Monk="3/5" Nightblade="3/5" Paladin="3/5" Ranger="4" NoProfession="3/6" class="u:rules(concat('//section//skill[@name=|Concentration|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+      <skill name="Targeting" attr="u:attribute('EmB')" Fighter="6" Hunter="6" Rogue="5" Thief="6" WarriorMonk="5" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/4" Mentalist="2/4" Seer="2/4" Animist="3/7" Cleric="3/7" Healer="3/7" Astrologer="2/5" Mystic="2/5" Sorcerer="2/6" Archmage="2/5" Bard="2/5" Delver="3/6" Monk="3/5" Nightblade="3/5" Paladin="3/5" Ranger="4" NoProfession="3/6" class="u:rules(concat('//section//skill[@name=|Targeting|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+      <skill name="Penetration" attr="u:attribute('InB')" Fighter="6" Hunter="6" Rogue="5" Thief="6" WarriorMonk="5" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="2/4" Mentalist="2/4" Seer="2/4" Animist="3/7" Cleric="3/7" Healer="3/7" Astrologer="2/5" Mystic="2/5" Sorcerer="2/6" Archmage="2/5" Bard="2/5" Delver="3/6" Monk="3/5" Nightblade="3/5" Paladin="3/5" Ranger="4" NoProfession="3/6" class="u:rules(concat('//section//skill[@name=|Penetration|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    </skill>
+    <skill name="Staves &amp; Wands" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('InB')) div 2))" Fighter="9" Hunter="8" Rogue="8" Thief="7" WarriorMonk="9" Alchimist="1/3" Illusionist="1/4" Magician="1/4" LayHealer="2/6" Mentalist="2/5" Seer="2/6" Animist="2/6" Cleric="2/5" Healer="3/7" Astrologer="2/6" Mystic="2/5" Sorcerer="2/5" Archmage="1/4" Bard="6" Delver="5" Monk="5" Nightblade="7" Paladin="9" Ranger="6" NoProfession="3/6"/>
+  </section>
+  <section name="Maneuvering in Armor">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:ifthenelse(.//skill[@name='$name']/@ranks &gt; 0, //skill[@name='$name']/@ranks * 5, 0)))"/>
+    <skill name="Soft Leather" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 2))" Fighter="1/*" Hunter="2/*" Rogue="1/*" Thief="1/*" WarriorMonk="9" Alchimist="9" Illusionist="9" Magician="9" LayHealer="2/*" Mentalist="4/*" Seer="4/*" Animist="2/*" Cleric="1/*" Healer="2/*" Astrologer="4/*" Mystic="4/*" Sorcerer="9" Archmage="9" Bard="2/*" Delver="9/*" Monk="9" Nightblade="2/*" Paladin="1/*" Ranger="1/*" NoProfession="3/*"/>
+    <skill name="Rigid Leather" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 2))" Fighter="1/*" Hunter="3/*" Rogue="1/*" Thief="2/*" WarriorMonk="9" Alchimist="9" Illusionist="9" Magician="9" LayHealer="3/*" Mentalist="5/*" Seer="5/*" Animist="3/*" Cleric="2/*" Healer="3/*" Astrologer="5/*" Mystic="5/*" Sorcerer="9" Archmage="9" Bard="2/*" Delver="9/*" Monk="9" Nightblade="2/*" Paladin="1/*" Ranger="2/*" NoProfession="4/*"/>
+    <skill name="Chain" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 2))" Fighter="2/*" Hunter="5/*" Rogue="2/*" Thief="3/*" WarriorMonk="10" Alchimist="10" Illusionist="10" Magician="10" LayHealer="4/*" Mentalist="6/*" Seer="6/*" Animist="10" Cleric="10" Healer="10" Astrologer="6/*" Mystic="6/*" Sorcerer="10" Archmage="10" Bard="3/*" Delver="10" Monk="10" Nightblade="4/*" Paladin="2/*" Ranger="3/*" NoProfession="6/*"/>
+    <skill name="Plate" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('StB')) div 2))" Fighter="2/*" Hunter="7/*" Rogue="3/*" Thief="4/*" WarriorMonk="10" Alchimist="11" Illusionist="10" Magician="10" LayHealer="5/*" Mentalist="7/*" Seer="7/*" Animist="10" Cleric="10" Healer="10" Astrologer="7/*" Mystic="7/*" Sorcerer="11" Archmage="11" Bard="5/*" Delver="11" Monk="11" Nightblade="6/*" Paladin="3/*" Ranger="4/*" NoProfession="7/*"/>
+  </section>
+  <section name="Medical">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Medical')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Medical')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Medical')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Animal Healing" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/5" Thief="2/6" WarriorMonk="2/5" Alchimist="2/5" Illusionist="2/6" Magician="2/6" LayHealer="1/2" Mentalist="2/6" Seer="2/5" Animist="1/4" Cleric="1/5" Healer="1/3" Astrologer="2/6" Mystic="2/5" Sorcerer="2/6" Archmage="2/6" Bard="2/5" Delver="2/5" Monk="2/5" Nightblade="2/6" Paladin="1/5" Ranger="2/5" NoProfession="2/6"/>
+    <skill name="First Aid" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('EmB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="2/6" WarriorMonk="2/6" Alchimist="2/5" Illusionist="2/6" Magician="2/6" LayHealer="1/2" Mentalist="2/6" Seer="2/6" Animist="1/5" Cleric="1/5" Healer="1/2" Astrologer="2/6" Mystic="3/6" Sorcerer="3/6" Archmage="2/6" Bard="2/6" Delver="2/5" Monk="2/6" Nightblade="2/6" Paladin="1/5" Ranger="2/4" NoProfession="2/6"/>
+    <skill name="Herb Mastery" attr="u:sign(floor(u:parse(u:attribute('MeB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/6" Hunter="2/4" Rogue="2/6" Thief="2/6" WarriorMonk="2/4" Alchimist="1/3" Illusionist="2/6" Magician="2/6" LayHealer="1/2" Mentalist="1/3" Seer="2/4" Animist="1/3" Cleric="2/4" Healer="1/2" Astrologer="2/4" Mystic="1/4" Sorcerer="2/6" Archmage="2/4" Bard="1/4" Delver="1/4" Monk="2/4" Nightblade="2/6" Paladin="1/4" Ranger="1/3" NoProfession="2/6"/>
+    <skill name="Midwifery" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('MeB')) + u:parse(u:attribute('InB')) div 3))" Fighter="4" Hunter="4" Rogue="4" Thief="4" WarriorMonk="4" Alchimist="4" Illusionist="4" Magician="4" LayHealer="1/3" Mentalist="4" Seer="4" Animist="2/6" Cleric="3/6" Healer="1/3" Astrologer="4" Mystic="4" Sorcerer="6" Archmage="6" Bard="4" Delver="4" Monk="4" Nightblade="4" Paladin="2/5" Ranger="2/6" NoProfession="4"/>
+  </section>
+  <section name="Outdoor">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Outdoor')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Outdoor')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Outdoor')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Animal Handling" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="1/4" Hunter="1/3" Rogue="1/4" Thief="2/5" WarriorMonk="2/6" Alchimist="2/5" Illusionist="2/5" Magician="2/5" LayHealer="2" Mentalist="2" Seer="2" Animist="1/2" Cleric="2" Healer="2" Astrologer="2" Mystic="2/6" Sorcerer="2/7" Archmage="2/7" Bard="1/5" Delver="2/5" Monk="2/5" Nightblade="2/5" Paladin="1/4" Ranger="1/3" NoProfession="2/8"/>
+    <skill name="Animal Training" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('InB')) div 2))" Fighter="3/7" Hunter="1/3" Rogue="3/6" Thief="3/7" WarriorMonk="3/8" Alchimist="4" Illusionist="4" Magician="4" LayHealer="3" Mentalist="3" Seer="3" Animist="1/3" Cleric="4" Healer="4" Astrologer="4" Mystic="4" Sorcerer="4" Archmage="4" Bard="3/7" Delver="4" Monk="4" Nightblade="3/8" Paladin="3/7" Ranger="3/7" NoProfession="3"/>
+    <skill name="Animal Training, Horse" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('InB')) div 2))" Fighter="3/7" Hunter="1/3" Rogue="3/6" Thief="3/7" WarriorMonk="3/8" Alchimist="4" Illusionist="4" Magician="4" LayHealer="3" Mentalist="3" Seer="3" Animist="1/3" Cleric="4" Healer="4" Astrologer="4" Mystic="4" Sorcerer="4" Archmage="4" Bard="3/7" Delver="4" Monk="4" Nightblade="3/8" Paladin="3/7" Ranger="3/7" NoProfession="3"/>
+    <skill name="Caving" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/6" Thief="1/4" WarriorMonk="2/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="1/2" Animist="2/7" Cleric="2/7" Healer="2/7" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3/6" Monk="2/6" Nightblade="3/6" Paladin="3/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Foraging" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('MeB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/5" Thief="2/6" WarriorMonk="2/6" Alchimist="2/6" Illusionist="2/7" Magician="2/6" LayHealer="2/5" Mentalist="2/6" Seer="1/4" Animist="1/5" Cleric="2/5" Healer="2/5" Astrologer="2/6" Mystic="2/6" Sorcerer="2/6" Archmage="2/6" Bard="2/6" Delver="2/5" Monk="2/6" Nightblade="2/6" Paladin="2/6" Ranger="1/3" NoProfession="2/6"/>
+    <skill name="Herding" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('PrB')) div 2))" Fighter="1/4" Hunter="1/4" Rogue="1/4" Thief="2/5" WarriorMonk="2/6" Alchimist="2/6" Illusionist="2/6" Magician="2/6" LayHealer="3/7" Mentalist="3/7" Seer="3/7" Animist="1/2" Cleric="2/5" Healer="2/5" Astrologer="3/7" Mystic="3/5" Sorcerer="2/7" Archmage="2/7" Bard="2/7" Delver="2/6" Monk="3/7" Nightblade="2" Paladin="2/6" Ranger="2/7" NoProfession="2/6"/>
+    <skill name="Riding, Horse" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/5" Thief="2/6" WarriorMonk="2/7" Alchimist="3" Illusionist="3" Magician="3" LayHealer="2" Mentalist="2" Seer="2" Animist="1/3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="2/6" Monk="3" Nightblade="3" Paladin="2/5" Ranger="2/6" NoProfession="2"/>
+    <skill name="Riding, Griffon" attr="u:sign(floor(u:parse(u:attribute('EmB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="2/5" Thief="2/6" WarriorMonk="2/7" Alchimist="3" Illusionist="3" Magician="3" LayHealer="2" Mentalist="2" Seer="2" Animist="1/3" Cleric="3" Healer="3" Astrologer="3" Mystic="3" Sorcerer="3" Archmage="3" Bard="2/6" Delver="2/6" Monk="3" Nightblade="3" Paladin="2/5" Ranger="2/6" NoProfession="2"/>
+  </section>
+  <section name="Perception">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Perception')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Perception')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Perception')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="General Perception" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 3))" Fighter="2/5" Hunter="2/4" Rogue="1/3" Thief="1/3" WarriorMonk="2/5" Alchimist="3" Illusionist="2" Magician="3" LayHealer="3" Mentalist="3" Seer="1/3" Animist="3" Cleric="3" Healer="3" Astrologer="2" Mystic="2" Sorcerer="3" Archmage="2" Bard="2/7" Delver="2/7" Monk="2/7" Nightblade="2/7" Paladin="3/7" Ranger="2/7" NoProfession="2/9"/>
+    <skill name="Locate S-Openings" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="2/5" Hunter="2/6" Rogue="1/4" Thief="1/3" WarriorMonk="1/4" Alchimist="2/5" Illusionist="3/6" Magician="3/6" LayHealer="3/7" Mentalist="3/6" Seer="1/4" Animist="3/5" Cleric="3/5" Healer="3/6" Astrologer="3/6" Mystic="1/4" Sorcerer="3/6" Archmage="3/6" Bard="1/5" Delver="2/5" Monk="2/5" Nightblade="1/3" Paladin="2/4" Ranger="1/4" NoProfession="2/6"/>
+    <skill name="Surveillance" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('SDB')) div 2))" Fighter="2/5" Hunter="3/6" Rogue="1/4" Thief="1/2" WarriorMonk="2/5" Alchimist="2/6" Illusionist="2/5" Magician="2/6" LayHealer="2/7" Mentalist="2/6" Seer="1/5" Animist="3/6" Cleric="2/6" Healer="3/6" Astrologer="2/6" Mystic="2/5" Sorcerer="2/6" Archmage="2/6" Bard="2/5" Delver="2/5" Monk="2/6" Nightblade="1/2" Paladin="2/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Time Sense" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('MeB')) div 2))" Fighter="2/5" Hunter="2/5" Rogue="2/4" Thief="1/4" WarriorMonk="1/4" Alchimist="1/3" Illusionist="1/4" Magician="1/4" LayHealer="1/3" Mentalist="1/3" Seer="1/3" Animist="1/4" Cleric="1/4" Healer="1/2" Astrologer="1/3" Mystic="1/3" Sorcerer="1/4" Archmage="1/3" Bard="1/3" Delver="1/4" Monk="1/4" Nightblade="1/4" Paladin="2/4" Ranger="1/3" NoProfession="2/4"/>
+    <skill name="Tracking" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="1/4" Hunter="1/4" Rogue="1/4" Thief="1/3" WarriorMonk="1/3" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="1/5" Animist="1/4" Cleric="2/6" Healer="3/5" Astrologer="2/4" Mystic="2/4" Sorcerer="3" Archmage="3" Bard="2/6" Delver="3" Monk="2/6" Nightblade="3" Paladin="2/6" Ranger="1/2" NoProfession="2"/>
+  </section>
+  <section name="Subterfuge">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Subterfuge')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Subterfuge')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Subterfuge')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Acting" attr="u:sign(floor(u:parse(u:attribute('PrB')) + u:parse(u:attribute('EmB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="1/3" Thief="2/5" WarriorMonk="2/5" Alchimist="2/6" Illusionist="1/3" Magician="3/6" LayHealer="2/6" Mentalist="2/6" Seer="2/6" Animist="2/7" Cleric="2/7" Healer="2/7" Astrologer="2/7" Mystic="1/2" Sorcerer="2/7" Archmage="2/7" Bard="1/5" Delver="3/6" Monk="2/6" Nightblade="2/5" Paladin="3/6" Ranger="2/6" NoProfession="2/6"/>
+    <skill name="Disarm Traps" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('AgB')) div 2))" Fighter="3/8" Hunter="3/5" Rogue="2/5" Thief="1/3" WarriorMonk="3/9" Alchimist="4" Illusionist="8" Magician="7" LayHealer="8" Mentalist="8" Seer="7" Animist="8" Cleric="7" Healer="8" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="4" Delver="1/5" Monk="4" Nightblade="3/7" Paladin="7" Ranger="4" NoProfession="4"/>
+    <skill name="Falsification" attr="u:sign(floor(u:parse(u:attribute('SDB')) + u:parse(u:attribute('ReB')) div 2))" Fighter="3" Hunter="3" Rogue="2/4" Thief="1/3" WarriorMonk="1/4" Alchimist="1/3" Illusionist="2/4" Magician="6" LayHealer="2/6" Mentalist="3" Seer="3" Animist="3" Cleric="3" Healer="3" Astrologer="6" Mystic="2" Sorcerer="6" Archmage="6" Bard="3" Delver="1/4" Monk="3" Nightblade="1/3" Paladin="6" Ranger="3" NoProfession="3"/>
+    <skill name="Hide &amp; Stalk" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('SDB')) + u:parse(u:attribute('SDB')) div 3))" Fighter="2/5" Hunter="1/5" Rogue="1/3" Thief="1/3" WarriorMonk="2/4" Alchimist="6" Illusionist="3" Magician="5" LayHealer="6" Mentalist="5" Seer="6" Animist="3" Cleric="5" Healer="6" Astrologer="3" Mystic="2/4" Sorcerer="6" Archmage="5" Bard="2/7" Delver="2/7" Monk="2/7" Nightblade="1/5" Paladin="5" Ranger="1/5" NoProfession="3"/>
+    <skill name="Pick Locks" attr="u:sign(floor(u:parse(u:attribute('InB')) + u:parse(u:attribute('ReB')) + u:parse(u:attribute('AgB')) div 3))" Fighter="3/9" Hunter="4" Rogue="2/6" Thief="1/3" WarriorMonk="3/9" Alchimist="4" Illusionist="8" Magician="8" LayHealer="8" Mentalist="8" Seer="7" Animist="8" Cleric="8" Healer="8" Astrologer="7" Mystic="7" Sorcerer="7" Archmage="7" Bard="4" Delver="1/5" Monk="4" Nightblade="2/7" Paladin="7" Ranger="4" NoProfession="5"/>
+    <skill name="Pick Pockets" attr="u:sign(floor(u:parse(u:attribute('AgB')) + u:parse(u:attribute('InB')) div 2))" Fighter="3/6" Hunter="3/6" Rogue="1/3" Thief="1/2" WarriorMonk="3/5" Alchimist="3" Illusionist="3" Magician="3" LayHealer="3" Mentalist="3" Seer="2/5" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="2/5" Sorcerer="3" Archmage="5" Bard="2/4" Delver="3" Monk="2/5" Nightblade="1/3" Paladin="4" Ranger="2/5" NoProfession="3"/>
+    <skill name="Trap Building" attr="u:sign(floor(u:parse(u:attribute('ReB')) + u:parse(u:attribute('EmB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="1/3" Thief="1/3" WarriorMonk="2/5" Alchimist="1/5" Illusionist="2/6" Magician="3/6" LayHealer="2/5" Mentalist="2/6" Seer="3/7" Animist="2/5" Cleric="2/5" Healer="2/6" Astrologer="3/7" Mystic="3/6" Sorcerer="3/5" Archmage="3/6" Bard="2/6" Delver="1/5" Monk="2/6" Nightblade="1/3" Paladin="3/6" Ranger="2/5" NoProfession="2/6"/>
+    <skill name="Trickery" attr="u:sign(floor(u:parse(u:attribute('PrB')) + u:parse(u:attribute('QuB')) div 2))" Fighter="2/6" Hunter="2/6" Rogue="1/3" Thief="1/2" WarriorMonk="1/4" Alchimist="3" Illusionist="1/4" Magician="3" LayHealer="3" Mentalist="3" Seer="1/5" Animist="3" Cleric="3" Healer="3" Astrologer="3" Mystic="1/5" Sorcerer="3" Archmage="3" Bard="2/4" Delver="3" Monk="2/5" Nightblade="1/2" Paladin="3" Ranger="2/5" NoProfession="3"/>
+  </section>
+  <section name="Other">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Other'))), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Other')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Other')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Ambush" Fighter="3/8" Hunter="2/5" Rogue="2/5" Thief="1/3" WarriorMonk="3/9" Alchimist="9" Illusionist="5" Magician="9" LayHealer="9" Mentalist="9" Seer="9" Animist="6" Cleric="9" Healer="9" Astrologer="9" Mystic="4" Sorcerer="9" Archmage="9" Bard="6" Delver="6" Monk="4" Nightblade="1/3" Paladin="9" Ranger="3" NoProfession="6" total="./skill[@name='Ambush']/@ranks"/>
+    <skill name="Adrenal Defense" attr="u:attribute('QuB')" Fighter="20" Hunter="5" Rogue="20" Thief="20" WarriorMonk="3/7" Alchimist="20" Illusionist="20" Magician="20" LayHealer="15" Mentalist="15" Seer="15" Animist="20" Cleric="20" Healer="20" Astrologer="20" Mystic="15" Sorcerer="20" Archmage="15" Bard="15" Delver="20" Monk="6" Nightblade="7" Paladin="20" Ranger="20" NoProfession="15" total="u:sign(u:parse(u:skill('Adrenal Defense', 'level')) + u:parse(u:skill('Adrenal Defense', 'misc')) + u:parse(u:skill('Adrenal Defense', 'attr')) + u:parse(u:skill('Adrenal Defense', 'race')) + u:ifthenelse(./skill[@name='Adrenal Defense']/@ranks &lt;= 10, ./skill[@name='Adrenal Defense']/@ranks * 5, u:ifthenelse(./skill[@name='Adrenal Defense']/@ranks &lt;= 20, 30 + ./skill[@name='Adrenal Defense']/@ranks * 2, 50 + ./skill[@name='Adrenal Defense']/@ranks)))"/>
+  </section>
+  <section name="Body">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:max(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@attribute[@name=|MaxHits|]/@value')), u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + ./skill[@name='$name']/@ranks * 5)"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Body')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Body')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Body')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Body Development" attr="" Fighter="1/3" Hunter="1/3" Rogue="2/5" Thief="3/7" WarriorMonk="2/7" Alchimist="8" Illusionist="8" Magician="8" LayHealer="6" Mentalist="6" Seer="6" Animist="4" Cleric="6" Healer="1/3" Astrologer="6" Mystic="8" Sorcerer="8" Archmage="8" Bard="3/8" Delver="4/7" Monk="3/7" Nightblade="3/8" Paladin="2/5" Ranger="2/7" NoProfession="3/7"/>
+  </section>
+  <section name="Directed Spells">
+    <modifier name="display" value="u:ifthenelse(contains('$name', '/'), substring-after('$name', '/'), '$name')"/>
+    <modifier name="race" value="u:parse(u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@skill[@name=|$name|]/@value')))"/>
+    <modifier name="total" value="u:sign(u:parse(u:skill('$name', 'level')) + u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'race')) + u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 0, -25, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 10, ./skill[@name='$name']/@ranks * 5, u:ifthenelse(./skill[@name='$name']/@ranks &lt;= 20, 30 + ./skill[@name='$name']/@ranks * 2, 50 + ./skill[@name='$name']/@ranks))))"/>
+    <modifier name="level" value="floor(u:ifthenelse(u:attribute('Level') &lt;= 20, u:attribute('Level') * u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Directed')), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Directed')) = 3, 40 + u:attribute('Level'), u:ifthenelse(u:rules(concat('//class[@name=|', .//attribute[@name='Profession']/@value, '|]/@Directed')) = 2, 30 + floor(u:attribute('Level') div 2), 20))))"/>
+    <modifier name="class" value="u:rules(concat('//section//skill[@name=|$name|]/@', translate(.//attribute[@name='Profession']/@value, ' ', '')))"/>
+    <skill name="Dir. Spell" attr="u:attribute('AgB')" Fighter="20" Hunter="25" Rogue="20" Thief="20" WarriorMonk="20" Alchimist="2/7" Illusionist="2/6" Magician="1/4" LayHealer="2/7" Mentalist="2/6" Seer="2/7" Animist="3" Cleric="3" Healer="3" Astrologer="2/7" Mystic="2/6" Sorcerer="2/5" Archmage="2/6" Bard="10" Delver="9" Monk="9" Nightblade="2/6" Paladin="20" Ranger="15" NoProfession="5">
+      <skill name="Adrenal Focus I" attr="u:attribute('SD')"/>
+      <skill name="Adrenal Focus II" attr="u:attribute('SD')"/>
+      <skill name="Adrenal Focus III" attr="u:attribute('SD')"/>
+    </skill>
+  </section>
+  <race name="Elf, Wood">
+    <attribute name="RecMult" value="1.5"/>
+    <attribute name="SoulDep" value="4"/>
+    <attribute name="StatDet" value="2"/>
+    <attribute name="SD" value="-20"/>
+    <attribute name="Ag" value="+10"/>
+    <attribute name="Me" value="+5"/>
+    <attribute name="Qu" value="+5"/>
+    <attribute name="Pr" value="+5"/>
+    <attribute name="Em" value="+5"/>
+    <attribute name="RREss" value="-5"/>
+    <attribute name="RRCha" value="-5"/>
+    <attribute name="RRMen" value="-5"/>
+    <attribute name="RRPoi" value="+10"/>
+    <attribute name="RRDis" value="+100"/>
+    <attribute name="HitsRank" value="5"/>
+    <attribute name="MaxHits" value="110"/>
+    <skill name="Meditation" value="20"/>
+    <skill name="Hide &amp; Stalk" value="20"/>
+  </race>
+  <race name="Human, Mongol">
+    <attribute name="RecMult" value="1"/>
+    <attribute name="SoulDep" value="11"/>
+    <attribute name="StatDet" value="0"/>
+    <attribute name="SD" value="+5"/>
+    <attribute name="St" value="+10"/>
+    <attribute name="Qu" value="+5"/>
+    <attribute name="HitsRank" value="5"/>
+    <attribute name="MaxHits" value="130"/>
+    <skill name="Crafting" value="5"/>
+    <skill name="Working, Leather" value="5"/>
+    <skill name="Working, Wood" value="5"/>
+  </race>
+  <class name="Alchemist" Academic="3" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="0" Directed="0" General="2" Linguistic="0" Magical="3" Medical="0" Outdoor="0" Perception="1" Subterfuge="0" type="PureEss" realms="Essence"/>
+  <class name="Animist" Academic="0" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="0" Directed="0" General="1" Linguistic="1" Magical="1" Medical="1" Outdoor="3" Perception="2" Subterfuge="0" type="PureCha" realms="Channeling"/>
+  <class name="Archmage" Academic="3" Combat="0" Athletic="0" BAR="3" Body="0" Concentration="2" Directed="0" General="0" Linguistic="0" Magical="2" Medical="0" Outdoor="0" Perception="0" Subterfuge="0" type="HybridMenCha" realms="Mentalism/Channeling"/>
+  <class name="Astrologer" Academic="2" Combat="0" Athletic="0" BAR="2" Body="0" Concentration="1" Directed="1" General="0" Linguistic="0" Magical="2" Medical="0" Outdoor="1" Perception="1" Subterfuge="0" type="Arcane" realms="Essence/Mentalism/Channeling"/>
+  <class name="Bard" Academic="2" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="1" Directed="0" General="3" Linguistic="3" Magical="0" Medical="0" Outdoor="0" Perception="0" Subterfuge="0" type="Semi-" realms="Mentalism"/>
+  <class name="Cleric" Academic="1" Combat="1" Athletic="0" BAR="1" Body="0" Concentration="0" Directed="0" General="2" Linguistic="0" Magical="2" Medical="1" Outdoor="0" Perception="2" Subterfuge="0" type="PureCha" realms="Channeling"/>
+  <class name="Delver" Academic="2" Combat="2" Athletic="0" BAR="1" Body="1" Concentration="0" Directed="0" General="2" Linguistic="0" Magical="1" Medical="0" Outdoor="0" Perception="1" Subterfuge="0" type="Semi-" realms="Essence"/>
+  <class name="Fighter" Academic="0" Combat="3" Athletic="2" BAR="0" Body="3" Concentration="0" Directed="0" General="0" Linguistic="0" Magical="0" Medical="0" Outdoor="1" Perception="0" Subterfuge="0"/>
+  <class name="Healer" Academic="1" Combat="0" Athletic="0" BAR="1" Body="2" Concentration="2" Directed="0" General="0" Linguistic="0" Magical="1" Medical="2" Outdoor="0" Perception="1" Subterfuge="0" type="PureCha" realms="Channeling"/>
+  <class name="Hunter" Academic="0" Combat="3" Athletic="2" BAR="0" Body="2" Concentration="0" Directed="0" General="0" Linguistic="0" Magical="0" Medical="0" Outdoor="3" Perception="0" Subterfuge="0"/>
+  <class name="Illusionist" Academic="2" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="0" Directed="1" General="0" Linguistic="0" Magical="3" Medical="0" Outdoor="0" Perception="2" Subterfuge="1" type="PureEss" realms="Essence"/>
+  <class name="Lay Healer" Academic="2" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="1" Directed="0" General="1" Linguistic="0" Magical="1" Medical="3" Outdoor="0" Perception="1" Subterfuge="0" type="PureMen" realms="Mentalism"/>
+  <class name="Magician" Academic="2" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="1" Directed="3" General="0" Linguistic="0" Magical="3" Medical="0" Outdoor="0" Perception="0" Subterfuge="0" type="PureEss" realms="Essence"/>
+  <class name="Mentalist" Academic="1" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="3" Directed="1" General="0" Linguistic="1" Magical="2" Medical="0" Outdoor="0" Perception="1" Subterfuge="0" type="PureMen" realms="Mentalism"/>
+  <class name="Monk" Academic="1" Combat="1" Athletic="2" BAR="1" Body="1" Concentration="0" Directed="0" General="0" Linguistic="0" Magical="0" Medical="1" Outdoor="1" Perception="1" Subterfuge="1" type="Semi-" realms="Essence"/>
+  <class name="Mystic" Academic="1" Combat="0" Athletic="0" BAR="2" Body="0" Concentration="3" Directed="0" General="0" Linguistic="1" Magical="2" Medical="0" Outdoor="0" Perception="1" Subterfuge="0" type="HybridEssMen" realms="Essence/Mentalism"/>
+  <class name="Nightblade" Academic="0" Combat="2" Athletic="2" BAR="1" Body="1" Concentration="1" Directed="0" General="0" Linguistic="0" Magical="0" Medical="0" Outdoor="0" Perception="0" Subterfuge="0" type="Semi-" realms="Mentalism"/>
+  <class name="Paladin" Academic="0" Combat="3" Athletic="1" BAR="1" Body="3" Concentration="0" Directed="0" General="0" Linguistic="0" Magical="0" Medical="0" Outdoor="0" Perception="1" Subterfuge="0" type="Semi-" realms="Channeling"/>
+  <class name="Ranger" Academic="0" Combat="1" Athletic="1" BAR="0" Body="0" Concentration="0" Directed="0" General="2" Linguistic="0" Magical="0" Medical="0" Outdoor="3" Perception="1" Subterfuge="1" type="Semi-" realms="Channeling"/>
+  <class name="Rogue" Academic="0" Combat="3" Athletic="2" BAR="0" Body="1" Concentration="0" Directed="0" General="1" Linguistic="0" Magical="0" Medical="0" Outdoor="1" Perception="0" Subterfuge="0"/>
+  <class name="Seer" Academic="2" Combat="0" Athletic="0" BAR="1" Body="0" Concentration="2" Directed="0" General="0" Linguistic="0" Magical="2" Medical="0" Outdoor="0" Perception="3" Subterfuge="0" type="PureMen" realms="Mentalism"/>
+  <class name="Sorceror" Academic="1" Combat="0" Athletic="0" BAR="2" Body="0" Concentration="1" Directed="2" General="0" Linguistic="0" Magical="3" Medical="0" Outdoor="0" Perception="1" Subterfuge="0" type="HybridEssCha" realms="Essence/Channeling"/>
+  <class name="Thief" Academic="0" Combat="2" Athletic="2" BAR="0" Body="0" Concentration="0" Directed="0" General="0" Linguistic="0" Magical="0" Medical="0" Outdoor="1" Perception="1" Subterfuge="3"/>
+  <class name="Warrior Monk" Academic="0" Combat="2" Athletic="2" BAR="0" Body="2" Concentration="0" Directed="0" General="0" Linguistic="0" Magical="0" Medical="0" Outdoor="2" Perception="1" Subterfuge="0"/>
+  <armor>
+    <atype name="1" type="" quickness="0" min="0" max="0" missile="0" pace="Dash"/>
+    <atype name="2" type="" quickness="0" min="0" max="0" missile="0" pace="Dash"/>
+    <atype name="3" type="" quickness="0" min="0" max="0" missile="0" pace="Dash"/>
+    <atype name="4" type="" quickness="0" min="0" max="0" missile="0" pace="Dash"/>
+    <atype name="5" type="Soft Leather" quickness="0" min="0" max="0" missile="0" pace="Dash"/>
+    <atype name="6" type="Soft Leather" quickness="0" min="0" max="-20" missile="-5" pace="Dash"/>
+    <atype name="7" type="Soft Leather" quickness="-10" min="-10" max="-40" missile="-15" pace="Dash"/>
+    <atype name="8" type="Soft Leather" quickness="-15" min="-15" max="-50" missile="-15" pace="Fast Sprint"/>
+    <atype name="9" type="Rigid Leather" quickness="0" min="-5" max="-50" missile="0" pace="Dash"/>
+    <atype name="10" type="Rigid Leather" quickness="-5" min="-10" max="-70" missile="-10" pace="Dash"/>
+    <atype name="11" type="Rigid Leather" quickness="-15" min="-15" max="-90" missile="-20" pace="Fast Sprint"/>
+    <atype name="12" type="Rigid Leather" quickness="-15" min="-15" max="-110" missile="-30" pace="Fast Sprint"/>
+    <atype name="13" type="Chain" quickness="-5" min="-10" max="-70" missile="0" pace="Dash"/>
+    <atype name="13E" type="Chain" quickness="0" min="0" max="-60" missile="0" pace="Dash"/>
+    <atype name="14" type="Chain" quickness="-10" min="-15" max="-90" missile="-10" pace="Dash"/>
+    <atype name="15" type="Chain" quickness="-20" min="-25" max="-120" missile="-20" pace="Sprint"/>
+    <atype name="16" type="Chain" quickness="-20" min="-25" max="-130" missile="-20" pace="Sprint"/>
+    <atype name="17" type="Plate" quickness="-10" min="-15" max="-90" missile="0" pace="Dash"/>
+    <atype name="18" type="Plate" quickness="-20" min="-20" max="-110" missile="-10" pace="Sprint"/>
+    <atype name="19" type="Plate" quickness="-30" min="-35" max="-150" missile="-30" pace="Sprint"/>
+    <atype name="20" type="Plate" quickness="-40" min="-45" max="-165" missile="-40" pace="Sprint"/>
+  </armor>
+  <table name="Age">
+    <row key0="0 12" value="Child"/>
+    <row key0="12 20" value="Adolescent"/>
+    <row key0="21 25" value="Early twenties"/>
+    <row key0="26 30" value="Late twenties"/>
+    <row key0="31 35" value="Early thirties"/>
+    <row key0="36 40" value="Late thirties"/>
+    <row key0="41 45" value="Early fourties"/>
+    <row key0="46 50" value="Late fourties"/>
+    <row key0="51 55" value="Early fifties"/>
+    <row key0="56 60" value="Late fifties"/>
+    <row key0="61 70" value="Sixties"/>
+    <row key0="71 80" value="Seventies"/>
+    <row key0="81 90" value="Eighties"/>
+    <row key0="91 999" value="Methusalem"/>
+  </table>
+  <table name="XP">
+    <row key0="1 6000" value="1"/>
+    <row key0="6000 14000" value="2"/>
+    <row key0="14001 24000" value="3"/>
+    <row key0="24001 36000" value="4"/>
+    <row key0="36001 50000" value="5"/>
+    <row key0="50001 66000" value="6"/>
+    <row key0="66001 84000" value="7"/>
+    <row key0="84001 104000" value="8"/>
+    <row key0="104001 126000" value="9"/>
+    <row key0="126001 150000" value="10"/>
+    <row key0="150001 176000" value="11"/>
+    <row key0="176001 204000" value="12"/>
+    <row key0="204001 234000" value="13"/>
+    <row key0="234001 266000" value="14"/>
+    <row key0="266001 294000" value="15"/>
+    <row key0="294001 330000" value="16"/>
+    <row key0="330001 468000" value="17"/>
+    <row key0="468001 508000" value="18"/>
+    <row key0="508001 550000" value="19"/>
+    <row key0="550001 594000" value="20"/>
+  </table>
+  <table name="Stats">
+    <row key0="1" value="-25, 1.0,0"/>
+    <row key0="2" value="-23, 1.3,0"/>
+    <row key0="3" value="-21, 1.6,0"/>
+    <row key0="4" value="-19, 1.9,0"/>
+    <row key0="5" value="-17, 2.0,0"/>
+    <row key0="6" value="-15, 2.2,0"/>
+    <row key0="7" value="-14, 2.4,0"/>
+    <row key0="8" value="-13, 2.6,0"/>
+    <row key0="9" value="-12, 2.7,0"/>
+    <row key0="10" value="-11, 2.8,0"/>
+    <row key0="11" value="-10, 2.9,0"/>
+    <row key0="12 14" value="-09, 3.0,0"/>
+    <row key0="15 17" value="-08, 3.3,0"/>
+    <row key0="18 20" value="-07, 3.6,0"/>
+    <row key0="21 23" value="-06, 3.8,0"/>
+    <row key0="24 26" value="-05, 4.0,0"/>
+    <row key0="27 29" value="-04, 4.3,0"/>
+    <row key0="30 32" value="-03, 4.6,0"/>
+    <row key0="33 36" value="-02, 4.8,0"/>
+    <row key0="37 40" value="-01, 5.0,0"/>
+    <row key0="41 60" value="+00, 5.5,0"/>
+    <row key0="61 64" value="+01, 6.0,0.2"/>
+    <row key0="65 68" value="+02, 6.3,0.4"/>
+    <row key0="69 71" value="+03, 6.6,0.6"/>
+    <row key0="72 74" value="+04, 6.8,0.8"/>
+    <row key0="75 77" value="+05, 7.0,1.0"/>
+    <row key0="78 80" value="+06, 7.4,1.1"/>
+    <row key0="81 83" value="+07, 7.7,1.2"/>
+    <row key0="84 86" value="+08, 8.0,1.3"/>
+    <row key0="87 89" value="+09, 8.2,1.4"/>
+    <row key0="90" value="+10, 8.4,1.5"/>
+    <row key0="91" value="+11, 8.6,1.6"/>
+    <row key0="92" value="+12, 8.7,1.7"/>
+    <row key0="93" value="+13, 8.8,1.8"/>
+    <row key0="94" value="+14, 8.9,1.9"/>
+    <row key0="95" value="+15, 9.0,2.0"/>
+    <row key0="96" value="+17, 9.2,2.2"/>
+    <row key0="97" value="+19, 9.4,2.4"/>
+    <row key0="98" value="+21, 9.6,2.6"/>
+    <row key0="99" value="+23, 9.8,2.8"/>
+    <row key0="100" value="+25,10.0,3.0"/>
+    <row key0="101" value="+30,10.5,3.5"/>
+    <row key0="102" value="+35,11.0,4.0"/>
+    <row key0="103" value="+40,11.5,4.5"/>
+    <row key0="104" value="+45,12.0,5.0"/>
+    <row key0="105" value="+50,12.5,5.5"/>
+    <row key0="106" value="+55,13.0,6.0"/>
+    <row key0="107" value="+60,13.5,6.5"/>
+    <row key0="108" value="+65,14.0,7.0"/>
+    <row key0="109" value="+70,14.5,7.5"/>
+    <row key0="110" value="+75,15.0,8.0"/>
+  </table>
+</rules>

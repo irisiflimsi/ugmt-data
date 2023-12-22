@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format">
+  <fo:layout-master-set>
+    <fo:simple-page-master master-name="a4" page-width="210mm" page-height="297mm" margin="0mm">
+      <fo:region-body region-name="main" margin="0mm"/>
+    </fo:simple-page-master>
+  </fo:layout-master-set>
+
+  <fo:page-sequence master-reference="a4">
+    <fo:flow flow-name="main">
+      <fo:block>
+        <fo:instream-foreign-object>
+          $page1
+        </fo:instream-foreign-object>
+      </fo:block>
+      <fo:block>
+        <fo:instream-foreign-object>
+          $page2
+        </fo:instream-foreign-object>
+      </fo:block>
+      <fo:block>
+        <fo:instream-foreign-object>
+          $page3
+        </fo:instream-foreign-object>
+      </fo:block>
+    </fo:flow>
+  </fo:page-sequence>
+ 
+</fo:root>

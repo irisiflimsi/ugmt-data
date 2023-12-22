@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="DSA">
+  <attribute name="StMU" rule="15*u:max(1,u:attribute('MU')-12)"/>
+  <attribute name="StFF" rule="15*u:max(1,u:attribute('FF')-12)"/>
+  <attribute name="StIN" rule="15*u:max(1,u:attribute('IN')-12)"/>
+  <attribute name="StKL" rule="15*u:max(1,u:attribute('KL')-12)"/>
+  <attribute name="StKK" rule="15*u:max(1,u:attribute('KK')-12)"/>
+  <attribute name="StKO" rule="15*u:max(1,u:attribute('KO')-12)"/>
+  <attribute name="StCH" rule="15*u:max(1,u:attribute('CH')-12)"/>
+  <attribute name="StGE" rule="15*u:max(1,u:attribute('GE')-12)"/>
+  <attribute name="Load" rule="round(100 * u:rules-sum('//equipment[@name=u:raw(|$1|)]/@enc*u:card(|$1|)',.//equipment/@name)) div 100"/>
+  <attribute name="Astral" rule="floor(u:ifthenelse(u:skill('Zauberer','value') != '',20 + u:attribute('IN'),'0'))"/>
+  <attribute name="Leben" rule="2*u:attribute('KO') + u:ifthenelse(u:attribute('Spezies') = 'Elf',2,5) + u:skill('Hohe Lebenskraft','value')"/>
+  <attribute name="Karma" rule="0"/>
+  <attribute name="Seele" rule="floor((u:attribute('MU') + u:attribute('KL') + u:attribute('IN')) div 6 + .5 + u:ifthenelse(u:attribute('Spezies') = 'Elf',-4,-5))"/>
+  <attribute name="Zaeh" rule="floor((u:attribute('KO') + u:attribute('KO') + u:attribute('KK')) div 6 + .5 + u:ifthenelse(u:attribute('Spezies') = 'Elf',-6,-5))"/>
+  <attribute name="Ausweichen" rule="floor(u:attribute('GE') div 2 + .5)"/>
+  <attribute name="Initiative" rule="floor((u:attribute('MU') + u:attribute('GE')) div 2 + u:skill('Kampfreflexe','value') + .5)"/>
+  <attribute name="Geschwindigkeit" rule="8"/>
+  <section name="Talent">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Alchimie" attr="concat(u:attribute('MU'),'/',u:attribute('KL'),'/',u:attribute('FF'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Bekehren&amp;Überzeugen" attr="concat(u:attribute('MU'),'/',u:attribute('KL'),'/',u:attribute('CH'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Betören" attr="concat(u:attribute('MU'),'/',u:attribute('CH'),'/',u:attribute('CH'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Boote&amp;Schiffe" attr="concat(u:attribute('FF'),'/',u:attribute('GE'),'/',u:attribute('KK'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Brett&amp;Glücksspiel" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Einschüchtern" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Etikette" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Fahrzeuge" attr="concat(u:attribute('CH'),'/',u:attribute('FF'),'/',u:attribute('KO'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Fesseln" attr="concat(u:attribute('KL'),'/',u:attribute('FF'),'/',u:attribute('KK'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Fischen&amp;Angeln" attr="concat(u:attribute('FF'),'/',u:attribute('GE'),'/',u:attribute('KK'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Fliegen" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('GE'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Fährtensuchen" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('GE'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Gassenwissen" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Gaukeleien" attr="concat(u:attribute('MU'),'/',u:attribute('CH'),'/',u:attribute('FF'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Geographie" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Geschichtswissen" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Götter&amp;Kulte" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Handel" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Heilkunde Gift" attr="concat(u:attribute('MU'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Heilkunde Krankheiten" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('KO'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Heilkunde Seele" attr="concat(u:attribute('IN'),'/',u:attribute('CH'),'/',u:attribute('KO'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Heilkunde Wunden" attr="concat(u:attribute('KL'),'/',u:attribute('FF'),'/',u:attribute('FF'))" learn1="✓" learn2="4*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Holzbearbeitung" attr="concat(u:attribute('FF'),'/',u:attribute('GE'),'/',u:attribute('KK'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Klettern" attr="concat(u:attribute('MU'),'/',u:attribute('GE'),'/',u:attribute('KK'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Kraftakt" attr="concat(u:attribute('KO'),'/',u:attribute('KK'),'/',u:attribute('KK'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Kriegskunst" attr="concat(u:attribute('MU'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Körperbeherrschung" attr="concat(u:attribute('GE'),'/',u:attribute('GE'),'/',u:attribute('KO'))" learn1="✓" learn2="4*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Lebensmittelbearbeitung" attr="concat(u:attribute('IN'),'/',u:attribute('FF'),'/',u:attribute('FF'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Lederbearbeitung" attr="concat(u:attribute('FF'),'/',u:attribute('GE'),'/',u:attribute('KO'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Magiekunde" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Malen&amp;Zeichnen" attr="concat(u:attribute('IN'),'/',u:attribute('FF'),'/',u:attribute('FF'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Mechanik" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('FF'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Menschenkenntnis" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Metallbearbeitung" attr="concat(u:attribute('FF'),'/',u:attribute('KO'),'/',u:attribute('KK'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Musizieren" attr="concat(u:attribute('CH'),'/',u:attribute('FF'),'/',u:attribute('KO'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Orientierung" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Pflanzenkunde" attr="concat(u:attribute('KL'),'/',u:attribute('FF'),'/',u:attribute('KO'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Rechnen" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Rechtskunde" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Reiten" attr="concat(u:attribute('CH'),'/',u:attribute('GE'),'/',u:attribute('KK'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Sagen&amp;Legenden" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Schlösserknacken" attr="concat(u:attribute('IN'),'/',u:attribute('FF'),'/',u:attribute('FF'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Schwimmen" attr="concat(u:attribute('GE'),'/',u:attribute('KO'),'/',u:attribute('KK'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Selbstbeherrschung" attr="concat(u:attribute('MU'),'/',u:attribute('MU'),'/',u:attribute('KO'))" learn1="" learn2="4*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Singen" attr="concat(u:attribute('KL'),'/',u:attribute('CH'),'/',u:attribute('KO'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Sinnesschärfe" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('IN'))" learn1="" learn2="4*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Sphärenkunde" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Steinbearbeitung" attr="concat(u:attribute('FF'),'/',u:attribute('FF'),'/',u:attribute('KK'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Sternkunde" attr="concat(u:attribute('KL'),'/',u:attribute('KL'),'/',u:attribute('IN'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Stoffbearbeitung" attr="concat(u:attribute('KL'),'/',u:attribute('FF'),'/',u:attribute('FF'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Tanzen" attr="concat(u:attribute('KL'),'/',u:attribute('CH'),'/',u:attribute('GE'))" learn1="✓" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Taschendiebstahl" attr="concat(u:attribute('MU'),'/',u:attribute('FF'),'/',u:attribute('GE'))" learn1="✓" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Tierkunde" attr="concat(u:attribute('MU'),'/',u:attribute('MU'),'/',u:attribute('CH'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Überreden" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Verbergen" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('GE'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Verkleiden" attr="concat(u:attribute('IN'),'/',u:attribute('CH'),'/',u:attribute('GE'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Wildnisleben" attr="concat(u:attribute('MU'),'/',u:attribute('GE'),'/',u:attribute('KO'))" learn1="✓" learn2="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Willenskraft" attr="concat(u:attribute('MU'),'/',u:attribute('IN'),'/',u:attribute('CH'))" learn1="" learn2="4*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Zechen" attr="concat(u:attribute('KL'),'/',u:attribute('KK'),'/',u:attribute('KO'))" learn1="" learn2="1*u:max(1,u:skill('$name','value')-10)"/>
+  </section>
+  <section name="Kampf">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Armbrüste" attr="u:attribute('FF')" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / X')"/>
+    <skill name="Bögen" attr="u:attribute('FF')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('FF') - 8) div 3),0),' / X')"/>
+    <skill name="Dolche" attr="u:attribute('GE')" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Fechtwaffen" attr="u:attribute('GE')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Hiebwaffen" attr="u:attribute('KK')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Kettenwaffen" attr="u:attribute('KK')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / X')"/>
+    <skill name="Lanzen" attr="u:attribute('KK')" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Raufen" attr="u:max(u:attribute('KK'),u:attribute('GE'))" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Schilde" attr="u:attribute('KK')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat('X / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Schwerter" attr="u:max(u:attribute('KK'),u:attribute('GE'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Stangenwaffen" attr="u:max(u:attribute('KK'),u:attribute('GE'))" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Wurfwaffen" attr="u:attribute('FF')" learn1="" learn2="2*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('FF') - 8) div 3),0),' / X')"/>
+    <skill name="Zweihandhiebwaffen" attr="u:attribute('KK')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+    <skill name="Zweihandschwerter" attr="u:attribute('KK')" learn1="" learn2="3*u:max(1,u:skill('$name','value')-10)" total="concat(u:skill('$name','value') + u:max(floor((u:attribute('MU') - 8) div 3),0),' / ',ceiling(u:skill('$name','value') div 2) + u:max(floor((u:skill('$name','attr') - 8) div 3),0))"/>
+  </section>
+  <section name="Spell">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Adlerauge" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('FF'))" learn1="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Armatrutz" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('FF'))" learn1="3*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Balsam Salabunde" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('FF'))" learn1="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Flim Flam" attr="concat(u:attribute('MU'),'/',u:attribute('KL'),'/',u:attribute('CH'))" learn1="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Visibili" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('KO'))" learn1="2*u:max(1,u:skill('$name','value')-10)"/>
+    <skill name="Wasseratem" attr="concat(u:attribute('KL'),'/',u:attribute('IN'),'/',u:attribute('KO'))" learn1="2*u:max(1,u:skill('$name','value')-10)"/>
+  </section>
+  <section name="Sprach">
+    <modifier name="display" value="concat('$name',u:ifthenelse(u:skill('$name','value') = 1,' I',u:ifthenelse(u:skill('$name','value') = 2,' II',u:ifthenelse(u:skill('$name','value') = 3,' III',''))))"/>
+    <skill name="Garethi"/>
+    <skill name="Isdira"/>
+    <skill name="Isdira-Zeichen"/>
+  </section>
+  <section name="Vor">
+    <modifier name="display" value="concat('$name',u:ifthenelse(u:skill('$name','value') = 1,' I',u:ifthenelse(u:skill('$name','value') = 2,' II',u:ifthenelse(u:skill('$name','value') = 3,' III',''))))"/>
+    <skill name="Begabung (Fährtensuchen)"/>
+    <skill name="Gutaussehend"/>
+    <skill name="Zauberer"/>
+    <skill name="Zweistimmiger Gesang"/>
+    <skill name="Hohe Lebenskraft"/>
+    <skill name="Verbesserte Regeneration (Leben)"/>
+    <skill name="Vertrauenerweckend"/>
+  </section>
+  <section name="Nach">
+    <modifier name="display" value="concat('$name',u:ifthenelse(u:skill('$name','value') = 1,' I',u:ifthenelse(u:skill('$name','value') = 2,' II',u:ifthenelse(u:skill('$name','value') = 3,' III',''))))"/>
+    <skill name="Schlechte Regeneration (Leben)"/>
+    <skill name="Sensibler Geruchssinn"/>
+    <skill name="Prinzipientreue"/>
+  </section>
+  <section name="Sonder">
+    <modifier name="display" value="concat('$name',u:ifthenelse(u:skill('$name','value') = 1,' I',u:ifthenelse(u:skill('$name','value') = 2,' II',u:ifthenelse(u:skill('$name','value') = 3,' III',''))))"/>
+    <skill name="Präziser Schuss"/>
+    <skill name="Schnellladen (Bögen)"/>
+    <skill name="Belastungsgewöhnung"/>
+    <skill name="Kampfreflexe"/>
+    <skill name="Finte"/>
+    <skill name="Wuchtschlag"/>
+    <skill name="Verteidigungshaltung"/>
+  </section>
+  <gear>
+    <modifier name="name" value="'$name'"/>
+    <modifier name="mod" value="u:ifthenelse(u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@type')) = 'Waffe',u:sign(u:max(u:parse(u:max(u:parse(u:attribute(substring(u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@wtype')),1,2))),u:parse(u:attribute(substring(u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@wtype')),4,2)))))-u:parse(substring(u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@wtype')),string-length(u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@wtype')))-1,2)),0)),concat(u:max(0,u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@crit')) - u:parse(u:skill('Belastungsgewöhnung','value'))),' (',u:rules(concat('//equipment[@name=|',u:raw('$name'),'|]/@crit')),')'))"/>
+    <equipment type="Waffe" name="Elfenbogen" skill="Bögen" damage="'1w6+5'" wtype="GE/GE 99" crit="1 Aktion" range="50 / 100 / 200" enc=".5"/>
+    <equipment type="Waffe" name="Elfensäbel" skill="Schwerter" damage="'1w6+3'" wtype="GE/KK 14" crit="+1 / 0" range="mittel" enc=".75"/>
+    <equipment type="Waffe" name="Langschwert" skill="Schwerter" damage="'1w6+4'" wtype="GE/KK 15" crit="0 / 0" range="-" enc="1"/>
+    <equipment type="Waffe" name="Schwerer Dolch" skill="Dolche" damage="'1w6+2'" wtype="GE/GE 14" crit="0 / -1" range="-" enc=".75"/>
+    <equipment type="Waffe" name="Holzschild" skill="Schilde" damage="-" wtype="GE/KK 15" crit="0 / +1" range="-" enc="3.5"/>
+    <equipment type="Rüstung" name="Normale Kleidung" mal="0" crit="0" enc="1"/>
+    <equipment type="Rüstung" name="Gambeson" mal="2" crit="1" enc="4"/>
+    <equipment type="" name="Feuerstein&amp;Stahl" enc=".25"/>
+    <equipment type="" name="Flöte" enc=".25"/>
+    <equipment type="" name="Beil" enc=".75"/>
+    <equipment type="" name="Geldbeutel" enc=".05"/>
+    <equipment type="" name="Kletterseil 10m" enc="5"/>
+    <equipment type="" name="Lederrucksack" enc="2"/>
+    <equipment type="" name="Pfeile" enc=".05"/>
+    <equipment type="" name="Wolldecke" enc="1.5"/>
+    <equipment type="" name="Messer" enc=".25"/>
+    <equipment type="" name="Nadel&amp;Zwirn" enc=".1"/>
+    <equipment type="" name="Proviant" enc="1.5"/>
+    <equipment type="" name="Wurfhaken" enc="1"/>
+    <equipment type="" name="Bogensehne" enc=".05"/>
+    <equipment type="" name="Holzschale" enc=".2"/>
+    <equipment type="" name="Pfeilköcher" enc=".75"/>
+    <equipment type="" name="Verband" enc=".005"/>
+    <equipment type="" name="Zunderdose" enc=".2"/>
+    <equipment type="" name="Zunder" enc=".001"/>
+    <equipment type="" name="Wasserschlauch" enc=".25"/>
+    <equipment type="" name="Heiltrank 1w6" enc=".1"/>
+    <equipment type="" name="Kohlestift" enc=".05"/>
+    <equipment type="" name="Kriegerbrief" enc=".05"/>
+    <equipment type="" name="Lampenöl 1h" enc=".05"/>
+    <equipment type="" name="Öllampe" enc=".25"/>
+    <equipment type="" name="Papier" enc=".05"/>
+    <equipment type="" name="Waffenpflegeset" enc="1"/>
+    <equipment type="" name="Zweipersonenzelt" enc="6"/>
+  </gear>
+</rules>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <style type="text/css">
+      td {
+        text-align:left;
+        border-top:solid .05em black;
+        border-bottom:solid .05em black;
+      }
+      td.num {
+        text-align:center;
+      }
+      th {
+        border-top:solid .15em black;
+        border-bottom:solid .15em black;
+        padding-top:.2em;
+        padding-bottom:.2em;
+        text-weight:bold;
+        text-align:center;
+      }
+      table {
+        width:100%;
+      }
+      .roll {
+        padding: .25em;
+        margin: .25em;
+        height: 1em;
+        width: 3em;
+        text-align: center;
+        vertical-align: middle;
+        border: solid .15em black;
+        font-weight: bold;
+        -moz-border-radius: .5em;
+        -webkit-border-radius: .5em;
+        border-radius: .5em;
+      }
+    </style>
+  </head>
+  <body onmousemove="parent.document.onmousemove">
+    <div style="padding:0.5em;">
+      <div style="text-align:center;padding:1em;">
+        <span class="roll" id="AttrRoll">0</span>
+      </div>
+      <table>
+        <tr>
+          <th colspan="6">Attributes</th>
+        </tr>
+        <tr>
+          <td style="font-size:.8em;padding:.7em;text-align:center;" colspan="6">
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr(1,6)">
+              1d6
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr(2,6)">
+              2d6
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr(3,6)">
+              3d6
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr(4,6)">
+              4d6
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr(5,6)">
+              5d6
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr(6,6)">
+              6d6
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="font-size:.8em;padding:.7em;text-align:center;" colspan="6">
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(1)">
+              <font size="-2">1d100/1</font>
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(2)">
+              <font size="-2">1d100/2</font>
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(3)">
+              <font size="-2">1d100/3</font>
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(4)">
+              <font size="-2">1d100/4</font>
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(5)">
+              <font size="-2">1d100/5</font>
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(6)">
+              <font size="-2">1d100/6</font>
+            </span>
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Attr100(7)">
+              <font size="-2">1d100/7</font>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:25%;">Agility</td>
+          <td style="width:11%;" class="num" id="AttrV0">$Agility</td>
+          <td style="width:14%;" class="num" id="AttrR0"> </td>
+          <td style="width:25%;">Morality</td>
+          <td style="width:11%;" class="num" id="AttrV1">$Morality</td>
+          <td style="width:14%;" class="num" id="AttrR1"> </td>
+        </tr>
+        <tr>
+          <td>Aura</td><td class="num" id="AttrV2">$Aura</td>
+          <td class="num" id="AttrR2"> </td>
+          <td>Smell</td><td class="num" id="AttrV3">$Smell</td>
+          <td class="num" id="AttrR3"> </td>
+        </tr>
+        <tr>
+          <td>Dexterity</td><td class="num" id="AttrV4">$Dexterity</td>
+          <td class="num" id="AttrR4"> </td>
+          <td>Stamina</td><td class="num" id="AttrV5">$Stamina</td>
+          <td class="num" id="AttrR5"> </td>
+        </tr>
+        <tr>
+          <td>Eyesight</td><td class="num" id="AttrV6">$Eyesight</td>
+          <td class="num" id="AttrR6"> </td>
+          <td>Strength</td><td class="num" id="AttrV7">$Strength</td>
+          <td class="num" id="AttrR7"> </td>
+        </tr>
+        <tr>
+          <td>Hearing</td><td class="num" id="AttrV8">$Hearing</td>
+          <td class="num" id="AttrR8"> </td>
+          <td>Voice</td><td class="num" id="AttrV9">$Voice</td>
+          <td class="num" id="AttrR9"> </td>
+        </tr>
+        <tr>
+          <td>Intelligence</td><td class="num" id="AttrV10">$Intelligence</td>
+          <td class="num" id="AttrR10"> </td>
+          <td>Will</td><td class="num" id="AttrV11">$Will</td>
+          <td class="num" id="AttrR11"> </td>
+        </tr>
+      </table>
+      <div style="text-align:center;padding:1em;">
+        <span class="roll" id="SkillRoll">0</span>
+      </div>
+      <table>
+        <tr>
+          <th colspan="6">Skills</th>
+        </tr>
+        <tr>
+          <td style="font-size:.8em;padding:.7em;text-align:center;" colspan="6">
+            <span class="button" onmouseover="high(this)" onmouseout="low(this)" onclick="rollHM3Skill()">
+              1d100
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td style="width:25%;">$Sk-1N</td>
+          <td style="width:11%;" class="num" id="SkillV0">$Sk-1V</td>
+          <td style="width:14%;" class="num" id="SkillR0"> </td>
+          <td style="width:25%;">$Sk-11N</td>
+          <td style="width:11%;" class="num" id="SkillV10">$Sk-11V</td>
+          <td style="width:14%;" class="num" id="SkillR10"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-2N</td><td class="num" id="SkillV1">$Sk-2V</td><td class="num" id="SkillR1"> </td>
+          <td>$Sk-12N</td><td class="num" id="SkillV11">$Sk-12V</td><td class="num" id="SkillR11"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-3N</td><td class="num" id="SkillV2">$Sk-3V</td><td class="num" id="SkillR2"> </td>
+          <td>$Sk-13N</td><td class="num" id="SkillV12">$Sk-13V</td><td class="num" id="SkillR12"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-4N</td><td class="num" id="SkillV3">$Sk-4V</td><td class="num" id="SkillR3"> </td>
+          <td>$Sk-14N</td><td class="num" id="SkillV13">$Sk-14V</td><td class="num" id="SkillR13"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-5N</td><td class="num" id="SkillV4">$Sk-5V</td><td class="num" id="SkillR4"> </td>
+          <td>$Sk-15N</td><td class="num" id="SkillV14">$Sk-15V</td><td class="num" id="SkillR14"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-6N</td><td class="num" id="SkillV5">$Sk-6V</td><td class="num" id="SkillR5"> </td>
+          <td>$Sk-16N</td><td class="num" id="SkillV15">$Sk-16V</td><td class="num" id="SkillR15"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-7N</td><td class="num" id="SkillV6">$Sk-7V</td><td class="num" id="SkillR6"> </td>
+          <td>$Sk-17N</td><td class="num" id="SkillV16">$Sk-17V</td><td class="num" id="SkillR16"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-8N</td><td class="num" id="SkillV7">$Sk-8V</td><td class="num" id="SkillR7"> </td>
+          <td>$Sk-18N</td><td class="num" id="SkillV17">$Sk-18V</td><td class="num" id="SkillR17"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-9N</td><td class="num" id="SkillV8">$Sk-9V</td><td class="num" id="SkillR8"> </td>
+          <td>$Sk-19N</td><td class="num" id="SkillV18">$Sk-19V</td><td class="num" id="SkillR18"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-10N</td><td class="num" id="SkillV9">$Sk-10V</td><td class="num" id="SkillR9"> </td>
+          <td>$Sk-20N</td><td class="num" id="SkillV19">$Sk-20V</td><td class="num" id="SkillR19"> </td>
+        </tr>
+        <tr>
+          <td style="font-size:.8em;padding:.7em;text-align:center;" colspan="6"/>
+        </tr>
+        <tr>
+          <td>$Sk-21N</td><td class="num" id="SkillV20">$Sk-21V</td><td class="num" id="SkillR20"> </td>
+          <td>$Sk-31N</td><td class="num" id="SkillV30">$Sk-31V</td><td class="num" id="SkillR30"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-22N</td><td class="num" id="SkillV21">$Sk-22V</td><td class="num" id="SkillR21"> </td>
+          <td>$Sk-32N</td><td class="num" id="SkillV31">$Sk-32V</td><td class="num" id="SkillR31"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-23N</td><td class="num" id="SkillV22">$Sk-23V</td><td class="num" id="SkillR22"> </td>
+          <td>$Sk-33N</td><td class="num" id="SkillV32">$Sk-33V</td><td class="num" id="SkillR32"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-24N</td><td class="num" id="SkillV23">$Sk-24V</td><td class="num" id="SkillR23"> </td>
+          <td>$Sk-34N</td><td class="num" id="SkillV33">$Sk-34V</td><td class="num" id="SkillR33"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-25N</td><td class="num" id="SkillV24">$Sk-25V</td><td class="num" id="SkillR24"> </td>
+          <td>$Sk-35N</td><td class="num" id="SkillV34">$Sk-35V</td><td class="num" id="SkillR34"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-26N</td><td class="num" id="SkillV25">$Sk-26V</td><td class="num" id="SkillR25"> </td>
+          <td>$Sk-36N</td><td class="num" id="SkillV35">$Sk-36V</td><td class="num" id="SkillR35"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-27N</td><td class="num" id="SkillV26">$Sk-27V</td><td class="num" id="SkillR26"> </td>
+          <td>$Sk-37N</td><td class="num" id="SkillV36">$Sk-37V</td><td class="num" id="SkillR36"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-28N</td><td class="num" id="SkillV27">$Sk-28V</td><td class="num" id="SkillR27"> </td>
+          <td>$Sk-38N</td><td class="num" id="SkillV37">$Sk-38V</td><td class="num" id="SkillR37"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-29N</td><td class="num" id="SkillV28">$Sk-29V</td><td class="num" id="SkillR28"> </td>
+          <td>$Sk-39N</td><td class="num" id="SkillV38">$Sk-39V</td><td class="num" id="SkillR38"> </td>
+        </tr>
+        <tr>
+          <td>$Sk-30N</td><td class="num" id="SkillV29">$Sk-30V</td><td class="num" id="SkillR29"> </td>
+          <td>$Sk-40N</td><td class="num" id="SkillV39">$Sk-40V</td><td class="num" id="SkillR39"> </td>
+        </tr>
+
+      </table>
+    </div>
+  </body>
+</html>

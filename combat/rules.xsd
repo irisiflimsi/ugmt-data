@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="rules">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="table" type="xs:anyType"/>
+        <xs:element name="tr" type="xs:anyType"/>
+        <xs:element name="td" type="xs:anyType"/>
+        <xs:element name="select" type="xs:anyType"/>
+        <xs:element name="option" type="xs:anyType"/>
+        <xs:element name="div" type="xs:anyType"/>
+        <xs:element name="th" type="xs:anyType"/>
+        <xs:element name="span" type="xs:anyType"/>
+        <xs:element name="input" type="xs:anyType"/>
+      </xs:choice>
+      <xs:attribute name="version" type="xs:string" use="required"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

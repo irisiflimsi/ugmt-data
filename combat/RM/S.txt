@@ -1,0 +1,95 @@
+5   Zip.
+    Weak strike. +0 hits.
+    +1 hit
+    +2 hits
+    +3 hits
+10  +1 hit.
+    +2 hits.
+    +3 hits
+    +4 hits
+    Unbalance foe. +5 hits. You have initiative next rnd.
+15  You have initiative next rnd. +1 hit.
+    Glancing blow to side. +3 hits. You have initiative next rnd.
+    Blow to foe's side. +6 hits. You have initiative next rnd.
+    +3 hits. Foe must parry next rnd.
+    +4 hits. Foe must parry next rnd.
+20  Foe must parry next rnd. +1 hit.
+    Blow to side. +2 hits. Foe must parry next rnd at -10.
+    Blow to side. +4 hits. Foe must parry next rnd -20.
+    Minor side wound. Foe at -10. +2 hits. Receive initiative next rnd.
+    Stun foe for 1 rnd. Foe may not parry. Add +10 to your next swing.
+35  Foe must parry next rnd. +2 hits. Add +10 to next swing.
+    Foe must parry next rnd at -20. +2 hits.
+    You break foe's rib. +3 hits. Foe is stunned next rnd.
+    Strike to side. Foe is stunned for next rnd and cannot parry. +3 hits.
+    Foe receives minor side wound, fights at -10 and takes 1 hit/rnd, +3hits.
+45  Minor calf wound. Foe receives 1 hit/rnd.
+    Minor calf wound. Foe takes 1 hit/rnd. +2 hits.
+    You slash foe's leg. Foe takes 2 hits/rnd. +2 hits.
+    Slash foe's upper leg. +3 hits. Foe takes 2 hits/rnd.
+    Blow to foe's upper leg. If foe has leg armor +5 hits. If foe has no armor, +3 hits and +3 hits/rnd.
+50  Blow to foe's back. +2 hits. Foe must parry next rnd at -30.
+    Blow to foe's back. Foe must parry next rnd at -30. +4 hits.
+    Blow to foe's back stuns foe for 1 rnd. Foe takes 1 hit/rnd. +3 hits. Foe cannot parry for 1 rnd.
+    Strike foe's lower back. Foe may not parry and is out next round. +3 hits. Foe takes 2 hits/rnd.
+    Strike to foe's lower back. Foe may not parry and is out next rnd. +4 hits. Foe takes 3 hits/rnd.
+55  Blow to foe's chest. Foe must parry next round - 25. Wound gives 1 hit/rnd. +2 hits.
+    Minor chest wound. Foe takes 1 hit/rnd and must parry next 2 rnds. +3 hits. Foe fights at -5.
+    Minor chest wound. +4 hits. Foe takes 2 hits/rnd and fights at -10. Foe must parry next rnd.
+    Medium chest wound. +5 hits. Foe takes 3 hits/rnd, fights at -15, and must parry next rnd.
+    Chest wound. Foe takes 4 hits/rnd, is at -10, and is stunned 2 rnds. +6 hits.
+60  Minor thigh wound. Foe takes 2 hits/rnd and must parry next rnd. +3 hits.
+    Minor thigh wound. Foe takes 2 hits/rnd. +4 hits. Foe must parry next 2 rnds.
+    Minor thigh wound. Foe takes 2 hits/rnd. +5 hits. Foe is stunned next rnd.
+    Medium thigh wound. +6 hits. Foe takes 2 hits/rnd and is stunned 2 rnds.
+    Thigh wound. Foe is stunned for 2 rnds. +8 hits. Foe takes 5 hits/rnd.
+65  Minor forearm wound. +3 hits. Foe takes 2 hits/rnd and is at -10.
+    Minor forearm wound. Foe is stunned next rnd, takes 2 hits/rnd and is at -10. +4 hits.
+    Medium forearm wound. +4 hits. Foe takes 3 hits/rnd, is at -10, and is stunned next rnd.
+    Medium forearm wound. +4 hits. Foe takes 3 hits/rnd, is at -10, and is stunned next 2 rnds.
+    Forearm wound. Foe is stunned for 2 rnds. +6 hits. Foe takes 3 hits /rnd and is at -15.
+66  Shatter foe's shield arm shoulder. Arm is useless. +10 next swing. Foe is stunned 3 rnds. +9 hits. Your initiative.
+    Shatter foe's weapon arm elbow. +8 hits. Foe is stunned for 4 rnds and cannot parry for 2 rnds.
+    Shatter foe's knee. Foe is knocked down. +6 hits. Foe at -90 and is down for 3 rnds and cannot parry.
+    You knock foe out for 6 hours with a strike to side of head. +15 hits. If foe has no helm, you kill him instantly.
+    Sever foe's weapon arm. +12 hits. Foe expires in 12 rnds, drops immediately. Add +10 to your next swing.
+70  Slash foe's neck. +6 hits. Foe is stunned for 3 rnds and cannot parry next rnd.
+    Blow to foe's neck . Foe takes 3 hits/rnd and fights at-5. Stun foe for 2 rnds. +7 hits.
+    Slash foe's neck. Foe is stunned 4 rnds and cannot parry next 2 rnds. +8 hits. +10 next rnd.
+    Slash muscle in foe's shoulder. +5 hits. Foe is stunned 3 rnds, and is at -20. Add +10 to your next swing.
+    Slash tendons and crush the bone in foe's shield shoulder. Arm is useless and foe takes 2 hits/rnd. Foe is stunned for 4 rnds.
+75  Slash tendons in foe's lower leg. Foe at-30 and takes 2 hits/rnd. +4 hits. Stun foe for 2 rnds. Poor sucker.
+    Slash muscle in foe's calf. Foe is stunned for 3 rnds and cannot parry next rnd. +6 hits. Foe at -40.
+    Slash muscle and tendons in foe's lower leg. Foe is stunned for 2 rnds and cannot parry. +7 hits. Foe at -45.
+    Slash muscle and sever tendons in foe's lower leg. Foe is stunned for 3 rnds and cannot parry for next 2 rnds. Foe is at -50.
+    Slash foe's lower leg and sever muscle and tendons. Foe at -70. +8 hits. Foe is stunned for 6 rnds.
+80  Slash foe's upper arm. +5 hits. Foe takes 3 hits/rnd and is at -25. Foe is stunned and unable to parry 2 rnds.
+    Slash muscle in foe's shield arm. Foe is at -30 and takes 3 hits/rnd. Stunned and unable to parry for 2 rnds. +6 hits.
+    Slash muscle and tendons in foe's shield arm. +9 hits. Foe takes 4 hits/rnd and arm is useless. Foe is stunned 6 rnds.
+    Slash muscle and tendons in foe's weapon arm. Arm is useless and foe is stunned 4 rnds. Foe cannot parry next 2 rnds. +10 hits.
+    Slash tendons and break bone in foe's shield arm. Arm is useless. +12 hits. Foe is stunned and unable to parry for next 3 rnds.
+85  Slash foe's side. +6 hits and a major wound. Foe takes 6 hits/rnd and is stunned 5 rnds. Add +20 to your next swing.
+    Slash foe's side. +7 hits and a major wound. Foe takes 6 hits/rnd. Foe is stunned and cannot parry for next 2 rnds.
+    Strike to foe's side. +8 hits. Foe takes 4 hits/rnd and is at -20. Foe is stunned and cannot parry for next 2 rnds.
+    Major abdominal wound. +10 hits. Foe takes 8 hits/rnd, is stunned for 4 rnds, and is unable to parry for next 2 rnds. Foe at -10.
+    Sever opponent's hand. +5 hits. Foe is stunned and unable to parry for next 12 rnds. Foe then dies.
+90  Slash foe's back. +8 hits. Foe is stunned and cannot parry for 2 rnds. Foe takes 2 hits/rnd and is at -10.
+    Strike to back knocks foe down. Foe is stunned and unable to parry for 3 rnds. +10 hits. Foe takes 3 hits/rnd.
+    Blast to back breaks bone and knocks foe down. +9 hits and foe at -10. Foe is stunned and unable to parry for 4 rnds.
+    Sever opponent's hand. +6 hits. Foe is stunned for 6 rnds, unable to parry. Foe then drops and dies 6 rnds later.
+    Sever foe's leg. +15 hits. Foe drops and lapses into unconsciousness. Foe dies in 9 rnds. Add +10 to your next swing.
+95  Cut off foe's ear. +3 hits. Foe takes 3 hits/rnd and hears at -50. Foe is stunned 3 rnds and unable to parry next rnd.
+    Strike to foe's hip. +7 hits and foe is stunned 3 rnds. Foe cannot parry next rnd and fights -20. Add +10 to your next swing.
+    Sever foe's leg. Foe drops immediately and dies in 6 rnds due to shock and blood loss. +20 hits.
+    Sever foe's weapon arm. Foe is stunned and unable to parry for next 9 rnds. Foe then dies. +15 hits.
+    Sever foe's spine. +20 hits. Foe collapses in a second, and is paralyzed from the neck down - permanently.
+99  Slash foe's nose. Minor wound. +2 hits and a permanent scar. Foe takes 2 hits/rnd and is at -30. Foe stunned 6 rnds.
+    Strike to foe's head and neck breaks skull and causes massive brain damage. Foe drops and dies in 6 rnds. +20 hits.
+    Sever foe's shield arm. Foe is stunned and unable to parry for 20 rnds. +18 hits.
+    Slash foe's side. +20 hits. Foe dies in 3 rnds due to massive internal organ damage. Foe is down and unconscious immediately.
+    Strike to foe's head destroys brain and makes life difficult for the poor fool. Foe expires in a heap immediately.
+100 Neck strike severs carotid artery and jugular vein. Foe's neck is broken. Foe dies in 1 rnd of intense agony.
+    Disembowel foe, killing him instantly. 25% chance your weapon is stuck in opponent during next rnd.
+    Destroy foe's eyes. +5 hits and foe is stunned and unable to parry for next 30 rnds.
+    Impale adversary in heart. +12 hits. Foe dies instantly. Heart is destroyed. 25% chance your weapon is stuck in foe 2 rnds.
+    Strike to foe's groin area. +10 hits. All vitals are destroyed immediately Foe is stunned and unable to parry for 12 rnds and then dies.

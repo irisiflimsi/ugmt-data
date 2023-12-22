@@ -1,0 +1,52 @@
+a.script {
+    color: #444;
+}
+
+table { 
+    border-collapse: collapse; 
+    padding: 5px;
+}
+
+td {
+    font-size: .75em;
+    padding-right: 1em;
+    vertical-align: top;
+}
+
+.head {
+    background-color: #aaa;
+}
+
+.smallentity2 {
+    font-size: .85em;
+    border: 2px solid black;
+    border-radius: 6px;
+    background-color: #372;
+    color: #eee;
+    box-shadow: inset 0px 0px 20px #bbb,
+      0px 0px 0px 2px #eee,
+      0px 0px 0px 3px #ddd;
+    margin: 4px;
+}
+
+.smalltext {
+    border: 1px dotted black;
+    border-radius: 3px;
+    margin: 2px;
+    padding: 2px 6px;
+    text-align: justify;
+}
+
+.expand {
+    width: 15%;
+    display: inline-block;
+}
+
+.expand4 {
+    width: 24%;
+    display: inline-block;
+}
+
+.line-below {
+    border-bottom: 1px solid #372;
+}

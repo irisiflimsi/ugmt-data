@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="UGM">
+  <attribute name="ShB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 0), 0))"/>
+  <attribute name="ShE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 1), 0))"/>
+  <attribute name="ShP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 2), 0))"/>
+  <attribute name="ShF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 3), 0))"/>
+  <attribute name="HpB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 0), 0))"/>
+  <attribute name="HpE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 1), 0))"/>
+  <attribute name="HpP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 2), 0))"/>
+  <attribute name="HpF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 3), 0))"/>
+  <attribute name="GrB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 0), 0))"/>
+  <attribute name="GrE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 1), 0))"/>
+  <attribute name="GrP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 2), 0))"/>
+  <attribute name="GrF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 3), 0))"/>
+  <attribute name="AbB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 0), 0))"/>
+  <attribute name="AbE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 1), 0))"/>
+  <attribute name="AbP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 2), 0))"/>
+  <attribute name="AbF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 3), 0))"/>
+  <attribute name="TxB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 0), 0))"/>
+  <attribute name="TxE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 1), 0))"/>
+  <attribute name="TxP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 2), 0))"/>
+  <attribute name="TxF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 3), 0))"/>
+  <attribute name="ThB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 0), 0))"/>
+  <attribute name="ThE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 1), 0))"/>
+  <attribute name="ThP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 2), 0))"/>
+  <attribute name="ThF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Surcoat']), u:table-lookup(.//equipment[@name='Surcoat']/@material, 3), 0))"/>
+  <attribute name="UaB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0))"/>
+  <attribute name="UaE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0))"/>
+  <attribute name="UaP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0))"/>
+  <attribute name="UaF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Shirt']), u:table-lookup(.//equipment[@name='Shirt']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Tunic']), u:table-lookup(.//equipment[@name='Tunic']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0))"/>
+  <attribute name="KnB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0))"/>
+  <attribute name="KnE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0))"/>
+  <attribute name="KnP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0))"/>
+  <attribute name="KnF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0))"/>
+  <attribute name="CaB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 0), 0))"/>
+  <attribute name="CaE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 1), 0))"/>
+  <attribute name="CaP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 2), 0))"/>
+  <attribute name="CaF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Pants']), u:table-lookup(.//equipment[@name='Pants']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 3), 0))"/>
+  <attribute name="FtB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 0), 0) + u:ifthenelse(boolean(.//equipment[@name='Shoes']), u:table-lookup(.//equipment[@name='Shoes']/@material, 0), 0))"/>
+  <attribute name="FtE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 1), 0) + u:ifthenelse(boolean(.//equipment[@name='Shoes']), u:table-lookup(.//equipment[@name='Shoes']/@material, 1), 0))"/>
+  <attribute name="FtP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 2), 0) + u:ifthenelse(boolean(.//equipment[@name='Shoes']), u:table-lookup(.//equipment[@name='Shoes']/@material, 2), 0))"/>
+  <attribute name="FtF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Leggings']), u:table-lookup(.//equipment[@name='Leggings']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Boots']), u:table-lookup(.//equipment[@name='Boots']/@material, 3), 0) + u:ifthenelse(boolean(.//equipment[@name='Shoes']), u:table-lookup(.//equipment[@name='Shoes']/@material, 3), 0))"/>
+  <attribute name="FoB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0))"/>
+  <attribute name="FoE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0))"/>
+  <attribute name="FoP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0))"/>
+  <attribute name="FoF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0))"/>
+  <attribute name="ElB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 0), 0))"/>
+  <attribute name="ElE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 1), 0))"/>
+  <attribute name="ElP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 2), 0))"/>
+  <attribute name="ElF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Robe']), u:table-lookup(.//equipment[@name='Robe']/@material, 3), 0))"/>
+  <attribute name="SkB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 0), 0))"/>
+  <attribute name="SkE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 1), 0))"/>
+  <attribute name="SkP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 2), 0))"/>
+  <attribute name="SkF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 3), 0))"/>
+  <attribute name="NkB" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 0), 0))"/>
+  <attribute name="NkE" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 1), 0))"/>
+  <attribute name="NkP" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 2), 0))"/>
+  <attribute name="NkF" rule="u:parse(u:ifthenelse(boolean(.//equipment[@name='Hood']), u:table-lookup(.//equipment[@name='Hood']/@material, 3), 0))"/>
+  <attribute name="FaB" rule="u:parse(0)"/>
+  <attribute name="FaE" rule="u:parse(0)"/>
+  <attribute name="FaP" rule="u:parse(0)"/>
+  <attribute name="FaF" rule="u:parse(0)"/>
+  <attribute name="HaB" rule="u:parse(0)"/>
+  <attribute name="HaE" rule="u:parse(0)"/>
+  <attribute name="HaP" rule="u:parse(0)"/>
+  <attribute name="HaF" rule="u:parse(0)"/>
+  <section name="Physical">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Acrobatics"/>
+    <skill name="Climbing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Dancing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Jumping" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Skiing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Stealth" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Swimming" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Throwing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Communication">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Acting" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Awareness" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Intrigue" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Lovecraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Mental Conflict" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Musician" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Rhetoric" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Singing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Language">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Jarinese" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Hârnic" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Orbaalese" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Yarili" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Harbaalese" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ivinian" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ivashi" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Khuzan" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ormauk" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Surikal" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Sindarin" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Script">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Lakise" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Music" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Runic" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Selenian" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Taelda" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Combat">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Initiative" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Unarmed" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Riding" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Dodge" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Weapon">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Axe" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Battleaxe" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Blowgun" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Bow" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Club" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Dagger" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Flail" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Net" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Polearm" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Shield" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Sling" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Spear" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Sword" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Whip" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="CraftLore">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Agriculture" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Alchemy" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Animalcraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Astrology" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Brewing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ceramics" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Cookery" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Drawing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Embalming" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Engineering" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Fishing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Fletching" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Folklore" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Foraging" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Glasswork" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Heraldry" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Herblore" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Hidework" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Jewelcraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Law" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Lockcraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Masonry" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Mathematics" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Metalcraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Milling" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Mining" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Perfumery" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Physician" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Piloting" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Agrik)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Halea)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Ilvir)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Larani)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Morgath)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Naveh)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Peoni)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Sarajin)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual (Save-K'nor)" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Ritual/Siem" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Runecraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Seamanship" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Shipwright" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Survival" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Tarotry" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Textilecraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Timbercraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Tracking" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Weaponcraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Weatherlore" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Woodcraft" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Psionics">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Charm" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Clairvoyance" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Disembodiement" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Healing" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Hex" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Medium" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Mental Bolt" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Mental Prowess" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Negation" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Prescience" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Psychometry" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Pyrokinesis" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Sensitivity" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Telekinesis" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Telepathy" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Transference" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Transmutation" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <section name="Convocational">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Lyahvi" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Peleahn" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Jmorvi" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Fyvria" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Odivshe" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Savorya" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+    <skill name="Neutral" learn1="u:parse(u:table-lookup('tasks1',u:skill('$name', 'value')))" learn2="u:parse(u:table-lookup('tasks2',u:skill('$name', 'value')))" learn3="u:parse(u:table-lookup('tasks3',u:skill('$name', 'value')))"/>
+  </section>
+  <gear>
+    <modifier name="material" value="'2'"/>
+    <equipment type="Weapon" name="Dagger" rof="1" clip="2" crit="5"/>
+    <equipment type="Weapon" name="Shortbow" rof="6" clip="-" crit="-"/>
+    <equipment type="Weapon" name="Handaxe" rof="4" clip="6" crit="-"/>
+    <equipment type="Weapon" name="Spear" rof="4" clip="-" crit="7"/>
+    <equipment type="Weapon" name="Shortsword" rof="2" clip="4" crit="4"/>
+    <equipment type="Weapon" name="Roundshield" rof="2" clip="-" crit="-"/>
+    <equipment type="Weapon" name="Taburi" rof="0" clip="-" crit="4"/>
+    <equipment name="Leggings" type="Armor"/>
+    <equipment name="Robe" type="Armor"/>
+    <equipment name="Shirt" type="Armor"/>
+    <equipment name="Boots" type="Armor"/>
+    <equipment name="Surcoat" type="Armor"/>
+    <equipment name="Tunic" type="Armor"/>
+  </gear>
+  <table name="Cloth">
+    <row key0="0" value="1"/>
+    <row key0="1" value="1"/>
+    <row key0="2" value="1"/>
+    <row key0="3" value="1"/>
+  </table>
+  <table name="Linen">
+    <row key0="0" value="1"/>
+    <row key0="1" value="1"/>
+    <row key0="2" value="1"/>
+    <row key0="3" value="1"/>
+  </table>
+  <table name="Serge">
+    <row key0="0" value="1"/>
+    <row key0="1" value="1"/>
+    <row key0="2" value="1"/>
+    <row key0="3" value="1"/>
+  </table>
+  <table name="Quilt">
+    <row key0="0" value="5"/>
+    <row key0="1" value="3"/>
+    <row key0="2" value="2"/>
+    <row key0="3" value="4"/>
+  </table>
+  <table name="Leather">
+    <row key0="0" value="2"/>
+    <row key0="1" value="4"/>
+    <row key0="2" value="3"/>
+    <row key0="3" value="3"/>
+  </table>
+  <table name="Kurbul">
+    <row key0="0" value="4"/>
+    <row key0="1" value="5"/>
+    <row key0="2" value="4"/>
+    <row key0="3" value="3"/>
+  </table>
+  <table name="Ring">
+    <row key0="0" value="3"/>
+    <row key0="1" value="6"/>
+    <row key0="2" value="4"/>
+    <row key0="3" value="3"/>
+  </table>
+  <table name="Mail">
+    <row key0="0" value="2"/>
+    <row key0="1" value="8"/>
+    <row key0="2" value="5"/>
+    <row key0="3" value="1"/>
+  </table>
+  <table name="Scale">
+    <row key0="0" value="5"/>
+    <row key0="1" value="9"/>
+    <row key0="2" value="4"/>
+    <row key0="3" value="5"/>
+  </table>
+  <table name="Plate">
+    <row key0="0" value="6"/>
+    <row key0="1" value="10"/>
+    <row key0="2" value="6"/>
+    <row key0="3" value="2"/>
+  </table>
+  <table name="tasks1">
+    <row key0="-20 5" value="-10"/>
+    <row key0="6 15" value="0"/>
+    <row key0="16 25" value="10"/>
+    <row key0="26 35" value="20"/>
+    <row key0="36 45" value="30"/>
+    <row key0="46 100" value="40"/>
+  </table>
+  <table name="tasks2">
+    <row key0="-20 5" value="0"/>
+    <row key0="6 15" value="10"/>
+    <row key0="16 25" value="20"/>
+    <row key0="26 35" value="30"/>
+    <row key0="36 45" value="40"/>
+    <row key0="46 100" value="50"/>
+  </table>
+  <table name="tasks3">
+    <row key0="-20 5" value="10"/>
+    <row key0="6 15" value="20"/>
+    <row key0="16 25" value="30"/>
+    <row key0="26 35" value="40"/>
+    <row key0="36 45" value="50"/>
+    <row key0="46 100" value="60"/>
+  </table>
+</rules>

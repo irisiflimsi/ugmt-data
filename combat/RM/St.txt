@@ -1,0 +1,42 @@
+2   F   F   F    F   F   F   F   F    F   F    F    F   F   F    F    F    F    F    F    F
+39  0   0   0    0   0   0   0   0    0   0    0    0   0   0    0    0    0    0    0    0
+42  0   0   0    0   0   0   0   0    0   0    0    0   0   0    0    0    0    0    0    1
+45  0   0   0    0   0   0   0   0    0   0    0    0   0   0    0    0    0    0    1    1
+48  0   0   0    0   0   0   0   0    0   0    0    0   0   0    0    0    0    0    1    1
+51  0   0   0    0   0   0   0   0    0   0    0    0   0   0    0    0    0    1    1    1
+54  0   0   0    0   0   0   0   0    0   0    0    0   0   0    0    1    1    1    1    2
+57  0   0   0    1   0   0   0   1    0   0    0    1   0   0    0    1    1    1    2    2AT
+60  0   0   0    1   0   0   0   1    0   0    0    1   0   0    0    1    1    1    2AT  2AT
+63  0   0   0    1   0   0   0   1    0   0    0    1   1   1    1    2    1    2    2AT  3AT
+66  0   0   1    1   0   0   1   1    0   0    1    2   1   1    1    2    2    2    3AT  3AT
+69  0   0   1    2   0   0   1   2    0   0    1    2   1   1    1    2    2    2AT  3AT  3AT
+72  0   0   1    2   0   0   1   2    0   0    1    2   1   1    2    3    2    3AT  3AT  4AT
+75  0   0   1    2   0   1   1   2    0   0    1    3   1   1    2    3AT  2    3AT  4AT  4AT
+78  0   0   2    3   1   1   2   3    0   0    2    3   2   2    2    3AT  3    3AT  4AT  4BT
+81  0   1   2    3   1   1   2   3AT  0   0    2    3AT 2   2    3AT  4AT  3AT  4AT  4BT  4BT
+84  0   1   2    3AT 1   1   2   3AT  0   1    2    4AT 2   2    3AT  4AT  3AT  4AT  5BT  5BT
+87  0   1   2    3AT 1   1   3   4AT  0   1    3AT  4AT 2   2AT  3AT  4AT  4AT  4AT  5BT  5BT
+90  0   1   3    4AT 1   2   3AT 4AT  1   1AT  3AT  4AT 2AT 2AT  4AT  5AT  4AT  4BT  5BT  5CT
+93  0   1   3AT  4AT 2   2   3AT 4AT  1   1AT  3AT  5AT 3AT 3AT  4AT  5BT  4AT  5BT  6CT  6CT
+96  1   2   3AT  4AT 2   2   3AT 5BT  1   2AT  4AT  5AT 3AT 3AT  4AT  5BT  4AT  5BT  6CT  6CT
+99  1   2AT 3AT  5AT 2AT 2AT 4AT 5BT  1   2AT  4AT  5BT 3AT 3AT  5BT  6BT  5AT  5BT  6CT  6CT
+102 1   2AT 4AT  5BT 2AT 2AT 4AT 5BT  1AT 2AT  4AT  6BT 3AT 3AT  5BT  6BT  5BT  6BT  6CT  7CT
+105 1AT 2AT 4AT  5BT 2AT 3AT 4AT 6BT  2AT 2AT  5BT  6BT 3AT 3AT  5BT  6CT  5BT  6CT  7CT  7CT
+--- S
+108 1AT 2AT 4AT  5BT 3AT 3AT 5AT 6CT  2AT 3AT  5BT  7CT 4AT 4BT  6BT  7CT  6BT  6CT  7CT  7DT
+111 1AT 3AT 4AT  6BT 3AT 3AT 5BT 6CT  2AT 3BT  5BT  7CT 4BT 4BT  6CT  7CT  6BT  7CT  7DT  8DT
+114 2AT 3AT 5BT  6CT 3AT 3AT 5BT 7CT  2AT 3BT  6BT  7CT 4BT 4BT  6CT  7CT  6CT  7CT  8DT  8DT
+117 2AT 3AT 5BT  6CT 3AT 3AT 5BT 7CT  2AT 4BT  6CT  8CT 4BT 4CT  7CT  8CT  6CT  7CT  8DT  8DT
+120 2AT 3BT 5BT  7CT 3BT 4BT 6BT 7CT  3AT 4BT  6CT  8CT 4CT 4CT  7CT  8DT  7CT  7DT  8DT  8DT
+--- M
+123 2AT 4BT 5BT  7CT 4BT 4BT 6CT 8DT  3BT 4BT  7CT  8DT 5CT 5CT  7DT  8DT  7CT  8DT  9DT  9ET
+126 2AT 4BT 6CT  7DT 4BT 4BT 6CT 8DT  3BT 4CT  7CT  9DT 5CT 5CT  8DT  9DT  7DT  8DT  9ET  9ET
+129 2BT 4BT 6CT  7DT 4BT 4BT 7CT 8DT  3BT 5CT  7DT  9DT 5CT 5CT  8DT  9DT  8DT  8DT  9ET  9AP
+132 3BT 4BT 6CT  8DT 4CT 4CT 7CT 9DT  3BT 5CT  8DT  9DT 5DT 5DT  8DT  9ET  8ET  9DT 10AP 10AP
+135 3BT 4CT 6CT  8DT 4CT 5CT 7CT 9DT  4BT 5DT  8DT 10DT 5DT 5DT  9ET 10AP  8AP  9AP 10AP 10AP
+--- L
+138 3BT 5CT 7CT  8ET 5CT 5CT 7DT 9ET  4CT 5DT  8DT 10ET 6DT 6DT  9AP 10AP  8AP  9AP 10AP 10AP
+141 3CT 5CT 7DT  9ET 5DT 5DT 8DT 10ET 4CT 6DT  9ET 10AP 6ET 6ET  9AP 10AP  9AP 10AP 11AP 11BP
+144 3CT 5DT 7DT  9ET 5DT 5DT 8ET 10ET 4DT 6ET  9AP 11AP 6AP 6AP 10AP 11AP  9AP 10AP 11BP 11BP
+147 3DT 5ET 7ET  9ET 5ET 5ET 8AP 10ET 4ET 6ET  9AP 11AP 6AP 6AP 10AP 11AP  9AP 10BP 11BP 11BP
+150 4ET 6AP 8AP 10BP 6AP 6AP 9AP 11BP 5ET 7AP 10AP 12BP 7AP 7AP 11BP 12BP 10BP 11BP 12BP 12BP

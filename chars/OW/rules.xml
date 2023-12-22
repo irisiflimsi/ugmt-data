@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="OW">
+  <attribute name="MHalf" rule="floor(.//attribute[@name='AgCurr']/@value div 10)"/>
+  <attribute name="MFull" rule="floor(.//attribute[@name='AgCurr']/@value div 10)*2"/>
+  <attribute name="MCharge" rule="floor(.//attribute[@name='AgCurr']/@value div 10)*3"/>
+  <attribute name="MRun" rule="floor(.//attribute[@name='AgCurr']/@value div 10)*6"/>
+  <attribute name="XPCurr" rule=".//attribute[@name='XPTotal']/@value - u:attribute('XPUsed')"/>
+  <attribute name="XPUsed" rule="sum(.//*/@cost)"/>
+  <attribute name="WSCheck1" rule="u:ifthenelse((.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="WSCheck2" rule="u:ifthenelse((.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="WSCheck3" rule="u:ifthenelse((.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="WSCheck4" rule="u:ifthenelse((.//attribute[@name='WSCurr']/@value - .//attribute[@name='WSStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="BSCheck1" rule="u:ifthenelse((.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="BSCheck2" rule="u:ifthenelse((.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="BSCheck3" rule="u:ifthenelse((.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="BSCheck4" rule="u:ifthenelse((.//attribute[@name='BSCurr']/@value - .//attribute[@name='BSStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="AgCheck1" rule="u:ifthenelse((.//attribute[@name='AgCurr']/@value - .//attribute[@name='AgStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="AgCheck2" rule="u:ifthenelse((.//attribute[@name='AgCurr']/@value - .//attribute[@name='AgStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="AgCheck3" rule="u:ifthenelse((.//attribute[@name='AgCurr']/@value - .//attribute[@name='AgStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="AgCheck4" rule="u:ifthenelse((.//attribute[@name='AgCurr']/@value - .//attribute[@name='AgStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="SCheck1" rule="u:ifthenelse((.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="SCheck2" rule="u:ifthenelse((.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="SCheck3" rule="u:ifthenelse((.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="SCheck4" rule="u:ifthenelse((.//attribute[@name='SCurr']/@value - .//attribute[@name='SStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="TCheck1" rule="u:ifthenelse((.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="TCheck2" rule="u:ifthenelse((.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="TCheck3" rule="u:ifthenelse((.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="TCheck4" rule="u:ifthenelse((.//attribute[@name='TCurr']/@value - .//attribute[@name='TStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="IntCheck1" rule="u:ifthenelse((.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="IntCheck2" rule="u:ifthenelse((.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="IntCheck3" rule="u:ifthenelse((.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="IntCheck4" rule="u:ifthenelse((.//attribute[@name='IntCurr']/@value - .//attribute[@name='IntStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="PerCheck1" rule="u:ifthenelse((.//attribute[@name='PerCurr']/@value - .//attribute[@name='PerStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="PerCheck2" rule="u:ifthenelse((.//attribute[@name='PerCurr']/@value - .//attribute[@name='PerStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="PerCheck3" rule="u:ifthenelse((.//attribute[@name='PerCurr']/@value - .//attribute[@name='PerStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="PerCheck4" rule="u:ifthenelse((.//attribute[@name='PerCurr']/@value - .//attribute[@name='PerStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="FelCheck1" rule="u:ifthenelse((.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="FelCheck2" rule="u:ifthenelse((.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="FelCheck3" rule="u:ifthenelse((.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="FelCheck4" rule="u:ifthenelse((.//attribute[@name='FelCurr']/@value - .//attribute[@name='FelStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <attribute name="WPCheck1" rule="u:ifthenelse((.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value) div 5 &gt;= 1, 'x', '')"/>
+  <attribute name="WPCheck2" rule="u:ifthenelse((.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value) div 5 &gt;= 2, 'x', '')"/>
+  <attribute name="WPCheck3" rule="u:ifthenelse((.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value) div 5 &gt;= 3, 'x', '')"/>
+  <attribute name="WPCheck4" rule="u:ifthenelse((.//attribute[@name='WPCurr']/@value - .//attribute[@name='WPStart']/@value) div 5 &gt;= 4, 'x', '')"/>
+  <section name="Basic">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="value" value="u:attribute(u:rules('.//skill[@name=|$name|]/@attr')) + u:ifthenelse(.//skill[@name='$name']/@ranks &gt; 0, .//skill[@name='$name']/@ranks * 10, -10) - 10"/>
+    <skill name="Acrobatics" attr="AgCurr"/>
+    <skill name="Athletics" attr="SCurr"/>
+    <skill name="Awareness" attr="PerCurr"/>
+    <skill name="Charm" attr="FelCurr"/>
+    <skill name="Command" attr="FelCurr"/>
+    <skill name="Commerce" attr="IntCurr"/>
+    <skill name="Deceive" attr="FelCurr"/>
+    <skill name="Dodge" attr="AgCurr"/>
+    <skill name="Inquire" attr="FelCurr"/>
+    <skill name="Interrogation" attr="WPCurr"/>
+    <skill name="Intimidate" attr="SCurr"/>
+    <skill name="Linguistic (Low Gothic)" attr="IntCurr"/>
+    <skill name="Linguistics (High Gothic)" attr="IntCurr"/>
+    <skill name="Linguistics (Imperial Codes)" attr="IntCurr"/>
+    <skill name="Linguistics (Severan Dominate Codes)" attr="IntCurr"/>
+    <skill name="Linguistics (Techna-lingua)" attr="IntCurr"/>
+    <skill name="Linguistics (Unholy Tongue)" attr="IntCurr"/>
+    <skill name="Logic" attr="IntCurr"/>
+    <skill name="Lore (Adept. Mech.)" attr="IntCurr"/>
+    <skill name="Lore (Archeotech)" attr="IntCurr"/>
+    <skill name="Lore (Daemonology)" attr="IntCurr"/>
+    <skill name="Lore (Ecclesiarchy)" attr="IntCurr"/>
+    <skill name="Lore (Heresy)" attr="IntCurr"/>
+    <skill name="Lore (Imp. Creed)" attr="IntCurr"/>
+    <skill name="Lore (Imp. Guard)" attr="IntCurr"/>
+    <skill name="Lore (Imp. Navy)" attr="IntCurr"/>
+    <skill name="Lore (Imperium)" attr="IntCurr"/>
+    <skill name="Lore (Legend)" attr="IntCurr"/>
+    <skill name="Lore (Legions)" attr="IntCurr"/>
+    <skill name="Lore (Mutants)" attr="IntCurr"/>
+    <skill name="Lore (Occult)" attr="IntCurr"/>
+    <skill name="Lore (Severan Dominate)" attr="IntCurr"/>
+    <skill name="Lore (Spinward Front)" attr="IntCurr"/>
+    <skill name="Lore (Tact. Imp.)" attr="IntCurr"/>
+    <skill name="Lore (Tech)" attr="IntCurr"/>
+    <skill name="Lore (Traitor)" attr="IntCurr"/>
+    <skill name="Lore (War)" attr="IntCurr"/>
+    <skill name="Lore (Warp)" attr="IntCurr"/>
+    <skill name="Medicae" attr="IntCurr"/>
+    <skill name="Navigate (Stellar)" attr="IntCurr"/>
+    <skill name="Navigate (Surface)" attr="IntCurr"/>
+    <skill name="Operate (Aeronautica)" attr="AgCurr"/>
+    <skill name="Operate (Surface)" attr="AgCurr"/>
+    <skill name="Operate (Voidship)" attr="AgCurr"/>
+    <skill name="Parry" attr="WSCurr"/>
+    <skill name="Psyniscience" attr="PerCurr"/>
+    <skill name="Scrutiny" attr="PerCurr"/>
+    <skill name="Security" attr="IntCurr"/>
+    <skill name="Sleight of Hands" attr="AgCurr"/>
+    <skill name="Stealth" attr="AgCurr"/>
+    <skill name="Survival" attr="PerCurr"/>
+    <skill name="Tech-Use" attr="IntCurr"/>
+  </section>
+  <section name="Talent">
+    <modifier name="display" value="'$name'"/>
+    <skill name="2-Weapon Wielder (Melee)"/>
+    <skill name="2-Weapon Wielder (Ranged)"/>
+    <skill name="Ambidextrous"/>
+    <skill name="Binary Chatter"/>
+    <skill name="Bulging Biceps"/>
+    <skill name="Catfall"/>
+    <skill name="Cold Hearted"/>
+    <skill name="Combat Formation"/>
+    <skill name="Combat Master"/>
+    <skill name="Deadeye Shot"/>
+    <skill name="Die Hard"/>
+    <skill name="Disturbing Voice"/>
+    <skill name="Double Team"/>
+    <skill name="Fearless"/>
+    <skill name="Ferric Summons"/>
+    <skill name="Frenzy"/>
+    <skill name="Hatred (Adept. Mech.)"/>
+    <skill name="Hatred (Imperial Guard)"/>
+    <skill name="Hatred (Loyal Space Marines)"/>
+    <skill name="Hatred (Mutants)"/>
+    <skill name="Hatred (All)"/>
+    <skill name="Heightened Senses (Hearing)"/>
+    <skill name="Heightened Senses (Sight)"/>
+    <skill name="Heightened Senses (Smell)"/>
+    <skill name="Heightened Senses (Taste)"/>
+    <skill name="Heightened Senses (Touch)"/>
+    <skill name="Hotshot Pilot"/>
+    <skill name="Iron Discipline"/>
+    <skill name="Iron Jaw"/>
+    <skill name="Killing Strike"/>
+    <skill name="Lasgun Barrage"/>
+    <skill name="Lightning Attack"/>
+    <skill name="Lightning Reflexes"/>
+    <skill name="Luminen Shock"/>
+    <skill name="Marksman"/>
+    <skill name="Master Enginseer"/>
+    <skill name="Mechadendrite Use (Utility Weapon)"/>
+    <skill name="Mighty Shot"/>
+    <skill name="Nerves of Steel"/>
+    <skill name="Orthoproxy"/>
+    <skill name="Quickdraw"/>
+    <skill name="Rapid Reaction"/>
+    <skill name="Rapid Reload"/>
+    <skill name="Sharpshooter"/>
+    <skill name="Sidearm"/>
+    <skill name="Sprint"/>
+    <skill name="Step Aside"/>
+    <skill name="Streetfighting"/>
+    <skill name="Swift Attack"/>
+    <skill name="Takedown"/>
+    <skill name="Technical Knock"/>
+    <skill name="Total Recall"/>
+    <skill name="True Grit"/>
+    <skill name="Unshakeable Faith"/>
+    <skill name="Weapon Training (Bolt)"/>
+    <skill name="Weapon Training (Las)"/>
+    <skill name="Weapon Training (Low Tech)"/>
+    <skill name="Weapon Training (Projectile)"/>
+    <skill name="Weapon-Tech"/>
+  </section>
+  <section name="Vehicle">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Tactical"/>
+    <skill name="Cruising"/>
+    <skill name="Manoeuvrability"/>
+    <skill name="Structure"/> 	
+    <skill name="Size"/>
+    <skill name="Crew"/>
+  </section>
+  <gear>
+    <equipment name="Knife" wtype="Melee/Thrown" clip="" class="Basic" rof="" range="5m" damage="'1d5R'" pen="0" reload="" special=""/>
+    <equipment name="Las Carbine" wtype="Las" clip="60" class="Basic" rof="S/2/-" range="75m" damage="'1d10+3E'" pen="0" reload="Half" special="reliable"/>
+    <equipment name="Hotshot Lasgun" wtype="Las" clip="30" class="Basic" rof="S/3/-" range="60m" damage="'1d10+4E'" pen="7" reload="2 Full" special=""/>
+    <equipment name="Long Las" wtype="Las" clip="40" class="Basic" rof="S/-/-" range="150m" damage="'1d10+3E'" pen="1" reload="Full" special="accurate,reliable,felling(4)"/>
+    <equipment name="Hand cannon (and glove)" wtype="Projectile" clip="5" class="Pistol" rof="S/-/-" range="35m" damage="'1d10+4I'" pen="2" reload="2Full" special="accurate,reliable,felling(4)"/>
+    <equipment name="Stub Revolver" wtype="Projectile" clip="6" class="Pistol" rof="S/-/-" range="30m" damage="'1d10+3I'" pen="0" reload="2 Full" special="reliable"/>
+    <equipment name="Sniper Rifle" wtype="Projectile" clip="20" class="Basic" rof="S/-/-" range="200m" damage="'1d10+4I'" pen="3" reload="Full" special="accurate,reliable"/>
+  </gear>
+</rules>

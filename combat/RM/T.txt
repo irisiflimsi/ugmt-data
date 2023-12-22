@@ -1,0 +1,95 @@
+5    Dubious strike. +0 hits.
+     Not enough, +0 hits.
+     Real weak. +0 hits.
+     HA!
+     +1 hit.
+10   Zip.
+     No bonus, +0 hits.
+     Nothing extra.
+     +1 hit.
+     +2 hits.
+15   Looking bad. +0 hits.
+     +1 hit.
+     +1 hit.
+     +1 hit.
+     +2 hits.
+20   +1 hit.
+     +1 hit.
+     +1 hit.
+     +2 hits.
+     Cutting strike. +2 hits and foe takes +1 hit/rnd.
+35   +1 hit.
+     +2 hits.
+     +2 hits.
+     +3 hits.
+     Minor calf wound, +2 hits and foe takes +1 hit/rnd.
+45   Cruel blow. +2 hits.
+     +3 hits.
+     Light wound. +2 hits and foe takes +1 hit/rnd.
+     Leg strike. If foe has no leg armor, +5 hits and he takes +1 hit/rnd.
+     Leg hit. +3 hits and foe takes +1 hit/rnd.
+50   Poor follow through. You lose a claw and fight at +5 for 2 rnds. Foe takes +4 hits.
+     +3 hits.
+     +4 hits.
+     Mild puncture. +3 hits and foe takes +1 hit/rnd.
+     Lower back strike. +5 hits. Foe must parry next rnd and takes +1 hit/rnd.
+55   Leaping chest strike yields +3 hits.
+     Light wound. Foe takes +1 hit per rnd. +3 hits.
+     Slight chest wound. Foe takes +2 hits per rnd. +4 hits.
+     Slash foe's lower chest. If foe has no metal chest armor, +5 hits and +3 hits/rnd.
+     Chest strike. +6 hits and foe is forced to parry next rnd. Foe takes +2 hits/rnd.
+60   Light thigh wound. Foe takes +1 hit/rnd. +1 hit.
+     Thigh strike, but no real penetration. +6 hits.
+     Mild thigh wound stuns foe next round. +4 hits and foe takes +2 hits/rnd.
+     Thigh strike stuns foe for next round. +6 hits and foe takes +2 hits/rnd.
+     Thigh wound. Foe is stunned for next round. +7 hits and foe takes +3 hits/rnd.
+65   Forearm wound. Foe takes +2 hits/rnd. +2 hits.
+     Raking forearm strike leaves nasty scar. Foe takes +2 hits/rnd. +3 hits.
+     Forearm strike. Foe is forced to parry for 2 rnds. +3 hits and foe takes +2 hits/rnd.
+     Forearm wound. Foe must parry for 2 rnds. +5 hits. Foe takes +2 hits/rnd. Add +10 to your next roll.
+     Forearm strike. Foe is stunned next rnd and you have initiative next 2 rnds. Foe takes +3 hits/rnd. +6 hits.
+66   Leg strike. Foe is stunned and unable to parry next rnd. +4 hits. Foe takes +2 hits/rnd.
+     Calf strike. Foe tears muscle, is stunned 2 rnds, and is at -20. +5 hits.
+     Bizarre wrist strike disarms foe. +4 hits. Foe is stunned next rnd. Add +10 to your next roll.
+     Astounding head strike. If foe has a helm, +4 hits. If not, +7 hits and foe is unable to parry for 6 rnds.
+     Bizarre strike to eyes destroys 1 eye and blinds the other eye for 2 days. Foe is at -95 and is stunned for 24 rnds.
+70   Shoulder strike. Foe takes +1 hit/rnd and must parry next round. +3 hits.
+     Upper chest strike. Foe is stunned next round. +4 hits. Foe takes +1 hit/rnd.
+     Strike to foe's shoulder. Foe takes +2 hits/rnd. +5 hits. Foe is stunned next rnd at -20.
+     Upper arm strike. Foe stunned and unable to parry next rnd. Foe takes +2 hits/rnd. +6 hits.
+     Inspired shoulder strike tears muscle. Foe is stunned and unable to parry next rnd. Foe is at -20. +7 hits.
+75   Lower leg strike. If foe has leg armor, +1 hit. If not, foe takes +4 hits and +2 hits/rnd. Foe has initiative next rnd.
+     Strike to lower leg. If foe has leg armor, +3 hits. If not, foe takes +6 hits, +2 hits/rnd, and must parry next 2 rnds.
+     Calf strike. Slash muscle. Foe is at -20. Wound gives foe +2 hits/rnd, and stuns him for 2 rnds.
+     Lower leg strike. If foe has leg armor, +3 hits and he is stunned next rnd. It not, foe is stunned 2 rnds, is unable to parry next rnd.
+     Vicious leg wound. Foe takes +4 hits/rnd and is stunned 3 rounds. +5 hits.
+80   Weak, but precise strike to foe's arm. Foe takes +1 hit/rnd and is stunned next rnd. +3 hits.
+     Strong, but imprecise arm strike. Foe takes +2 hits/rnd and is at -15. +5 hits.
+     Forearm strike slashes muscle and tendon. Foe fights at -25, takes +2 hits/rnd, and is stunned 2 rnds. +5 hits.
+     Arm strike tears muscle and tendon. Foe fights at -25, takes +2 hits/rnd, and is stunned 3 rnds. +5 hits.
+     Arm strike gives foe a troublesome wound. Foe is stunned and unable to parry for 2 rnds and takes 3 hits/rnd.
+85   Strike to foe's face. +4 hits. Foe is stunned next rnd and takes +2 hits/rnd.
+     Flying face strike. If facial armor, +2 hits and foe must parry next rnd. If not, foe takes +3 hits/rnd and stunned for 3 rnds.
+     Head strike. If foe has helm, +3 hits and he is stunned next rnd. If not, foe has a nasty scar, takes +3 hits/rnd, and is at -40.
+     Acrobatic face strike. If facial armor, +5 hits. If not, foe's nose torn and he takes +3 hits/rnd, is stunned 3 rnds, and is at -40.
+     Head strike. If foe has helm, +4 hits and he is stunned next rnd. If not, foe takes +3 hits/rnd, fights at -25, and is stunned 9 rnds.
+90   Sudden, well-placed blow. Foe is stunned for 2 rnds. +6 hits.
+     Slash foe's neck. Foe takes +2 hits/rnd and is stunned for 3 rnds. +5 hits.
+     Shoulder strike spins foe. Foe is stunned and unable to parry 2 rnds. +6 hits.
+     Strike to foe's weapon arm. Foe is disarmed and stunned next rnd. +5 hits.
+     Upper thigh wound tears muscle. Foe is at -40 and takes +3 hits /rnd. +4 hits. Foe is stunned for 3 rnds, unable to parry 1 rnd.
+95   Leaping head strike. If foe has helm, +3 hits and foe is stunned next rnd. If not, foe is at -30 and stunned 2 rnds. Ear torn.
+     Wrist strike. +2 hits/rnd. Foe is stunned for 3 rnds and unable to parry next rnd. +5 hits.
+     Neck strike. Foe is stunned and unable to parry for 2 rnds and takes +2 hits/rnd. Foe fights at -20. +3 hits.
+     Well-timed attack tears muscle in thumb . Foe is disarmed, stunned and unable to parry 2 rnds. Foe fights at -50.
+     Dazzling leap knocks foe down. Foe is disarmed and unconscious. +9 hits.
+99   Insulting strike to foe's nose. If foe has full helm, he is stunned 2 rnds. If not, foe has shredded nose, takes +3 hits/rnd, and is stunned 9 rnds.
+     Head strike. Foe is blinded by bleeding, takes +3 hits/rnd, and is stunned and unable to parry for 3 rnds. Foe at -40 while bleeding.
+     Slash foe's Achilles tendon. Foe is knocked down and is stunned and unable to parry for 3 rnds. Foe takes +1 hit/rnd, operates at -75.
+     Strike to foe's eyes. If foe has full helm, he is blind and at -95 for 1 week. If not, foe loses 1 eye and is blind in the other ... and at -100.
+     Head strike knocks foe down. Foe has massive concussion and dies in 9 rnds due to shock and interna bleeding. Pitiful sight.
+100  Strike to foe's eyes. If foe has full helm, he is stunned and unable to parry for 2 rnds. If not, foe loses 1 eye, is at -75, and is stunned and unable to parry for 3 rnds.
+     Slashing throat attack knocks foe down. Foe is stunned and unable to parry for 6 rnds, takes +3 hits/rnds, and fights -50.
+     Bizarre attack to foe's head causes foe to strike himself. Foe must roll on the "E" column on the crush critical strike table.
+     Strike to foe's eyes. +10 hits. Foe is stunned and unable to parry for 6 rnds, takes +2 hits/rnd, and is at -95. Blindness permanent.
+     Unbelievable neck strike knocks foe down. Vein and artery are severed. Foe takes +20 hits/rnd, dies after 6 inactive rnds.

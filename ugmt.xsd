@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="data"> 
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="char" type="char"/>
+        <xs:element name="map" type="map"/>
+        <xs:element name="note" type="note"/>
+        <xs:element name="tag" type="tag"/>
+        <xs:element name="art" type="art"/>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:complexType name="root">
+    <xs:attribute name="id" type="xs:ID"/>
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="permit" type="xs:boolean"/>
+  </xs:complexType>
+
+  <xs:complexType name="char">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="attribute">
+            <xs:complexType>
+              <xs:attribute name="name" type="xs:string" use="required"/>
+              <xs:attribute name="value" type="xs:string" use="required"/>
+              <xs:attribute name="misc" type="xs:string"/>
+              <xs:attribute name="cost" type="xs:string"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="skill">
+            <xs:complexType>
+              <xs:attribute name="name" type="xs:string" use="required"/>
+              <xs:attribute name="value" type="xs:string"/>
+              <xs:attribute name="ranks" type="xs:string"/>
+              <xs:attribute name="type" type="xs:string"/>
+              <xs:attribute name="learn" type="xs:string"/>
+              <xs:attribute name="cost" type="xs:string"/>
+              <xs:attribute name="misc" type="xs:string"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="location">
+            <xs:complexType>
+              <xs:attribute name="map" type="xs:string" use="required"/>
+              <xs:attribute name="x" type="xs:integer" use="required"/>
+              <xs:attribute name="y" type="xs:integer" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="image">
+            <xs:complexType>
+              <xs:attribute name="type" type="xs:string" use="required"/>
+              <xs:attribute name="file" type="xs:string" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="spell">
+            <xs:complexType>
+              <xs:attribute name="name" type="xs:string" use="required"/>
+              <xs:attribute name="type" type="xs:string"/>
+              <xs:attribute name="cost" type="xs:string"/>
+              <xs:attribute name="level" type="xs:string"/>
+              <xs:attribute name="value" type="xs:string"/>
+              <xs:attribute name="learn" type="xs:string"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="equipment" type="equipment"/>
+          <xs:element name="tagged" type="xs:string"/>
+          <xs:element name="note" type="note"/>
+        </xs:choice>
+        <xs:attribute name="rules" type="xs:string" use="required"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="map">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice minOccurs="0" maxOccurs="unbounded">
+          <xs:element name="link">
+            <xs:complexType>
+              <xs:attribute name="shape" type="xs:string" use="required"/>
+              <xs:attribute name="coords" type="xs:string" use="required"/>
+              <xs:attribute name="href" type="xs:string" use="required"/>
+            </xs:complexType>
+          </xs:element>
+          <xs:element name="tagged" type="xs:string"/>
+        </xs:choice>
+        <xs:attribute name="file" type="xs:string" use="required"/>
+        <xs:attribute name="tiles" type="xs:string"/>
+        <xs:attribute name="y" type="xs:decimal"/>
+        <xs:attribute name="x" type="xs:decimal"/>
+        <xs:attribute name="scalef" use="required">
+          <xs:simpleType>
+            <xs:restriction base="xs:decimal">
+              <xs:minExclusive value="0"/>
+            </xs:restriction>
+          </xs:simpleType>
+        </xs:attribute>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="art">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice>
+          <xs:element name="tagged" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="file" type="xs:string" use="required"/>
+        <xs:attribute name="select" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="tag">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice>
+          <xs:element name="tagged" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:choice>
+        <xs:attribute name="root" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType mixed="true" name="note">
+    <xs:complexContent>
+      <xs:extension base="root">
+        <xs:choice>
+          <xs:any processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+       </xs:choice>
+        <xs:attribute name="type" type="xs:string"/>
+        <xs:attribute name="value" type="xs:string"/>
+        <xs:attribute name="file" type="xs:string"/>
+        <xs:attribute name="hide" type="xs:boolean"/>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+
+  <xs:complexType name="equipment">
+    <xs:choice minOccurs="0" maxOccurs="unbounded">
+      <xs:element name="equipment"/>
+    </xs:choice>
+    <xs:attribute name="name" type="xs:string" use="required"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="material" type="xs:string"/>
+    <xs:attribute name="damage" type="xs:string"/>
+    <xs:attribute name="wert" type="xs:string"/>
+    <xs:attribute name="wgs" type="xs:string"/>
+    <xs:attribute name="munition" type="xs:string"/>
+  </xs:complexType>
+</xs:schema>

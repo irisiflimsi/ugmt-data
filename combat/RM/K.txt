@@ -1,0 +1,95 @@
+5   Zip.
+    Weak grip. No extra damage.
+    +1 hit
+    +2 hits
+    +3 hits
+10  +1 hit.
+    +2 hits.
+    +3 hits
+    +4 hits
+    Glancing blow +6 hits. You have initiative next rnd.
+15  Glancing blow. +3 hits. You have initiative next rnd.
+    Glancing blow. +3 hits. You have initiative next rnd.
+    Blow to foe's side. +7 hits. You have initiative next rnd.
+    +5 hits. Foe must parry next rnd at -10.
+    +6 hits. Foe is stunned for 1 rnd. Add +5 to your next swing.
+20   +2 hits. Foe must parry next rnd.
+     Blow to foe's side. +4 hits. Foe must parry next rnd at -10.
+     Blow to foe's side. +6 hits. Foe must parry next rnd at -20.
+     Minor frib fracture. +5 hits. Foe fights at -5. You have initiative next rnd.
+     Strong blow. Foe is stunned and unable to parry next rnd. +10 to your parry next rnd.
+35   Foe must parry next rnd. +3 hits. +5 to your next swing.
+     Foe must parry next rnd at -20. +4 hits.
+     Break foe's rib. +5 hits. Foe is stunned next rnd.
+     Strike to foe's side. +4 hits. Foe is stunned and unable to parry next rnd.
+     Strike cracks foe's ribs. +6 hits. Foe is at -10. You have initiative next rnd.
+45   Bruise foe's calf. +6 hits. You have initiative. Foe fights at -5 for next rnd.
+     Bruise foe's calf. +6 hits. You have initiative. Foe fights at -20 for next 2 rnds.
+     Bruise foe's calf. +9 hits. You have initiative. Foe fights at -25 for next 2 rnds.
+     Major calf bruise. +10 hits. Foe fights at -10. You have initiative next rnd.
+     Strike to upper leg. Minor fracture. +12 hits. Foe fights at -10. You have initiative next rnd.
+50   Blow to foe's back. +4 hits. Foe must parry next rnd at -25.
+     Blow to foe's back. +6 hits. Foe must parry next rnd at -25.
+     Blow to back. +5 hits. Foe is stunned and unable to parry for 1 rnd. You have initiative for 2 rnds.
+     Hard blow to back. +10 hits. Foe is stunned and unable to parry next rnd.
+     Strike to foe's lower back. +15 hits. Foe is stunned and unable to parry next rnd.
+55   Blow to foe's chest. +5 hits. Foe must parry next rnd at -25. Foe has a bruised rib.
+     Blow to foe's chest. +6 hits. Foe must parry for next 2 rnds.
+     Hard blow to chest. +5 hits. Foe fights at -10. Foe is stunned next rnd.
+     Blow to chest. +10 hits. Foe has a pair of broken ribs and must fight at -15.
+     Blow to chest. +15 hits. Foe is stunned for 2 rnds. Foe fights at -15.
+60   Strike foe's thigh. +5 hits. Foe is forced to parry next rnd at -25.
+     Strike foe's thigh. +6 hits. Foe is bruised, at -5 and must parry for 1 rnd.
+     Strike foe's thigh. +6 hits. Foe is at -5. +10 to your next swing. Foe must parry next rnd.
+     Blow to thigh. Foe is stunned next rnd. +6 hits. Foe is at -10 and is upset.
+     Blow to thigh. Foe is stunned and unable to parry next rnd. +10 hits. Foe is at -10.
+65   Blow to foe's forearm. +5 hits. Foe is stunned 1 rnd. Add +20 to your next swing.
+     Blow to foe's forearm. Foe is at -10. +9 hits. Foe is stunned next rnd.
+     Disarm foe with a blow to forearm. +8 hits. Foe is stunned next rnd.
+     Blow to forearm. Foe is stunned and unable to parry next rnd. +10 hits. Foe at -10.
+     Blow to forearm. Foe drops weapon. Foe is at -15. +10 hits. Foe is stunned next rnd.
+66   Shatter shoulder in foe's shield arm. Arm is quite useless. Foe is stunned and unable to parry for the next 2 rnds. +8 hits.
+     Shatter elbow in foe's weapon arm. Arm is useless. Foe drops weapon, and is stunned and unable to parry for 3 rnds.
+     Shatter foe's knee. +9 hits. Foe is knocked down and is stunned and unable to parry for 3 rnds. Foe at -90.
+     Blow to side of foe's head. If foe has no helm, you crush his skull. If foe has helm, you knock him out for 4 hours. +20 hits.
+     Blow to back of neck, crushes backbone and severs spine. +15 hits. Foe dies instantly. +10 to your next swing.
+70   Strike upper chest area. +8 hits. Foe is stunned for 3 rnds and unable to parry during next rnd.
+     Strike upper chest area. Foe is stunned and unable to parry for 2 rnds +10 hits. Foe is at -10.
+     Strike upper chest area. Foe is stunned for 3 rnds and unable to parry during next 2 rnds, +10 hits. Foe is at -10.
+     Blow to foe's shoulder area. Minor fracture. Foe is at -20. Foe is stunned and unable to parry for 2 rnds.
+     Blow to foe's shield shoulder. If foe has a shield, it if broken. If foe has no shield, the shoulder is shattered, arm useless.
+75   Blow to foe's lower leg. Bad bruise. +5 hits. Foe is stunned for 2 rnds and unable to parry next rnd. Foe at -20.
+     Blow bruises foe's calf. Foe is at -35. +10 hits. Foe is stunned 2 rnds and unable to parry next rnd.
+     Blow bruises foe's knee. Foe is at -40. +10 hits. Foe is stunned and unable to parry for 2 rnds.
+     Blow breaks bone in leg. Foe is at -50. +12 hits. Foe is stunned and unable to parry for 2 rnds. Major cartilage damage.
+     Blow breaks foe's hip. Foe is at -75 and is knocked down. +15 hits. Foe is stunned 3 rnds.
+80   Blow to foe's shield arm. If foe has a shield, it is broken. If foe has no shield, the arm is badly broken and useless.
+     Blow to foe's shield arm shatters wrist. Arm is useless. Foe is stunned for next round. +6 hits.
+     Blow to foe's weapon arm. Bad bruise. +9 hits. Foe is stunned and unable to parry for next rnd. Foe is at -50.
+     Blow breaks foe's weapon arm. Foe is stunned and unable to parry for 1 rnd. Arm is useless. +8 hits. Tendon damage.
+     Blow to foe's elbow. +9 hits. Joint is shattered. Arm is useless. Foe is stunned and unable to parry for 2 rnds.
+85   Blow to foe's side. +10 hits. Foe is stunned and unable to parry for 2 rnds. Foe is at -20.
+     Blow to foe's side. +12 hits. Foe has broken ribs. Foe is stunned and unable to parry for 2 rnds. Foe is at -25.
+     Strike to foe's side. Breaks 3 ribs. Foe is at-40. +12 hits. Foe is stunned and unable to parry for 3 rnds.
+     Strike to foe's side +15 hits. Foe is knocked down. Add +10 to your next swing. Foe is stunned and unable to parry 3 rnds.
+     Catch foe in armpit. +30 hits. Crush foe's ribs and destroy side. Foe drops and dies of nerve and organ damage in 3 rnds.
+90   Strike foe in back. +12 hits. Muscle and cartilage damage. Foe is stunned and unable to parry for 3 rnds. Foe is at -25.
+     Strike to back knocks foe down and smashes tendons. Foe is stunned and unable to parry for 4 rnds. Foe is at -30.
+     Blow to back smashes muscle and breaks bone. +20 hits. Foe is at -50. Foe is knocked down and stunned for 6 rnds.
+     Blow to foe's neck area breaks backbone and destroys spine. +25 hits. Foe falls and dies in 2 rnds.
+     Neck strike shatters bone and severs an artery. Foe cannot breath and is inactive for 12 rnds. The poor fool then expires.
+95   Break foe's nose. Foe is stunned and unable to parry for 3 rnds. +15 hits. Foe fights at -30 for 2 days.
+     Foe's upper head hit. If no helm, he is in a coma for 3 weeks. If foe has a helm, +20 hits and foe is stunned 12 rnds.
+     Blow shatters thigh. +9 hits and a compound fracture. Bone severs an artery. Foe dies after 12 rnds of inactivity.
+     Blow shatters shield arm. Bone severs vein and an artery. Foe dies of shock and blood loss after 9 inactive rnds.
+     Blast to foe's back. +25 hits. Bone is driven into vital organs and foe is down for 6 rnds ... Then dies, sad.
+99   Blow to foe's head. If foe has no helm he is dead. If foe has a helm, he is knocked down and stunned 6 rnds. +20 hits.
+     Blast foe's chest. Send ribcage through heart. Foe drops and dies. +20 to your next swing.
+     Blow to foe's abdomen destroys a variety of organs. The poor fool expires after 6 rnds of inactivity.
+     Blow to foe's side crushes chest cavity. Foe drops and dies in 3 rnds. Add +25 to your next swing.
+     Crush foe's skull. +30 hits. Opponent dies immediately. Add +20 to your next swing. You have a half rnd left to act.
+100  Blow to foe's jaw. Drives bone through brain. Foe dies instantly. +50 hits, add +20 to your next swing.
+     Blow to back of neck paralyzes foe from the shoulders down. +25 hits. Foe is quite stunned.
+     Strike to forehead. +30 hits. You squash foe's eyes and destroy them. Foe is stunned and is unable to parry 24 rnds.
+     Blast to foe's chest area. Destroy foe's heart. Foe dies immediately. +25 hits. Fine work.
+     Crush foe's hip. +35 hits. Opponent is stunned for 2 rnds, is then active for 4 rnds at -30, then dies of nerve damage.

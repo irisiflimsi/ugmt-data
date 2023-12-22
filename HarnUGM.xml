@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="./ugmt.xsd">
+  <char rules="UHM" id="PC40001">
+    <tagged>UHM</tagged>
+    <tagged>PC</tagged>
+    <image type="marker" file="data/markers/harn/Beairn-Gundarson.png"/>
+    <image type="portrait" file="data/portraits/harn/Beairn-Gundarson.png"/>
+    <attribute name="Name" value="Béairn Gundarson"/>
+    <attribute name="Agility" value="+3"/>
+    <attribute name="Aura" value="+1.5"/>
+    <attribute name="Birthdate" value="10-Sav-696"/>
+    <attribute name="Comeliness" value="0"/>
+    <attribute name="Complexion" value="Medium"/>
+    <attribute name="Culture" value="Viking"/>
+    <attribute name="Deity" value="Ilvir"/>
+    <attribute name="Dexterity" value="+1.5"/>
+    <attribute name="Sunsign" value="Tai"/>
+    <attribute name="Endurance" value="28"/>
+    <attribute name="Eyecolor" value="Green"/>
+    <attribute name="Eyesight" value="0"/>
+    <attribute name="Frame" value="Medium"/>
+    <attribute name="Medical" value="-"/>
+    <attribute name="Psyche" value="-"/>
+    <attribute name="Haircolor" value="Auburn"/>
+    <attribute name="Hearing" value="0"/>
+    <attribute name="Height" value="67"/>
+    <attribute name="Intelligence" value="+3"/>
+    <attribute name="Morality" value="&#9733;&#9733;&#9733;&#9733;"/>
+    <attribute name="Move" value="30"/>
+    <attribute name="Occupation" value="Farmer" />
+    <attribute name="Parentoccupation" value="Farmer" />
+    <attribute name="Piety" value="24"/>
+    <attribute name="Gender" value="Male"/>
+    <attribute name="Smell" value="0"/>
+    <attribute name="Socialclass" value="Free"/>
+    <attribute name="Species" value="Human"/>
+    <attribute name="Stamina" value="0"/>
+    <attribute name="Strength" value="0"/>
+    <attribute name="Voice" value="+3"/>
+    <attribute name="Weight" value="149"/>
+    <attribute name="Will" value="+3.5"/>
+    <skill name="Agriculture" value="14"/>
+    <skill name="Animalcraft" value="14"/>
+    <skill name="Awareness" value="20"/>
+    <skill name="Axe" value="26"/>
+    <skill name="Bow" value="24"/>
+    <skill name="Climbing" value="28"/>
+    <skill name="Dagger" value="26"/>
+    <skill name="Dodge" value="40"/>
+    <skill name="Embalming" value="6"/>
+    <skill name="Fletching" value="13"/>
+    <skill name="Foraging" value="21"/>
+    <skill name="Hidework" value="15"/>
+    <skill name="Initiative" value="40"/>
+    <skill name="Intrigue" value="24"/>
+    <skill name="Ivinian" value="39"/>
+    <skill name="Jarinese" value="20"/>
+    <skill name="Jumping" value="28"/>
+    <skill name="Rhetoric" value="17"/>
+    <skill name="Ritual (Ilvir)" value="8"/>
+    <skill name="Runic" value="7"/>
+    <skill name="Seamanship" value="26"/>
+    <skill name="Singing" value="21"/>
+    <skill name="Skiing" value="6"/>
+    <skill name="Stealth" value="36"/>
+    <skill name="Survival" value="23"/>
+    <skill name="Swimming" value="7"/>
+    <skill name="Throwing" value="24"/>
+    <skill name="Tracking" value="20"/>
+    <skill name="Unarmed" value="23"/>
+    <skill name="Woodcraft" value="8"/>
+    <equipment name="Shortbow" type="Weapon"/>
+    <equipment name="Handaxe" type="Weapon"/>
+    <equipment name="Dagger" type="Weapon"/>
+    <equipment name="Boots" material="Leather" type="Armor"/>
+    <equipment name="Leggings" material="Cloth" type="Armor"/>
+    <equipment name="Surcoat" material="Leather" type="Armor"/>
+    <equipment name="Shirt" material="Cloth" type="Armor"/>
+    <equipment name="35d"/>
+  </char>
+  <char rules="UHM" id="PC40002">
+    <tagged>UHM</tagged>
+    <tagged>PC</tagged>
+    <image type="marker" file="data/markers/harn/Helgya-Gundardautir.png"/>
+    <image type="portrait" file="data/portraits/harn/Helgya-Gundardautir.png"/>
+    <attribute name="Name" value="Hélgya Gundardautír"/>
+    <attribute name="Agility" value="+2"/>
+    <attribute name="Aura" value="+3.5"/>
+    <attribute name="Birthdate" value="27-Peo-697"/>
+    <attribute name="Comeliness" value="+2"/>
+    <attribute name="Complexion" value="Medium"/>
+    <attribute name="Culture" value="Viking"/>
+    <attribute name="Deity" value="Ilvir"/>
+    <attribute name="Dexterity" value="0"/>
+    <attribute name="Endurance" value="26"/>
+    <attribute name="Sunsign" value="Aralius"/>
+    <attribute name="Eyecolor" value="Green"/>
+    <attribute name="Eyesight" value="0"/>
+    <attribute name="Frame" value="Light"/>
+    <attribute name="Medical" value="-"/>
+    <attribute name="Psyche" value="-"/>
+    <attribute name="Haircolor" value="Auburn"/>
+    <attribute name="Hearing" value="0"/>
+    <attribute name="Height" value="65"/>
+    <attribute name="Intelligence" value="+2"/>
+    <attribute name="Morality" value="&#9733;&#9733;&#9733;"/>
+    <attribute name="Move" value="22"/>
+    <attribute name="Occupation" value="Farmer" />
+    <attribute name="Parentoccupation" value="Farmer" />
+    <attribute name="Piety" value="17"/>
+    <attribute name="Gender" value="Female"/>
+    <attribute name="Smell" value="0"/>
+    <attribute name="Socialclass" value="Free"/>
+    <attribute name="Species" value="Human"/>
+    <attribute name="Stamina" value="0"/>
+    <attribute name="Strength" value="0"/>
+    <attribute name="Voice" value="+2"/>
+    <attribute name="Weight" value="127"/>
+    <attribute name="Will" value="+2"/>
+    <skill name="Climbing" value="27"/>
+    <skill name="Jumping" value="22"/>
+    <skill name="Stealth" value="20"/>
+    <skill name="Throwing" value="20"/>
+    <skill name="Swimming" value="14"/>
+    <skill name="Skiing" value="6"/>
+    <skill name="Awareness" value="21"/>
+    <skill name="Intrigue" value="24"/>
+    <skill name="Rhetoric" value="23"/>
+    <skill name="Singing" value="20"/>
+    <skill name="Ivinian" value="33"/>
+    <skill name="Jarinese" value="33"/>
+    <skill name="Orbaalese" value="33"/>
+    <skill name="Runic" value="35"/>
+    <skill name="Seamanship" value="8"/>
+    <skill name="Agriculture" value="14"/>
+    <skill name="Cookery" value="15"/>
+    <skill name="Survival" value="12"/>
+    <skill name="Herblore" value="24"/>
+    <skill name="Textilecraft" value="10"/>
+    <skill name="Weatherlore" value="5"/>
+    <skill name="Ritual (Ilvir)" value="8"/>
+    <skill name="Telekinesis" value="8"/>
+    <skill name="Medium" value="8"/>
+    <skill name="Telepathy" value="8"/>
+    <skill name="Sensitivity" value="8"/>
+    <skill name="Healing" value="8"/>
+    <skill name="Initiative" value="38"/>
+    <skill name="Unarmed" value="18"/>
+    <skill name="Dodge" value="38"/>
+    <skill name="Dagger" value="14"/>
+    <skill name="Spear" value="20"/>
+    <skill name="Sling" value="5"/>
+    <equipment name="20d"/>
+    <equipment name="Robe" material="Cloth" type="Armor"/>
+    <equipment name="Tunic" material="Leather" type="Armor"/>
+    <equipment name="Leggings" material="Cloth" type="Armor"/>
+    <equipment name="Boots" material="Leather" type="Armor"/>
+    <equipment name="Dagger" type="Weapon"/>
+    <equipment name="Spear" type="Weapon"/>
+  </char>
+  <char rules="UHM" id="PC40003">
+    <tagged>UHM</tagged>
+    <tagged>PC</tagged>
+    <image type="marker" file="data/markers/harn/Ysbrydd-Gundarson.png"/>
+    <image type="portrait" file="data/portraits/harn/Ysbrydd-Gundarson.png"/>
+    <attribute name="Name" value="Ysbrydd Gundarson"/>
+    <attribute name="Agility" value="+1.5"/>
+    <attribute name="Aura" value="+1"/>
+    <attribute name="Birthdate" value="16-Sav-700"/>
+    <attribute name="Sunsign" value="Tai"/>
+    <attribute name="Comeliness" value="+3"/>
+    <attribute name="Complexion" value="Medium"/>
+    <attribute name="Culture" value="Viking"/>
+    <attribute name="Deity" value="Sarajin"/>
+    <attribute name="Dexterity" value="+1.5"/>
+    <attribute name="Endurance" value="26"/>
+    <attribute name="Eyecolor" value="Green"/>
+    <attribute name="Eyesight" value="0"/>
+    <attribute name="Frame" value="Medium"/>
+    <attribute name="Medical" value="Scars"/>
+    <attribute name="Psyche" value="-"/>
+    <attribute name="Haircolor" value="Auburn"/>
+    <attribute name="Hearing" value="0"/>
+    <attribute name="Height" value="67"/>
+    <attribute name="Intelligence" value="+1.5"/>
+    <attribute name="Morality" value="&#9733;&#9733;&#9733;"/>
+    <attribute name="Move" value="30"/>
+    <attribute name="Occupation" value="Warrior" />
+    <attribute name="Parentoccupation" value="Farmer" />
+    <attribute name="Piety" value="12"/>
+    <attribute name="Gender" value="Male"/>
+    <attribute name="Smell" value="0"/>
+    <attribute name="Socialclass" value="Free"/>
+    <attribute name="Species" value="Human"/>
+    <attribute name="Stamina" value="0"/>
+    <attribute name="Strength" value="0"/>
+    <attribute name="Voice" value="0"/>
+    <attribute name="Weight" value="153"/>
+    <attribute name="Will" value="0"/>
+    <skill name="Climbing" value="26"/>
+    <skill name="Jumping" value="26"/>
+    <skill name="Stealth" value="18"/>
+    <skill name="Throwing" value="24"/>
+    <skill name="Swimming" value="7"/>
+    <skill name="Awareness" value="22"/>
+    <skill name="Intrigue" value="18"/>
+    <skill name="Rhetoric" value="17"/>
+    <skill name="Singing" value="17"/>
+    <skill name="Ivinian" value="36"/>
+    <skill name="Jarinese" value="18"/>
+    <skill name="Trierzi" value="6"/>
+    <skill name="Runic" value="7"/>
+    <skill name="Seamanship" value="20"/>
+    <skill name="Foraging" value="15"/>
+    <skill name="Survival" value="20"/>
+    <skill name="Physician" value="13"/>
+    <skill name="Piloting" value="13"/>
+    <skill name="Ritual (Sarajin)" value="6"/>
+    <skill name="Initiative" value="36"/>
+    <skill name="Unarmed" value="33"/>
+    <skill name="Dodge" value="35"/>
+    <skill name="Sword" value="40"/>
+    <skill name="Shield" value="33"/>
+    <skill name="Taburi" value="21"/>
+    <equipment name="29d"/>
+    <equipment name="Shirt" material="Linen" type="Armor"/>
+    <equipment name="Tunic" material="Quilt" type="Armor"/>
+    <equipment name="Leggings" material="Linen" type="Armor"/>
+    <equipment name="Boots" material="Leather" type="Armor"/>
+    <equipment name="Shortsword" type="Weapon"/>
+    <equipment name="Roundshield" type="Weapon"/>
+    <equipment name="Taburi" type="Weapon"/>
+  </char>
+  <char rules="UHM" id="PC40004">
+    <tagged>UHM</tagged>
+    <tagged>PC</tagged>
+    <image type="marker" file="data/markers/harn/Maiken.png"/>
+    <image type="portrait" file="data/portraits/harn/Maiken.png"/>
+    <attribute name="Name" value="Maiken"/>
+  </char>
+  <char rules="UHM" id="PC40005">
+    <tagged>UHM</tagged>
+    <tagged>PC</tagged>
+    <image type="marker" file="data/markers/harn/Tascha.png"/>
+    <image type="portrait" file="data/portraits/harn/Tascha.png"/>
+    <attribute name="Name" value="Tascha"/>
+  </char>
+  <char rules="UHM" id="NPC40001">
+    <tagged>UHM</tagged>
+    <attribute name="Name" value="Pagaelin"/>
+    <attribute name="Agility" value="-1"/>
+    <attribute name="Culture" value="Barbarian"/>
+    <attribute name="Dexterity" value="0"/>
+    <attribute name="Endurance" value="26"/>
+    <attribute name="Morale" value="34"/>
+    <attribute name="Move" value="16"/>
+    <attribute name="Occupation" value="Warrior" />
+    <attribute name="Species" value="Human"/>
+    <attribute name="Stamina" value="0"/>
+    <attribute name="Strength" value="+1"/>
+    <skill name="Initiative" value="24"/>
+    <skill name="Dodge" value="20"/>
+    <skill name="Unarmed" value="23"/>
+    <skill name="Spear" value="30"/>
+    <skill name="Bow" value="23"/>
+    <skill name="Dagger" value="30"/>
+    <equipment name="Hood" material="Leather" type="Armor"/>
+    <equipment name="Shirt" material="Serge" type="Armor"/>
+    <equipment name="Tunic" material="Leather" type="Armor"/>
+    <equipment name="Pants" material="Leather" type="Armor"/>
+    <equipment name="Leggings" material="Leather" type="Armor"/>
+    <equipment name="Shoes" material="Leather" type="Armor"/>
+    <equipment name="Taburi" type="Weapon"/>
+    <equipment name="Shortbow" type="Weapon"/>
+  </char>
+</data>

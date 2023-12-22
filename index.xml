@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="index.xsl" type="text/xsl"?>
+<index>
+  <item dirname="chars" name="Characters" permit="true"/>
+  <item dirname="combat" name="Combat" permit="true"/>
+  <item dirname="notes" name="Notes" permit="true"/>
+  <item dirname="art" name="Art" permit="true"/>
+  <item dirname="maps" name="Maps" permit="true"/>
+  <item dirname="tactics" name="Tactics" permit="true"/>
+  <!--
+     encyclopedia, calendar, encounters, equipment, groups, index,
+     log, magic, sketch, sound, travel, visual, weather
+    -->
+</index>

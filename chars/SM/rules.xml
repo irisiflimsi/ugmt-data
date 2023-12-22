@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="SM">
+  <attribute name="GKCurr" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Rasse']/@value, '|]/@GK'))"/>
+  <attribute name="GSWCurr" rule="u:attribute('GKCurr') + .//attribute[@name='BEWCurr']/@value"/>
+  <attribute name="INICurr" rule="10 - .//attribute[@name='INTCurr']/@value"/>
+  <attribute name="LPCurr" rule="u:attribute('GKCurr') + .//attribute[@name='KONCurr']/@value"/>
+  <attribute name="FOCurr" rule=".//attribute[@name='WILCurr']/@value * 2 + .//attribute[@name='MYSCurr']/@value * 2"/>
+  <attribute name="VTDCurr" rule="20 + .//attribute[@name='BEWCurr']/@value + .//attribute[@name='STÄCurr']/@value - u:attribute('GKCurr') * 2 + u:attribute('Heldengrad') * 2"/>
+  <attribute name="GWCurr" rule="10 + .//attribute[@name='VERCurr']/@value + .//attribute[@name='WILCurr']/@value + 2 * u:attribute('Heldengrad')"/>
+  <attribute name="KWCurr" rule="10 + .//attribute[@name='WILCurr']/@value + .//attribute[@name='KONCurr']/@value + 2 * u:attribute('Heldengrad')"/>
+  <attribute name="GSWMod" rule="u:ifthenelse(u:skill('Flink', 'value') != '', '+1', '')"/>
+  <attribute name="GWMod" rule="u:ifthenelse(u:skill('Hoher Geist. Widerst.', 'value') != '', '+2', '')"/>
+  <attribute name="FOMod" rule="u:ifthenelse(u:skill('Erh. Fokuspool', 'value') != '', '+5', '')"/>
+  <attribute name="SplitterpunktMod" rule="u:ifthenelse(u:skill('Zus. Splitterpunkte', 'value') != '', '+2', '')"/>
+  <attribute name="Splitterpunkte" rule="2 + u:attribute('Heldengrad')"/>
+  <attribute name="XPNext" rule="u:attribute('Heldengrad') * (u:attribute('Heldengrad') + 1) * 50"/>
+  <attribute name="XPCurr" rule=".//attribute[@name='XPTotal']/@value - u:attribute('XPUsed')"/>
+  <attribute name="XPUsed" rule="sum(.//*[@cost]/@cost)"/>
+  <attribute name="Heldengrad" rule="u:table-lookup('XP', .//attribute[@name='XPTotal']/@value)"/>
+  <attribute name="MondG1" rule="u:table-lookup(.//attribute[@name='Mondzeichen']/@value, 1)"/>
+  <attribute name="MondG2" rule="u:table-lookup(.//attribute[@name='Mondzeichen']/@value, 2)"/>
+  <attribute name="MondG4" rule="u:table-lookup(.//attribute[@name='Mondzeichen']/@value, 4)"/>
+  <!-- Order for Sym* is important -->
+  <attribute name="SymLP10" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 10, '', 'x')"/>
+  <attribute name="SymLP11" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 11, '', 'x')"/>
+  <attribute name="SymLP12" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 12, '', 'x')"/>
+  <attribute name="SymLP13" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 13, '', 'x')"/>
+  <attribute name="SymLP14" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 14, '', 'x')"/>
+  <attribute name="SymLP15" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 15, '', 'x')"/>
+  <attribute name="SymLP1" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 1, '', 'x')"/>
+  <attribute name="SymLP2" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 2, '', 'x')"/>
+  <attribute name="SymLP3" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 3, '', 'x')"/>
+  <attribute name="SymLP4" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 4, '', 'x')"/>
+  <attribute name="SymLP5" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 5, '', 'x')"/>
+  <attribute name="SymLP6" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 6, '', 'x')"/>
+  <attribute name="SymLP7" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 7, '', 'x')"/>
+  <attribute name="SymLP8" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 8, '', 'x')"/>
+  <attribute name="SymLP9" rule="u:ifthenelse(u:attribute('LPCurr') &gt;= 9, '', 'x')"/>
+  <attribute name="SymFO10" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 10, '', 'x')"/>
+  <attribute name="SymFO11" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 11, '', 'x')"/>
+  <attribute name="SymFO12" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 12, '', 'x')"/>
+  <attribute name="SymFO13" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 13, '', 'x')"/>
+  <attribute name="SymFO14" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 14, '', 'x')"/>
+  <attribute name="SymFO15" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 15, '', 'x')"/>
+  <attribute name="SymFO16" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 16, '', 'x')"/>
+  <attribute name="SymFO17" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 17, '', 'x')"/>
+  <attribute name="SymFO18" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 18, '', 'x')"/>
+  <attribute name="SymFO19" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 19, '', 'x')"/>
+  <attribute name="SymFO20" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 20, '', 'x')"/>
+  <attribute name="SymFO21" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 21, '', 'x')"/>
+  <attribute name="SymFO22" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 22, '', 'x')"/>
+  <attribute name="SymFO23" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 23, '', 'x')"/>
+  <attribute name="SymFO24" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 24, '', 'x')"/>
+  <attribute name="SymFO25" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 25, '', 'x')"/>
+  <attribute name="SymFO26" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 26, '', 'x')"/>
+  <attribute name="SymFO27" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 27, '', 'x')"/>
+  <attribute name="SymFO28" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 28, '', 'x')"/>
+  <attribute name="SymFO29" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 29, '', 'x')"/>
+  <attribute name="SymFO30" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 30, '', 'x')"/>
+  <attribute name="SymFO31" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 31, '', 'x')"/>
+  <attribute name="SymFO32" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 32, '', 'x')"/>
+  <attribute name="SymFO33" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 33, '', 'x')"/>
+  <attribute name="SymFO34" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 34, '', 'x')"/>
+  <attribute name="SymFO35" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 35, '', 'x')"/>
+  <attribute name="SymFO36" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 36, '', 'x')"/>
+  <attribute name="SymFO37" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 37, '', 'x')"/>
+  <attribute name="SymFO38" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 38, '', 'x')"/>
+  <attribute name="SymFO39" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 39, '', 'x')"/>
+  <attribute name="SymFO40" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 40, '', 'x')"/>
+  <attribute name="SymFO41" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 41, '', 'x')"/>
+  <attribute name="SymFO42" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 42, '', 'x')"/>
+  <attribute name="SymFO43" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 43, '', 'x')"/>
+  <attribute name="SymFO44" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 44, '', 'x')"/>
+  <attribute name="SymFO45" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 45, '', 'x')"/>
+  <attribute name="SymFO46" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 46, '', 'x')"/>
+  <attribute name="SymFO47" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 47, '', 'x')"/>
+  <attribute name="SymFO48" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 48, '', 'x')"/>
+  <attribute name="SymFO49" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 49, '', 'x')"/>
+  <attribute name="SymFO50" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 50, '', 'x')"/>
+  <attribute name="SymFO1" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 1, '', 'x')"/>
+  <attribute name="SymFO2" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 2, '', 'x')"/>
+  <attribute name="SymFO3" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 3, '', 'x')"/>
+  <attribute name="SymFO4" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 4, '', 'x')"/>
+  <attribute name="SymFO5" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 5, '', 'x')"/>
+  <attribute name="SymFO6" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 6, '', 'x')"/>
+  <attribute name="SymFO7" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 7, '', 'x')"/>
+  <attribute name="SymFO8" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 8, '', 'x')"/>
+  <attribute name="SymFO9" rule="u:ifthenelse(u:attribute('FOCurr') + u:parse(u:attribute('FOMod')) &gt;= 9, '', 'x')"/>
+  <race name="Alb" GK="5"/>
+  <race name="Gnom" GK="3"/>
+  <race name="Mensch" GK="5"/>
+  <race name="Varg" GK="6"/>
+  <race name="Zwerg" GK="4"/>
+  <section name="Basic">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Akrobatik" attr=".//attribute[@name='BEWCurr']/@value + .//attribute[@name='STÄCurr']/@value" total="u:parse(u:skill('Akrobatik', 'value')) + u:parse(u:skill('Akrobatik', 'attr'))"/>
+    <skill name="Alchemie" attr=".//attribute[@name='MYSCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Alchemie', 'value')) + u:parse(u:skill('Alchemie', 'attr'))"/>
+    <skill name="Anführen" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='WILCurr']/@value" total="u:parse(u:skill('Anführen', 'value')) + u:parse(u:skill('Anführen', 'attr'))"/>
+    <skill name="Arkane Kunde" attr=".//attribute[@name='MYSCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Arkane Kunde', 'value')) + u:parse(u:skill('Arkane Kunde', 'attr'))"/>
+    <skill name="Athletik" attr=".//attribute[@name='BEWCurr']/@value + .//attribute[@name='STÄCurr']/@value" total="u:parse(u:skill('Athletik', 'value')) + u:parse(u:skill('Athletik', 'attr'))"/>
+    <skill name="Darbietung" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='WILCurr']/@value" total="u:parse(u:skill('Darbietung', 'value')) + u:parse(u:skill('Darbietung', 'attr'))"/>
+    <skill name="Diplomatie" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Diplomatie', 'value')) + u:parse(u:skill('Diplomatie', 'attr'))"/>
+    <skill name="Edelhandwerk" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Edelhandwerk', 'value')) + u:parse(u:skill('Edelhandwerk', 'attr'))"/>
+    <skill name="Empathie" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Empathie', 'value')) + u:parse(u:skill('Empathie', 'attr'))"/>
+    <skill name="Entschlossenheit" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='WILCurr']/@value" total="u:parse(u:skill('Entschlossenheit', 'value')) + u:parse(u:skill('Entschlossenheit', 'attr'))"/>
+    <skill name="Fingerfertigkeit" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='BEWCurr']/@value" total="u:parse(u:skill('Fingerfertigkeit', 'value')) + u:parse(u:skill('Fingerfertigkeit', 'attr'))"/>
+    <skill name="Geschichte und Mythen" attr=".//attribute[@name='MYSCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Geschichte und Mythen', 'value')) + u:parse(u:skill('Geschichte und Mythen', 'attr'))"/>
+    <skill name="Handwerk" attr=".//attribute[@name='KONCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Handwerk', 'value')) + u:parse(u:skill('Handwerk', 'attr'))"/>
+    <skill name="Heilkunde" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Heilkunde', 'value')) + u:parse(u:skill('Heilkunde', 'attr'))"/>
+    <skill name="Heimlichkeit" attr=".//attribute[@name='BEWCurr']/@value + .//attribute[@name='INTCurr']/@value" total="u:parse(u:skill('Heimlichkeit', 'value')) + u:parse(u:skill('Heimlichkeit', 'attr'))"/>
+    <skill name="Jagdkunst" attr=".//attribute[@name='KONCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Jagdkunst', 'value')) + u:parse(u:skill('Jagdkunst', 'attr'))"/>
+    <skill name="Länderkunde" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Länderkunde', 'value')) + u:parse(u:skill('Länderkunde', 'attr'))"/>
+    <skill name="Naturkunde" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='VERCurr']/@value" total="u:parse(u:skill('Naturkunde', 'value')) + u:parse(u:skill('Naturkunde', 'attr'))"/>
+    <skill name="Redegewandtheit" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='WILCurr']/@value" total="u:parse(u:skill('Redegewandtheit', 'value')) + u:parse(u:skill('Redegewandtheit', 'attr'))"/>
+    <skill name="Schlösser &amp; Fallen" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='BEWCurr']/@value" total="u:parse(u:skill('Schlösser &amp; Fallen', 'value')) + u:parse(u:skill('Schlösser &amp; Fallen', 'attr'))"/>
+    <skill name="Schwimmen" attr=".//attribute[@name='STÄCurr']/@value + .//attribute[@name='KONCurr']/@value" total="u:parse(u:skill('Schwimmen', 'value')) + u:parse(u:skill('Schwimmen', 'attr'))"/>
+    <skill name="Seefahrt" attr=".//attribute[@name='BEWCurr']/@value + .//attribute[@name='KONCurr']/@value" total="u:parse(u:skill('Seefahrt', 'value')) + u:parse(u:skill('Seefahrt', 'attr'))"/>
+    <skill name="Straßenkunde" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='INTCurr']/@value" total="u:parse(u:skill('Straßenkunde', 'value')) + u:parse(u:skill('Straßenkunde', 'attr'))"/>
+    <skill name="Tierführung" attr=".//attribute[@name='AUSCurr']/@value + .//attribute[@name='BEWCurr']/@value" total="u:parse(u:skill('Tierführung', 'value')) + u:parse(u:skill('Tierführung', 'attr'))"/>
+    <skill name="Überleben" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='KONCurr']/@value" total="u:parse(u:skill('Überleben', 'value')) + u:parse(u:skill('Überleben', 'attr'))"/>
+    <skill name="Wahrnehmung" attr=".//attribute[@name='INTCurr']/@value + .//attribute[@name='WILCurr']/@value" total="u:parse(u:skill('Wahrnehmung', 'value')) + u:parse(u:skill('Wahrnehmung', 'attr'))"/>
+    <skill name="Zähigkeit" attr=".//attribute[@name='KONCurr']/@value + .//attribute[@name='WILCurr']/@value" total="u:parse(u:skill('Zähigkeit', 'value')) + u:parse(u:skill('Zähigkeit', 'attr'))"/>
+  </section>
+  <section name="Staerke">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Ausdauernd" misc="'diverse Zäh-Boni'"/>
+    <skill name="Feensinn" misc="'diverse Boni bei Feen'"/>
+    <skill name="Feine Nase" misc="'Geruchwahrn. + 2'"/>
+    <skill name="Flink" misc="'(GSW+1)'"/>
+    <skill name="Gleichgewichtssinn" misc="'Balancieren(o.ä.) + 3'"/>
+    <skill name="Hitzeresistent" misc="'Hitze - 1 St; Zäh + 3'"/>
+    <skill name="Hoher Geist. Widerst." misc="'(GW + 2)'"/>
+    <skill name="Natürliche Rüstung" misc="'SR + 1'"/>
+    <skill name="Natürliche Waffe" misc="'Echter Schaden'"/>
+    <skill name="Orientierungssinn" misc="'Orientierung + 3'"/>
+    <skill name="Scharfes Gehör" misc="'Gehörwahrn. + 2'"/>
+    <skill name="Stabile Magie" misc="'Zauberpatzer - 1 St.'"/>
+    <skill name="Tiervertrauter" misc="'Vertrautengespür'"/>
+    <skill name="Zus. Splitterpunkte" misc="'(+ 2 Splitterpunkte)'"/>
+    <skill name="Attraktivität" misc="'Einstellung + 1 St.'"/>
+    <skill name="Zäh" misc="'LP x 2 sterbend'"/>
+    <skill name="Erh. Fokuspool" misc="'(FO + 5)'"/>
+    <skill name="Dämmersicht" misc="'Sicht (Licht) + 2 St.'"/>
+  </section>
+  <section name="KKunst">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Schmerzh. Hieb" skill="Handgemenge" misc="'60 Ticks lahm'"/>
+    <skill name="Verteidiger" skill="Handgemenge" misc="'Aktive Abwehr bei anderen'"/>
+    <skill name="Kampf mit 2 Waffen" skill="Klingenwaffen" misc="'Kein Abzug für 2. Hand'"/>
+    <skill name="Belagerungsschütze" skill="Schusswaffen" misc="'Deckung - 1 Stufe'"/>
+    <skill name="Verteidigungswirbel" skill="Klingenwaffen" misc="'VTD + 2 + EG'"/>
+    <skill name="Klingenwirbel" skill="Klingenwaffen" misc="'2. Angriff mit Hälfte Ticks'"/>
+    <skill name="Ausfall" skill="Klingenwaffen" misc="'Gegner verliert 3 Ticks'"/>
+    <skill name="Scharfschütze" skill="Schusswaffen" misc="'Kein Abzug für Nahkampf'"/>
+    <skill name="Schnellschütze" skill="Schusswaffen" misc="'Bereitmachen - 1 Tick'"/>
+    <skill name="Abdrängen" skill="Klingenwaffen" misc="'-'"/>
+    <skill name="Umreißen" skill="Klingenwaffen" misc="'-'"/>
+    <skill name="Umklammern" skill="Handgemenge" misc="'Manöver: beide Gegner ringend'"/>
+    <skill name="Blocken" skill="Handgemenge" misc="'Aktiv VTD ohne Waffe'"/>
+  </section>
+  <section name="Meister">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Arbeit unter Wasser" skill="Schwimmen" misc="'siehe Regeln'"/>
+    <skill name="Tierkenner Insekt" skill="Jagdkunst" misc="'+3 Angriff'"/>
+    <skill name="Aufmerksam" skill="Schlösser &amp; Fallen" misc="'Bonus bei vorh. Wahrnehmung'"/>
+    <skill name="Balance" skill="Akrobatik" misc="'1/2 GSW auf Balken u.ä.'"/>
+    <skill name="Blick auf die Sterne" skill="Seefahrt" misc="'Orientierung + 3'"/>
+    <skill name="Leisetreter" skill="Heimlichkeit" misc="'Bewegung mgl. wenn heimlich'"/>
+    <skill name="Sprinter" skill="Athletik" misc="'GSW + 1'"/>
+    <skill name="Wildnisläufer" skill="Überleben" misc="'Reisegeschw + 20% ohne Strassen'"/>
+    <skill name="Geländekunde Wüste" skill="Überleben" misc="'+1 bei Schwerpunkt'"/>
+    <skill name="SP Wüste" skill="Naturkunde" misc="'+1 bei Schwerpunkt'"/>
+    <skill name="Rüstungsträger I" skill="Zähigkeit" misc="'Rüstungmalus um 1 reduziert'"/>
+    <skill name="Rüstungsträger II" skill="Zähigkeit" misc="'Rüstungticks um 1 reduziert'"/>
+    <skill name="Alchimistenhelfer" skill="Naturkunde" misc="'siehe Regeln'"/>
+    <skill name="Ausweichen" skill="Akrobatik" misc="'VTD + 2'"/>
+    <skill name="Reiterkampf" skill="Tierführung" misc="'Reiterwaffe führen'"/>
+    <skill name="Blitzreflexe" skill="Akrobatik" misc="'INI - 3'"/>
+    <skill name="Stehaufmännchen" skill="Akrobatik" misc="'Aufstehen 3 T'"/>
+    <skill name="Schnell auf den Beinen" skill="Zähigkeit" misc="'Steht nach 3 Ticks wieder'"/>
+    <skill name="Geschossmagie" skill="Kampfmagie" misc="'Schaden bis ZG 2 binden'"/>
+    <skill name="Eis. Konzentration" skill="Kampfmagie" misc="'Entschlossenheit + 3'"/>
+    <skill name="Eis. Wille" skill="Entschlossenheit" misc="'Entschlossenheit + 3'"/>
+    <skill name="Magische Zeichen" skill="Stärkungsmagie" misc="'Schulzauber -3V1/-K2V1'"/>
+    <skill name="Artefaktkunde" skill="Arkane Kunde" misc="'-'"/>
+    <skill name="SP Arw. Mark" skill="Geschichte und Mythen" misc="'-'"/>
+    <skill name="SP Arwingen" skill="Straßenkunde" misc="'-'"/>
+    <skill name="Bannzauber-Experte" skill="Bannmagie" misc="'-'"/>
+    <skill name="Fernzauberer" skill="Erkenntnismagie" misc="'-'"/>
+    <skill name="Stimmen der Freunde" skill="Erkenntnismagie" misc="'-'"/>
+    <skill name="Umgebungssinne (Stadt)" skill="Wahrnehmung" misc="'Wahrnehmung + 3 hier'"/>
+    <skill name="Umgebungssinne (Wald)" skill="Wahrnehmung" misc="'Wahrnehmung + 3 hier'"/>
+    <skill name="Zauberschutz-Experte" skill="Schutzmagie" misc="'-'"/>
+  </section>
+  <section name="Kampf">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="total" value="u:parse(u:skill('$name', 'value'))"/>
+    <skill name="Handgemenge"/>
+    <skill name="Hiebwaffen"/>
+    <skill name="Kettenwaffen"/>
+    <skill name="Klingenwaffen"/>
+    <skill name="Stangenwaffen"/>
+    <skill name="Schusswaffen"/>
+    <skill name="Wurfwaffen"/>
+  </section>
+  <section name="Magie">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Bannmagie" attr="WILCurr/MYSCurr" total="u:parse(u:skill('Bannmagie', 'value')) + .//attribute[@name='WILCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Erkenntnismagie" attr="VERCurr/MYSCurr" total="u:parse(u:skill('Erkenntnismagie', 'value')) + .//attribute[@name='VERCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Heilungsmagie" attr="AUSCurr/MYSCurr" total="u:parse(u:skill('Heilungsmagie', 'value')) + .//attribute[@name='AUSCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Illusionsmagie" attr="AUSCurr/MYSCurr" total="u:parse(u:skill('Illusionsmagie', 'value')) + .//attribute[@name='AUSCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Kampfmagie" attr="STÄCurr/MYSCurr" total="u:parse(u:skill('Kampfmagie', 'value')) + .//attribute[@name='STÄCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Schattenmagie" attr="INTCurr/MYSCurr" total="u:parse(u:skill('Schattenmagie', 'value')) + .//attribute[@name='INTCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Schutzmagie" attr="AUSCurr/MYSCurr" total="u:parse(u:skill('Schutzmagie', 'value')) + .//attribute[@name='AUSCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Stärkungsmagie" attr="STÄCurr/MYSCurr" total="u:parse(u:skill('Stärkungsmagie')) + .//attribute[@name='STÄCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+    <skill name="Wassermagie" attr="INTCurr/MYSCurr" total="u:parse(u:skill('Wassermagie', 'value')) + .//attribute[@name='INTCurr']/@value + .//attribute[@name='MYSCurr']/@value"/>
+  </section>
+  <section name="Ressource">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="total" value="u:skill('$name', 'value')"/>
+    <skill name="Ansehen"/>
+    <skill name="Gefolge"/>
+    <skill name="Kontakte"/>
+    <skill name="Kreatur"/>
+    <skill name="Mentor"/>
+    <skill name="Rang"/>
+    <skill name="Relikt"/>
+    <skill name="Stand"/>
+    <skill name="Vermögen"/>
+    <skill name="Zuflucht"/>
+  </section>
+  <spell name="Alarm" school="Erkenntnismagie" level="1" time="2" cast="18" focus="4V1" range="selbst" duration="6h" value="A,EF,V,VF,WB,WD,1/1V1"/>
+  <spell name="Alarm" school="Schutzmagie" level="1" time="2" cast="18" focus="4V1" range="selbst" duration="6h" value="A,EF,V,VF,WB,WD,1/1V1"/>
+  <spell name="Ausdauer stärken" school="Heilungsmagie" level="0" time="1" cast="15" focus="K1" range="selbst" duration="kan." value="A,V,1/K1V1"/>
+  <spell name="Ausdauer stärken" school="Stärkungsmagie" level="0" time="1" cast="15" focus="K1" range="selbst" duration="kan." value="A,V,1/K1V1"/>
+  <spell name="Eiserne Aura" school="Stärkungsmagie" level="2" time="3" cast="21" focus="K1" range="berührt" duration="kan." value="A,KF,V,VF,WB,1/K2V2"/>
+  <spell name="Eiserne Aura" school="Schutzmagie" level="2" time="3" cast="21" focus="K1" range="berührt" duration="kan." value="A,KF,V,VF,WB,1/K2V2"/>
+  <spell name="Erfrischung" school="Heilungsmagie" level="0" time="1" cast="15" focus="K1" range="berührt" duration="kan." value="A,KF,1/K1V1"/>
+  <spell name="Falsches Gesicht" school="Illusionsmagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,V,VF,2/K1V1"/>
+  <spell name="Feuerstrahl" school="Feuermagie" level="1" time="8" cast="VTD" focus="5V2" range="10m" duration="-" value="A,KF,VF,V,1/1V1"/>
+  <spell name="Feuerstrahl" school="Kampfmagie" level="2" time="8" cast="VTD" focus="5V2" range="10m" duration="-" value="A,KF,VF,V,1/1V1"/>
+  <spell name="Flammende Waffe" school="Feuermagie" level="1" time="2" cast="18" focus="K4V1" range="berührt" duration="kan." value="A,KF,V,VF,2/K1V1"/>
+  <spell name="Flammende Waffe" school="Kampfmagie" level="1" time="2" cast="18" focus="K4V1" range="berührt" duration="kan." value="A,KF,V,VF,2/K1V1"/>
+  <spell name="Fluch brechen" school="Bannmagie" level="2" time="10" cast="21" focus="8V2" range="berührt" duration="-" value="A,EF,V,VF,2/2V2"/>
+  <spell name="Fluch brechen" school="Schicksalmagie" level="3" time="10" cast="21" focus="8V2" range="berührt" duration="-" value="A,EF,V,VF,2/2V2"/>
+  <spell name="Gedankenlesen" school="Erkenntnismagie" level="4" time="15" cast="GW" focus="K16V4" range="berührt" duration="kan." value="A,KF,V,VF,3/K4V4"/>
+  <spell name="Gehör verbessern" school="Erkenntnismagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Gehör verbessern" school="Stärkungsmagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Gehör verbessern" school="Verwandlungsmagie" level="2" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Geisterdolch" school="Kampfmagie" level="0" time="1" cast="15" focus="K1" range="selbst" duration="kan." value="A,V,1/K1V1"/>
+  <spell name="Geschoss verzaubern" school="Kampfmagie" level="2" time="2" cast="18" focus="K4V1" range="berührt" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Gift erkennen" school="Heilungsmagie" level="1" time="2" cast="18" focus="4V1" range="berührt" duration="-" value="A,EF,V,VF,1/1V1"/>
+  <spell name="Gift erkennen" school="Erkenntnismagie" level="3" time="2" cast="18" focus="4V1" range="berührt" duration="-" value="A,EF,V,VF,1/1V1"/>
+  <spell name="Katzenwäsche" school="Wassermagie" level="0" time="1" cast="15" focus="1" range="berührt" duration="-" value="A,V,1/1V1"/>
+  <spell name="Kl. Magieschutz" school="Schutzmagie" level="0" time="1" cast="15" focus="K1" range="selbst" duration="kan." value="A,V,1/K1V1"/>
+  <spell name="Leichte Heilung" school="Heilungsmagie" level="2" time="2" cast="21" focus="8V2" range="berührt" duration="-" value="A,EF,V,VF,2/2V2"/>
+  <spell name="Lichtertanz" school="Illusionsmagie" level="0" time="1" cast="15" focus="1" range="10m" duration="1m" value="A,RW,V,W,WD,3/1V1"/>
+  <spell name="Lichtertanz" school="Lichtmagie" level="0" time="1" cast="15" focus="1" range="10m" duration="1m" value="A,RW,V,W,WD,3/1V1"/>
+  <spell name="Magie erkennen" school="Erkenntnismagie" level="0" time="2" cast="15" focus="1" range="5m" duration="5s" value="A,RW,V,WD,1/1V1"/>
+  <spell name="Magische Botschaft" school="Erkenntnismagie" level="1" time="5" cast="18" focus="4V1" range="50m" duration="-" value="A,EF,RW,V,VF,1/1V1"/>
+  <spell name="Magische Rüstung" school="Schutzmagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Magischer Schlag" school="Kampfmagie" level="1" time="4" cast="VTD" focus="3" range="5m" duration="-" value="A,EF,RW,V,Sch,VF,1/K1V1"/>
+  <spell name="Rindenhaut" school="Naturmagie" level="1" time="3" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,V,VF,2/K1V1"/>
+  <spell name="Rindenhaut" school="Schutzmagie" level="1" time="3" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,V,VF,2/K1V1"/>
+  <spell name="Rindenhaut" school="Verwandlungmagie" level="1" time="3" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,V,VF,2/K1V1"/>
+  <spell name="Schattenmantel" school="Schattenmagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,V,VF,1/K1V1"/>
+  <spell name="Schattenspiel" school="Schattenmagie" level="0" time="2" cast="15" focus="K1" range="5m" duration="kan." value="A,RW,V,1/K1V1"/>
+  <spell name="Schattenwaffe" school="Schattenmagie" level="1" time="1" cast="18" focus="K4V1" range="berührt" duration="kan." value="A,KF,V,VF,1/K2V2"/>
+  <spell name="Schriftverständnis" school="Erkenntnismagie" level="2" time="4m" cast="21" focus="K8V2" range="selbst" duration="kan." value="A,KF,V,VF,1/K2V2"/>
+  <spell name="Selbstheilung" school="Heilungsmagie" level="1" time="1" cast="18" focus="4V1" range="selbst" duration="-" value="A,KF,VF,V,3/1V1"/>
+  <spell name="Sicht verbessern" school="Erkenntnismagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Sicht verbessern" school="Stärkungsmagie" level="1" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Sicht verbessern" school="Verwandlungsmagie" level="2" time="1" cast="18" focus="K4V1" range="selbst" duration="kan." value="A,KF,VF,V,1/K1V1"/>
+  <spell name="Verwandlung beenden" school="Bannmagie" level="1" time="10" cast="24" focus="12V3" range="berührt" duration="-" value="A,EF,V,VF,2/3V3"/>
+  <spell name="Verwandlung beenden" school="Verwandlungsmagie" level="3" time="10" cast="24" focus="12V3" range="berührt" duration="-" value="A,EF,V,VF,2/3V3"/>
+  <spell name="Zauber bannen" school="Bannmagie" level="3" time="12" cast="24" focus="12V3" range="10m" duration="-" value="A,EF,RW,V,VF,2/3V3"/>
+  <gear>
+    <modifier name="value" value="u:skill(u:rules(concat('.//equipment[@name=|', u:raw('$name'), '|]/@skill')), 'total') + u:attribute(substring-before(u:rules(concat('.//equipment[@name=|', u:raw('$name'), '|]/@attr')), '/')) + u:attribute(substring-after(u:rules(concat('.//equipment[@name=|', u:raw('$name'), '|]/@attr')), '/'))"/>
+    <modifier name="wgs" value="u:rules(concat('.//equipment[@name=|', u:raw('$name'), '|]/@clip')) - u:parse(substring(substring-after(u:mod('$name'), 'W'), 1, 1))"/>
+    <modifier name="damage" value="concat(u:rules(concat('.//equipment[@name=|', u:raw('$name'), '|]/@mod')), u:ifthenelse(u:parse(substring(substring-after(u:mod('$name'), 'S'), 1, 1)) &gt; 0, u:sign(u:parse(substring(substring-after(u:mod('$name'), 'S'), 1, 1))), ''))"/>
+    <modifier name="ticks" value="u:rules(concat('.//equipment[@name=|', u:raw('$name'), '|]/@clip')) - u:parse(substring(substring-after(u:mod('$name'), 'T'), 1, 1))"/>
+    <modifier name="mod" value="u:rules('//equipment[@name=u:raw(|$name|)]/@crit') + u:parse(substring(substring-after(u:mod('$name'), 'V'), 1, 1))"/>
+    <equipment type="Basic" name="robuste Kleidung" enc="-"/>
+    <equipment type="Basic" name="Decke" enc="1"/>
+    <equipment type="Basic" name="Wasserschlauch" enc="1"/>
+    <equipment type="Basic" name="Essgeschirr" enc="1"/>
+    <equipment type="Basic" name="Feuerzeug" enc="-"/>
+    <equipment type="Basic" name="Fackel" enc="1"/>
+    <equipment type="Basic" name="Ration" enc="1"/>
+    <equipment type="Basic" name="Laterne" enc="2"/>
+    <equipment type="Basic" name="Laternenöl" enc="0.1"/>
+    <equipment type="Basic" name="Brecheisen" enc="2"/>
+    <equipment type="Basic" name="Dietriche" enc="1"/>
+    <equipment type="Basic" name="Wurfhaken" enc="2"/>
+    <equipment type="Basic" name="Kletterhaken" enc="0.1"/>
+    <equipment type="Basic" name="Seil" enc="0.1"/>
+    <equipment type="Basic" name="Spaten" enc="1"/>
+    <equipment type="Basic" name="Leinensack" enc="1"/>
+    <equipment type="Basic" name="Maske + 1" enc="1"/>
+    <equipment type="Armor" name="Tuch, leicht" enc="3" crit="1" ap="0" mal="0" clip="0"/>
+    <equipment type="Armor" name="Leder, schwer" enc="4" crit="3" ap="0" mal="0" clip="1"/>
+    <equipment type="Armor" name="Kette, leicht" enc="4" crit="2" ap="2" mal="1" clip="1"/>
+    <equipment type="Waffe" name="Dolch" enc="1" clip="6" skill="Klingenwaffen" attr="BEWCurr/INTCurr" mod="1d6+1" munition="wurftauglich"/>
+    <equipment type="Waffe" name="Kopesh" enc="2" clip="7" skill="Klingenwaffen" attr="BEWCurr/STÄCurr" mod="1d10+1" munition="scharf 2"/>
+    <equipment type="Waffe" name="Dschiahn" enc="2" clip="8" skill="Klingenwaffen" attr="BEWCurr/INTCurr" mod="1d10" munition="exakt 1,kritisch 2"/>
+    <equipment type="Waffe" name="Schlagring" enc="1" skill="Handgemenge" attr="BEWCurr/STÄCurr" clip="5" mod="1d6" munition="scharf 2"/>
+    <equipment type="Waffe" name="Breitschwert" enc="2" skill="Klingenwaffen" attr="BEWCurr/STÄCurr" clip="9" mod="1d6+4" munition="wuchtig"/>
+    <equipment type="Waffe" name="Falchion" enc="2" skill="Klingenwaffen" attr="BEWCurr/STÄCurr" clip="9" mod="1d6+5"/>
+    <equipment type="Waffe" name="Langbogen" enc="3" skill="Schusswaffen" attr="INTCurr/STÄCurr" clip="10" mod="1d10+8" munition="durch 1,scharf 2,2H"/>
+    <equipment type="Waffe" name="1&#x00bd;händer" enc="3" skill="Klingenwaffen" attr="BEWCurr/STÄCurr" clip="9" mod="2d6" munition="scharf 3,vielseitig"/>
+    <equipment type="Waffe" name="Reitersäbel" enc="2" skill="Klingenwaffen" attr="BEWCurr/INTCurr" clip="8" mod="1d6+3" munition="reiter 2"/>
+    <equipment type="Waffe" name="Reiterbogen" enc="3" skill="Schusswaffen" attr="INTCurr/STÄCurr" clip="8" mod="1d10+4" munition="durch 1,reiter 0,scharf 3,2H"/>
+    <equipment type="Waffe" name="Wurfdolch" enc="1" clip="3" skill="Klingenwaffen" attr="BEWCurr/INTCurr" mod="1d6+1" munition="wurftauglich"/>
+    <equipment type="Waffe" name="Kurzschwert" enc="2" clip="7" skill="Klingenwaffen" attr="BEWCurr/INTCurr" mod="1d6+2" munition=""/>
+  </gear>
+  <table name="XP">
+    <row key0="0 100" value="1"/>
+    <row key0="101 300" value="2"/>
+    <row key0="301 600" value="3"/>
+    <row key0="601 9999" value="4"/>
+  </table>
+  <table name="Omen des schw. Mond">
+    <row key0="1" value="Probe des SL wiederholen"/>
+    <row key0="2" value="Für 2 Pkte wie oben mit -3"/>
+    <row key0="4" value="Gefährte würfelt 1 W neu (kein Patzer)"/>
+  </table>
+  <table name="Der Blitz">
+    <row key0="1" value="Kampfhandlung -4 Ticks; mind. 2"/>
+    <row key0="2" value="Für 2 Pkte -6 Ticks wie oben"/>
+    <row key0="4" value="Gefährte gewinnt 1 Tick"/>
+  </table>
+  <table name="Das zweite Gesicht">
+    <row key0="1" value="Statt überrascht Ini + 2"/>
+    <row key0="2" value="Für 2 Pkte Ini + 4 wie oben"/>
+    <row key0="4" value="Ini-Tausch mit einem Gefährten"/>
+  </table>
+  <table name="Geist der Gedanken">
+    <row key0="1" value="FO in LP Verbrauch und umgekehrt"/>
+    <row key0="2" value="Für 2 Pkte 3 Pkte V zu E"/>
+    <row key0="4" value="Gefährte kann Zauberkosten umlenken"/>
+  </table>
+</rules>

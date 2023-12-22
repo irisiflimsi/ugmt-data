@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../rules.xsd" version="PF">
+  <attribute name="ModSize" rule="u:ifthenelse(u:attribute('Size') = 'K', '+1', '0')"/>
+  <attribute name="KMV" rule="u:parse(u:attribute('KMB')) + u:parse(u:attribute('MaxModDex')) + 10"/>
+  <attribute name="KMB" rule="u:parse(u:attribute('TModGAB')) + u:parse(u:attribute('ModStr')) - u:parse(u:attribute('ModSize'))"/>
+  <attribute name="CCharLevel" rule="u:parse(.//attribute[@name='Level1']/@value) + u:parse(.//attribute[@name='Level2']/@value)"/>
+  <attribute name="NextLevelXP" rule="u:table-lookup('XP', u:attribute('CCharLevel'))"/>
+  <attribute name="Size" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@size'))"/>
+  <attribute name="Damage Reduction" rule="u:ifthenelse(u:skill('Abnormale Form', 'value') != '', '5/-', '')"/>
+  <attribute name="SkillRks" rule=".//attribute[@name='Level1']/@value - 1 - .//attribute[@name='ChosenHP']/@value + u:ifthenelse(.//attribute[@name='Race']/@value = 'Mensch', u:attribute('CCharLevel'), 0) + u:attribute('CCharLevel') * u:parse(u:attribute('ModPInt')) + u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@ranks'))) * .//attribute[@name='Level1']/@value + u:parse(u:rules(concat('//class[@name=|', .//attribute[@name='Class2']/@value, '|]/@ranks'))) * .//attribute[@name='Level2']/@value"/>
+  <attribute name="UsedSkillRks" rule="u:skill('Akrobatik', 'value') + u:skill('Auftreten 1', 'value') + u:skill('Auftreten 2', 'value') + u:skill('Beruf 1', 'value') + u:skill('Beruf 2', 'value') + u:skill('Bluffen', 'value') + u:skill('Diplomatie', 'value') + u:skill('Einschüchtern', 'value') + u:skill('Entfesselungskunst', 'value') + u:skill('Fingerfertigkeit', 'value') + u:skill('Fliegen', 'value') + u:skill('Handwerk 1', 'value') + u:skill('Handwerk 2', 'value') + u:skill('Handwerk 3', 'value') + u:skill('Heilkunde', 'value') + u:skill('Heimlichkeit', 'value') + u:skill('Klettern', 'value') + u:skill('Magischen Gegenstand benutzen', 'value') + u:skill('Mechanismus ausschalten', 'value') + u:skill('Mit Tieren umgehen', 'value') + u:skill('Motiv erkennen', 'value') + u:skill('Reiten', 'value') + u:skill('Schwimmen', 'value') + u:skill('Schätzen', 'value') + u:skill('Sprachenkunde', 'value') + u:skill('Verkleiden', 'value') + u:skill('Wissen (Adel und Königshäuser)', 'value') + u:skill('Wissen (Arkanes)', 'value') + u:skill('Wissen (Baukunst)', 'value') + u:skill('Wissen (Die Ebenen)', 'value') + u:skill('Wissen (Geographie)', 'value') + u:skill('Wissen (Geschichte)', 'value') + u:skill('Wissen (Gewölbekunde)', 'value') + u:skill('Wissen (Lokales)', 'value') + u:skill('Wissen (Natur)', 'value') + u:skill('Wissen (Religion)', 'value') + u:skill('Wahrnehmung', 'value') + u:skill('Zauberkunde', 'value') + u:skill('Überlebenskunst', 'value')"/>
+  <attribute name="HP" rule=".//attribute[@name='RolledHP']/@value + .//attribute[@name='ChosenHP']/@value + u:parse(u:attribute('ModCon')) * u:attribute('CCharLevel') + u:ifthenelse(boolean(.//skill[@name='Abhärtung']),u:max(u:attribute('CCharLevel'), 3),0)"/>
+  <attribute name="KnownSpells0" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known0'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="KnownSpells1" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known1'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="KnownSpells2" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known1'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'KnownOffset'), 2))"/>
+  <attribute name="KnownSpells3" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known3'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="KnownSpells4" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known3'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'KnownOffset'), 4))"/>
+  <attribute name="KnownSpells5" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known3'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'KnownOffset'), 5))"/>
+  <attribute name="KnownSpells6" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known6'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="KnownSpells7" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known6'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'KnownOffset'), 7))"/>
+  <attribute name="KnownSpells8" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known6'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'KnownOffset'), 8))"/>
+  <attribute name="KnownSpells9" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Known9'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="DailySpells0" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily0'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="DailyTSpells1" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily1'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="DailyTSpells2" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily2'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="DailyTSpells3" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily1'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'DailyOffset'), 3))"/>
+  <attribute name="DailyTSpells4" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily1'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'DailyOffset'), 4))"/>
+  <attribute name="DailyTSpells5" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily1'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'DailyOffset'), 5))"/>
+  <attribute name="DailyTSpells6" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily1'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'DailyOffset'), 6))"/>
+  <attribute name="DailyTSpells7" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily1'), .//attribute[@name='Level1']/@value - u:table-lookup(concat(.//attribute[@name='Class1']/@value,'DailyOffset'), 7))"/>
+  <attribute name="DailyTSpells8" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily8'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="DailyTSpells9" rule="u:table-lookup(concat(.//attribute[@name='Class1']/@value,'Daily9'), .//attribute[@name='Level1']/@value)"/>
+  <attribute name="SpellAttr" rule="u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="DailySpells1" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells1'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells1'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 0, 1, 0) + u:ifthenelse(u:attribute('SpellAttr') > 4, 1, 0)), substring(u:attribute('DailyTSpells1'), 2)), '0')"/>
+  <attribute name="DailySpells2" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells2'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells2'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 1, 1, 0) + u:ifthenelse(u:attribute('SpellAttr') > 5, 1, 0)), substring(u:attribute('DailyTSpells2'), 2)), '0')"/>
+  <attribute name="DailySpells3" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells3'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells3'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 2, 1, 0) + u:ifthenelse(u:attribute('SpellAttr') > 6, 1, 0)), substring(u:attribute('DailyTSpells3'), 2)), '0')"/>
+  <attribute name="DailySpells4" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells4'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells4'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 3, 1, 0) + u:ifthenelse(u:attribute('SpellAttr') > 7, 1, 0)), substring(u:attribute('DailyTSpells4'), 2)), '0')"/>
+  <attribute name="DailySpells5" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells5'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells5'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 4, 1, 0) + u:ifthenelse(u:attribute('SpellAttr') > 8, 1, 0)), substring(u:attribute('DailyTSpells5'), 2)), '0')"/>
+  <attribute name="DailySpells6" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells6'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells6'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 5, 1, 0)), substring(u:attribute('DailyTSpells1'), 2)), '0')"/>
+  <attribute name="DailySpells7" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells7'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells7'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 6, 1, 0)), substring(u:attribute('DailyTSpells1'), 2)), '0')"/>
+  <attribute name="DailySpells8" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells8'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells8'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 7, 1, 0)), substring(u:attribute('DailyTSpells1'), 2)), '0')"/>
+  <attribute name="DailySpells9" rule="u:ifthenelse(u:parse(substring(u:attribute('DailyTSpells9'), 1, 1)) > 0, concat(floor(u:parse(substring(u:attribute('DailyTSpells9'), 1, 1)) + u:ifthenelse(u:attribute('SpellAttr') > 8, 1, 0)), substring(u:attribute('DailyTSpells1'), 2)), '0')"/>
+  <attribute name="RR0" rule="10 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR1" rule="11 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR2" rule="12 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR3" rule="13 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR4" rule="14 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR5" rule="15 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR6" rule="16 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR7" rule="17 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR8" rule="18 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="RR9" rule="19 + u:parse(u:attribute(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/@mod'))))"/>
+  <attribute name="ModARef" rule="u:attribute('ModDex')"/>
+  <attribute name="ModAHar" rule="u:attribute('ModCon')"/>
+  <attribute name="ModAWil" rule="u:attribute('ModWis')"/>
+  <attribute name="TStr"    rule="u:ifthenelse(u:attribute('TTStr') != 0, u:sign(u:attribute('TTStr')), '')"/>
+  <attribute name="TInt"    rule="u:ifthenelse(u:attribute('TTInt') != 0, u:sign(u:attribute('TTInt')), '')"/>
+  <attribute name="TDex"    rule="u:ifthenelse(u:attribute('TTDex') != 0, u:sign(u:attribute('TTDex')), '')"/>
+  <attribute name="TWis"    rule="u:ifthenelse(u:attribute('TTWis') != 0, u:sign(u:attribute('TTWis')), '')"/>
+  <attribute name="TCon"    rule="u:ifthenelse(u:attribute('TTCon') != 0, u:sign(u:attribute('TTCon')), '')"/>
+  <attribute name="TCha"    rule="u:ifthenelse(u:attribute('TTCha') != 0, u:sign(u:attribute('TTCha')), '')"/>
+  <attribute name="TTStr"   rule="u:max(.//equipment[starts-with(@name,'Gürtel ST')]/@name, .//equipment[starts-with(@name,'Ionenstein ST')]/@name, 0)"/>
+  <attribute name="TTInt"   rule="u:ifthenelse(u:max(.//equipment[starts-with(@name,'Stirnreif WE,IN') or starts-with(@name,'Mütze IN')]/@name) != 0, u:sign(u:max(.//equipment[starts-with(@name,'Stirnreif WE,IN') or starts-with(@name,'Mütze IN')]/@name)), '')"/>
+  <attribute name="TTWis"   rule="u:max(.//equipment[starts-with(@name,'Stirnreif WE')]/@name, .//equipment[starts-with(@name,'Gürtel WE')]/@name, 0)"/>
+  <attribute name="TTCon"   rule="u:max(.//equipment[starts-with(@name,'Ionenstein KO')]/@name, 0)"/>
+  <attribute name="TTDex"   rule="u:max(.//equipment[starts-with(@name,'Ionenstein GE')]/@name, 0)"/>
+  <attribute name="TTCha"   rule="u:max(.//equipment[starts-with(@name,'Gürtel ST,CH')]/@name, .//equipment[starts-with(@name,'Ionenstein CH')]/@name, .//equipment[starts-with(@name,'Armschienen CH')]/@name, 0)"/>
+  <attribute name="ModStr"  rule="u:sign(floor((.//attribute[@name='Str']/@value + u:parse(u:attribute('TStr')) - 10) div 2))"/>
+  <attribute name="ModDex"  rule="u:sign(floor((.//attribute[@name='Dex']/@value + u:parse(u:attribute('TDex')) - 10) div 2))"/>
+  <attribute name="ModPInt" rule="u:sign(floor((.//attribute[@name='Int']/@value - 10) div 2))"/>
+  <attribute name="ModInt"  rule="u:sign(floor((.//attribute[@name='Int']/@value + u:parse(u:attribute('TInt')) - 10) div 2))"/>
+  <attribute name="ModWis"  rule="u:sign(floor((.//attribute[@name='Wis']/@value + u:parse(u:attribute('TWis')) - 10) div 2))"/>
+  <attribute name="ModCon"  rule="u:sign(floor((.//attribute[@name='Con']/@value + u:parse(u:attribute('TCon')) - 10) div 2))"/>
+  <attribute name="ModCha"  rule="u:sign(floor((.//attribute[@name='Cha']/@value + u:parse(u:attribute('TCha')) - 10) div 2))"/>
+  <attribute name="ModIni"  rule="u:sign(u:parse(u:attribute('MaxModDex')) + u:ifthenelse(boolean(.//skill[@name='Verbesserte Initiative']), 4, 0) + u:ifthenelse(boolean(.//skill[@name='Tunichtgut']), 1, 0) + u:ifthenelse(boolean(.//equipment[@name='Scherbe [Wollust]']), 4, 0))"/>
+  <attribute name="TModGAB" rule="u:sign(u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/attribute[@name=|GAB|]/@value')), .//attribute[@name='Level1']/@value)) + u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class2']/@value, '|]/attribute[@name=|GAB|]/@value')), .//attribute[@name='Level2']/@value)))"/>
+  <attribute name="ModGAB" rule="concat(u:attribute('TModGAB'), u:ifthenelse(u:parse(u:attribute('TModGAB')) > 5, concat('/', u:sign(u:parse(u:attribute('TModGAB')) - 5)) , ''), u:ifthenelse(u:parse(u:attribute('TModGAB')) > 10, concat('/', u:sign(u:parse(u:attribute('TModGAB')) - 10)) , ''), u:ifthenelse(u:parse(u:attribute('TModGAB')) > 15, concat('/', u:sign(u:parse(u:attribute('TModGAB')) - 15)) , ''))"/>
+  <attribute name="ModRef" rule="u:sign(u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/attribute[@name=|Ref|]/@value')), .//attribute[@name='Level1']/@value)) + u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class2']/@value, '|]/attribute[@name=|Ref|]/@value')), .//attribute[@name='Level2']/@value)) + u:ifthenelse(boolean(.//attribute[@name='Race']/@value='Halbling'), 1, 0))"/>
+  <attribute name="ModHar" rule="u:sign(u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/attribute[@name=|Har|]/@value')), .//attribute[@name='Level1']/@value)) + u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class2']/@value, '|]/attribute[@name=|Har|]/@value')), .//attribute[@name='Level2']/@value)) + u:ifthenelse(boolean(.//attribute[@name='Race']/@value='Halbling'), 1, 0) + u:ifthenelse(boolean(.//skill[@name='Große Zähigkeit']),2,0))"/>
+  <attribute name="ModWil" rule="u:sign(u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class1']/@value, '|]/attribute[@name=|Wil|]/@value')), .//attribute[@name='Level1']/@value)) + u:parse(u:table-lookup(u:rules(concat('//class[@name=|', .//attribute[@name='Class2']/@value, '|]/attribute[@name=|Wil|]/@value')), .//attribute[@name='Level2']/@value)) + u:ifthenelse(boolean(.//skill[@name='Eiserner Wille']), 2, 0) + u:ifthenelse(boolean(.//attribute[@name='Race']/@value='Halbling'), 1, 0))"/>
+  <attribute name="MoveBaseM" rule="u:rules(concat('//race[@name=|', .//attribute[@name='Race']/@value, '|]/@move')) + u:ifthenelse(boolean(.//equipment[starts-with(@name,'Stiefel [Lauf')]), 3, 0)"/>
+  <attribute name="MoveBaseF" rule="u:parse(floor(2 * u:attribute('MoveBaseM') div 3))"/>
+  <attribute name="TotRef" rule="u:sign(u:parse(u:attribute('ModRef')) + u:parse(u:attribute('ModARef')) + u:max(.//equipment[starts-with(@name,'Resistenzumhang')]/@name) + u:ifthenelse(count(.//equipment[contains(@name,'[Glück]')]) != 0, 1, 0) + u:ifthenelse(count(.//equipment[contains(@name,'Türenkompass [KO+2]')]) != 0, 1, 0))"/>
+  <attribute name="TotHar" rule="u:sign(u:parse(u:attribute('ModHar')) + u:parse(u:attribute('ModAHar')) + u:max(.//equipment[starts-with(@name,'Resistenzumhang')]/@name) + u:ifthenelse(count(.//equipment[contains(@name,'[Glück]')]) != 0, 1, 0))"/>
+  <attribute name="TotWil" rule="u:sign(u:parse(u:attribute('ModWil')) + u:parse(u:attribute('ModAWil')) + u:max(.//equipment[starts-with(@name,'Resistenzumhang')]/@name) + u:ifthenelse(count(.//equipment[contains(@name,'[Glück]')]) != 0, 1, 0))"/>
+  <attribute name="RKsize" rule="u:sign(u:parse(u:attribute('ModSize')))"/>
+  <attribute name="RKdodge" rule="u:sign(u:parse(u:attribute('MaxModDex')) + u:ifthenelse(boolean(.//skill[@name='Ausweichen']), 1, 0))"/>
+  <attribute name="RKnat" rule="u:sign(u:max(.//equipment[starts-with(@name,'Amulett Naturrüstung')]/@name))"/>
+  <attribute name="RKshield" rule="u:sign(u:rules-sum('//equipment[@name=u:raw(|$1|)]/@smod', .//equipment[@type='Shield']/@name) + u:rules-sum('1', .//equipment[@type='Shield' and contains(@name, '[+1]')]/@name))"/>
+  <attribute name="RKarmor" rule="u:sign(u:max(.//equipment[starts-with(@name,'Rüstungsarmschienen')]/@name, u:rules-sum('//equipment[@name=u:raw(|$1|)]/@smod', .//equipment[@type='Armor']/@name) + u:rules-sum('1', .//equipment[@type='Armor' and contains(@name, '[+1]')]/@name)))"/>
+  <attribute name="RKdeflect" rule="u:sign(u:max(.//equipment[starts-with(@name,'Schutzring')]/@name))"/>
+  <attribute name="RKunder" rule="u:sign(u:max(u:ifthenelse(boolean(.//equipment[starts-with(@name,'Scherbe [Neid]')]), 1, 0), u:max(.//equipment[starts-with(@name,'Ionenstein RK')]/@name)))"/>
+  <attribute name="RKwrong" rule="10 + u:parse(u:attribute('RKsize')) + u:parse(u:attribute('RKnat')) + u:parse(u:attribute('RKdeflect')) + u:parse(u:attribute('RKarmor')) + u:parse(u:attribute('RKshield')) + u:parse(u:attribute('RKunder'))"/>
+  <attribute name="RKtouch" rule="10 + u:parse(u:attribute('RKsize')) + u:parse(u:attribute('RKdodge')) + u:parse(u:attribute('RKdeflect')) + u:max(.//equipment[starts-with(@name,'Rüstungsarmschienen')]/@name) + u:parse(u:attribute('RKunder'))"/>
+  <attribute name="RK" rule="u:attribute('RKwrong') + u:parse(u:attribute('RKdodge'))"/>
+  <attribute name="ArmorBonus" rule="u:sign(u:rules-sum('//equipment[@name=u:raw(|$1|)]/@smod', .//equipment[@type='Armor']/@name) + u:rules-sum('1', .//equipment[@type='Armor' and contains(@name, '[+1]')]/@name) + u:rules-sum('//equipment[@name=u:raw(|$1|)]/@smod', .//equipment[@type='Shield']/@name) + u:rules-sum('1', .//equipment[@type='Shield' and contains(@name, '[+1]')]/@name))"/>
+  <attribute name="ArmorZP" rule="concat(u:rules-sum('//equipment[@name=u:raw(|$1|)]/@crit', .//equipment[@type='Armor' or @type='Shield']/@name), '%')"/>
+  <attribute name="ArmorMal" rule="u:sign(u:rules-sum('//equipment[@name=u:raw(|$1|)]/@smal', .//equipment[@type='Armor' or @type='Shield']/@name) + u:rules-sum('1', .//equipment[(@type='Armor' or @type='Shield') and (contains(@name, '[M]') or contains(@name, '[+1]') or contains(@name, '[+2]') or contains(@name, '[+3]') or contains(@name, '[+4]') or contains(@name, '[+5]'))]/@name))"/>
+  <attribute name="ArmorPenalty" rule="u:ifthenelse(//skill[@name='Umgang mit Rüstung (Mittelschwer)'] or u:rules(concat('count(//class[@name=|', u:attribute('Class1'), '|]/skill[@name=|Umgang mit Rüstung (Mittelschwer)|])')) or u:rules(concat('count(//class[@name=|', u:attribute('Class2'), '|]/skill[@name=|Umgang mit Rüstung (Mittelschwer)|])')), 0, u:rules-sum('//equipment[@name=u:raw(|$1|) and @category=|Mittelschwer|]/@mal', .//equipment[@type='Armor' or @type='Shield']/@name)) + u:ifthenelse(//skill[@name='Umgang mit Rüstung (Schwer)'] or u:rules(concat('count(//class[@name=|', u:attribute('Class1'), '|]/skill[@name=|Umgang mit Rüstung (Schwer)|])')) or u:rules(concat('count(//class[@name=|', u:attribute('Class2'), '|]/skill[@name=|Umgang mit Rüstung (Schwer)|])')), 0, u:rules-sum('//equipment[@name=u:raw(|$1|) and @category=|Schwer|]/@mal', .//equipment[@type='Armor' or @type='Shield']/@name)) + u:ifthenelse(//skill[@name='Umgang mit Rüstung (Schild)'] or u:rules(concat('count(//class[@name=|', u:attribute('Class1'), '|]/skill[@name=|Umgang mit Rüstung (Schild)|])')) or u:rules(concat('count(//class[@name=|', u:attribute('Class2'), '|]/skill[@name=|Umgang mit Rüstung (Schild)|])')), 0, u:rules-sum('//equipment[@name=u:raw(|$1|) and @category=|Schild|]/@mal', .//equipment[@type='Armor' or @type='Shield']/@name)) + u:ifthenelse(//skill[@name='Umgang mit Rüstung (Leicht)'] or u:rules(concat('count(//class[@name=|', u:attribute('Class1'), '|]/skill[@name=|Umgang mit Rüstung (Leicht)|])')) or u:rules(concat('count(//class[@name=|', u:attribute('Class2'), '|]/skill[@name=|Umgang mit Rüstung (Leicht)|])')), 0, u:rules-sum('//equipment[@name=u:raw(|$1|) and @category=|Leicht|]/@mal', .//equipment[@type='Armor' or @type='Shield']/@name))"/>
+  <attribute name="FighterLevel" rule="u:ifthenelse(boolean(.//attribute[@name='Class1' and @value='Kämpfer']), u:parse(.//attribute[@name='Level1']/@value), 0) + u:ifthenelse(boolean(.//attribute[@name='Class2' and @value='Kämpfer']), u:parse(.//attribute[@name='Level2']/@value), 0)"/>
+  <attribute name="SorcererLevel" rule="u:ifthenelse(boolean(.//attribute[@name='Class1' and @value='Hexenmeister']), u:parse(.//attribute[@name='Level1']/@value), 0) + u:ifthenelse(boolean(.//attribute[@name='Class2' and @value='Hexenmeister']), u:parse(.//attribute[@name='Level2']/@value), 0)"/>
+  <attribute name="WizardLevel" rule="u:ifthenelse(boolean(.//attribute[@name='Class1' and @value='Magier']), u:parse(.//attribute[@name='Level1']/@value), 0) + u:ifthenelse(boolean(.//attribute[@name='Class2' and @value='Magier']), u:parse(.//attribute[@name='Level2']/@value), 0)"/>
+  <attribute name="ClericLevel" rule="u:ifthenelse(boolean(.//attribute[@name='Class1' and @value='Kleriker']), u:parse(.//attribute[@name='Level1']/@value), 0) + u:ifthenelse(boolean(.//attribute[@name='Class2' and @value='Kleriker']), u:parse(.//attribute[@name='Level2']/@value), 0)"/>
+  <attribute name="RogueLevel" rule="u:ifthenelse(boolean(.//attribute[@name='Class1' and @value='Schurke']), u:parse(.//attribute[@name='Level1']/@value), 0) + u:ifthenelse(boolean(.//attribute[@name='Class2' and @value='Schurke']), u:parse(.//attribute[@name='Level2']/@value), 0)"/>
+  <attribute name="MaxModDex" rule="u:sign(u:min(u:parse(u:attribute('ModDex')),u:rules-min('//equipment[@name=u:raw(|$1|)]/@maxdex + u:min(floor((u:attribute(|FighterLevel|) + 1) div 4), 4)', .//equipment[@type='Armor' or @type='Shield']/@name)))"/>
+  <attribute name="MoveArmorM" rule="u:table-lookup('ArmorMove', u:rules-min('u:min(9, u:ifthenelse(boolean(//equipment[@name=u:raw(|$1|) and @category=|Mittelschwer|]) and u:attribute(|FighterLevel|) &lt; 3, 6, 9), u:ifthenelse(boolean(//equipment[@name=u:raw(|$1|) and @category=|Schwer|]) and u:attribute(|FighterLevel|) &lt; 7, 6, 9))', .//equipment[@type='Armor' or @type='Shield']/@name) div u:ifthenelse(u:attribute('Size') = 'K', 3, 1)) + u:ifthenelse(boolean(.//equipment[starts-with(@name,'Stiefel [Lauf')]), 3, 0)"/>
+  <attribute name="MoveArmorF" rule="u:parse(floor(2 * u:attribute('MoveArmorM') div 3))"/>
+  <attribute name="Load" rule="round(100 * u:rules-sum('//equipment[@name=u:raw(|$1|)]/@enc', .//equipment/@name)) div 100"/>
+  <attribute name="Llimit" rule="u:table-lookup('Load', .//attribute[@name='Str']/@value + u:parse(u:attribute('TStr')))"/>
+  <attribute name="Zauberresistenz" rule="concat('0/+', u:ifthenelse(u:attribute('Class1')='Magier' or u:attribute('Class1')='Kleriker' or u:attribute('Class1')='Hexenmeister', u:attribute('Level1'), 0) + u:ifthenelse(.//attribute[@name='Race']/@value = 'Elf', '2', '0') + u:ifthenelse(boolean(.//skill[@name='Durchschlagende Zauber']), '2', '0') + u:ifthenelse(boolean(.//skill[@name='Mächtige durchschlagende Zauber']), '2', '0') + u:max(.//equipment[starts-with(@name,'Ionenstein ZS')]/@name, 0))"/>
+  <attribute name="LocRing1" rule=".//equipment[@type='Ring'][1]/@name"/>
+  <attribute name="LocRing2" rule=".//equipment[@type='Ring'][2]/@name"/>
+  <attribute name="LocHead" rule=".//equipment[@type='Head']/@name"/>
+  <attribute name="LocHband" rule=".//equipment[@type='Hband']/@name"/>
+  <attribute name="LocEyes" rule=".//equipment[@type='Eyes']/@name"/>
+  <attribute name="LocShoulders" rule=".//equipment[@type='Shoulders']/@name"/>
+  <attribute name="LocNeck" rule=".//equipment[@type='Neck']/@name"/>
+  <attribute name="LocChest" rule=".//equipment[@type='Chest']/@name"/>
+  <attribute name="LocBody" rule=".//equipment[@type='Body']/@name"/>
+  <attribute name="LocArmor" rule=".//equipment[@type='Armor']/@name"/>
+  <attribute name="LocBelt" rule=".//equipment[@type='Belt']/@name"/>
+  <attribute name="LocWrists" rule=".//equipment[@type='Wrists']/@name"/>
+  <attribute name="LocHands" rule=".//equipment[@type='Hands']/@name"/>
+  <attribute name="LocFeet" rule=".//equipment[@type='Feet']/@name"/>
+  <section name="Basic">
+    <modifier name="display" value="'$name'"/>
+    <modifier name="total" value="u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))"/>
+    <skill name="Akrobatik" attr="u:attribute('ModDex')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Auftreten 1" attr="u:attribute('ModCha')" misc="u:ifthenelse(count(./skill[starts-with(@name, 'Eifriger Auftritt')]) != 0, '+1', '')"/>
+    <skill name="Auftreten 2" attr="u:attribute('ModCha')" misc="u:ifthenelse(count(./skill[starts-with(@name, 'Eifriger Auftritt')]) != 0, '+1', '')"/>
+    <skill name="Beruf 1" attr="u:attribute('ModWis')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Beruf 2" attr="u:attribute('ModWis')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Bluffen" attr="u:attribute('ModCha')"/>
+    <skill name="Diplomatie" attr="u:attribute('ModCha')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:sign(u:max(./equipment[contains(@name, 'Hemd Dipl')]/@name, 0))"/>
+    <skill name="Einschüchtern" attr="u:attribute('ModCha')" misc="u:ifthenelse(boolean(.//skill[@name='Einschüchternde Kraft']), u:attribute('ModStr'), '')"/>
+    <skill name="Entfesselungskunst" attr="u:attribute('ModDex')" misc="u:sign(u:ifthenelse(u:skill('Tunichtgut', 'value') != '', 1, 0) + u:ifthenelse(count(./skill[starts-with(@name, 'Freiheitskämpfer')]) != 0, 3, 0) + u:parse(u:attribute('ArmorMal')))"/>
+    <skill name="Fingerfertigkeit" attr="u:attribute('ModDex')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Fliegen" attr="u:attribute('ModDex')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Handwerk 1" attr="u:attribute('ModInt')"/>
+    <skill name="Handwerk 2" attr="u:attribute('ModInt')"/>
+    <skill name="Handwerk 3" attr="u:attribute('ModInt')"/>
+    <skill name="Heilkunde" attr="u:attribute('ModWis')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:sign(u:ifthenelse(count(./equipment[contains(@name, 'Hl')]) != 0, u:max(u:attribute('CCharLevel') - ./skill[@name='Heilkunde']/@value, 0), 0) + u:max(./equipment[contains(@name, 'Handschuhe Heil')]/@name, 0))"/>
+    <skill name="Heimlichkeit" attr="u:attribute('ModDex')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Klettern" attr="u:attribute('ModStr')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Magischen Gegenstand benutzen" attr="u:attribute('ModCha')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Mechanismus ausschalten" attr="u:attribute('ModDex')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:ifthenelse(u:attribute('RogueLevel') != 0, u:max(1, floor(u:attribute('RogueLevel') div 2)), '')"/>
+    <skill name="Mit Tieren umgehen" attr="u:attribute('ModCha')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Motiv erkennen" attr="u:attribute('ModWis')"/>
+    <skill name="Reiten" attr="u:attribute('ModDex')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Schwimmen" attr="u:attribute('ModStr')" misc="u:attribute('ArmorMal')"/>
+    <skill name="Schätzen" attr="u:attribute('ModInt')" misc="u:sign(u:ifthenelse(boolean(.//skill[@name='Goblinbeobachter']), 1, 0) + u:ifthenelse(count(./equipment[contains(@name, 'Bazaranhänger')]) != 0, 5, 0))"/>
+    <skill name="Sprachenkunde" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Verkleiden" attr="u:attribute('ModCha')"/>
+    <skill name="Wissen (Adel und Königshäuser)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Wissen (Arkanes)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Wissen (Baukunst)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Wissen (Die Ebenen)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Wissen (Geographie)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:sign(u:ifthenelse(u:skill('Ruinenkenner', 'value') != '', 1, 0) + u:ifthenelse(count(./equipment[contains(@name, 'Geo')]) != 0, u:max(u:attribute('CCharLevel') - ./skill[@name='Wissen (Geographie)']/@value, 0), 0))"/>
+    <skill name="Wissen (Geschichte)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Wissen (Gewölbekunde)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:ifthenelse(u:skill('Ruinenkenner', 'value') != '', '+1', '')"/>
+    <skill name="Wissen (Lokales)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:sign(u:ifthenelse(count(./equipment[contains(@name, 'Lok')]) != 0, u:max(u:attribute('CCharLevel') - ./skill[@name='Wissen (Lokales)']/@value, 0), 0))"/>
+    <skill name="Wissen (Natur)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')"/>
+    <skill name="Wissen (Religion)" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:sign(u:ifthenelse(count(./equipment[contains(@name, 'Rel')]) != 0, u:max(u:attribute('CCharLevel') - ./skill[@name='Wissen (Religion)']/@value, 0), 0))"/>
+    <skill name="Wahrnehmung" attr="u:attribute('ModWis')" misc="concat('+', u:ifthenelse(boolean(.//skill[@name='Goblinbeobachter']), '1', '0') + u:ifthenelse(.//attribute[@name='Race']/@value = 'Elf', '2', '0'))"/>
+    <skill name="Zauberkunde" attr="u:attribute('ModInt')" total="u:ifthenelse(u:parse(u:skill('$name', 'value')) != 0, u:parse(u:parse(u:skill('$name', 'misc')) + u:parse(u:skill('$name', 'class')) + u:parse(u:skill('$name', 'attr')) + u:parse(u:skill('$name', 'value'))), '')" misc="u:ifthenelse(.//attribute[@name='Race']/@value = 'Elf', '+2', '')"/>
+    <skill name="Überlebenskunst" attr="u:attribute('ModWis')"/>
+  </section>
+  <section name="Talent">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Ausdauer" value="': Umwelt und Anstrengung ermüden weniger'"/>
+    <skill name="Unverwüstlich" value="': mit negativen TP optional kampfunfähig'"/>
+    <skill name="Beweglichkeit" value="': +4 RK vs GA in Bewegung'"/>
+    <skill name="Doppelschlag" value="': +1 Angriff nach erfolgreichem Angriff'"/>
+    <skill name="Fertigkeitsfokus" value="': +3 auf eine Fertigkeit'"/>
+    <skill name="Gezieltes Fokussieren" value="': CH-Bonus Ziele sind keine bei Energie fokussieren'"/>
+    <skill name="Heftiger Angriff" value="': AB gegen Schaden tauschen'"/>
+    <skill name="Kernschuss" value="': +1 Fernkampf innerhalb 9m'"/>
+    <skill name="Präzisionsschuss" value="': in Nahkampf schiessen ohne Malus'"/>
+    <skill name="Rundumschlag" value="': Doppelschlag auf weitere Gegner'"/>
+    <skill name="Schnelle Waffenbereitschaft" value="': Ziehen als freie Aktion'"/>
+    <skill name="Schriftrollen anfertigen" value=""/>
+    <skill name="Wundersame Gegenstände herstellen" value=""/>
+    <skill name="Umgang mit Rüstung (Leicht)" value=""/>
+    <skill name="Umgang mit Rüstung (Mittelschwer)" value=""/>
+    <skill name="Umgang mit Rüstung (Schild)" value=""/>
+    <skill name="Umgang mit Rüstung (Schwer)" value=""/>
+    <skill name="Umgang mit Rüstung (Turmschild)" value=""/>
+    <skill name="Verbesserter Ringkampf" value="': +2 Ringkampf ohne GA'"/>
+    <skill name="Verbesserter Waffenloser Schlag" value="': gilt als bewaffnet'"/>
+    <skill name="Verbessertes Entwaffnen" value="': +2 Entwaffnen und ohne GA'"/>
+    <skill name="Zauberstab herstellen" value=""/>
+    <skill name="Zauberzepter herstellen" value=""/>
+    <skill name="Im Kampf zaubern" value="': +4 Konzentration für defensiv zaubern'"/>
+    <skill name="Verstärkt zaubern" value="': +50% Effekte; ZG+2'"/>
+    <skill name="Maximiert zaubern" value="': max. Effekte; ZG+3'"/>
+    <skill name="Hartnäckig zaubern" value="': Minimum zweier RW; ZG+2'"/>
+    <skill name="Materiallos zaubern" value=""/>
+    <skill name="Weit zaubern" value=": Eine Kategorie weiter; ZG+1"/>
+    <skill name="Lautlos zaubern" value="': ZG+1'"/>
+    <skill name="Gesinnung Fokussieren: Böses" value=""/>
+    <skill name="Magische Waffen und Rüstungen herstellen" value=""/>
+  </section>
+  <section name="AF">
+    <modifier name="display" value="'$name'"/>
+    <skill name="1. Waffentraining (Schwere Klingen)" value=""/>
+    <skill name="Aura: Gesinnung detektierbar" value=""/>
+    <skill name="Hinterhältiger Angriff" value="concat(': ',floor(1 + (u:attribute('RogueLevel') - 1) div 2), 'w6; Zange oder Gegner darf keinen GE-Bonus einsetzen; innerhalb 9m')"/>
+    <skill name="Reflexbewegung" value="u:ifthenelse(u:attribute('RogueLevel') &gt;= 4, ': nicht mehr auf falschem Fuss und GE-Bonus gegen Unsichtbare', '')"/>
+    <skill name="Rüstungstraining" value=""/>
+    <skill name="Feuerresistenz" value="concat(': ', u:ifthenelse(u:attribute('ClericLevel') &gt;= 6, u:ifthenelse(u:attribute('ClericLevel') &gt;= 12, u:ifthenelse(u:attribute('ClericLevel') &gt;= 20, 'immun', '20'), '10'), ''))"/>
+    <skill name="Tapferkeit" value="u:ifthenelse(u:attribute('FighterLevel') &gt;= 2, concat(': +', floor((u:attribute('FighterLevel') + 2) div 4, '%'), ' RW gegen Furcht'), '')"/>
+  </section>
+  <section name="UF">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Energie fokussieren" value="concat(': ',1 + floor((u:attribute('ClericLevel') - 1) div 2), 'w6; 9m Radius; SG ', 10 + floor(u:attribute('ClericLevel') div 2) + u:parse(u:attribute('ModCha')) + u:ifthenelse(u:skill('Verbessertes Fokussieren', 'value') != '', 2, 0) + u:ifthenelse(u:skill('Glaubensschüler', 'value') != '', 1, 0), '; ', 3 + u:parse(u:attribute('ModCha')) + u:ifthenelse(u:skill('Zusätzliches Fokussieren', 'value') != '', 2, 0), ' / Tag')"/>
+    <skill name="Freiheit" value="concat(': ',u:attribute('ClericLevel'), ' Runden (spontan) wie Zauber Bewegungsfreiheit')"/>
+    <skill name="Ruf der Freiheit" value="u:ifthenelse(u:attribute('ClericLevel') &gt;= 8, ': wie Freiheit in 9m Radius', '')"/>
+    <skill name="Geheimnis des Blutes" value="': Verwandlung Gestaltwechsel +50% Dauer'"/>
+    <skill name="Hand des Lehrlings" value="concat(': 9m Fernkampf (', u:attribute('ModInt'), ' statt ', u:attribute('ModDex'), ') ', u:parse(u:attribute('ModInt')) + 3, 'x pro Tag')"/>
+    <skill name="Segen des Heilers" value="u:ifthenelse(u:attribute('ClericLevel') &gt;= 6, ': Heilung + 50%', '')"/>
+    <skill name="Metamagische Meisterschaft" value="concat(': ', floor((u:attribute('WizardLevel') - 6) div 2), 'x pro Tag bekannten metamagischen Talentgrad anwenden')"/>
+  </section>
+  <section name="ZF">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Arkane Verbindung: Fokus, +1 Zauber" value=""/>
+    <skill name="Arkane Verbindung: Vertrauter" value=""/>
+    <skill name="Feuerpfeil" value="concat(': 1w6+', floor(u:attribute('ClericLevel') div 2), ' Schaden ', u:parse(u:attribute('ModWis')) + 3, 'x pro Tag')"/>
+    <skill name="Glückspilz" value="concat(': ',3 + u:parse(u:attribute('ModWis')), ' / Tag je eine Runde alle w20 verbessern. Berührung und Standardaktion')"/>
+    <skill name="Hauch der Herrlichkeit" value="concat(': +', u:attribute('Level1'), ' auf Fertigkeits/Attributwurf ', u:parse(u:attribute('ModWis')) + 3, 'x pro Tag')"/>
+    <skill name="Abwendung des Todes" value="concat(': 1w4+', u:table-lookup('Half', u:attribute('Level1')), ' Heilung auf Sterbende ', u:parse(u:attribute('ModWis')) + 3, 'x pro Tag')"/>
+    <skill name="Spontan zaubern" value="concat(': Zauber zu Heilzauber', u:ifthenelse(u:attribute('DailySpells1') &gt; 0, concat('; St.1: 1w8+', u:min(5, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells2') &gt; 0, concat('; St.2: 2w8+', u:min(10, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells3') &gt; 0, concat('; St.3: 3w8+', u:min(15, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells4') &gt; 0, concat('; St.4: 4w8+', u:min(20, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells5') &gt; 0, concat('; St.5: 5w8+', u:min(25, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells6') &gt; 0, concat('; St.6: 6w8+', u:min(30, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells7') &gt; 0, concat('; St.7: 7w8+', u:min(35, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells8') &gt; 0, concat('; St.8: 8w8+', u:min(40, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''), u:ifthenelse(u:attribute('DailySpells9') &gt; 0, concat('; St.9: 9w8+', u:min(45, u:attribute('ClericLevel') + u:ifthenelse(u:skill('Glaubensschüler', 'value') !='', 1, 0))), ''))"/>
+    <skill name="Säurestrahl" value="concat(': 1w6+', floor(u:attribute('SorcererLevel') div 2), '; 9m Strahl; ', 3 + u:parse(u:attribute('ModCha')), ' / Tag')"/>
+    <skill name="Trick Höhere Magie: Verhüllender Nebel" value=""/>
+    <skill name="Trick Niedere Magie: Geisterhaftes Geräusch" value=""/>
+  </section>
+  <section name="Add">
+    <modifier name="display" value="'$name'"/>
+    <skill name="Dunkelsicht: 18m" value=""/>
+    <skill name="Dämmersicht" value="': 2x so weit sehen wie Menschen'"/>
+    <skill name="Einschüchternd" value="': +2 Einschüchtern'"/>
+    <skill name="Elfenimmunität" value="': immun gegen magischen Schlaf; +2 auf RW gegen Verzauberungsschule'"/>
+    <skill name="Entrinnen" value="': Ab St. 2 mit leichter Rüstung, REF für 0 statt 1/2 Schaden'"/>
+    <skill name="Fallen finden" value="concat(': Magische Fallen als Mechanismus ausschalten', u:ifthenelse(u:attribute('RogueLevel') &gt;= 2, concat('; +', floor(u:attribute('RogueLevel') div 2), ' auf Fallenwahrnehmung'), ''))"/>
+    <skill name="Fallengespür" value="u:ifthenelse(u:attribute('RogueLevel') &gt;= 3, concat(': ',floor(u:attribute('RogueLevel') div 3), ' auf RK und RW gegen Fallen'), '')"/>
+    <skill name="Furchtlos" value="': +2 RW gegen Furcht'"/>
+    <skill name="Geburtsmal" value="': +1 RW gegen Verzauberung u. Zwang'"/>
+    <skill name="Gnomenmagie" value="': SG +1 für Illusionszauber. Zusätzliche Zauberfähigkeiten'"/>
+    <skill name="Gunst des Schicksals" value="u:ifthenelse(u:attribute('ClericLevel') &gt;= 6, concat(': ',floor(u:attribute('ClericLevel') div 6), ' mal pro Tag einen w20 wiederholen. Selbst und Augenblicklich.'), '')"/>
+    <skill name="Hass: AB +1 gegen reptile und goblinoide Humanoide" value=""/>
+    <skill name="Illusionsresistent" value="': RW +2 gegen Illusionen'"/>
+    <skill name="Lange Glieder" value="u:ifthenelse(u:attribute('SorcererLevel') &gt;= 3, concat(': ',u:ifthenelse(u:attribute('SorcererLevel') &gt;= 11, u:ifthenelse(u:attribute('SorcererLevel') &gt;= 17, '4,50', '3'), '1,50'), ' m Reichweite auf Berührungszauber'), '')"/>
+    <skill name="Ork Wildheit" value="': 1/Tag unter 0 TP weiterkämpfen für 1 Runde'"/>
+    <skill name="Orkblut" value="': Volkseffekte gelten wie für Mensch und Ork'"/>
+    <skill name="Verteidigungsschulung: +4 RK vs Riesen" value=""/>
+    <skill name="Waffenvertrautheit (Elfen)" value="': geübt mit Bögen, Schwertern; Rassenwaffen sind Kriegswaffen'"/>
+    <skill name="Waffenvertrautheit (Orks)" value="': geübt mit Krummschwert, 2H-Axt; Rassenwaffen sind Kriegswaffen'"/>
+    <skill name="Waffenvertrautheit (Halblinge)" value="': geübt mit Schleudern; Rassenwaffen sind Kriegswaffen'"/>
+    <skill name="Waffenvertrautheit (Gnome)" value="': Rassenwaffen sind Kriegswaffen'"/>
+    <skill name="Eifriger Auftritt: Zauber der Schule der Verzauberung" value=""/>
+    <skill name="Freiheitskämpfer" value="': +1 auf Fertigk. &amp; Angriff geg. Gefangen'"/>
+    <skill name="Goblinbeobachter" value="': +5 auf Maximumschätzen'"/>
+    <skill name="Wagemutig" value="': +2 RW Furcht'"/>
+    <skill name="Perm. Unsichtbares Sehen" value=""/>
+    <skill name="Perm. Arkaner Blick" value=""/>
+    <skill name="Blutlinie: Abnormal" value=""/>
+    <skill name="Domäne: Befreiung" value=""/>
+    <skill name="Domäne: Feuer" value=""/>
+    <skill name="Domäne: Glück" value=""/>
+    <skill name="Domäne: Herrlichkeit" value=""/>
+    <skill name="Domäne: Heilung" value=""/>
+    <skill name="1. Beruf: Auftreten [Blasinstrumente]" value=""/>
+    <skill name="1. Beruf: Bibliothekar" value=""/>
+    <skill name="2. Beruf: Schreiber" value=""/>
+    <skill name="1. Handwerk: Kalligraphie" value=""/>
+  </section>
+  <race name="Mensch" size="MG" move="9"/>
+  <race name="Elf" size="MG" move="9">
+    <skill name="Wahrnehmung" value="2"/>
+    <skill name="Zauberkunde" value="2"/>
+  </race>
+  <race name="Halbling" size="K" move="6">
+    <skill name="Heimlichkeit" value="4"/>
+    <skill name="Wahrnehmung" value="2"/>
+    <skill name="Akrobatik" value="2"/>
+    <skill name="Klettern" value="2"/>
+  </race>
+  <race name="Gnom" size="K" move="6">
+    <skill name="Wahrnehmung" value="2"/>
+    <skill name="Handwerk 1" value="2"/>
+  </race>
+  <race name="Halbork" size="MG" move="9">
+    <skill name="Einschüchtern" value="2"/>
+  </race>
+  <class name="Hexenmeister" ranks="2" mod="ModCha" value="u:ifthenelse(count(//class[@name='Hexenmeister']/skill[@name='$name']) != 0, '+3', '')">
+    <attribute name="GAB" value="Half"/>
+    <attribute name="Ref" value="Third"/>
+    <attribute name="Wil" value="TwoAndHalf"/>
+    <attribute name="Har" value="Third"/>
+    <skill name="Umgang mit Waffen (Einfach)"/>
+    <skill name="Beruf 1"/>
+    <skill name="Beruf 2"/>
+    <skill name="Bluffen"/>
+    <skill name="Einschüchtern"/>
+    <skill name="Fliegen"/>
+    <skill name="Handwerk 1"/>
+    <skill name="Handwerk 2"/>
+    <skill name="Handwerk 3"/>
+    <skill name="Magischen Gegenstand benutzen"/>
+    <skill name="Schätzen"/>
+    <skill name="Wissen (Arkanes)"/>
+    <skill name="Zauberkunde"/>
+  </class>
+  <class name="Kleriker" ranks="2" mod="ModWis" value="u:ifthenelse(count(//class[@name='Kleriker']/skill[@name='$name']) != 0, '+3', '')">
+    <attribute name="GAB" value="ThreeQuarters"/>
+    <attribute name="Ref" value="Third"/>
+    <attribute name="Wil" value="TwoAndHalf"/>
+    <attribute name="Har" value="TwoAndHalf"/>
+    <skill name="Umgang mit Waffen (Einfach)"/>
+    <skill name="Umgang mit Waffen (Sternmesser)"/>
+    <skill name="Umgang mit Waffen (Krummsäbel)"/>
+    <skill name="Umgang mit Rüstung (Leicht)"/>
+    <skill name="Umgang mit Rüstung (Mittelschwer)"/>
+    <skill name="Umgang mit Rüstung (Schild)"/>
+    <skill name="Beruf 1"/>
+    <skill name="Beruf 2"/>
+    <skill name="Diplomatie"/>
+    <skill name="Handwerk 1"/>
+    <skill name="Handwerk 2"/>
+    <skill name="Handwerk 3"/>
+    <skill name="Heilkunde"/>
+    <skill name="Motiv erkennen"/>
+    <skill name="Schätzen"/>
+    <skill name="Sprachenkunde"/>
+    <skill name="Wissen (Adel und Königshäuser)"/>
+    <skill name="Wissen (Arkanes)"/>
+    <skill name="Wissen (Die Ebenen)"/>
+    <skill name="Wissen (Geschichte)"/>
+    <skill name="Wissen (Religion)"/>
+    <skill name="Zauberkunde"/>
+  </class>
+  <class name="Schurke" ranks="8" value="u:ifthenelse(count(//class[@name='Schurke']/skill[@name='$name']) != 0, '+3', '')">
+    <attribute name="GAB" value="ThreeQuarters"/>
+    <attribute name="Ref" value="TwoAndHalf"/>
+    <attribute name="Wil" value="Third"/>
+    <attribute name="Har" value="Third"/>
+    <skill name="Umgang mit Waffen (Einfach)"/>
+    <skill name="Umgang mit Waffen (Handarmbrust)"/>
+    <skill name="Umgang mit Waffen (Rapier)"/>
+    <skill name="Umgang mit Waffen (Totschläger)"/>
+    <skill name="Umgang mit Waffen (Kurzbogen)"/>
+    <skill name="Umgang mit Waffen (Kurzschwert)"/>
+    <skill name="Umgang mit Rüstung (Leicht)"/>
+    <skill name="Akrobatik"/>
+    <skill name="Auftreten 1"/>
+    <skill name="Auftreten 2"/>
+    <skill name="Beruf 1"/>
+    <skill name="Beruf 2"/>
+    <skill name="Bluffen"/>
+    <skill name="Diplomatie"/>
+    <skill name="Einschüchtern"/>
+    <skill name="Entfesselungskunst"/>
+    <skill name="Fingerfertigkeit"/>
+    <skill name="Handwerk 1"/>
+    <skill name="Handwerk 2"/>
+    <skill name="Handwerk 3"/>
+    <skill name="Heimlichkeit"/>
+    <skill name="Klettern"/>
+    <skill name="Magischen Gegenstand benutzen"/>
+    <skill name="Mechanismus ausschalten"/>
+    <skill name="Motiv erkenne"/>
+    <skill name="Schätzen"/>
+    <skill name="Schwimmen"/>
+    <skill name="Sprachenkunde"/>
+    <skill name="Verkleiden"/>
+    <skill name="Wahrnehmung"/>
+    <skill name="Wissen (Gewölbekunde)"/>
+    <skill name="Wissen (Lokales)"/>
+  </class>
+  <class name="Schattentänzer" ranks="6" value="u:ifthenelse(count(//class[@name='Schattentänzer']/skill[@name='$name']) != 0, '+3', '')">
+    <attribute name="GAB" value="Half"/>
+    <attribute name="Ref" value="Third"/>
+    <attribute name="Wil" value="HalfAndHalf"/>
+    <attribute name="Har" value="ThirdAndThird"/>
+    <skill name="Umgang mit Waffen (Armbrust)"/>
+    <skill name="Umgang mit Waffen (Rapier)"/>
+    <skill name="Umgang mit Waffen (Totschläger)"/>
+    <skill name="Umgang mit Waffen (Kurzbogen)"/>
+    <skill name="Umgang mit Waffen (Kurzschwert)"/>
+    <skill name="Umgang mit Waffen (Keule)"/>
+    <skill name="Umgang mit Waffen (Dolch)"/>
+    <skill name="Umgang mit Waffen (Wurfpfeil)"/>
+    <skill name="Umgang mit Waffen (Streitkolben)"/>
+    <skill name="Umgang mit Waffen (Morgenstern)"/>
+    <skill name="Umgang mit Waffen (Kampfstab)"/>
+    <skill name="Umgang mit Rüstung (Leicht)"/>
+    <skill name="Akrobatik"/>
+    <skill name="Bluffen"/>
+    <skill name="Diplomatie"/>
+    <skill name="Verkleiden"/>
+    <skill name="Entfesselungskunst"/>
+    <skill name="Wahrnehmung"/>
+    <skill name="Auftreten 1"/>
+    <skill name="Auftreten 2"/>
+    <skill name="Fingerfertigkeit"/>
+    <skill name="Heimlichkeit"/>
+  </class>
+  <class name="Kämpfer" ranks="2" value="u:ifthenelse(count(//class[@name='Kämpfer']/skill[@name='$name']) != 0, '+3', '')">
+    <attribute name="GAB" value="One"/>
+    <attribute name="Ref" value="Third"/>
+    <attribute name="Wil" value="Third"/>
+    <attribute name="Har" value="TwoAndHalf"/>
+    <skill name="Umgang mit Waffen (Einfach)"/>
+    <skill name="Umgang mit Waffen (Krieg)"/>
+    <skill name="Umgang mit Rüstung (Leicht)"/>
+    <skill name="Umgang mit Rüstung (Mittelschwer)"/>
+    <skill name="Umgang mit Rüstung (Schwer)"/>
+    <skill name="Umgang mit Rüstung (Schild)"/>
+    <skill name="Umgang mit Rüstung (Turmschild)"/>
+    <skill name="Beruf 1"/>
+    <skill name="Beruf 2"/>
+    <skill name="Einschüchtern"/>
+    <skill name="Handwerk 1"/>
+    <skill name="Handwerk 2"/>
+    <skill name="Handwerk 3"/>
+    <skill name="Klettern"/>
+    <skill name="Mit Tieren umgehen"/>
+    <skill name="Reiten"/>
+    <skill name="Schwimmen"/>
+    <skill name="Überlebenskunst"/>
+    <skill name="Wissen (Baukunst)"/>
+    <skill name="Wissen (Gewölbekunde)"/>
+  </class>
+  <class name="Magier" mod="ModInt" ranks="2" value="u:ifthenelse(count(//class[@name='Magier']/skill[@name='$name']) != 0, '+3', '')">
+    <attribute name="GAB" value="Half"/>
+    <attribute name="Ref" value="TwoAndHalf"/>
+    <attribute name="Wil" value="TwoAndHalf"/>
+    <attribute name="Har" value="Third"/>
+    <skill name="Umgang mit Waffen (Armbrust)"/>
+    <skill name="Umgang mit Waffen (Dolch)"/>
+    <skill name="Umgang mit Waffen (Kampfstab)"/>
+    <skill name="Umgang mit Waffen (Keule)"/>
+    <skill name="Fliegen"/>
+    <skill name="Beruf 1"/>
+    <skill name="Handwerk 1"/>
+    <skill name="Schätzen"/>
+    <skill name="Sprachenkunde"/>
+    <skill name="Wissen (Adel und Königshäuser)"/>
+    <skill name="Wissen (Arkanes)"/>
+    <skill name="Wissen (Baukunst)"/>
+    <skill name="Wissen (Die Ebenen)"/>
+    <skill name="Wissen (Geographie)"/>
+    <skill name="Wissen (Geschichte)"/>
+    <skill name="Wissen (Gewölbekunde)"/>
+    <skill name="Wissen (Lokales)"/>
+    <skill name="Wissen (Natur)"/>
+    <skill name="Wissen (Religion)"/>
+    <skill name="Zauberkunde"/>
+  </class>
+  <gear>
+    <modifier name="name" value="'$name'"/>
+    <modifier name="mod" value="u:sign(u:ifthenelse(u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@type')) = 'Armor' or u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@type')) = 'Shield', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@smod')) + u:ifthenelse(u:mod('$name') = '+1', 1, 0), u:ifthenelse(u:mod('$name') = 'M', 1, u:ifthenelse(u:mod('$name') = '+1', 1, u:ifthenelse(u:mod('$name') = '+2', 2, u:ifthenelse(u:mod('$name') = '+3', 3, u:ifthenelse(u:mod('$name') = '+4', 4, u:ifthenelse(u:mod('$name') = '+5', 5, u:ifthenelse(u:mod('$name') = 'Glück', 2, 0))))))) + u:parse(u:attribute(concat('Mod', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@attr'))))) + u:parse(u:attribute('TModGAB')) + u:ifthenelse(u:attribute('FighterLevel') &gt; 4 and u:parse(u:skill(concat('1. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 1) div 4), 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 8 and u:parse(u:skill(concat('2. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 5) div 4), 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 12 and u:parse(u:skill(concat('3. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 9) div 4), 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 16 and u:parse(u:skill(concat('4. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 11) div 4), 0) + u:ifthenelse(u:parse(u:skill(concat('Waffenfokus (', u:raw('$name'), ')'), 'total')) &gt; 0, 1, 0) + u:ifthenelse(u:parse(u:skill(concat('Umgang mit Waffen (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@category')), ')'),'total')) &gt; 0, 0, u:ifthenelse(u:rules(concat('count(//class[@name=|', u:attribute('Class1'), '|]/skill[@name=|Umgang mit Waffen (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@category')), ')|])')) != '0', 0, u:ifthenelse(u:rules(concat('count(//class[@name=|', u:attribute('Class2'), '|]/skill[@name=|Umgang mit Waffen (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@category')), ')|])')) != '0', 0, u:ifthenelse(u:parse(u:skill(concat('Umgang mit Waffen (', u:raw('$name'), ')'), 'value')) &gt; 0, 0, -4)))) + u:min(0, u:ifthenelse(u:attribute('FighterLevel') &gt; 2, u:min(floor((u:attribute('FighterLevel') + 1) div 4), 4), 0) + u:attribute('ArmorPenalty'))))"/>
+    <modifier name="damage" value="concat(u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@damage', u:attribute('Size'))), u:sign(u:ifthenelse(u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@sattr')) = 'Str', u:parse(u:attribute('ModStr')), 0) + u:ifthenelse(u:parse(u:skill(concat('Waffenspezialisierung (', u:raw('$name'), ')'), 'total')) &gt; 0, 2, 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 4 and u:parse(u:skill(concat('1. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 1) div 4), 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 8 and u:parse(u:skill(concat('2. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 5) div 4), 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 12 and u:parse(u:skill(concat('3. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 9) div 4), 0) + u:ifthenelse(u:attribute('FighterLevel') &gt; 16 and u:parse(u:skill(concat('4. Waffentraining (', u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@group')), ')'), 'total')) &gt; 0, floor((u:attribute('FighterLevel') - 11) div 4), 0) + u:ifthenelse(u:mod('$name') = '+1', 1, u:ifthenelse(u:mod('$name') = '+2', 2, u:ifthenelse(u:mod('$name') = '+3', 3, u:ifthenelse(u:mod('$name') = '+4', 4, u:ifthenelse(u:mod('$name') = '+5', 5, u:ifthenelse(u:mod('$name') = 'Glück', 2, 0))))))))"/>
+    <modifier name="mal" value="u:sign(u:parse(u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@smal'))) + u:ifthenelse(u:parse(u:rules(concat('//equipment[@name=|', u:raw('$name'), '|]/@smal'))) &lt; 0, u:ifthenelse((u:mod('$name') = 'M') or (u:mod('$name') = '+1'), 1, 0), 0))"/>
+    <equipment type="Weapon" name="Streitkolben, schwer" enc="8" damageMG="1w8" damageK="1w6" wtype="W" crit="x2" range="-" munition="-" sattr="Str" attr="Str" group="Hämmer" category="Einfach"/>
+    <equipment type="Weapon" name="Sternmesser" enc="3" damageMG="1w4" damageK="1w3" wtype="S" crit="x3" range="6" munition="-" sattr="Str" attr="Str" group="Leichte Klingen" category="Krieg"/>
+    <equipment type="Weapon" name="Sichel" enc="2" damageMG="1w4" damageK="1w4" wtype="H" crit="x2" range="-" munition="-" sattr="Str" attr="Str" group="Leichte Klingen" category="Einfach"/>
+    <equipment type="Weapon" name="Rapier" enc="2" damageMG="1w6" damageK="1w4" wtype="S" crit="18-20/x2" range="-" munition="-" sattr="Str" attr="Str" group="Leichte Klingen" category="Krieg"/>
+    <equipment type="Weapon" name="Dolch" enc="1" damageMG="1w4" damageK="1w3" wtype="H+S" crit="19-20/x2" range="3" munition="-" sattr="Str" attr="Str" group="Leichte Klingen" category="Einfach"/>
+    <equipment type="Weapon" name="Kampfstab" enc="4" damageMG="1w6" damageK="1w4" wtype="W" crit="x2" range="-" munition="-" sattr="Str" attr="Str" group="Zweihandwaffe" category="Einfach"/>
+    <equipment type="Weapon" name="Krummsäbel" enc="4" damageMG="1w6" damageK="1w4" wtype="H" crit="18-20/x2" range="-" munition="-" sattr="Str" attr="Str" group="Einhandwaffe" category="Kriegswaffen"/>
+    <equipment type="Weapon" name="Armbrust, leicht" enc="4" damageMG="1w8" damageK="1w6" wtype="S" crit="19-20/x2" range="24" munition="Bolzen" attr="Dex" group="Armbrüste" category="Einfach"/>
+    <equipment type="Weapon" name="Schleuder" enc="0" damageMG="1w4" damageK="1w3" wtype="W" crit="x2" range="15" munition="Kugeln" sattr="Str" attr="Dex" group="Wurfwaffen" category="Einfach"/>
+    <equipment type="Weapon" name="Kurzschwert" enc="2" damageMG="1w6" damageK="1w4" wtype="S" crit="19-20/x2" range="-" munition="-" sattr="Str" attr="Str" group="Leichte Waffen" category="Kriegswaffen"/>
+    <equipment type="Weapon" name="Bastardschwert" enc="6" damageMG="1w10" damageK="1w8" wtype="H" crit="19-20/x2" range="-" munition="-" sattr="Str" attr="Str" group="Schwere Klingen" category="Exotisch"/>
+    <equipment type="Weapon" name="Zweihänder" enc="8" damageMG="2w6" damageK="1w10" wtype="H" crit="19-20/x2" range="-" munition="-" sattr="Str" attr="Str" group="Schwere Klingen" category="Krieg"/>
+    <equipment type="Armor" name="Gelehrtenkleidung" enc="6" smod="0" crit="0%" maxdex="10" smal="0" category="Keine"/>
+    <equipment type="Armor" name="Seidenrüstung" enc="4" smod="1" crit="0%" maxdex="10" smal="0" category="Leicht"/>
+    <equipment type="Armor" name="Haramaki" enc="1" smod="1" crit="0%" maxdex="99" smal="0" category="Leicht"/>
+    <equipment type="Armor" name="Lederrüstung" enc="15" smod="2" crit="10%" maxdex="6" smal="0" category="Leicht"/>
+    <equipment type="Armor" name="Kettenhemd" enc="25" smod="4" crit="20%" maxdex="4" smal="-2" category="Leicht"/>
+    <equipment type="Armor" name="Brustplatte" enc="30" smod="6" crit="25%" maxdex="3" smal="-4" category="Mittelschwer"/>
+    <equipment type="Armor" name="Mithralbrustplatte" enc="15" smod="6" crit="15%" maxdex="5" smal="-1" category="Leicht"/>
+    <equipment type="Armor" name="Ritterrüstung" enc="50" smod="9" crit="35%" maxdex="1" smal="-6" category="Schwer"/>
+    <equipment type="Shield" name="Schwerer Stahlschild" enc="15" smod="2" crit="15%" maxdex="99" smal="-2" category="Schild"/>
+    <equipment type="Shield" name="Schwerer Holzschild" enc="10" smod="2" crit="15%" maxdex="99" smal="-2" category="Schild"/>
+    <equipment type="Shield" name="Leichter Holzschild" enc="5" smod="1" crit="5%" maxdex="99" smal="-1" category="Schild"/>
+    <equipment type="" name="15m Seidenseil" enc="5"/>
+    <equipment type="" name="Blatt Pergament" enc="0.02"/>
+    <equipment type="" name="Amulett Naturrüstung" enc="0.1"/>
+    <equipment type="" name="Amulett" enc="0.1"/>
+    <equipment type="" name="Armschienen CH" enc="1"/>
+    <equipment type="" name="Bazaranhänger" enc="1"/>
+    <equipment type="" name="Beutel mit Materialkomponenten" enc="2"/>
+    <equipment type="" name="Bewegungsfreiheitshemd" enc="0.5"/>
+    <equipment type="" name="Bewegungsfreiheitsring" enc="0.02"/>
+    <equipment type="" name="Buch" enc="3"/>
+    <equipment type="" name="Energiewürfel" enc="0.5"/>
+    <equipment type="" name="Fackel" enc="1"/>
+    <equipment type="" name="Federfallring" enc="0.02"/>
+    <equipment type="" name="Flöte" enc="0.2"/>
+    <equipment type="" name="Flüstermünze" enc="0.02"/>
+    <equipment type="" name="Zufluchtband" enc="0.01"/>
+    <equipment type="" name="Gebetsperlenkette, schwach" enc="0.5"/>
+    <equipment type="" name="Gebetsrolle Positivenergie" enc="0.02"/>
+    <equipment type="" name="Glocke" enc="0.1"/>
+    <equipment type="" name="Gürtel ST" enc="1"/>
+    <equipment type="" name="Gürtel ST,CH" enc="1"/>
+    <equipment type="" name="Gürtel WE" enc="1"/>
+    <equipment type="" name="Handschuhe Heil" enc="0.5"/>
+    <equipment type="" name="Heilertasche" enc="1"/>
+    <equipment type="" name="Heiliges Symbol, holz" enc="0.1"/>
+    <equipment type="" name="Helm" enc="3"/>
+    <equipment type="" name="Hemd Dipl" enc="1"/>
+    <equipment type="" name="Ionenstein CH" enc="0.1"/>
+    <equipment type="" name="Ionenstein GE" enc="0.1"/>
+    <equipment type="" name="Ionenstein KO" enc="0.1"/>
+    <equipment type="" name="Ionenstein RK" enc="0.1"/>
+    <equipment type="" name="Ionenstein ST" enc="0.1"/>
+    <equipment type="" name="Ionenstein ZS" enc="0.1"/>
+    <equipment type="" name="Ionenstein" enc="0.1"/>
+    <equipment type="" name="Kompass" enc="1"/>
+    <equipment type="" name="Kugel" enc="1"/>
+    <equipment type="" name="Stiefel" enc="1"/>
+    <equipment type="" name="Mächtiger Zwielichtanhänger" enc="1"/>
+    <equipment type="" name="Mütze IN" enc="1"/>
+    <equipment type="" name="Pyxis der Domäne" enc="0.1"/>
+    <equipment type="" name="Resistenzumhang" enc="1"/>
+    <equipment type="" name="Rucksack" enc="2"/>
+    <equipment type="" name="Rüstungsarmschienen" enc="1"/>
+    <equipment type="" name="Salbe" enc="0.5"/>
+    <equipment type="" name="Scherbe" enc="0.1"/>
+    <equipment type="" name="Schriftrolle" enc="0.02"/>
+    <equipment type="" name="Schuldschein" enc="0.02"/>
+    <equipment type="" name="Schutzring" enc="0.02"/>
+    <equipment type="" name="Stirnreif IN" enc="1"/>
+    <equipment type="" name="Stirnreif WE,IN" enc="1"/>
+    <equipment type="" name="Stirnreif WE,IN,CH" enc="1"/>
+    <equipment type="" name="Tinte &amp; Schreiber" enc="0.1"/>
+    <equipment type="" name="Trank" enc="0.06"/>
+    <equipment type="" name="Türenkompass" enc="1"/>
+    <equipment type="" name="Verstrickungsbeutel" enc="4"/>
+    <equipment type="" name="Weihrauch" enc="0.02"/>
+    <equipment type="" name="Wurfhaken" enc="4"/>
+    <equipment type="" name="Zauberbuch [gepriesen]" enc="1"/>
+    <equipment type="" name="Zauberbuch [kompakt]" enc="1"/>
+    <equipment type="" name="Zauberbuch [normal]" enc="3"/>
+    <equipment type="" name="Zauberring" enc="0.02"/>
+    <equipment type="" name="Zauberstab" enc="0.05"/>
+    <equipment type="" name="Zauberzepter" enc="5"/>
+  </gear>
+  <table name="XP">
+    <row key0="1" value="2000"/>
+    <row key0="2" value="5000"/>
+    <row key0="3" value="9000"/>
+    <row key0="4" value="15000"/>
+    <row key0="5" value="23000"/>
+    <row key0="6" value="35000"/>
+    <row key0="7" value="51000"/>
+    <row key0="8" value="75000"/>
+    <row key0="9" value="105000"/>
+    <row key0="10" value="155000"/>
+    <row key0="11" value="220000"/>
+    <row key0="12" value="315000"/>
+    <row key0="13" value="445000"/>
+    <row key0="14" value="635000"/>
+    <row key0="15" value="890000"/>
+    <row key0="16" value="1300000"/>
+    <row key0="17" value="1800000"/>
+    <row key0="18" value="2550000"/>
+    <row key0="19" value="3600000"/>
+    <row key0="20" value="100000000"/>
+  </table>
+  <table name="HexenmeisterKnown0">
+    <row key0="1" value="4"/>
+    <row key0="2 3" value="5"/>
+    <row key0="4 5" value="6"/>
+    <row key0="6 7" value="7"/>
+    <row key0="8 9" value="8"/>
+    <row key0="9 20" value="9"/>
+  </table>
+  <table name="HexenmeisterKnown1">
+    <row key0="-20 -1" value="0"/>
+    <row key0="0 0" value="1"/>
+    <row key0="1 2" value="2"/>
+    <row key0="3 4" value="3"/>
+    <row key0="5 6" value="4"/>
+    <row key0="7 20" value="5"/>
+  </table>
+  <table name="HexenmeisterKnown3">
+    <row key0="-20 5" value="0"/>
+    <row key0="6" value="1"/>
+    <row key0="7 8" value="2"/>
+    <row key0="9 10" value="3"/>
+    <row key0="11 20" value="4"/>
+  </table>
+  <table name="HexenmeisterKnown6">
+    <row key0="-20 11" value="0"/>
+    <row key0="12" value="1"/>
+    <row key0="13 14" value="2"/>
+    <row key0="15 20" value="3"/>
+  </table>
+  <table name="HexenmeisterKnown9">
+    <row key0="-20 11" value="0"/>
+    <row key0="12" value="1"/>
+    <row key0="13 14" value="2"/>
+    <row key0="15 20" value="3"/>
+  </table>
+  <table name="HexenmeisterKnownOffset">
+    <row key0="2" value="4"/>
+    <row key0="4" value="2"/>
+    <row key0="5" value="4"/>
+    <row key0="7" value="2"/>
+    <row key0="8" value="4"/>
+  </table>
+  <table name="KlerikerKnown0">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="KlerikerKnown1">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="KlerikerKnown3">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="KlerikerKnown6">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="KlerikerKnown9">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="KlerikerKnownOffset">
+    <row key0="1 9" value="0"/>
+  </table>
+  <table name="HexenmeisterDaily0">
+    <row key0="-20 20" value="~"/>
+  </table>
+  <table name="HexenmeisterDaily1">
+    <row key0="-20 0" value="0"/>
+    <row key0="1" value="3"/>
+    <row key0="2" value="4"/>
+    <row key0="3" value="5"/>
+    <row key0="4 20" value="6"/>
+  </table>
+  <table name="HexenmeisterDaily2">
+    <row key0="-20 0" value="0"/>
+    <row key0="4" value="3"/>
+    <row key0="5" value="4"/>
+    <row key0="6" value="5"/>
+    <row key0="7 20" value="6"/>
+  </table>
+  <table name="HexenmeisterDaily8">
+    <row key0="-20 15" value="0"/>
+    <row key0="16" value="3"/>
+    <row key0="17" value="4"/>
+    <row key0="18" value="5"/>
+    <row key0="19 20" value="6"/>
+  </table>
+  <table name="HexenmeisterDaily9">
+    <row key0="-20 17" value="0"/>
+    <row key0="18" value="3"/>
+    <row key0="19" value="4"/>
+    <row key0="20" value="6"/>
+  </table>
+  <table name="HexenmeisterDailyOffset">
+    <row key0="3" value="5"/>
+    <row key0="4" value="7"/>
+    <row key0="5" value="9"/>
+    <row key0="6" value="11"/>
+    <row key0="7" value="13"/>
+  </table>
+  <table name="KlerikerDaily0">
+    <row key0="-20 1" value="3"/>
+    <row key0="2 20" value="4"/>
+  </table>
+  <table name="KlerikerDaily1">
+    <row key0="-20 0" value="0"/>
+    <row key0="1" value="1+1"/>
+    <row key0="2 3" value="2+1"/>
+    <row key0="4 6" value="3+1"/>
+    <row key0="7 20" value="4+1"/>
+  </table>
+  <table name="KlerikerDaily2">
+    <row key0="-20 2" value="0"/>
+    <row key0="3" value="1+1"/>
+    <row key0="4 5" value="2+1"/>
+    <row key0="6 8" value="3+1"/>
+    <row key0="9 20" value="4+1"/>
+  </table>
+  <table name="KlerikerDaily9">
+    <row key0="-20 16" value="0"/>
+    <row key0="17" value="1+1"/>
+    <row key0="18" value="2+1"/>
+    <row key0="19" value="3+1"/>
+    <row key0="20" value="4+1"/>
+  </table>
+  <table name="KlerikerDaily8">
+    <row key0="-20 14" value="0"/>
+    <row key0="15" value="1+1"/>
+    <row key0="15 17" value="2+1"/>
+    <row key0="18 19" value="3+1"/>
+    <row key0="20" value="4+1"/>
+  </table>
+  <table name="KlerikerDailyOffset">
+    <row key0="3" value="4"/>
+    <row key0="4" value="6"/>
+    <row key0="5" value="8"/>
+    <row key0="6" value="10"/>
+    <row key0="7" value="12"/>
+  </table>
+  <table name="MagierDaily0">
+    <row key0="-20 1" value="3"/>
+    <row key0="2 20" value="4"/>
+  </table>
+  <table name="MagierDaily1">
+    <row key0="-20 0" value="0"/>
+    <row key0="1" value="1"/>
+    <row key0="2 3" value="2"/>
+    <row key0="4 6" value="3"/>
+    <row key0="7 20" value="4"/>
+  </table>
+  <table name="MagierDaily2">
+    <row key0="-20 2" value="0"/>
+    <row key0="3" value="1"/>
+    <row key0="4 5" value="2"/>
+    <row key0="6 8" value="3"/>
+    <row key0="9 20" value="4"/>
+  </table>
+  <table name="MagierDaily8">
+    <row key0="-20 14" value="0"/>
+    <row key0="15" value="1"/>
+    <row key0="16 17" value="2"/>
+    <row key0="18 19" value="3"/>
+    <row key0="20" value="4"/>
+  </table>
+  <table name="MagierDaily9">
+    <row key0="-20 16" value="0"/>
+    <row key0="17" value="1"/>
+    <row key0="18" value="2"/>
+    <row key0="19" value="3"/>
+    <row key0="20" value="4"/>
+  </table>
+  <table name="MagierDailyOffset">
+    <row key0="3" value="4"/>
+    <row key0="4" value="6"/>
+    <row key0="5" value="8"/>
+    <row key0="6" value="10"/>
+    <row key0="7" value="12"/>
+  </table>
+  <table name="MagierKnown0">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="MagierKnown1">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="MagierKnown3">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="MagierKnown6">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="MagierKnown9">
+    <row key0="-20 20" value=""/>
+  </table>
+  <table name="MagierKnownOffset">
+    <row key0="1 9" value="0"/>
+  </table>
+  <table name="Half">
+    <row key0="1" value="0"/>
+    <row key0="2 3" value="1"/>
+    <row key0="4 5" value="2"/>
+    <row key0="6 7" value="3"/>
+    <row key0="8 9" value="4"/>
+    <row key0="10 11" value="5"/>
+    <row key0="12 13" value="6"/>
+    <row key0="14 15" value="7"/>
+    <row key0="16 17" value="8"/>
+    <row key0="18 19" value="9"/>
+    <row key0="20" value="10"/>
+  </table>
+  <table name="HalfAndHalf">
+    <row key0="1 2" value="1"/>
+    <row key0="3 4" value="2"/>
+    <row key0="5 6" value="3"/>
+    <row key0="7 8" value="4"/>
+    <row key0="9 10" value="5"/>
+    <row key0="11 12" value="6"/>
+    <row key0="13 14" value="7"/>
+    <row key0="15 16" value="8"/>
+    <row key0="17 18" value="9"/>
+    <row key0="19 20" value="10"/>
+  </table>
+  <table name="One">
+    <row key0="1" value="1"/>
+    <row key0="2" value="2"/>
+    <row key0="3" value="3"/>
+    <row key0="4" value="4"/>
+    <row key0="5" value="5"/>
+    <row key0="6" value="6"/>
+    <row key0="7" value="7"/>
+    <row key0="8" value="8"/>
+    <row key0="9" value="9"/>
+    <row key0="10" value="10"/>
+    <row key0="11" value="11"/>
+    <row key0="12" value="12"/>
+    <row key0="13" value="13"/>
+    <row key0="14" value="14"/>
+    <row key0="15" value="15"/>
+    <row key0="16" value="16"/>
+    <row key0="17" value="17"/>
+    <row key0="18" value="18"/>
+    <row key0="19" value="19"/>
+    <row key0="20" value="20"/>
+  </table>
+  <table name="Third">
+    <row key0="1 2" value="0"/>
+    <row key0="3 5" value="1"/>
+    <row key0="6 8" value="2"/>
+    <row key0="9 11" value="+3"/>
+    <row key0="12 14" value="4"/>
+    <row key0="15 17" value="5"/>
+    <row key0="18 20" value="6"/>
+  </table>
+  <table name="ThirdAndThird">
+    <row key0="1" value="0"/>
+    <row key0="2 4" value="1"/>
+    <row key0="5 7" value="2"/>
+    <row key0="8 10" value="3"/>
+    <row key0="11 13" value="4"/>
+    <row key0="14 16" value="5"/>
+    <row key0="17 19" value="6"/>
+    <row key0="20" value="7"/>
+  </table>
+  <table name="ThreeQuarters">
+    <row key0="1" value="0"/>
+    <row key0="2" value="1"/>
+    <row key0="3" value="2"/>
+    <row key0="4 5" value="3"/>
+    <row key0="6" value="4"/>
+    <row key0="7" value="5"/>
+    <row key0="8 9" value="6"/>
+    <row key0="10" value="7"/>
+    <row key0="11" value="8"/>
+    <row key0="12 13" value="9"/>
+    <row key0="14" value="10"/>
+    <row key0="15" value="11"/>
+    <row key0="16 17" value="12"/>
+    <row key0="18" value="13"/>
+    <row key0="19" value="14"/>
+    <row key0="20" value="15"/>
+  </table>
+  <table name="TwoAndHalf">
+    <row key0="1" value="2"/>
+    <row key0="2 3" value="3"/>
+    <row key0="4 5" value="4"/>
+    <row key0="6 7" value="5"/>
+    <row key0="8 9" value="6"/>
+    <row key0="10 11" value="7"/>
+    <row key0="12 13" value="8"/>
+    <row key0="14 15" value="9"/>
+    <row key0="16 17" value="10"/>
+    <row key0="18 19" value="11"/>
+    <row key0="20" value="12"/>
+  </table>
+  <table name="ArmorMove">
+    <row key0="2" value="4.5"/>
+    <row key0="3" value="6"/>
+    <row key0="6" value="6"/>
+    <row key0="9" value="9"/>
+  </table>
+  <table name="Load">
+    <row key0="1" value="3"/>
+    <row key0="2" value="6"/>
+    <row key0="3" value="10"/>
+    <row key0="4" value="13"/>
+    <row key0="5" value="16"/>
+    <row key0="6" value="20"/>
+    <row key0="7" value="23"/>
+    <row key0="8" value="26"/>
+    <row key0="9" value="30"/>
+    <row key0="10" value="33"/>
+    <row key0="11" value="38"/>
+    <row key0="12" value="43"/>
+    <row key0="13" value="50"/>
+    <row key0="14" value="58"/>
+    <row key0="15" value="66"/>
+    <row key0="16" value="76"/>
+    <row key0="17" value="86"/>
+    <row key0="18" value="100"/>
+    <row key0="19" value="116"/>
+    <row key0="20" value="133"/>
+    <row key0="21" value="153"/>
+    <row key0="22" value="173"/>
+    <row key0="23" value="200"/>
+    <row key0="24" value="233"/>
+  </table>
+</rules>

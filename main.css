@@ -1,0 +1,165 @@
+html {
+    background-color: #def;
+    font-family: serif;
+    height: 100%;
+}
+
+body {
+    width: 90%;
+    height: 90%;
+    margin: auto;
+    padding: 2ex;
+    text-align: center;
+}
+
+a {
+    color: #eee;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 2em;
+    font-weight: bold;
+    text-align: center;
+    padding: .2ex;
+    width: 100%;
+}
+
+table {
+    border-spacing: 0px;
+    border-collapse: separate;
+}
+
+.bigentity {
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to left, #7bf, #49e) 1 0;
+    background: linear-gradient(to right, #7bf, #49e);
+    color: #eee;
+}
+
+.mediumentity {
+    border-width: 3px;
+    border-style: solid;
+    border-image: linear-gradient(to left, #7bf, #49e) 1 0;
+    background: linear-gradient(to right, #7bf, #49e);
+    color: #eee;
+    margin: 7px;
+}
+
+.smallentity {
+    border-width: 2px;
+    border-style: solid;
+    border-image: linear-gradient(to left, #7bf, #49e) 1 0;
+    background: linear-gradient(to right, #7bf, #49e);
+    color: #eee;
+    margin: 3px;
+}
+
+.hilite {
+    background: linear-gradient(to right, #8fcfff, #5fafff); !important;
+    cursor:pointer;
+}
+
+.button {
+    vertical-align: middle;
+    text-align: center;
+    padding: .25em;
+    font-weight: bold;
+}
+
+select {
+    font-family: serif;
+}
+
+select.button {
+    font-weight: bold;
+    margin: .0em;
+    width:94%;
+}
+
+.art {
+    width:192px;
+    height:192px;
+    padding:0px;
+    margin:2px;
+}
+
+table.frame {
+    border-spacing: 4px 10px;
+}
+
+table.overview {
+    margin: auto;
+    border-spacing: 1em;
+}
+
+td.overview {
+    vertical-align: middle;
+    text-align: center;
+    padding: .5em;
+    height: 1ex;
+    width: 12em;
+    font-weight: bold;
+}
+
+td.frame {
+    vertical-align: top;
+    text-align: center;
+    border-width: 0px 1px;
+    border-style: solid;
+    border-color: #2c38;
+    padding: 0px;
+}
+
+div.frame {
+    width: 180px;
+    height: 180px;
+    display: inline-block;
+    margin: 10px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+img.listing {
+    height: auto;
+    width: auto;
+    display: inline-block;
+    max-height: 100px;
+    max-width: 100px;
+}
+
+a.listing {
+    padding: 4px;
+    font-size: .8em;
+    vertical-align: middle;
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+}
+
+span.listing {
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    width: 18em;
+    display: inline-block;
+    font-weight: bold;
+    padding: 2px;
+}
+
+span.smalllisting {
+    vertical-align: middle;
+    text-align: center;
+    text-decoration: none;
+    width: 10em;
+    display:inline-block;
+    font-weight: bold;
+    font-size: .9em;
+    padding: 1px;
+}
+
+.lefticon {
+    float: left;
+}

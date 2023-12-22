@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tr xmlns="http://www.w3.org/1999/xhtml" id="Combat-$Name" class="combatsep">
+  <td class="combat">
+    <span data-title="name" class="smallentity" onmouseover="high(this)" onmouseout="low(this)" onclick="show(this.parentNode.parentNode)">
+      $Name
+    </span>
+    <span data-title="vtd" style="display:none">
+      $VTD
+    </span>
+  </td>
+  <td class="combat">
+    <select data-title="oppo"/>
+  </td>
+  <td class="combat">
+    <select data-title="atyp">
+      $ATYP
+    </select>
+  </td>
+  <td class="combat">
+    <input data-title="auto" type="text" maxlength="4" readonly="true" value="0" style="color:#999"/>
+  </td>
+  <td class="combat">
+    <input data-title="misc" type="text" maxlength="4"/>
+  </td>
+  <td class="combat">
+    <input data-title="aktiv" type="text" maxlength="4"/>
+  </td>
+  <td class="combat">
+    <input data-title="ares" type="text" maxlength="4" readonly="true" value="" style="color:#999"/>
+  </td>
+  <td class="combat">
+    <input data-title="vres" type="text" maxlength="4" readonly="true" value="" style="color:#999"/>
+  </td>
+  <td class="combat">
+    <input data-title="dres" type="text" maxlength="4" readonly="true" value="" style="color:#999"/>
+  </td>
+  <td class="combat">
+    <input data-title="gres" type="text" maxlength="4" readonly="true" value="" style="color:#999"/>
+  </td>
+</tr>
